@@ -1,0 +1,875 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 5 - Conservation of momentum in 1D &#8212; PHY009 - Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Lecture5';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logouni.png" class="logo__image only-light" alt="PHY009 - Mechanics - Home"/>
+    <script>document.write(`<img src="_static/logouni.png" class="logo__image only-dark" alt="PHY009 - Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    PHY009: Foundations of Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PreCourse.html">Pre-course requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic1.html">Topic 1 - Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic2.html">Topic 2 - Kinematics and Projectile Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic3.html">Topic 3 - Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic4.html">Topic 4 - Energy, Power and Momentum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic5.html">Topic 5 - Circular Motion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLecture5.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Lecture5.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 5 - Conservation of momentum in 1D</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-forces-to-momentum-the-impulse-momentum-theorem">From forces to momentum - the impulse-momentum theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-momentum">Conservation of momentum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-in-1d">Collisions in 1D</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perfectly-elastic-collisions">Perfectly elastic collisions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perfectly-inelastic-collisions">Perfectly inelastic collisions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ballistic-pendulum-example">Ballistic pendulum example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-5-conservation-of-momentum-in-1d">
+<span id="lecture5"></span><h1>Lecture 5 - Conservation of momentum in 1D<a class="headerlink" href="#lecture-5-conservation-of-momentum-in-1d" title="Link to this heading">#</a></h1>
+<p>In a similar vein to the start of <a class="reference internal" href="Lecture4.html#lecture4"><span class="std std-ref">Lecture 4</span></a> we find ourselves faced with a concept that is difficult to give a well-defined meaning but is nevertheless incredibly useful in classical mechanics. I have already made use of this definition earlier but it is worthwhile to restate it for emphasis.</p>
+<div class="tip admonition">
+<p class="admonition-title">Reminder</p>
+<p>The momentum of a body with constant mass <span class="math notranslate nohighlight">\(m\)</span> moving with some velocity <span class="math notranslate nohighlight">\(\textbf{v}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\textbf{p} = m\textbf{v}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\textbf{p}\)</span> is a vector quantity in the same direction as <span class="math notranslate nohighlight">\(\textbf{v}\)</span>.</p>
+</div>
+<section id="from-forces-to-momentum-the-impulse-momentum-theorem">
+<h2>From forces to momentum - the impulse-momentum theorem<a class="headerlink" href="#from-forces-to-momentum-the-impulse-momentum-theorem" title="Link to this heading">#</a></h2>
+<p>Remember back in the <a class="reference internal" href="Lecture4.html#sec-c4-work"><span class="std std-ref">section on Work</span></a> where we looked at Newton’s Second Law and considered what it means to integrate this over distance? I mentioned in the footnote there that we would revisit this process but integrating over time. That time is now.</p>
+<p>We start from equation <a class="reference internal" href="Topic3.html#equation-eq-c3-second-new">(9)</a> but will assume for now that the net force acting during some time interval <span class="math notranslate nohighlight">\(\Delta t\)</span> is constant. Thus we can derive the <strong>impulse-momentum theorem</strong> which states</p>
+<div class="math notranslate nohighlight">
+\[\textbf{J} = \sum\textbf{F}\Delta t = \Delta \textbf{p} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\textbf{J}\)</span> is the impulse and <span class="math notranslate nohighlight">\(\Delta \textbf{p}\)</span> is the <strong>change</strong> in momentum. You may not have been taught about impulse prior to this but there is a good rationale why this is a useful quantity in certain circumstances.</p>
+<p>Consider a constant force acting on an initially stationary body which will cause the body to accelerate, but an important piece of information is for how long the force is acting on the body. A <span class="math notranslate nohighlight">\(1\text{ N}\)</span> force acting on the body for one second gives a different final system compared to one acting on the body for 10 seconds. Now you could go back to the kinematic equations we saw in <a class="reference internal" href="Lecture2.html#lecture2"><span class="std std-ref">Lecture 2</span></a> to find the final velocities of both of these situations, but it is often easier to make use of the impulse-momentum theorem to directly find the change in momentum and thus the change in velocity.</p>
+<p>For the 1 second case</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Delta \textbf{p} &amp;= \textbf{F}t = 1\times1 =1\\
+\therefore \Delta v &amp;= \frac{1}{m}\end{split}\]</div>
+<p>whereas for the 10 second case</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Delta \textbf{p} &amp;= \textbf{F}t = 1\times10 =10\\
+\therefore \Delta v &amp;= \frac{10}{m}\end{split}\]</div>
+<p>It’s important to note that this gives the <strong>change</strong> in velocity. A lot of problems may specify the initial or final velocity as being at rest (to simplify the problem) but it’s important you check this is valid rather than assuming it is true for all cases.</p>
+<p>But what about the case where the net force is not constant? We get the same result albeit in through a slightly more difficult route,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\int_{t_1}^{t_2}\sum\textbf{F}\,\mathrm{d}t &amp;= \int_{t_1}^{t_2}\frac{\mathrm{d}\textbf{p}}{\mathrm{d}t}\,\mathrm{d}t\\
+	&amp;= \int_{\textbf{p}_1}^{\textbf{p}_2}\,\mathrm{d}\textbf{p}\\
+	&amp;= \textbf{p}_2-\textbf{p}_1 = \Delta \textbf{p}\\
+\end{align*}\]</div>
+</section>
+<section id="conservation-of-momentum">
+<h2>Conservation of momentum<a class="headerlink" href="#conservation-of-momentum" title="Link to this heading">#</a></h2>
+<p>One of the most far reaching and useful property of momentum is that is a conserved property. Once again the formal proof of Noether’s Theorem shows that conservation of momentum is <strong>necessary</strong> due to the differentiable symmetry of space, but this theorem is not necessary to learn for this course. We can however make some use of Newton’s Laws to demonstrate that momentum is indeed conserved.</p>
+<p>If we have an isolated system of two bodies where the net force of body A acting on body B is <span class="math notranslate nohighlight">\(\textbf{F}_{AB}\)</span> and that of body B on A is <span class="math notranslate nohighlight">\(\textbf{F}_{BA}\)</span> then we can make use of Newtons Second Law to state</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\textbf{F}_{AB} = \frac{\mathrm{d}\textbf{p}_B}{\mathrm{d}t} \qquad\text{and} \qquad  \textbf{F}_{BA} = \frac{\mathrm{d}\textbf{p}_A}{\mathrm{d}t}
+\end{align*}\]</div>
+<p>These two statements can be combined by making use of Newton’s Third Law:</p>
+<div class="math notranslate nohighlight" id="equation-eq-c5-com1">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c5-com1" title="Link to this equation">#</a></span>\[\begin{split}\textbf{F}_{AB} &amp;= -\textbf{F}_{BA}\nonumber\\
+0 &amp;= \textbf{F}_{AB} + \textbf{F}_{BA}\nonumber\\
+ &amp;= \frac{\mathrm{d}\textbf{p}_B}{\mathrm{d}t} + \frac{\mathrm{d}\textbf{p}_A}{\mathrm{d}t}\nonumber\\
+ &amp;= \frac{\mathrm{d}(\textbf{p}_A+\textbf{p}_B)}{\mathrm{d}t}\end{split}\]</div>
+<p>The total momentum of this system of two bodies is <span class="math notranslate nohighlight">\(\textbf{P}=\textbf{p}_A+\textbf{p}_B\)</span>.  This means that equation <a class="reference internal" href="Topic4.html#equation-eq-c5-com1">(13)</a> can be rewritten as</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}\textbf{P}}{\mathrm{d}t}=0\]</div>
+<p>which is only true if <span class="math notranslate nohighlight">\(\textbf{P}\)</span> is constant.</p>
+<div class="tip admonition">
+<p class="admonition-title">Key point</p>
+<p>The total momentum of a system is constant if the vector sum of the external forces acting on the system is zero.</p>
+</div>
+</section>
+<section id="collisions-in-1d">
+<h2>Collisions in 1D<a class="headerlink" href="#collisions-in-1d" title="Link to this heading">#</a></h2>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Two and three dimensions is in <a class="reference internal" href="Lecture6.html#lecture6"><span class="std std-ref">Lecture 6</span></a>.</p>
+</div>
+</aside>
+<p>Knowing the definition of momentum and the conservation of momentum law is all well and good but being able to apply it is much more useful. For the remainder of this chapter we are going to look at some very idealised cases <strong>in one dimension</strong>  and see how the conservation of momentum can be used and how it does (or does not) apply in conjunction with the conservation of energy. As in all cases where we are only considering the idealised case there is quite a departure from the real world applications, but as ever a good foundation in the principles and dealing with idealised cases allows you to modify and expand for every more complicated and realistic situations.</p>
+<p>The two types of idealised collisions we will explore are the <a class="reference internal" href="Topic4.html#sec-c5-elastic"><span class="std std-ref">perfectly elastic case</span></a> and the <a class="reference internal" href="Topic4.html#sec-c5-inelastic"><span class="std std-ref">perfectly inelastic case</span></a>. It is worth stressing here that whilst kinetic energy may or may not be conserved for the different cases we will examine, the <strong>total momentum is always conserved</strong> in the absence of any external forces. A common mistake in dealing with these types of systems is assuming that kinetic energy is equal before and after the collision - if you need a reminder about the subtle nuance around energy loss then go back to the <a class="reference internal" href="Lecture4.html#sec-c4-lost"><span class="std std-ref">Energy Loss section</span></a> for a refresher.</p>
+<section id="perfectly-elastic-collisions">
+<span id="sec-c5-elastic"></span><h3>Perfectly elastic collisions<a class="headerlink" href="#perfectly-elastic-collisions" title="Link to this heading">#</a></h3>
+<p>An elastic collision is defined as a collision where the kinetic energy of the system is the same before and after the collision. In other words, the <strong>total</strong> kinetic energy is conserved.</p>
+<p>Imagine we have two objects <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> with masses <span class="math notranslate nohighlight">\(m_A\)</span> and <span class="math notranslate nohighlight">\(m_B\)</span> respectively, and are travelling along the <span class="math notranslate nohighlight">\(x\)</span>-axis with initial velocities <span class="math notranslate nohighlight">\(\textbf{v}_{Ai}\)</span> and <span class="math notranslate nohighlight">\(\textbf{v}_{Bi}\)</span> respectively. In the event that they collide the bodies then have final velocities <span class="math notranslate nohighlight">\(\textbf{v}_{Af}\)</span> and <span class="math notranslate nohighlight">\(\textbf{v}_{Bf}\)</span> respectively. We know that the total momentum is conserved which allows us to state,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\textbf{P}_{\text{before}} &amp;= \textbf{P}_{\text{after}}\\
+\textbf{p}_{Ai} + \textbf{p}_{Bi} &amp;= \textbf{p}_{Af} + \textbf{p}_{Bf}\\
+m_A\textbf{v}_{Ai} + m_B\textbf{v}_{Bi} &amp;= m_A\textbf{v}_{Af} + m_B\textbf{v}_{Bf}
+\end{align*}\]</div>
+<p>Note that the momenta and velocities in the above expressions are vectors, as they should be. It does allow us to readily expand this into a two and three dimensional system but for the sake of easier visualisation I am going to split out the magnitude and directions of the vectors. For our one dimensional case this is trivial as the direction is either positive or negative along the <span class="math notranslate nohighlight">\(x\)</span>-axis - anything other than this and it would not be a one dimensional system. This gives</p>
+<div class="math notranslate nohighlight" id="equation-eq-c5-com2">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c5-com2" title="Link to this equation">#</a></span>\[ m_Av_{Ai} + m_Bv_{Bi} = m_Av_{Af} + m_Bv_{Bf}\]</div>
+<p>where a negative velocity means the body is travelling in the negative <span class="math notranslate nohighlight">\(x\)</span> direction.</p>
+<p>We are going to consider the four different types of system that can be constructed when we start to give different directions and relative velocities to the bodies <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. In each of the cases we are going to focus on calculating the final velocities assuming that we know the masses and initial velocities.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Moving towards each other initially</p>
+<figure class="align-center" id="fig-c5-elastic1">
+<a class="reference internal image-reference" href="Figures/C5_elastic1.png"><img alt="Two masses $m_1$ and $m_2$  moving towards each other along the $x$ axis with different velocities." src="Figures/C5_elastic1.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-text">Two masses <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span>  moving towards each other along the <span class="math notranslate nohighlight">\(x\)</span> axis with different velocities.</span><a class="headerlink" href="#fig-c5-elastic1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you happened to have one of the final velocity values then finding the other one is trivial here. However we are doing the more interesting problem solving of starting with the initial parameters only and predicting the outcome</p>
+</div>
+</aside>
+<p>We will be making use of equation <a class="reference internal" href="Topic4.html#equation-eq-c5-com2">(14)</a> but if we are wanting to derive expressions for both of the final velocities then this equation alone is not enough. In order to solve for two variables we need two equations. We need to make use of the physics involved in an elastic collision and note that the total kinetic energy is also conserved. This means that</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{m_Av_{Ai}^2}{2} +\frac{m_Bv_{Bi}^2}{2} &amp;= \frac{m_Av_{Af}^2}{2} + \frac{m_Bv_{Bf}^2}{2}
+%m_Av_{Ai}^2 + m_Av_{Bi}^2 &amp;= m_Av_{Af}^2 + m_Av_{Bf}^2
+\end{align*}\]</div>
+<p>With some fairly straightforward algebra and making use of the completing the square method we find</p>
+<div class="math notranslate nohighlight" id="equation-eq-c5-elastic1">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c5-elastic1" title="Link to this equation">#</a></span>\[m_A\left(v_{Ai}+v_{Af}\right)\left(v_{Ai}-v_{Af}\right) =m_B\left(v_{Bf}+v_{Bi}\right)\left(v_{Bf}-v_{Bi}\right)\]</div>
+<p>Now we take the rearranged form of equation <a class="reference internal" href="Topic4.html#equation-eq-c5-com2">(14)</a>, namely <span class="math notranslate nohighlight">\(m_A\left(v_{Ai}-v_{Af}\right)=m_B\left(v_{Bf}-v_{Bi}\right)\)</span> and substitute this into equation <a class="reference internal" href="Topic4.html#equation-eq-c5-elastic1">(15)</a> above. This then simplifies to</p>
+<div class="math notranslate nohighlight" id="equation-eq-c5-elastic2">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c5-elastic2" title="Link to this equation">#</a></span>\[v_{Bf} = v_{Ai} + v_{Af}-v_{Bi}\]</div>
+<p>Taking this equation and substituting for <span class="math notranslate nohighlight">\(v_{Bf}\)</span> into equation <a class="reference internal" href="Topic4.html#equation-eq-c5-com2">(14)</a> gives</p>
+<div class="math notranslate nohighlight" id="equation-eq-c5-elastic3">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c5-elastic3" title="Link to this equation">#</a></span>\[\begin{split}m_Av_{Ai} + m_Bv_{Bi} &amp;= m_B\left(v_{Ai}+v_{Af}-v_{Bi}\right)\nonumber\\
+\therefore v_{Af} &amp;= \left(\frac{m_A - m_B}{M}\right)v_{Ai} + \left(\frac{2m_B}{M}\right)v_{Bi}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(M\)</span> is the total mass <span class="math notranslate nohighlight">\(m_A + m_B\)</span>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Instead of writing <a class="reference internal" href="Topic4.html#equation-eq-c5-elastic2">(16)</a> for <span class="math notranslate nohighlight">\(v_{Bf}\)</span> you would find <span class="math notranslate nohighlight">\(v_{Af}\)</span> and substitute this into equation <a class="reference internal" href="Topic4.html#equation-eq-c5-com2">(14)</a>. That’s an exercise for you to try.</p>
+</div>
+</aside>
+<p>You can follow similar steps to find the following expression for <span class="math notranslate nohighlight">\(v_{Bf}\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq-c5-elastic4">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c5-elastic4" title="Link to this equation">#</a></span>\[v_{Bf} = \left(\frac{2m_A}{M}\right)v_{Ai}+\left(\frac{m_B - m_A}{M}\right)v_{Bi}\]</div>
+<p><strong>Sense Check</strong></p>
+<p>This is a perfect opportunity for me to emphasise one of the most important yet often underrated problem solving techiques in physics. The idea behind this sense check process is to take the results you have from your derivations, in our case equations <a class="reference internal" href="Topic4.html#equation-eq-c5-elastic3">(17)</a> and <a class="reference internal" href="Topic4.html#equation-eq-c5-elastic4">(18)</a>, and apply some specific conditions to see whether the model in the equation represents what you would expect to happen in the real world.</p>
+<p>Take the first example of imposing the condition that <span class="math notranslate nohighlight">\(m_A = m_B = m\)</span>. With this condition in mind our two equations become</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v_{1f} &amp;= v_{2i}\\
+v_{2f} &amp;= v_{1i}
+\end{align*}\]</div>
+<p>which in words would be described as an exchange of velocities. This is much more apparent if we think about a snooker or pool situation and we say that one of the balls is initially at rest. Once the moving ball of identical mass hits the stationary ball then the initially moving one stops completely and the initially stationary ball moves off with the inital velocity of the impacting ball.</p>
+<p>Another condition we can think about is assuming that one of the masses is significantly larger than the other. For the interest of making the interpretation easier we are going to impose the condition that <span class="math notranslate nohighlight">\(v_{Bi}=0\)</span>, although the actual conceptual understanding we draw from this still applies if object <span class="math notranslate nohighlight">\(B\)</span> is initially moving.</p>
+<p>If <span class="math notranslate nohighlight">\(m_A\ll m_B\)</span> then our two equations for the final velocities become</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v_{Af} &amp;= -v_{Ai}\\
+v_{Bf} &amp;= v_{Bi} = 0
+\end{align*}\]</div>
+<p>Putting this into English we would say that the little mass <span class="math notranslate nohighlight">\(A\)</span> bounces off the much larger mass <span class="math notranslate nohighlight">\(B\)</span> and goes backwards with the same velocity (remember this is an elastic collision) whereas mass <span class="math notranslate nohighlight">\(B\)</span> just stays still. This checks out with what we would expect for throwing a small mass at a much larger mass.</p>
+<p>Taking the reverse condition of <span class="math notranslate nohighlight">\(m_A\gg m_B\)</span> we find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v_{Af} &amp;= v_{Ai}\\
+v_{Bf} &amp;= 2v_{Ai}
+\end{align*}\]</div>
+<p>Translating this into the real world experience we find that the much heavier and initially moving mass just keeps going at the same speed after the collision whereas the much smaller and initially stationary mass flies off at twice the speed of the incoming large mass. Again this checks out with our expectations based on our experience of reality.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Moving away from each other at the start</p>
+<p>The objects simply do not collide.</p>
+<p>Nevertheless if you were to plug the values into equation <a class="reference internal" href="Topic4.html#equation-eq-c5-com2">(14)</a> you would still get an `answer’ for the variable you were solving for, and generally you end up with the rather obvious results of <span class="math notranslate nohighlight">\(v_{Ai}=v_{Af}\)</span> and <span class="math notranslate nohighlight">\(v_{Bi}=v_{Bf}\)</span>.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Moving in positive <span class="math notranslate nohighlight">\(x\)</span> direction, <span class="math notranslate nohighlight">\(v_{Ai}&gt; v_{Bi}\)</span></p>
+<figure class="align-center" id="fig-c5-elastic2">
+<a class="reference internal image-reference" href="Figures/C5_elastic2.png"><img alt="Two masses $m_1$ and $m_2$  moving towards each other in the same direction along the $x$ axis with different velocities. The velocity of the mass in front is less than that of the mass behind. Without this condition the masses will not collide." src="Figures/C5_elastic2.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-text">Two masses <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span>  moving towards each other in the same direction along the <span class="math notranslate nohighlight">\(x\)</span> axis with different velocities. The velocity of the mass in front is less than that of the mass behind. Without this condition the masses will not collide.</span><a class="headerlink" href="#fig-c5-elastic2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>You will be pleased to know that we have already done this derivation in the first case (“Moving towards each other initially”).</p>
+<p>We have determined, from simply looking at the system, that a collision will indeed take place so we can use the exact same result as above. The only difference here is that when we get to the stage of putting in the values for the initial velocities they will all be the same sign - in the diagram above they will all be positive but it is also applicable to the bodies moving in the negative <span class="math notranslate nohighlight">\(x\)</span> direction but will require <span class="math notranslate nohighlight">\(v_{Ai} &lt; v_{Bi}\)</span> for a collision to occur.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Moving in positive <span class="math notranslate nohighlight">\(x\)</span> direction, <span class="math notranslate nohighlight">\(v_{Ai} &lt; v_{Bi}\)</span></p>
+<p>The objects simply do not collide. Mass <span class="math notranslate nohighlight">\(B\)</span> is ahead and has a larger velocity, so mass <span class="math notranslate nohighlight">\(A\)</span> never catches up with <span class="math notranslate nohighlight">\(B\)</span>.</p>
+</div>
+</section>
+<section id="perfectly-inelastic-collisions">
+<span id="sec-c5-inelastic"></span><h3>Perfectly inelastic collisions<a class="headerlink" href="#perfectly-inelastic-collisions" title="Link to this heading">#</a></h3>
+<p>We now move away from the elastic condition that has by definition the requirement that the total kinetic energy in conserved. In an inelastic collision the total kinetic energy is not conserved which means some of the initial energy is ‘lost’ during the collision. Although we could consider systems where a collision occurs and the two bodies move apart (i.e. considering the elastic case but with energy loss) this turns out to be somewhat complicated as we need to quantify the amount of energy lost. This is beyond what we need to do for this course so instead we will focus our attention on a specific case of inelastic collisions in which the two initially separate bodies stick together at and after the collision, and thus move as one body.</p>
+<p>Compared to the elastic case this situation is much easier to derive. We start again by stating the conservation of momentum equation <a class="reference internal" href="Topic4.html#equation-eq-c5-com2">(14)</a> but we now have a single mass <span class="math notranslate nohighlight">\(M\)</span> moving with velocity <span class="math notranslate nohighlight">\(v_f\)</span> after the collision. Thus</p>
+<div class="math notranslate nohighlight" id="equation-eq-c5-inelastic">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c5-inelastic" title="Link to this equation">#</a></span>\[\begin{split}m_Av_{Ai}+m_Bv_{Bi} &amp;= Mv_f\nonumber\\
+\therefore v_f &amp;= \left(\frac{m_A}{M}\right)v_{Ai}+\left(\frac{m_B}{M}\right)v_{Bi}\end{split}\]</div>
+<p>The final velocity is the sum of the weighted initial velocities, where the weighting is determined by what fraction of the total mass each body represents. I am going to give you three sense check conditions that you should think about and see whether the modified version of equation <a class="reference internal" href="Topic4.html#equation-eq-c5-inelastic">(19)</a> describes what you would expect to happen in the real world.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(m_A = m_B = m\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_A \ll m_B\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_A \gg m_B\)</span></p></li>
+</ol>
+</section>
+</section>
+<section id="ballistic-pendulum-example">
+<h2>Ballistic pendulum example<a class="headerlink" href="#ballistic-pendulum-example" title="Link to this heading">#</a></h2>
+<p>A nice example is always a good way to test our understanding of a topic. In this case we are going to investigate an old method for measuring the speed of darts and bullets. In the days before high speed cameras it was not possible to measure the exit velocity of a bullet as it left the barrel using photographic or stroboscopic methods; the bullet was simply too fast to image with these techniques. Instead a system was devised in which the bullet is fired into a much larger solid block that is suspended from a rope. As the bullet strikes and is embedded in the block, the bullet + block system swings backwards to a maximum height before swinging back. By measuring the maximum height of this much heavier (and therefore much slower) bullet + block we can calculate the velocity of the bullet before impact.</p>
+<p>There is a schematic of this experimental setup in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C5_ballistic</span></code>.</p>
+<figure class="align-center" id="fig-c5-ballistic">
+<a class="reference internal image-reference" href="Figures/C5_ballistic.png"><img alt="Schematic of the ballistic pendulum. The block of mass $M$ is initially at rest and the bullet of mass $m$ and velocity $v_0$ impacts the block. The bullet embeds into the block and the whole system swings out to some height $h$." src="Figures/C5_ballistic.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-text">Schematic of the ballistic pendulum. The block of mass <span class="math notranslate nohighlight">\(M\)</span> is initially at rest and the bullet of mass <span class="math notranslate nohighlight">\(m\)</span> and velocity <span class="math notranslate nohighlight">\(v_0\)</span> impacts the block. The bullet embeds into the block and the whole system swings out to some height <span class="math notranslate nohighlight">\(h\)</span>.</span><a class="headerlink" href="#fig-c5-ballistic" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We shall start this example by first stating what physical principles apply at the different points of the process. The reason I am doing this is so we have a clear description of each step, and then we are more confident that the equations and models we apply are appropriate to each of the steps.</p>
+<p>Let us start with the first step between the bullet leaving the barrel and immediately before striking the block. We will make the assumption that there is negligible air resistance, or alternatively we say the barrel is really close to the block, which means that the velocity remains constant up until the bullet strikes the block. More formally we can say that both energy and momentum are conserved, though this is not particularly useful here.</p>
+<p>We now consider the collision itself. The bullet has an initial velocity and the block is stationary, but <strong>immediately</strong> after the collision the bullet + block is moving with a new velocity. It is worth stating explicitly that because this collision is <strong>inelastic</strong> there is some energy lost from the system due to the collision.</p>
+<p>Finally after the collision the bullet + block is moving with some velocity and therefore has kinetic energy. The system swings up to a maximum height and when it reaches this stationary point all of the energy in the system is now gravitational potential energy.</p>
+<p>It may seem really pedantic that I have gone through this first stage with a lot of words but every year so far a sizeable number of students make the incorrect assumption that the initial kinetic energy of the bullet before impact is all converted into potential energy at the maximum of the swing. My hope is that by now providing a step by step description it is more explicit that energy loss occurs and you are clear at which point it occurs during the process.</p>
+<p>Time for some equations plus some definitions. The bullet has mass <span class="math notranslate nohighlight">\(m\)</span> and initial velocity <span class="math notranslate nohighlight">\(v_0\)</span>. It impacts and embeds into a block of mass <span class="math notranslate nohighlight">\(M\)</span>, and immediately after the impact this <span class="math notranslate nohighlight">\(m+M\)</span> system moves with a velocity <span class="math notranslate nohighlight">\(v_f\)</span>.</p>
+<p>At the collision we have already identified that energy is not conserved so it would be incorrect to say <span class="math notranslate nohighlight">\(KE_i = KE_f\)</span> or <span class="math notranslate nohighlight">\(\frac{mv_0^2}{2}=\frac{\left(m+M\right)v_f^2}{2}\)</span>. What we can say is that momentum <strong>is</strong> conserved over the collision and therefore</p>
+<div class="math notranslate nohighlight" id="equation-eq-c5-ballistic1">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c5-ballistic1" title="Link to this equation">#</a></span>\[\begin{split}mv_0 &amp;= \left(m+M\right)v_f\nonumber\\
+v_f &amp;= \left(\frac{m}{m+M}\right) v_0\end{split}\]</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are neglecting the energy loss from air resistance and friction at the pivot point. But we are considering the idealised case here.</p>
+</div>
+</aside>
+<p>After the collision has occured there are no processes in which energy can be lost from the system we can now make use of the conservation of energy. We can define the kinetic energy <strong>immediately</strong> after the collision in terms of <span class="math notranslate nohighlight">\(v_f\)</span> and thus</p>
+<div class="math notranslate nohighlight" id="equation-eq-c5-ballistic2">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c5-ballistic2" title="Link to this equation">#</a></span>\[\begin{split}\frac{\left(m+M\right)v_f^2}{2} &amp;= \left(m+M\right)gh\nonumber\\
+\therefore v_f &amp;= \sqrt{2gh}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(h\)</span> is the height of the stationary point with respect to the initial resting position of the block (see <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C5_ballistic</span></code>). We now combine equations <a class="reference internal" href="#equation-eq-c5-ballistic1">()</a> and <a class="reference internal" href="#equation-eq-c5-ballistic2">()</a> to give an expression for the initial velocity (our parameter of interest) as a function of the maximum swing height (the measurable property),</p>
+<div class="math notranslate nohighlight" id="equation-eq-c5-ballistic3">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c5-ballistic3" title="Link to this equation">#</a></span>\[\begin{split}v_0 &amp;= \left(\frac{m+M}{m}\right)\sqrt{2gh}\nonumber\\
+	&amp;=\left(1+\frac{M}{m}\right)\sqrt{2gh}\end{split}\]</div>
+<p>There are some limitations to this model though. It assumes that as the velocity increased more and more the height will also increase more and more. However when we think about the physical system itself we can see that the height is limited between <span class="math notranslate nohighlight">\(0\leq h \leq 2L\)</span> where <span class="math notranslate nohighlight">\(L\)</span> is the length of the rope from which the block is suspended. This value of <span class="math notranslate nohighlight">\(2L\)</span> corresponds to the bullet + block being at the top of the circle traced out by the swing of the system. It is sometimes easier to express the swing in terms of angle rather than change in height of the block, which is something for you to try.</p>
+</section>
+<section id="lecture-questions">
+<h2>Lecture Questions<a class="headerlink" href="#lecture-questions" title="Link to this heading">#</a></h2>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 1</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Question</label><div class="sd-tab-content docutils">
+<p>The collision between an empty car (mass <span class="math notranslate nohighlight">\(m\)</span> and initial velocity <span class="math notranslate nohighlight">\(v_i\)</span>) and a solid barrier lasts <span class="math notranslate nohighlight">\(0.120\text{ s}\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Derive an expression for the average force exerted on the wall, if the velocity of the car after the collision is <span class="math notranslate nohighlight">\(v_f\)</span>.</p></li>
+<li><p>If the mass of the car is <span class="math notranslate nohighlight">\(1700\text{ kg}\)</span> and the initial and final velocities are <span class="math notranslate nohighlight">\(13.6\text{ m s}^{-1}\)</span> and <span class="math notranslate nohighlight">\(-1.3\text{ m s}^{-1}\)</span> respectively, calculate the average force on the barrier.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Hint</label><div class="sd-tab-content docutils">
+<p>There are lots of parameters involved here. It can help to list the ones you know (mass, velocity and time), the ones you’re after (force), and identify any intermediate ones you may need to calculate (in this case, momentum).</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Solution</label><div class="sd-tab-content docutils">
+<p><strong>1</strong>
+With the <span class="math notranslate nohighlight">\(x\)</span> axis along the direction of the initial motion, the change in momentum is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+p_{\text{after}}-p_{\text{before}} &amp;= mv_{\text{after}} - mv_{\text{before}}\\
+	&amp;= m\left(v_{\text{after}} - v_{\text{before}}\right)\\
+\therefore \left&lt;F\right&gt; &amp;= \dfrac{m\left(v_{\text{after}} - v_{\text{before}}\right)}{\Delta t}
+\end{align*}\]</div>
+<p><strong>2</strong>
+Plugging in the numbers will give the force <strong>on</strong> the car <strong>by</strong> the wall</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left&lt;F\right&gt; &amp;= \dfrac{-2.5\times 10^{4}}{0.120}\\
+	&amp;= -2.11\times 10^{5}
+\end{align*}\]</div>
+<p>From Newton’s 3rd law the forces on the car and barrier are of equal magnitudes and opposite directions. Therefore the average force <strong>on</strong> the barrier is <span class="math notranslate nohighlight">\(\left&lt;F\right&gt; = +2.11\times10^{5}\text{ N}\)</span></p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 2</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Question</label><div class="sd-tab-content docutils">
+<p>A SuperBall, made of a rubberlike plastic, is thrown against a smooth, hard wall. The ball strikes the wall from a perpendicular direction with speed <span class="math notranslate nohighlight">\(v\)</span>. Assuming that the collision is <strong>perfectly elastic</strong> find:</p>
+<ol class="arabic simple">
+<li><p>the speed of the ball after the collision.</p></li>
+<li><p>the change in momentum of the ball.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Hint</label><div class="sd-tab-content docutils">
+<p>Pay close attention to the words used in the question. In this case whether you’re asked for a scalar or a vector quantity.</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Solution</label><div class="sd-tab-content docutils">
+<p><strong>1</strong>
+We assume that the collision is perfectly elastic, in part because the wall is much more massive than the ball and as such the reaction force of the ball on the wall will not impart any appreciable velocity on the wall. Therefore the velocity of the ball after the is simply <span class="math notranslate nohighlight">\(-v\)</span>.</p>
+<p><strong>2</strong>
+If the <span class="math notranslate nohighlight">\(x\)</span> axis is definited in the direction of the initial motion, then the momentum before the collision is <span class="math notranslate nohighlight">\(p_{\text{before}} = mv\)</span> and the momentum after is <span class="math notranslate nohighlight">\(p_{\text{after}} = -mv\)</span>. Hence the change in momentum is <span class="math notranslate nohighlight">\(\Delta p = p_{\text{after}} - p_{\text{before}} = -2mv\)</span>.</p>
+<p>The wall has an equal and opposite momentum change of <span class="math notranslate nohighlight">\(+2mv\)</span> so that the total momentum is conserved. The wall can `acquire’ this momentum without acquiring any appreciable velocity because its mass is so large, and it is attached to an even more massive building.</p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 3</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+Question</label><div class="sd-tab-content docutils">
+<p>An empty railway carriage of mass <span class="math notranslate nohighlight">\(m_1 = 20\)</span> metric tons rolling on a straight track at <span class="math notranslate nohighlight">\(v_{1i}=5.0\text{ m s}^{-1}\)</span> collides with a loaded stationary carriage of mass <span class="math notranslate nohighlight">\(m_2 = 65\)</span> metric tons. Assuming the cars bounce off each other elastically, find the velocities after the collision.</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+Hint</label><div class="sd-tab-content docutils">
+<p>The expressions needed have already been derived above. The fact these are extended masses (carriages) rather than small coloured dots makes no difference.</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+Solution</label><div class="sd-tab-content docutils">
+<p>Starting from equations <a class="reference internal" href="Topic4.html#equation-eq-c5-elastic3">(17)</a> and <a class="reference internal" href="Topic4.html#equation-eq-c5-elastic4">(18)</a> and setting <span class="math notranslate nohighlight">\(v_{2i}=0\)</span> we can use the values in the question to find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v_{1f} &amp;= \frac{20-65}{20+65}\times 5.0 = -2.6\text{ m s}^{-1}\\
+v_{2f} &amp;= \frac{2\times20}{20+65}\times 5.0 = 2.4\text{ m s}^{-1}
+\end{align*}\]</div>
+<p>I have left the mass units as tons because the fractions in the above equations are a ratio of masses so the overall term is dimensionless. Always worth checking, but if in doubt convert to SI units to be on the safe side.</p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 4</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
+Question</label><div class="sd-tab-content docutils">
+<p>Suppose that the carriages in question 3 coupled during the collision and remain locked together.</p>
+<ol class="arabic simple">
+<li><p>What is the velocity of the coupled carriages after the collision?</p></li>
+<li><p>How much energy is lost during the collision?</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
+Hint</label><div class="sd-tab-content docutils">
+<p>“Coupled together” means the collision is inelastic.</p>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
+Solution</label><div class="sd-tab-content docutils">
+<p><strong>1</strong>
+We have a completely inelastic collision here, so from the conservation of momentum</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+m_1v_{1i} &amp;= \left(m_1+m_2\right)v_f\\
+\therefore v_f &amp;= \frac{m_1v_{1i}}{m_1+m_2}\\
+		&amp;= \frac{20\times 5.0}{20+65} = 1.2\text{ m s}^{-1}
+\end{align*}\]</div>
+<p><strong>2</strong>
+The energy lost <span class="math notranslate nohighlight">\(E\)</span> is the difference between the final and initial kinetic energies</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+E &amp;= \frac{1}{2}(m_1+m_2)v_f^2 - \frac{1}{2}m_1v_{1i}^2\\
+	&amp;=1.9\times10^5\text{ J}
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-forces-to-momentum-the-impulse-momentum-theorem">From forces to momentum - the impulse-momentum theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-momentum">Conservation of momentum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-in-1d">Collisions in 1D</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perfectly-elastic-collisions">Perfectly elastic collisions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perfectly-inelastic-collisions">Perfectly inelastic collisions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ballistic-pendulum-example">Ballistic pendulum example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Matt Mears
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

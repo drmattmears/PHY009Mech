@@ -1,0 +1,873 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 2 - Non-constant acceleration: (De)constructing suvat. &#8212; PHY009 - Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Lecture2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logouni.png" class="logo__image only-light" alt="PHY009 - Mechanics - Home"/>
+    <script>document.write(`<img src="_static/logouni.png" class="logo__image only-dark" alt="PHY009 - Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    PHY009: Foundations of Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PreCourse.html">Pre-course requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic1.html">Topic 1 - Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic2.html">Topic 2 - Kinematics and Projectile Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic3.html">Topic 3 - Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic4.html">Topic 4 - Energy, Power and Momentum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic5.html">Topic 5 - Circular Motion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLecture2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Lecture2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 2 - Non-constant acceleration: (De)constructing suvat.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-particular-case-of-suvat">The particular case of suvat</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-non-suvat-example">A non-suvat example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-constant-acceleration">Non-constant acceleration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-pendulum">Simple pendulum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#free-fall-in-a-fluid">Free fall in a fluid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gravity">Gravity.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-2-non-constant-acceleration-de-constructing-suvat">
+<span id="lecture2"></span><h1>Lecture 2 - Non-constant acceleration: (De)constructing suvat.<a class="headerlink" href="#lecture-2-non-constant-acceleration-de-constructing-suvat" title="Link to this heading">#</a></h1>
+<p>I must confess to a tiny amount of sleight-of-hand in <a class="reference internal" href="ProjectileExtra.html#lecture1"><span class="std std-ref">Lecture 1</span></a>. In saying that I was going to refer to the suvat equations as <strong>kinematic equations</strong> because I wanted to change to a more standard notation I have overlooked a more fundamental point. It is this point that we will look into now.</p>
+<section id="the-particular-case-of-suvat">
+<h2>The particular case of suvat<a class="headerlink" href="#the-particular-case-of-suvat" title="Link to this heading">#</a></h2>
+<p>In order to really think about this issue we are going to first derive the kinematic equations in such a way that we can then reassess and test our <strong>assumptions</strong> rather than focusing on the final expressions.</p>
+<p>Many of the examples we use the suvat form of the kinematic equations for is mechanics in an every day situation. Dropping a ball, a car travelling along a road, trying to shoot a coconut off a post - all of these are a daily occurrence. For all of these simpler systems I would expect that you have worked on the assumption that the acceleration is constant, either due to gravity or because that is how the teacher set up the question for ease. Nevertheless that is where we are going to start as well.</p>
+<p>If the acceleration has constant value <span class="math notranslate nohighlight">\(a_0\)</span> then we can state that</p>
+<div class="math notranslate nohighlight" id="equation-eq-c2-const-a">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c2-const-a" title="Link to this equation">#</a></span>\[a(t) = \frac{\mathrm{d}v}{\mathrm{d}t} = a_0\]</div>
+<p>This is a very simple differential equation that we can solve by integration and imposing the initial condition that the velocity at <span class="math notranslate nohighlight">\(t=0\)</span> is <span class="math notranslate nohighlight">\(v_0\)</span> (i.e. <span class="math notranslate nohighlight">\(v(t=0)=v_0\)</span>)</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v(t) &amp;= \int_0^t a_0\,\mathrm{d}t\nonumber\\
+	&amp;= a_0t+v_0
+\end{align*}\]</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Often we get around including this <span class="math notranslate nohighlight">\(x_0\)</span> term by redefining the origin at the initial position (i.e. setting <span class="math notranslate nohighlight">\(x(t=0) = 0\)</span>), but here I am excluding this step for the purpose of generalisation.</p>
+</div>
+</aside>
+<p>We can use the same approach to find the position as a function of time, again with the initial condition that the position at <span class="math notranslate nohighlight">\(t=0\)</span> is <span class="math notranslate nohighlight">\(x_0\)</span>;</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x(t) &amp;= \int_0^t v(t)\,\mathrm{d}t\nonumber\\
+	&amp;= \int_0^t \left(a_0t+v_0\right)\,\mathrm{d}t\nonumber\\
+	&amp;= \frac{a_0t^2}{2}+v_0t+x_0
+\end{align*}\]</div>
+<p>None of these derivations should be particularly groundbreaking as they are perhaps the most formal approach to deriving the suvat class of the kinematic equations. But having them set out in this way allows us to review them and see which of our steps or assumptions may cause a problem when we want to generalise our kinematic equations.</p>
+<p>The so-called issue actually happens at the first hurdle, with equation <a class="reference internal" href="#equation-eq-c2-const-a">()</a>. This seemingly small and unassuming equation actually imposes some significant restrictions on the use of the resulting equations. Because we are starting with the statement or assumption that the acceleration is constant then the suvat equations only apply to constant acceleration systems. I’m sure that you are generally aware of this but I think it important to stress the point; by making this assumption we are constraining the applications and physical systems that these suvat kinematic equations apply to.</p>
+<p>But the flip side to taking this approach is that we now have a mechanism by which to generate our own kinematic equations for any system in which we know <strong>how the acceleration varies with time</strong>, that is we know an expression for <span class="math notranslate nohighlight">\(a(t)\)</span> which is not constant.</p>
+<div class="tip admonition">
+<p class="admonition-title">Key point</p>
+<p>The suvat equations are kinematic equations <strong>for a specific condition</strong>. One way to think about them is that all suvat equations are kinematic equations, but not all kinematic equations are suvat equations.</p>
+</div>
+<section id="a-non-suvat-example">
+<span id="sec-c2-non-suvat"></span><h3>A non-suvat example<a class="headerlink" href="#a-non-suvat-example" title="Link to this heading">#</a></h3>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For anyone who is interested  the rate of change of acceleration is <strong>jerk</strong>, so this example both involves and is brought to you by a constant jerk.</p>
+</div>
+</aside>
+<p>Let us consider a very trivial example where the acceleration of a system starts from some value <span class="math notranslate nohighlight">\(a_0\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span> and then linearly increases with some constant of proportionality <span class="math notranslate nohighlight">\(J\)</span>. This means we can define our starting equation similar to equation <a class="reference internal" href="#equation-eq-c2-const-a">()</a> but this time with a non-constant acceleration,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a(t) &amp;= Jt
+\end{align*}\]</div>
+<p>This means we can derive expressions for the velocity and position of a particle under this abstract linear acceleration condition, namely;</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v(t) &amp;= \int_0^t a(t)\,\mathrm{d}t = \frac{Jt^2}{2}+a_0t + v_0\\
+x(t) &amp;= \int_0^t v(t)\,\mathrm{d}t = \frac{Jt^3}{6} +\frac{a_0t^2}{2}+v_0t+x_0
+\end{align*}\]</div>
+<p>So here we have a nice set of kinematic equations that we could use in a similar fashion to the suvat equations you have used time and time again. But these are decidely not the suvat equations of old. And this is the critical point that I want you to take away from this example.</p>
+<div class="tip admonition">
+<p class="admonition-title">Key point</p>
+<p>You always need to check the underlying assumptions of the models and tools you use. But knowing the fundamentals and derivations means you can modify the tools and create your own.</p>
+</div>
+</section>
+</section>
+<section id="non-constant-acceleration">
+<h2>Non-constant acceleration<a class="headerlink" href="#non-constant-acceleration" title="Link to this heading">#</a></h2>
+<p>So you may be asking yourself why I have spent some much time stressing that you should be very careful with the suvat equations. And you should be, because they only work under a very specific condition that actually is a rather unusual one in the real world. It is much more common that the systems you will now be dealing with in your degree have a non-constant acceleration. We are going to look at two particular situations, the <a class="reference internal" href="#sec-c2-pend"><span class="std std-ref">simple pendulum</span></a> and <a class="reference internal" href="#sec-c2-air"><span class="std std-ref">free fall in a fluid</span></a>, plus an aside discussion on <a class="reference internal" href="#sec-c2-gravity"><span class="std std-ref">gravity</span></a> that we will not formally derive but is a good mental exercise for you.</p>
+<section id="simple-pendulum">
+<span id="sec-c2-pend"></span><h3>Simple pendulum<a class="headerlink" href="#simple-pendulum" title="Link to this heading">#</a></h3>
+<p>The simple pendulum is often taught in pre-University courses but my experience is that the approach taken is similar to that we saw for projectile motion in <a class="reference internal" href="ProjectileExtra.html#lecture1"><span class="std std-ref">Lecture 1</span></a>. Some special points are considered, namely the equilibrium point and the maximum amplitude, but the entire path itself is not explored in depth. We are going to change that now because the simple pendulum is a really simple system to visualise that involves a non-constant acceleration.</p>
+<p>Consider <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C2_pendulum</span></code> that shows a pendulum of length <span class="math notranslate nohighlight">\(l\)</span> swinging on the orange path between two maximum amplitudes. Forgive me for jumping ahead a chapter for a brief moment but I have made use of the concept of a force, but what I have used is most definitely not new to you so let us run with it for now and leave the deeper discussions about forces until <a class="reference internal" href="Lecture3.html#lecture3"><span class="std std-ref">Lecture 3</span></a>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We know that force and acceleration are intricately linked. Probably not a spoiler, but we will cover Newton’s Laws in <a class="reference internal" href="Lecture3.html#lecture3"><span class="std std-ref">Lecture 3</span></a>.</p>
+</div>
+</aside>
+<p>Assuming that we are playing with this pendulum on Earth but also happen to be standing in a vacuum, the only force acting on the pendulum mass is due to gravity. This means that the acceleration of the mass along the orange path, i.e. the tangential direction, is equal to the component acting in the tangential direction</p>
+<div class="math notranslate nohighlight" id="equation-eq-c2-gaccel">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c2-gaccel" title="Link to this equation">#</a></span>\[a_T(\theta) = g\sin\theta\]</div>
+<p>as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C2_pendulum</span></code> below. I am using the notation <span class="math notranslate nohighlight">\(a_T(\theta)\)</span> to be really explicit that this is the acceleration acting in the tangential direction <strong>and</strong> that it is a function of <span class="math notranslate nohighlight">\(\theta\)</span> and is therefore not constant.</p>
+<figure class="align-center" id="fig-c2-pendulum">
+<a class="reference internal image-reference" href="Figures/C2_pendulum.png"><img alt="A pendulum oscillating between two maximum amplitudes. The only force acting is gravity which acts downwards as indicated by the downwards arrow and has magnitude $mg$. This force can be resolved into two components, one pointing along the length of the pendulum (with magnitude $mg\cos\theta$) and the other pointing in the direction of motion (with magnitude $mg\sin\theta$)." src="Figures/C2_pendulum.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-text">A pendulum oscillating between two maximum amplitudes. The only force acting is gravity which acts downwards as indicated by the downwards arrow and has magnitude <span class="math notranslate nohighlight">\(mg\)</span>. This force can be resolved into two components, one pointing along the length of the pendulum (with magnitude <span class="math notranslate nohighlight">\(mg\cos\theta\)</span>) and the other pointing in the direction of motion (with magnitude <span class="math notranslate nohighlight">\(mg\sin\theta\)</span>).</span><a class="headerlink" href="#fig-c2-pendulum" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>But we do have a well defined function for how the acceleration varies with angular displacement so we can construct an equation that describe the motion of the mass in terms of angular displacement and time, with some constants for good measure.</p>
+<p>We first need to switch to a more convenient coordinate system. So instead of considering the linear displacement we want to know the <strong>arc length</strong> <span class="math notranslate nohighlight">\(s\)</span> in terms of the displaced angle. From this we can calculate the velocity and acceleration of the mass as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+s(\theta) &amp;=l\theta,\\
+v_T(\theta) &amp;= \frac{\mathrm{d}s}{\mathrm{d}t}=l\frac{\mathrm{d}\theta}{\mathrm{d}t},\\
+a_T(\theta) &amp;= \frac{\mathrm{d}^2s}{\mathrm{d}t^2} = l\frac{\mathrm{d}^2\theta}{\mathrm{d}t^2}
+\end{align*}\]</div>
+<p>We can combine this expression for <span class="math notranslate nohighlight">\(a_T(\theta)\)</span> with equation <a class="reference internal" href="#equation-eq-c2-gaccel">()</a> to find</p>
+<div class="math notranslate nohighlight" id="equation-eq-c2-simple">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c2-simple" title="Link to this equation">#</a></span>\[\begin{split}l\frac{\mathrm{d}^2\theta}{\mathrm{d}t^2} &amp;= -g\sin\theta,\nonumber\\
+\frac{\mathrm{d}^2\theta}{\mathrm{d}t^2} &amp;+\frac{g}{l}\sin\theta = 0\end{split}\]</div>
+<p>I hope that you can see that this equation that describes a simple pendulum in terms of the acceleration and displacement is very different to the suvat equations. If you tried to force the suvat equations into the system it simply wouldn’t work, which is why it is imperative to always go back to the assumptions of the system you are studying and construct the theoretical framework appropriately.</p>
+<p>It turns out that equation <a class="reference internal" href="#equation-eq-c2-simple">()</a> is a differential equation that is not easy to solve. This particular instance is a second-order nonlinear ordinary differential equation. Differential equations crop up everywhere in physics so you will see these time and time again, but for now we will leave it here as we do not need to find a solution to get the take home message regarding non-constant acceleration.</p>
+<div class="dropdown attention admonition">
+<p class="admonition-title">For the future</p>
+<p>If you feel so inclined you can come back to this equation again once you have learnt a bit about differential equations and see if you can find a solution if you make use of the small angle approximation, i.e. <span class="math notranslate nohighlight">\(\sin\theta \approx \theta.\)</span> It should give a you familiar expression from your pre-University studies.</p>
+</div>
+</section>
+<section id="free-fall-in-a-fluid">
+<span id="sec-c2-air"></span><h3>Free fall in a fluid<a class="headerlink" href="#free-fall-in-a-fluid" title="Link to this heading">#</a></h3>
+<p>In this section we are now going to go against the stereotype of a physicist and actually consider air resistance! Or more generally we are going to consider the case of a body moving through a fluid which includes both liquids and gases but can be extended to roughly approximate motion through more exotic states of matter such as polymer melts.<br />
+We are only going to think about a body in free fall as this simple geometry still presents a difficult setup to derive a form of a kinematic equation, namely the velocity of the body. You can extend the principles here to two or three dimensional motion, such as including air resistance in the projectile motion we have already covered in <a class="reference internal" href="ProjectileExtra.html#lecture1"><span class="std std-ref">Lecture 1</span></a> but it quickly gets <strong>very</strong> hard to solve and is not necessary for this course.</p>
+<p>So let us jump into the problem with our usual first step of defining the system, and of course we must include our labelled schematic diagram.</p>
+<figure class="align-center" id="fig-c2-drag">
+<a class="reference internal image-reference" href="Figures/C2_drag.png"><img alt="An object of mass $m$ in free fall through some fluid. The velocity of the object $v(t)$ points downwards in the direction of gravity and there is a resistive force due to the interaction between the fluid and the moving body $R(v)$. For this course we assume that $R(v)$ is proportional to $v(t)$." src="Figures/C2_drag.png" style="width: 30%;" /></a>
+<figcaption>
+<p><span class="caption-text">An object of mass <span class="math notranslate nohighlight">\(m\)</span> in free fall through some fluid. The velocity of the object <span class="math notranslate nohighlight">\(v(t)\)</span> points downwards in the direction of gravity and there is a resistive force due to the interaction between the fluid and the moving body <span class="math notranslate nohighlight">\(R(v)\)</span>. For this course we assume that <span class="math notranslate nohighlight">\(R(v)\)</span> is proportional to <span class="math notranslate nohighlight">\(v(t)\)</span>.</span><a class="headerlink" href="#fig-c2-drag" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>You may be questioning why I have taken the time to draw out <a class="reference internal" href="Topic3.html#fig-c2-drag"><span class="std std-numref">Fig. 6</span></a> as it is a rather simple one at face value. I agree but it also allows us to pin down some definitions that will help us from making mistakes down the line. I’d like to draw your attention to the fact that the force acting downwards due to gravity is constant, whereas the resistive force <span class="math notranslate nohighlight">\(R\)</span> is a function of velocity. For nearly every system describing motion through a fluid this will be a positive relation meaning that increasing the velocity will increase the resistive force, but it is the exact relationship between resistive force and velocity that makes this a more challenging problem.</p>
+<p>For the purposes of this example we are going to make the assumption that the resistive force varies linearly with velocity meaning we can state that</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+R(v) &amp;= bv
+\end{align*}\]</div>
+<p>where the constant of proportionality <span class="math notranslate nohighlight">\(b\)</span> depends on the shape of the body moving through the fluid as well as the interaction between the body and fluid. Thankfully we do not need to exactly define what <span class="math notranslate nohighlight">\(b\)</span> is so long as we make the reasonable assumption that it remains constant.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>We will pick this definition apart more in the next chapter, but for now it will suffice.</p>
+</div>
+</aside>
+<p>Again I am jumping ahead a little bit but we can make use of the form of Newton’s Second Law that you have already seen (<span class="math notranslate nohighlight">\(F=ma\)</span>) to make a statement about the net force (and therefore net acceleration) in terms of the two component forces involved. This gives</p>
+<div class="math notranslate nohighlight" id="equation-eq-c2-drag-start">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c2-drag-start" title="Link to this equation">#</a></span>\[\begin{split}mg-bv&amp;=m\frac{dv}{dt}\\
+\frac{dv}{dt}&amp;=g-\left(\frac{b}{m}\right)v\\
+	&amp;=g-kv\end{split}\]</div>
+<p>You will see that I have used the substitution <span class="math notranslate nohighlight">\(k=\frac{b}{m}\)</span>. It is entirely acceptable to combine multiple constants into a single constant as I have done here. Sometimes this can give some new insight into the physical meaning of the system but, more often than not, it is simply because we want to save time by only writing one letter instead of many. This efficient (read: lazy) approach is the one I have taken.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will be formally covered in your maths courses.</p>
+</div>
+</aside>
+<p>This is a differential equation which can be solved using the separation of variables method as follows</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\intop_{0}^{v}\frac{dv}{g-kv}&amp;=\intop_{0}^{t}dt\\
+\left[-\frac{1}{k}\ln\left(g-kv\right)\right]_{0}^{v}&amp;=\left[t\right]_{0}^{t}+c\\
+-\frac{1}{k}\ln\left(g-kv\right)+\left(\frac{1}{k}\ln\left(g\right)\right)&amp;=t+c\\
+\frac{1}{k}\ln\left(\frac{g-kv}{g}\right)&amp;=-t+c\\
+1-\frac{kv}{g}&amp;=e^{-k(t+c)}
+\end{align*}\]</div>
+<p>We can define this constant of integration <span class="math notranslate nohighlight">\(c\)</span> by considering the initial conditions of our system. As is our usual approach we can work from the assumption that the initial velocity is zero. By substituting in <span class="math notranslate nohighlight">\(v=0\)</span> and <span class="math notranslate nohighlight">\(t=0\)</span> we find <span class="math notranslate nohighlight">\(1 = e^{-kc}\)</span> which is only true when <span class="math notranslate nohighlight">\(c=0\)</span> (assuming <span class="math notranslate nohighlight">\(k\neq 0\)</span>). Thus</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{kv}{g}&amp;=1-e^{-kt}\\
+v&amp;=\frac{g}{k}\left(1-e^{-kt}\right)\\
+	&amp;=\frac{mg}{b}\left(1-e^{-\frac{bt}{m}}\right)
+\end{align*}\]</div>
+<p>This equation shows how the velocity of a falling object in a resistive medium changes as a function of time. We can see that if <span class="math notranslate nohighlight">\(t=0\)</span>, then <span class="math notranslate nohighlight">\(v=0\)</span> and when <span class="math notranslate nohighlight">\(t=\infty\)</span>, the terminal velocity <span class="math notranslate nohighlight">\(v_{terminal}=\frac{mg}{b}\)</span> is obtained. Terminal velocity is reached when the gravitational force (weight) is balanced by the resistive force (eg. viscous force).</p>
+<div class="tip admonition">
+<p class="admonition-title">Key point</p>
+<p>When asking whether our system is a constant or non-constant acceleration system we need to consider the <strong>net</strong> acceleration. This follows from considering the <strong>net forces</strong> that will be covered in <a class="reference internal" href="Lecture3.html#lecture3"><span class="std std-ref">Lecture 3</span></a>.</p>
+</div>
+</section>
+<section id="gravity">
+<span id="sec-c2-gravity"></span><h3>Gravity.<a class="headerlink" href="#gravity" title="Link to this heading">#</a></h3>
+<p><strong>Disclaimer:</strong> We will look back at this example in a bit more detail at the very end of this course when we study gravity in <a class="reference internal" href="Lecture11.html#lecture11"><span class="std std-ref">Lecture 11</span></a>. But this will be more for completeness and is not part of the assessed course itself.</p>
+<p>When we entertain ourselves by studying how a mass behaves in free fall we typically make two assumptions, that there is no air resistance (although we’ve covered this in <a class="reference internal" href="#sec-c2-air"><span class="std std-ref">the free-fall in a fluid section</span></a> and that gravity is the only force acting on the mass. This second assumption relies on the approximation that for “small distances” the gravitational force is constant or, more correctly, the change in the force over the small distance is negligible. But what happens if we wanted to calculate the time taken to impact on the Earth, or the impact velocity of a tool dropped by an astronaut undergoing a space walk on the ISS? The force due to gravity is described by</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+F_g &amp;= -\frac{GmM}{r^2}
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(G\)</span> is the gravitational constant, <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(M\)</span> are the masses of the two interacting bodies, and <span class="math notranslate nohighlight">\(r\)</span> is the distance between the two. You may have already seen this but if you have not then worry not as we will cover it in <a class="reference internal" href="Lecture11.html#lecture11"><span class="std std-ref">Lecture 11</span></a>. For now, just accept it as true.</p>
+<p>We are going to now calculate the velocity the dropped tool will have when it hits the surface of the Earth, assuming no atmospheric effects and the tool is dropped from rest.</p>
+<p>If we know the force due to gravity then we can state the acceleration due to gravity,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a_g &amp;= -\frac{GM}{r^2}
+\end{align*}\]</div>
+<p>and we’ll define <span class="math notranslate nohighlight">\(R_E\)</span> as the radius of the Earth, <span class="math notranslate nohighlight">\(h\)</span> as the height of the ISS above the surface of the Earth, and <span class="math notranslate nohighlight">\(r\)</span> is the radial distance of the tool <strong>from the surface of the Earth</strong> (so <span class="math notranslate nohighlight">\(r=0\)</span> occurs then the tool hits the ground).</p>
+<p>The challenging part to this problem comes when we try to link the above equation for acceleration due to gravity with the differential form of acceleration, <span class="math notranslate nohighlight">\(\frac{\mathrm{d}v}{\mathrm{d}t}\)</span>. The acceleration due to gravity acting on the tool is not constant in time as for later times the acceleration will be larger (i.e. the tool is closer to the Earth). One approach to solving this could be to try and calculate the time taken to hit the ground and then find the velocity, but this is a bit tricky as you need an expression for how the acceleration varies in time.</p>
+<p>Instead we can change the differential!</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a = \frac{\mathrm{d}v}{\mathrm{d}t} &amp;= \frac{\mathrm{d}v}{\mathrm{d}r}\,\frac{\mathrm{d}r}{\mathrm{d}t}\\
+			&amp;= v\,\frac{\mathrm{d}v}{\mathrm{d}r}
+\end{align*}\]</div>
+<p>So now we can solve by using the expression for <span class="math notranslate nohighlight">\(a_g\)</span> above, rearranging and integrating,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+-\frac{GM}{r^2}\mathrm{d}r &amp;= v\,\mathrm{d}v\\
+-GM\int\limits_{R_E+h}^{R_E} \frac{\mathrm{d}r}{r^2} &amp;= \int\limits_0^{v_f}v\,\mathrm{d}v\\
+\therefore \frac{v_f^2}{2} 	&amp;= GM\left[\frac{1}{R_E}-\frac{1}{R_E+h}\right]\\
+					&amp;= GM \left(\frac{h}{R_E(R_E+h)}\right)\\
+ \text{so } v_f &amp;= \sqrt{\frac{2GMh}{R_E(R_E+h)}}
+ \end{align*}\]</div>
+<p>A sense check here would be to see what happens when <span class="math notranslate nohighlight">\(h\ll R_E\)</span> meaning the tool is close to the surface and so the gravitational field is roughly constant. When this limit is taken you get the same result you would from the standard suvat-type kinematic equation,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ v_f &amp;= \sqrt{\frac{2GMh}{R_E^2}}=\sqrt{2gh}
+\end{align*}\]</div>
+<p>This may be a rather contrived example but it has some wider reaching benefits beyond the immediate topic. The important part is that if you have a mathematical description for the force related to some physical interaction then you can use this to create lots of insightful models. For example if you knew how the force between two charged particles behaved as a function of separation between them, then you could work out the velocity of one particle if released from rest and the second particle was fixed. Or you could model the motion of charged particles through a field, which forms the basis of an experimental technique known as mass spectrometry.</p>
+<p>Not bad for your second week at university!</p>
+</section>
+</section>
+<section id="lecture-questions">
+<h2>Lecture Questions<a class="headerlink" href="#lecture-questions" title="Link to this heading">#</a></h2>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 1</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Question</label><div class="sd-tab-content docutils">
+<p>Determine the velocity of a body falling under gravity, the resistance of air being assumed proportional to the square of the velocity.</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Hint</label><div class="sd-tab-content docutils">
+<p>Start with a modification to equation <a class="reference internal" href="Topic3.html#equation-eq-c2-drag-start">(11)</a> that changes it from a <span class="math notranslate nohighlight">\(v\)</span> to a <span class="math notranslate nohighlight">\(v^2\)</span> dependence.
+You’ll also need the standard integral:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\int \frac{\mathrm{d}x}{a^2 - x^2} &amp;= \frac{1}{2a}\ln\frac{a+x}{a-x}+c
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is a constant.</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Solution</label><div class="sd-tab-content docutils">
+<p>Start with the equation of motion</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ma &amp;= mg - bv^2\\
+\frac{\mathrm{d}v}{\mathrm{d}t} &amp;= g - kv^2\\
+\therefore \frac{1}{k}\int\frac{\mathrm{d}v}{V^2 - v^2} &amp;= t+c\\
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k=\frac{b}{m}\)</span> and <span class="math notranslate nohighlight">\(V^2 = \frac{g}{k}\)</span>. This second substitution may seem a little odd but it allows us the use a standard integral</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\int \frac{\mathrm{d}x}{a^2 - x^2} &amp;= \frac{1}{2a}\ln\frac{a+x}{a-x}+c
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is a constant. Using this standard integral in our problem gives</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\ln\frac{V+v}{V-v} &amp;= 2kV(t+c)
+\end{align*}\]</div>
+<p>If the body starts from rest then <span class="math notranslate nohighlight">\(c=0\)</span> and so</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+		\ln\frac{V+v}{V-v}	&amp;= 2kVt\\
+\therefore \frac{V+v}{V-v} &amp;= e^{2kVt}\\
+\text{or }\quad \frac{v}{V} &amp;= \frac{e^{2kVt}-1}{e^{2kVt}+1} = \tanh kVt\\
+	v &amp;= V\tanh\frac{gt}{V}
+\end{align*}\]</div>
+<p>The penultimate line here actually tells us something physical about <span class="math notranslate nohighlight">\(V\)</span>. As <span class="math notranslate nohighlight">\(t\rightarrow\infty\)</span> the right hand side approaches 1 meaning that <span class="math notranslate nohighlight">\(v\rightarrow V\)</span> - this means that <span class="math notranslate nohighlight">\(V\)</span> is the terminal velocity.</p>
+<p>It is possible to derive other equations of motion such as position as function of time or velocity as a function of position. I’ll give you the answers here if you want to work through the algebra yourself.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+y(t) &amp;= \frac{V^2}{g}\ln\cosh\frac{gt}{V}	&amp;	v(y) &amp;= V^2\left(1-e^{-\frac{2gy}{V^2}}\right)
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 2</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Question</label><div class="sd-tab-content docutils">
+<p>A body is projected upward with initial velocity <span class="math notranslate nohighlight">\(u\)</span> against air resistance which is assumed to be proportional to the square of velocity. Determine the height to which the body will rise.</p>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Hint</label><div class="sd-tab-content docutils">
+<p>In kinematic problems there are a number of parameters that are of interest, and we can express one in terms of another (position as a function of time, for example). Consider which two parameters are the best here.</p>
+<p>You can use the chain rule to change from pairs of variables (position and time) to another (position and velocity).</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Solution</label><div class="sd-tab-content docutils">
+<p>First we define our axes such that motion occurs in the <span class="math notranslate nohighlight">\(y\)</span> direction and so our equation of motion is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{\mathrm{d}^2y}{\mathrm{d}t^2} &amp;= -g - k\left(\frac{\mathrm{d}y}{\mathrm{d}t}\right)^2
+\end{align*}\]</div>
+<p>Before we start with the algebra it’s useful to take a moment to think about where we want to end up. The question is wants us to find a height (distance in <span class="math notranslate nohighlight">\(y\)</span>) at the peak of motion. One approach could be to calculate the time taken for this to happen and substitute into an expression for <span class="math notranslate nohighlight">\(y(t)\)</span> but this is rather convoluted. We also know that at the turning point the velocity is zero so this tells us that we should aim for an expression in terms of velocity and position.</p>
+<p>To do this we need to use the chain rule to change the variables in our equation of motion from time to position. We use</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{\mathrm{d}^2y}{\mathrm{d}t^2} = \frac{\mathrm{d}v}{\mathrm{d}t} = \frac{\mathrm{d}v}{\mathrm{d}y}\frac{\mathrm{d}y}{\mathrm{d}t} = v\frac{\mathrm{d}v}{\mathrm{d}y}
+\end{align*}\]</div>
+<p>Substituting this into the equation for motion and solving gives</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v\frac{\mathrm{d}v}{\mathrm{d}y} &amp;= -g-kv^2\\
+\therefore \frac{1}{2k} \int\frac{\mathrm{d}(v^2)}{V^2+v^2} &amp;= -\int\mathrm{d}y
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(V^2=\frac{g}{k}\)</span> and we use the fact that <span class="math notranslate nohighlight">\(\frac{\mathrm{d}(v^2)}{\mathrm{d}v} = 2v \implies v\mathrm{d}v = \frac{\mathrm{d}(v^2)}{2}\)</span>.</p>
+<p>Thus</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\ln\left(\frac{V^2 + v^2}{c}\right) = -2ky\\
+\therefore V^2 + v^2 = ce^{-2ky}
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(c\)</span> is the constant of integration. When <span class="math notranslate nohighlight">\(y=0\)</span>, <span class="math notranslate nohighlight">\(v=u\)</span> and therefore <span class="math notranslate nohighlight">\(c=V^2 + u^2\)</span> and so we have</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{V^2+v^2}{V^2+u^2} &amp;= e^{-\frac{2gy}{V^2}}\\
+\therefore v^2 &amp;= \left(V^2+v^2\right)e^{-\frac{2gy}{V^2}}-V^2
+\end{align*}\]</div>
+<p>The height <span class="math notranslate nohighlight">\(h\)</span> to which the particle rises is found by putting <span class="math notranslate nohighlight">\(v=0\)</span> at <span class="math notranslate nohighlight">\(y=h\)</span> giving</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{V^2+u^2}{V^2} &amp;= e^{-\frac{2gh}{V^2}}\\
+\therefore h &amp;= \frac{V^2}{2g}\ln\left(1+\frac{u^2}{V^2}\right) = \frac{1}{2k}\ln\left(1+\frac{ku^2}{g}\right)
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 3</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+Question</label><div class="sd-tab-content docutils">
+<p>Under the assumption of the air resistance being proportional to the square of velocity, find the loss in kinetic energy when the body has been projected upward with velocity <span class="math notranslate nohighlight">\(u\)</span> and returns to the point of projection.</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+Hint</label><div class="sd-tab-content docutils">
+<p>The previous two questions provide the two key expressions needed here. Your job is to think how to combine the two expressions.</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+Solution</label><div class="sd-tab-content docutils">
+<p>For simplicity we’ll use the result from the two previous questions. To do this we recognise that the second half of the motion is a downward fall from rest, which is the situation for the first question but we also know the height that the object falls from the second question. In other words, we substitute the expression for <span class="math notranslate nohighlight">\(h\)</span> from question 2 into <span class="math notranslate nohighlight">\(v(y)\)</span> from question 1.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\therefore v^2 &amp;= V^2\left(1-\frac{V^2}{V^2+u^2}\right) = \frac{u^2V^2}{V^2+u^2}
+\end{align*}\]</div>
+<p>The loss of kinetic energy is <span class="math notranslate nohighlight">\(\frac{1}{2}mu^2 - \frac{1}{2}mv^2\)</span> so</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\text{Loss} = \frac{1}{2}mu^2\left(1-\frac{V^2}{V^2+u^2}\right) = \frac{1}{2}mu^2\left(\frac{u^2}{V^2+u^2}\right)
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-particular-case-of-suvat">The particular case of suvat</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-non-suvat-example">A non-suvat example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-constant-acceleration">Non-constant acceleration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-pendulum">Simple pendulum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#free-fall-in-a-fluid">Free fall in a fluid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gravity">Gravity.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Matt Mears
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

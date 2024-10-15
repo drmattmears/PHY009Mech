@@ -1,0 +1,1288 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Topic 4 - Energy, Power and Momentum &#8212; PHY009 - Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Topic4';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Topic 5 - Circular Motion" href="Topic5.html" />
+    <link rel="prev" title="Topic 3 - Forces" href="Topic3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logouni.png" class="logo__image only-light" alt="PHY009 - Mechanics - Home"/>
+    <script>document.write(`<img src="_static/logouni.png" class="logo__image only-dark" alt="PHY009 - Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    PHY009: Foundations of Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PreCourse.html">Pre-course requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic1.html">Topic 1 - Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic2.html">Topic 2 - Kinematics and Projectile Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic3.html">Topic 3 - Forces</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Topic 4 - Energy, Power and Momentum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic5.html">Topic 5 - Circular Motion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTopic4.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Topic4.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Topic 4 - Energy, Power and Momentum</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-energy-and-power">Work, Energy and Power</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#work">Work</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kinetic-energy">Kinetic Energy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-energy">Potential Energy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-energy">Conservation of energy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power">Power</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum">Momentum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-momentum">Conservation of momentum.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-in-1d">Collisions in 1D</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perfectly-elastic-collisions">Perfectly elastic collisions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perfectly-inelastic-collisions">Perfectly inelastic collisions</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="topic-4-energy-power-and-momentum">
+<span id="topic4"></span><h1>Topic 4 - Energy, Power and Momentum<a class="headerlink" href="#topic-4-energy-power-and-momentum" title="Link to this heading">#</a></h1>
+<p>Energy is, at best, strange. As a concept it perhaps the most far-reaching in terms of applicability but is also one of the most difficult to define completely and succinctly. We explain it in terms of different units, with different equations and models, and try to use general defining statements such as energy being something we ‘pay’ in order to get things done. One particular attempt that I like is from A. P. French (1971) who claimed that</p>
+<blockquote>
+<div><p>Energy is the universal currency that exists in apparently countless denominations; and physical processes represent a conversion from one denomination to another.</p>
+</div></blockquote>
+<p>But none of these truly <strong>define</strong> what energy is. But thankfully this should not be regarded as an issue; Kramer once reflected in a symposium that</p>
+<blockquote>
+<div><p>The most important and most fruitful concepts are those to which it is impossible to attach a well-defined meaning.</p>
+</div></blockquote>
+<p>Having a well-defined meaning of energy is less important and useful compared to how we consider the <strong>transformation</strong> of energy. We cannot define energy in general but we can and will make heavy use of the fact that it is <strong>conserved</strong>, a statement that we will accept at face value.<a class="footnote-reference brackets" href="#noether" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<p>If we take the rather fluffy statement that energy is is paid to do something, then we can define the property “work” that quantifies how this paid energy transforms our system from one state to another. For the purposes of this course we will <strong>only</strong> be considering dynamical states, i.e. motion.</p>
+<section id="work-energy-and-power">
+<h2>Work, Energy and Power<a class="headerlink" href="#work-energy-and-power" title="Link to this heading">#</a></h2>
+<section id="work">
+<h3>Work<a class="headerlink" href="#work" title="Link to this heading">#</a></h3>
+<p>In the last topic we discussed how the change in the dynamics, i.e. the acceleration of a body is a result of an applied force. We are of course making the assumption here that the mass remains constant meaning we are making use of the special case of Newton’s Second Law.</p>
+<p>Let us expand on this idea. We have already established that an applied force will give rise to an acceleration, but we can consider the work done when applying this force over a certain distance.</p>
+<p>The system we will first consider is a box being pulled along the ground with some constant force <span class="math notranslate nohighlight">\(\textbf{F}\)</span>, as shown in <a class="reference internal" href="#fig-c4-box"><span class="std std-numref">Fig. 7</span></a>.</p>
+<figure class="align-center" id="fig-c4-box">
+<a class="reference internal image-reference" href="_images/C4_box.png"><img alt="A box dragged horizontally across a floor by a force applied at some angle $\theta$ to the horizontal. Assume there is no friction between the box and the floor." src="_images/C4_box.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">A box dragged horizontally across a floor by a force applied at some angle <span class="math notranslate nohighlight">\(\theta\)</span> to the horizontal. Assume there is no friction between the box and the floor.</span><a class="headerlink" href="#fig-c4-box" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Assume there is no friction between the box and the ground. The work done <span class="math notranslate nohighlight">\(W\)</span> in moving this box some distance <span class="math notranslate nohighlight">\(x\)</span> is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+W &amp;= F_x x\\
+	&amp;= \left(F\cos\theta\right)x\\
+	&amp;= \textbf{F}\cdot\textbf{x}
+\end{align*}\]</div>
+<p>We need to define some terms here. <span class="math notranslate nohighlight">\(F_x\)</span> is the horiztonal component of the force <span class="math notranslate nohighlight">\(\textbf{F}\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between the horizontal and the direction of <span class="math notranslate nohighlight">\(\textbf{F}\)</span>, and <span class="math notranslate nohighlight">\(\textbf{x}\)</span> is the distance vector with magnitude <span class="math notranslate nohighlight">\(x\)</span> and points in the horizontal direction (i.e. along the unit vector <span class="math notranslate nohighlight">\(\hat{\textbf{x}}\)</span>, such that <span class="math notranslate nohighlight">\(\textbf{x}=x\hat{\textbf{x}}\)</span>). The last line of these equations is known as the <strong>dot product</strong> or <strong>scalar product</strong> of two vectors. I am going to assume you know these as they are or will be taught in your mathematics courses.</p>
+<p>This is the very special case in which the force remains constant over the distance <span class="math notranslate nohighlight">\(x\)</span> so a logical next step would be to consider what happens if the force is not constant but instead is some function of <span class="math notranslate nohighlight">\(x\)</span>? This is possible but involves splitting the distance up into very small steps and then adding them all together. You may not have seen integration yet in your maths course, so if not just skip over this paragraph until you’re familiar with this very useful mathematical technique.<br />
+If we make the displacements <strong>really</strong> small we can state that the total work done in moving the box from <span class="math notranslate nohighlight">\(x_1\)</span> to <span class="math notranslate nohighlight">\(x_2\)</span> is</p>
+<div class="math notranslate nohighlight" id="equation-eq-c4-work1">
+<span class="eqno">(12)<a class="headerlink" href="#equation-eq-c4-work1" title="Link to this equation">#</a></span>\[\begin{split}W &amp;= \lim\limits_{\Delta x \to 0} \sum_{x_1}^{x_2}\textbf{F}\cdot\Delta \textbf{x}\nonumber\\
+&amp;= \int_{x_1}^{x_2}\textbf{F}\cdot\mathrm{d}\textbf{x}\end{split}\]</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 4.1 - Work done</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Question</label><div class="sd-tab-content docutils">
+<p>A packing case is pushed <span class="math notranslate nohighlight">\(5.0\text{ m}\)</span> across a smooth floor by a horizontal force of constant magnitude <span class="math notranslate nohighlight">\(30.0\text {N}\)</span>. Find the work done on the box by the applied force.</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Hint</label><div class="sd-tab-content docutils">
+<p>The force is constant so we can use <span class="math notranslate nohighlight">\(W = F_xx\)</span>.</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Solution</label><div class="sd-tab-content docutils">
+<p>Using the constant force expression, noting that the force <span class="math notranslate nohighlight">\(F_x\)</span> is all in the direction of motion (i.e. there is no vertical component to the applied force)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}W &amp;= F_x \times x\\
+    &amp;= 30.0 \times 5.0\\
+    &amp;= 150.0\text{ J}\end{split}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 4.2 - Work done against gravity</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Question</label><div class="sd-tab-content docutils">
+<p>An angler catches a fish of mass <span class="math notranslate nohighlight">\(1.5\text{ kg}\)</span>. Find the work they do against gravity in raising the fish <span class="math notranslate nohighlight">\(4.0\text{ m}\)</span> from the surface of the water to the pier, assuming they wind their line at a constant speed.</p>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Hint</label><div class="sd-tab-content docutils">
+<p>Constant speed means the system is not accelerating. Think how acceleration and forces are linked.</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Solution</label><div class="sd-tab-content docutils">
+<p>Model the fish as a particle(!) moving vertically. As the speed is constant there is no acceleration, and therefore no <strong>net</strong> acceleration.<br />
+Using Newton’s Second Law we can state:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sum F = 0 &amp;= T - 1.5g\\
+   \therefore T &amp;= 1.5g\end{split}\]</div>
+<p>Work done by gravity <span class="math notranslate nohighlight">\(=F_yy\)</span> where I’ve changed to <span class="math notranslate nohighlight">\(y\)</span> instead of <span class="math notranslate nohighlight">\(x\)</span> as the motion is vertical, and so</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}W &amp;= F_y\times y\\
+    &amp;= 1.5g\times 4\\
+    &amp;= 58.8\text{ J}\end{split}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 4.3 - Work done against friction</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+Question</label><div class="sd-tab-content docutils">
+<p>A box of mass <span class="math notranslate nohighlight">\(5.0\text{kg}\)</span> is pulled a distance of <span class="math notranslate nohighlight">\(24.0\text{ m}\)</span> up a rough plane at a constant speed. This plane is inclined at <span class="math notranslate nohighlight">\(40^\circ\)</span> above the horizontal. If the coefficient of friction between the box and the plane is <span class="math notranslate nohighlight">\(\mu=0.25\)</span> find:</p>
+<ol class="arabic simple">
+<li><p>the work done against friction, and</p></li>
+<li><p>the work done against gravity.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+Hint</label><div class="sd-tab-content docutils">
+<p>When a particle is pulled up a rough inclined plane at a constant speed work must be done <strong>against</strong> the frictional force acting on the particle <strong>as well as</strong> against gravity, though these forces are acting in different directions so a force diagram will be a very sensible place to start.</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+Solution</label><div class="sd-tab-content docutils">
+<figure class="align-center" id="fig-t4-ex3">
+<a class="reference internal image-reference" href="_images/T4_Ex3.png"><img alt="_images/T4_Ex3.png" src="_images/T4_Ex3.png" style="width: 40%;" /></a>
+</figure>
+<p>In the diagram above <span class="math notranslate nohighlight">\(P\)</span> is the pulling force, <span class="math notranslate nohighlight">\(F_f\)</span> the frictional force, and <span class="math notranslate nohighlight">\(N\)</span> the normal force perpendicular to the surface.</p>
+<p><strong>Part 1</strong><br />
+For this part it is easier to consider forces and motion parallel and/or perpendicular to the plane of the surface.<br />
+As there is no motion perpendicular to the plane:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 0 &amp;= N - 5g\cos 40\\
+ \therefore N &amp;= 5g\cos 40\end{split}\]</div>
+<p>Using <span class="math notranslate nohighlight">\(F=\mu N\)</span> with <span class="math notranslate nohighlight">\(\mu=\frac{1}{4}\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}F = \mu \times R &amp;= \frac{1}{4}\times 5g\cos 40\\
+    &amp;= \frac{5g}{4}\cos 40\end{split}\]</div>
+<p>The box moves a distance <span class="math notranslate nohighlight">\(s=24.0\text{ m}\)</span> (anti)parallel to the direction of the friction force, and so the work done against friction is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}W_\text{friction} &amp;= F\times s\\
+    &amp;= \frac{5g}{4}\cos 40 \times 24\\
+    &amp;= 30g\cos 40 \approx 225.2\text{ J}\end{split}\]</div>
+<p><strong>Part 2</strong><br />
+For this part we are considering gravity so it is easier to consider forces / motion / distances in terms of vertical and horizontal components.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{ Work done against gravity} &amp;= \text{weight} \times \text{ vertical distance moved}\\
+    &amp;= 5g \times s\sin 40\\
+    &amp;= 775.9\text{ J}\end{split}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 4.4 - Work done for force at an angle to direction of motion</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
+Question</label><div class="sd-tab-content docutils">
+<p>A packing case is pulled across a smooth horizontal floor by a force of magnitude <span class="math notranslate nohighlight">\(20.0\text{ N}\)</span> inclined at <span class="math notranslate nohighlight">\(30^\circ\)</span> to the horizontal. Find the work done by the force in moving the packing case a distance of <span class="math notranslate nohighlight">\(10.0\text{ m}\)</span>.</p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
+Hint</label><div class="sd-tab-content docutils">
+<p>We’ve already seen this drawn in <a class="reference internal" href="#fig-c4-box"><span class="std std-numref">Fig. 7</span></a></p>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
+Solution</label><div class="sd-tab-content docutils">
+<p>First we need to find the horizontal component of the force:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    F_x = F\cos\theta\\
+        &amp;= 20.0 \times \cos 30^\circ\\
+        (&amp;= 17.32)\end{split}\]</div>
+<p>The work done is the horizontal component of force times the horizontal distance travelled:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    W &amp;= F_x\times s\\
+    &amp;= F\cos\theta \times s\\
+    &amp;=20.0 \times \cos 30 \times 10\\
+    &amp;= 173.2\text{ J}\end{split}\]</div>
+</div>
+</div>
+</div>
+</section>
+<section id="kinetic-energy">
+<h3>Kinetic Energy<a class="headerlink" href="#kinetic-energy" title="Link to this heading">#</a></h3>
+<p>The kinetic energy of a particle is the energy it possesses by virtue of its motion. Consider a particle of mass <span class="math notranslate nohighlight">\(m\)</span> moving horizontally through a vacuum under some applied horizontal force <span class="math notranslate nohighlight">\(F\)</span>. This force accelerates the particle from an initial velocity <span class="math notranslate nohighlight">\(v_i\)</span> to a final velocity <span class="math notranslate nohighlight">\(v_f\)</span> after travelling a distance <span class="math notranslate nohighlight">\(s\)</span>.</p>
+<p>Combining the work done equation (<span class="math notranslate nohighlight">\(W=Fs\)</span>) with Newton’s Second Law (<span class="math notranslate nohighlight">\(F=ma\)</span>) gives</p>
+<div class="math notranslate nohighlight">
+\[W = F\times s = m\times a\times s\]</div>
+<p>We can rearrange Kinematic Equation 4 in terms of acceleration, i.e.:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}v_f^2 &amp;= v_i^2 + 2as\\
+\therefore a &amp;= \frac{v_f^2 - v_i^2}{2s}\end{split}\]</div>
+<p>and substituting this into our new expression for the work done gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}W &amp;= m\times \frac{v_f^2 - v_i^2}{2s} \times s\\
+    &amp;= \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2\end{split}\]</div>
+<p>and if the particle is starting from rest then the work done is</p>
+<div class="math notranslate nohighlight">
+\[W = \frac{1}{2}mv_f^2 = \text{K.E.}\]</div>
+<p>where K.E. is the kinetic energy of the particle, and is equal to the work done in changing the velocity of the particle.</p>
+<p>If more than one force acts on the particle then the force used to calculate the work done (and hence the kinetic energy of the particle) is the resultant force in the direction of motion.</p>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 4.5 - Kinetic energy of a pulled object</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
+Question</label><div class="sd-tab-content docutils">
+<p>A particle of mass <span class="math notranslate nohighlight">\(2.0\text{ kg}\)</span> is being pulled across a smooth horizontal surface by a horizontal force. The force does <span class="math notranslate nohighlight">\(24.0\text{ J}\)</span> of work in increasing the particle’s velocity from <span class="math notranslate nohighlight">\(v_i=5.0\text{ m s}^{-1}\)</span> to <span class="math notranslate nohighlight">\(v_f\)</span>. Find the value of <span class="math notranslate nohighlight">\(v_f\)</span>.</p>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-13">
+Hint</label><div class="sd-tab-content docutils">
+<p>The change in kinetic energy of a system is equal to the work done on the system.</p>
+</div>
+<input id="sd-tab-item-14" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-14">
+Solution</label><div class="sd-tab-content docutils">
+<p>The work-energy theorem states that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}W &amp;= \Delta \text{K.E.}\\
+    &amp;= \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2\\
+\therefore \frac{1}{2}mv_f^2 &amp;= W + \frac{1}{2}mv_i^2\\
+\text{or } v_f &amp;= \sqrt{\frac{2W}{m} + v_i^2}\\
+            &amp;= \sqrt{\frac{2\times24.0}{2.0} + 5.0^2}\\
+            &amp;= 7.0\text{ m s}^{-1}\end{split}\]</div>
+</div>
+</div>
+</div>
+</section>
+<section id="potential-energy">
+<h3>Potential Energy<a class="headerlink" href="#potential-energy" title="Link to this heading">#</a></h3>
+<p>The <strong>potential energy</strong>, PE, of a system is the energy it possess by virtue of its position within a gravitational field, or less formally its height. If a particle of mass <span class="math notranslate nohighlight">\(m\)</span> is raised by some height <span class="math notranslate nohighlight">\(h\)</span> then the work done in moving the particle is equal to</p>
+<div class="math notranslate nohighlight">
+\[W = mgh = \text{PE}\]</div>
+<p>In other words, the work done in moving a particle vertically upwards is equal to the increase in potential energy of the particle. If the particle is lowered then its potential energy is decreased by an amount equal to the work done by the particle.</p>
+<p>Some care is needed here. The change in potential energy is proportional to the <strong>change</strong> in height, so a more precise restatement of the above equation would be</p>
+<div class="math notranslate nohighlight">
+\[W = mg\Delta h = \Delta\text{PE}\]</div>
+<p>where the change in height <span class="math notranslate nohighlight">\(\Delta h = h_\text{final} - h_\text{initial}\)</span>.</p>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 4.6 - Lifting a parcel</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-15" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-15">
+Question</label><div class="sd-tab-content docutils">
+<p>A parcel of mass <span class="math notranslate nohighlight">\(5.0\text{ kg}\)</span> is raised vertically through a distance of <span class="math notranslate nohighlight">\(7.0\text{ m}\)</span>. Find the increase in potential energy.</p>
+</div>
+<input id="sd-tab-item-16" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-16">
+Hint</label><div class="sd-tab-content docutils">
+<p>The <strong>change</strong> in potential energy is related to the <strong>change</strong> in height, so you should define a zero / starting / reference point.</p>
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-17">
+Solution</label><div class="sd-tab-content docutils">
+<p>Defining the initial starting point as <span class="math notranslate nohighlight">\(h_i=0\)</span> the change in potential energy in lifting the parcel to height <span class="math notranslate nohighlight">\(h_f\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Delta\text{ P.E.} &amp;= mg\Delta h\\
+                    &amp;= mg(h_f - h_i)\\
+                    &amp;= mgh_f\\
+                    &amp;= 5.0\times 9.8 \times 7.0 = 343.0\text{ J}\end{split}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 4.7 - Child going down a slide</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-18">
+Question</label><div class="sd-tab-content docutils">
+<p>A child of mass <span class="math notranslate nohighlight">\(25.0\text{ kg}\)</span> slides <span class="math notranslate nohighlight">\(4.0\text{ m}\)</span> down a smooth playground slide inclined at an angle of <span class="math notranslate nohighlight">\(35^\circ\)</span> to the horizontal. Calculate the potential energy lost by the child.</p>
+</div>
+<input id="sd-tab-item-19" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-19">
+Hint</label><div class="sd-tab-content docutils">
+<p>Change in potential energy is related to the change in height, not necessarily the total distance travelled (unless all motion is vertical).</p>
+</div>
+<input id="sd-tab-item-20" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-20">
+Solution</label><div class="sd-tab-content docutils">
+<p>Taking the bottom of the slide to be the zero level for P.E., the vertical distance travelled by the child is <span class="math notranslate nohighlight">\(4.0\sin 30^\circ\)</span> and so the potential energy change is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{P.E.} &amp;= \text{P.E.}_\text{f} - \text{P.E.}_\text{i}\\
+            &amp;= 0 - mgh\\
+            &amp;= -562.1\text{ J}\end{split}\]</div>
+<p>where the minus sign indicates that potential energy has been lost (more accurately it has been converted into kinetic energy as the child moves faster).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="conservation-of-energy">
+<h3>Conservation of energy<a class="headerlink" href="#conservation-of-energy" title="Link to this heading">#</a></h3>
+<p>Consider a particle that is falling freely under gravity and without air resistance. The only force acting on the particle is its weight.<br />
+If the particle increases its speed from an initial speed <span class="math notranslate nohighlight">\(v_i\)</span> to a final speed <span class="math notranslate nohighlight">\(v_f\)</span> after descending some height <span class="math notranslate nohighlight">\(h\)</span> then</p>
+<ol class="arabic simple">
+<li><p>the work done by gravity <span class="math notranslate nohighlight">\(W = mgh\)</span> = change in PE</p></li>
+<li><p>the change in kinetic energy = final KE - initial KE = <span class="math notranslate nohighlight">\(\frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2\)</span> = work done</p></li>
+</ol>
+<p>As the work done is the same in both of these statements it follows that</p>
+<div class="math notranslate nohighlight">
+\[mgh = \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2\]</div>
+<p>This means that <strong>the change in potential energy = - change in kinetic energy</strong>. The minus sign here means that if the potential energy increases, kinetic energy must decrease and vice versa. This allows us to make the statement that, in the absence of any external forces doing work on the system:</p>
+<blockquote>
+<div><p>A particle’s total energy is constant.</p>
+</div></blockquote>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 4.8 - Using kinetic and potential energy for sliding down a ramp</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-21" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-21">
+Question</label><div class="sd-tab-content docutils">
+<p>A particle of mass <span class="math notranslate nohighlight">\(2.0\text{ kg}\)</span> is released from rest and slides down a smooth plane inclined at <span class="math notranslate nohighlight">\(\sin^{-1}\left(\frac{3}{5}\right)\)</span> to the horizontal.<br />
+Find the distance travelled when the particle has increased its velocity to <span class="math notranslate nohighlight">\(5.0\text{ m s}^{-1}\)</span>.</p>
+</div>
+<input id="sd-tab-item-22" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-22">
+Hint</label><div class="sd-tab-content docutils">
+<p>Care needs to be taken with the different distances involved. Potential energy is defined by a change in height (vertical), whereas kinetic energy corresponds to motion in any direction.</p>
+</div>
+<input id="sd-tab-item-23" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-23">
+Solution</label><div class="sd-tab-content docutils">
+<p>Let the distance travelled down the slope be <span class="math notranslate nohighlight">\(x\)</span>. The decrease in height is therefore</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Delta h &amp;= x\sin\theta\\
+        &amp;= x\sin(\sin^{-1}\left(\frac{3}{5}\right) = \frac{3x}{5}\end{split}\]</div>
+<p>Next we find the decrease in P.E.:</p>
+<div class="math notranslate nohighlight">
+\[\Delta\text{P.E.} = mgh = \frac{3mgx}{5}\]</div>
+<p>and the increase in K.E.:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Delta\text{K.E.} &amp;= \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2\\
+                &amp;= \frac{1}{2}mv_f^2\end{split}\]</div>
+<p>as the initial velocity is zero. Since the decrease in P.E. = increase in K.E. we can equate these two expressions to find</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{3mgx}{5} &amp;= \frac{1}{2}mv_f^2\\
+\therefore x &amp;= \frac{5v_f^2}{2\times 3g}\\
+                &amp;= \frac{5\times 5.0^2}{2.0\times 9.8\times 3} = 2.1\text{ m}\end{split}\]</div>
+</div>
+</div>
+</div>
+</section>
+<section id="power">
+<h3>Power<a class="headerlink" href="#power" title="Link to this heading">#</a></h3>
+<p>Power is defined as the rate of work done to perform a task (such as moving an object). Mathematically this is given by <span class="math notranslate nohighlight">\(P=\frac{W}{t}\)</span> and power has the units of watts where 1 watt is 1 joule per second.<br />
+This is often combined with the definition for work done under a force applied <span class="math notranslate nohighlight">\(F\)</span> over a given distance <span class="math notranslate nohighlight">\(s\)</span>, meaning that power could be expressed as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{Power} &amp;= \frac{\text{Work done}}{\text{time work is done for}}\\
+    &amp;= \frac{\text{Force applied} \times \text{distance travelled under applied force}} {\text{time force applied for}}\end{split}\]</div>
+<p>Notice that the distance and time terms can easily be combined into the velocity, as <span class="math notranslate nohighlight">\(v = \frac{d}{t}\)</span> meaning that for moving objects the <strong>power per second</strong> is:</p>
+<div class="math notranslate nohighlight">
+\[P = F\times v\]</div>
+<p>This approach is more typical as power is more useful in terms of the amount of work done per unit second rather than needing to know the total distance travelled and time taken to travel this distance.</p>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 4.9 - Power from distance</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-24" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-24">
+Question</label><div class="sd-tab-content docutils">
+<p>A force of magnitude <span class="math notranslate nohighlight">\(1500\text{ N}\)</span> pulls a truck up a slope at a constant speed of <span class="math notranslate nohighlight">\(6\text{ m s}^{-1}\)</span>. Given that the force acts parallel to the direction of motion find the power of the system pulling the truck.</p>
+</div>
+<input id="sd-tab-item-25" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-25">
+Hint</label><div class="sd-tab-content docutils">
+<p>You need to consider the distance travelled per unit second, as we do not know (or need to know) the total distance and duration of force applied</p>
+</div>
+<input id="sd-tab-item-26" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-26">
+Solution</label><div class="sd-tab-content docutils">
+<p>The work done per second is the force times the distance travelled in one second, so</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}W_\text{1 sec} &amp;= F\times d_\text{1 sec}\\
+    &amp;= 1500 \times 6 = 9000\text{ J}\end{split}\]</div>
+<p>The power is the rate of doing work, i.e. the work done per second, and so</p>
+<div class="math notranslate nohighlight">
+\[P = W_\text{1 sec} = 9000\text{ W} = 9\text{ kW}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 4.10 - Power from velocity</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-27" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-27">
+Question</label><div class="sd-tab-content docutils">
+<p>A car of mass <span class="math notranslate nohighlight">\(1000\text{ kg}\)</span> is travelling along a level road against a constant resistance of magnitude <span class="math notranslate nohighlight">\(475\text{ N}\)</span>. The engine of the car is working at $4\text{ kW}. Calculate:</p>
+<ol class="arabic simple">
+<li><p>the acceleration when the car is travelling at $5\text{ m s}^{-1}, and</p></li>
+<li><p>the maximum speed of the car.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-28" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-28">
+Hint</label><div class="sd-tab-content docutils">
+<p>The car is accelerating, which gives a link to the net force. We have one force from the engine (linked to power) and the resistive force so a resultant force can be found.<br />
+A maximum speed means it is no longer accelerating.</p>
+</div>
+<input id="sd-tab-item-29" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-29">
+Solution</label><div class="sd-tab-content docutils">
+<p><strong>Part 1</strong><br />
+First we need to covert into <span class="math notranslate nohighlight">\(W\)</span> from <span class="math notranslate nohighlight">\(kW\)</span>, so <span class="math notranslate nohighlight">\(4\text{ kW} = 4000\text{ W}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{Power} &amp;= F\times v\\
+       4000 &amp;= 5F\\
+       \therefore F &amp;= 800\text{ N}\end{split}\]</div>
+<p>Using <span class="math notranslate nohighlight">\(F=ma\)</span> where <span class="math notranslate nohighlight">\(F\)</span> is the resultant force gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}F_\text{engine} - F_\text{resistance} &amp;= ma\\
+800 - 475 &amp;= 1000a\\
+\therefore a &amp;= \frac{800-475}{1000} = 0.33\text{ m s}^{-2}\end{split}\]</div>
+<p><strong>Part 2</strong><br />
+When the car is travelling at its maximum speed there will be no acceleration so the resultant force in the direction of motion is zero.<br />
+Hence <span class="math notranslate nohighlight">\(F = 457\text{ N}\)</span> and so</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    P &amp;= F\times v\\
+    4000 &amp;= 475v\\
+    \therefore v &amp;= \frac{4000}{475} = 8.4\text{ m s}^{-1}\end{split}\]</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="momentum">
+<h2>Momentum<a class="headerlink" href="#momentum" title="Link to this heading">#</a></h2>
+<p>Suppose a particle of mass <span class="math notranslate nohighlight">\(m\)</span> moving in a straight line with contant acceleration increases its speed from <span class="math notranslate nohighlight">\(v_i\)</span> to <span class="math notranslate nohighlight">\(v_f\)</span> in time <span class="math notranslate nohighlight">\(t\)</span>. Then its acceleration can be found using:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    v_f &amp;= v_i + at\\
+    \therefore a &amp;= \frac{v_f - v_i}{t}\end{split}\]</div>
+<p>Applying this to Newton’s Second Law gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}F &amp;= ma = m\frac{\left(v_f - v_i\right)}{t}\\
+\therefore Ft &amp;= mv_f - mv_i\end{split}\]</div>
+<p>This quantity of <span class="math notranslate nohighlight">\(\text{mass}\times\text{velocity}\)</span> is called the <strong>momentum</strong> of the particle, and is a vector quantity because it depends on the particle’s velocity.</p>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 4.11 - Momentum of single particle</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-30" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-30">
+Question</label><div class="sd-tab-content docutils">
+<p>A particle of mass <span class="math notranslate nohighlight">\(5\text{ kg}\)</span> is at rest on a smooth horizontal surface. A horizontal force of magnitude <span class="math notranslate nohighlight">\(4\text{ N}\)</span> acts on the particle for 6 seconds. Find the final speed of the particle using the principles of momentum.</p>
+</div>
+<input id="sd-tab-item-31" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-31">
+Hint</label><div class="sd-tab-content docutils">
+<p>Smooth means no friction, and the particle only moves horizontally meaning weight and normal force balance, so the only force we need to be worried about is the pushing horizontal force.</p>
+</div>
+<input id="sd-tab-item-32" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-32">
+Solution</label><div class="sd-tab-content docutils">
+<p>Using</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}Ft &amp;= mv_f - mv_i\\
+4\times 6 &amp;= 5v_f - 0\\
+\therefore v_f &amp;= \frac{24}{5} = 4.8\text{ m s}^{-1}\end{split}\]</div>
+</div>
+</div>
+</div>
+<section id="conservation-of-momentum">
+<h3>Conservation of momentum.<a class="headerlink" href="#conservation-of-momentum" title="Link to this heading">#</a></h3>
+<p>One of the most far reaching and useful property of momentum is that is a conserved property. Once again the formal proof of Noether’s Theorem shows that conservation of momentum is <strong>necessary</strong> due to the differentiable symmetry of space, but this theorem is not necessary to learn for this course. We can however make some use of Newton’s Laws to demonstrate that momentum is indeed conserved.</p>
+<p>If we have an isolated system of two bodies where the net force of body A acting on body B is <span class="math notranslate nohighlight">\(\textbf{F}_{AB}\)</span> and that of body B on A is <span class="math notranslate nohighlight">\(\textbf{F}_{BA}\)</span> then we can make use of Newtons Second Law to state</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\textbf{F}_{AB} = \frac{\mathrm{d}\textbf{p}_B}{\mathrm{d}t} \qquad\text{and} \qquad  \textbf{F}_{BA} = \frac{\mathrm{d}\textbf{p}_A}{\mathrm{d}t}
+\end{align*}\]</div>
+<p>These two statements can be combined by making use of Newton’s Third Law:</p>
+<div class="math notranslate nohighlight" id="equation-eq-c5-com1">
+<span class="eqno">(13)<a class="headerlink" href="#equation-eq-c5-com1" title="Link to this equation">#</a></span>\[\begin{split}\textbf{F}_{AB} &amp;= -\textbf{F}_{BA}\nonumber\\
+0 &amp;= \textbf{F}_{AB} + \textbf{F}_{BA}\nonumber\\
+ &amp;= \frac{\mathrm{d}\textbf{p}_B}{\mathrm{d}t} + \frac{\mathrm{d}\textbf{p}_A}{\mathrm{d}t}\nonumber\\
+ &amp;= \frac{\mathrm{d}(\textbf{p}_A+\textbf{p}_B)}{\mathrm{d}t}\end{split}\]</div>
+<p>The total momentum of this system of two bodies is <span class="math notranslate nohighlight">\(\textbf{P}=\textbf{p}_A+\textbf{p}_B\)</span>.  This means that equation <a class="reference internal" href="#equation-eq-c5-com1">(13)</a> can be rewritten as</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathrm{d}\textbf{P}}{\mathrm{d}t}=0\]</div>
+<p>which is only true if <span class="math notranslate nohighlight">\(\textbf{P}\)</span> is constant.</p>
+<div class="tip admonition">
+<p class="admonition-title">Key point</p>
+<p>The total momentum of a system is constant if the vector sum of the external forces acting on the system is zero.</p>
+</div>
+</section>
+</section>
+<section id="collisions-in-1d">
+<h2>Collisions in 1D<a class="headerlink" href="#collisions-in-1d" title="Link to this heading">#</a></h2>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We will stick to one dimensional cases in this course.</p>
+</div>
+</aside>
+<p>Knowing the definition of momentum and the conservation of momentum law is all well and good but being able to apply it is much more useful. For the remainder of this chapter we are going to look at some very idealised cases <strong>in one dimension</strong>  and see how the conservation of momentum can be used and how it does (or does not) apply in conjunction with the conservation of energy. As in all cases where we are only considering the idealised case there is quite a departure from the real world applications, but as ever a good foundation in the principles and dealing with idealised cases allows you to modify and expand for every more complicated and realistic situations.</p>
+<p>The two types of idealised collisions we will explore are the <a class="reference internal" href="#sec-c5-elastic"><span class="std std-ref">perfectly elastic case</span></a> and the <a class="reference internal" href="#sec-c5-inelastic"><span class="std std-ref">perfectly inelastic case</span></a>. It is worth stressing here that whilst kinetic energy may or may not be conserved for the different cases we will examine, the <strong>total momentum is always conserved</strong> in the absence of any external forces. A common mistake in dealing with these types of systems is assuming that kinetic energy is equal before and after the collision.</p>
+<section id="perfectly-elastic-collisions">
+<span id="sec-c5-elastic"></span><h3>Perfectly elastic collisions<a class="headerlink" href="#perfectly-elastic-collisions" title="Link to this heading">#</a></h3>
+<p>An elastic collision is defined as a collision where the kinetic energy of the system is the same before and after the collision. In other words, the <strong>total</strong> kinetic energy is conserved.</p>
+<p>Imagine we have two objects <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> with masses <span class="math notranslate nohighlight">\(m_A\)</span> and <span class="math notranslate nohighlight">\(m_B\)</span> respectively, and are travelling along the <span class="math notranslate nohighlight">\(x\)</span>-axis with initial velocities <span class="math notranslate nohighlight">\(\textbf{v}_{Ai}\)</span> and <span class="math notranslate nohighlight">\(\textbf{v}_{Bi}\)</span> respectively. In the event that they collide the bodies then have final velocities <span class="math notranslate nohighlight">\(\textbf{v}_{Af}\)</span> and <span class="math notranslate nohighlight">\(\textbf{v}_{Bf}\)</span> respectively. We know that the total momentum is conserved which allows us to state,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\textbf{P}_{\text{before}} &amp;= \textbf{P}_{\text{after}}\\
+\textbf{p}_{Ai} + \textbf{p}_{Bi} &amp;= \textbf{p}_{Af} + \textbf{p}_{Bf}\\
+m_A\textbf{v}_{Ai} + m_B\textbf{v}_{Bi} &amp;= m_A\textbf{v}_{Af} + m_B\textbf{v}_{Bf}
+\end{align*}\]</div>
+<p>Note that the momenta and velocities in the above expressions are vectors, as they should be. It does allow us to readily expand this into a two and three dimensional system but for the sake of easier visualisation I am going to split out the magnitude and directions of the vectors. For our one dimensional case this is trivial as the direction is either positive or negative along the <span class="math notranslate nohighlight">\(x\)</span>-axis - anything other than this and it would not be a one dimensional system. This gives</p>
+<div class="math notranslate nohighlight" id="equation-eq-c5-com2">
+<span class="eqno">(14)<a class="headerlink" href="#equation-eq-c5-com2" title="Link to this equation">#</a></span>\[ m_Av_{Ai} + m_Bv_{Bi} = m_Av_{Af} + m_Bv_{Bf}\]</div>
+<p>where a negative velocity means the body is travelling in the negative <span class="math notranslate nohighlight">\(x\)</span> direction.</p>
+<p>We are going to consider the four different types of system that can be constructed when we start to give different directions and relative velocities to the bodies <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. In each of the cases we are going to focus on calculating the final velocities assuming that we know the masses and initial velocities.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Moving towards each other initially</p>
+<figure class="align-center" id="fig-c5-elastic1">
+<a class="reference internal image-reference" href="_images/C5_elastic1.png"><img alt="Two masses $m_1$ and $m_2$  moving towards each other along the $x$ axis with different velocities." src="_images/C5_elastic1.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Two masses <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span>  moving towards each other along the <span class="math notranslate nohighlight">\(x\)</span> axis with different velocities.</span><a class="headerlink" href="#fig-c5-elastic1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you happened to have one of the final velocity values then finding the other one is trivial here. However we are doing the more interesting problem solving of starting with the initial parameters only and predicting the outcome</p>
+</div>
+</aside>
+<p>We will be making use of equation <a class="reference internal" href="#equation-eq-c5-com2">(14)</a> but if we are wanting to derive expressions for both of the final velocities then this equation alone is not enough. In order to solve for two variables we need two equations. We need to make use of the physics involved in an elastic collision and note that the total kinetic energy is also conserved. This means that</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{m_Av_{Ai}^2}{2} +\frac{m_Bv_{Bi}^2}{2} &amp;= \frac{m_Av_{Af}^2}{2} + \frac{m_Bv_{Bf}^2}{2}
+%m_Av_{Ai}^2 + m_Av_{Bi}^2 &amp;= m_Av_{Af}^2 + m_Av_{Bf}^2
+\end{align*}\]</div>
+<p>With some fairly straightforward algebra and making use of the completing the square method we find</p>
+<div class="math notranslate nohighlight" id="equation-eq-c5-elastic1">
+<span class="eqno">(15)<a class="headerlink" href="#equation-eq-c5-elastic1" title="Link to this equation">#</a></span>\[m_A\left(v_{Ai}+v_{Af}\right)\left(v_{Ai}-v_{Af}\right) =m_B\left(v_{Bf}+v_{Bi}\right)\left(v_{Bf}-v_{Bi}\right)\]</div>
+<p>Now we take the rearranged form of equation <a class="reference internal" href="#equation-eq-c5-com2">(14)</a>, namely <span class="math notranslate nohighlight">\(m_A\left(v_{Ai}-v_{Af}\right)=m_B\left(v_{Bf}-v_{Bi}\right)\)</span> and substitute this into equation <a class="reference internal" href="#equation-eq-c5-elastic1">(15)</a> above. This then simplifies to</p>
+<div class="math notranslate nohighlight" id="equation-eq-c5-elastic2">
+<span class="eqno">(16)<a class="headerlink" href="#equation-eq-c5-elastic2" title="Link to this equation">#</a></span>\[v_{Bf} = v_{Ai} + v_{Af}-v_{Bi}\]</div>
+<p>Taking this equation and substituting for <span class="math notranslate nohighlight">\(v_{Bf}\)</span> into equation <a class="reference internal" href="#equation-eq-c5-com2">(14)</a> gives</p>
+<div class="math notranslate nohighlight" id="equation-eq-c5-elastic3">
+<span class="eqno">(17)<a class="headerlink" href="#equation-eq-c5-elastic3" title="Link to this equation">#</a></span>\[\begin{split}m_Av_{Ai} + m_Bv_{Bi} &amp;= m_B\left(v_{Ai}+v_{Af}-v_{Bi}\right)\nonumber\\
+\therefore v_{Af} &amp;= \left(\frac{m_A - m_B}{M}\right)v_{Ai} + \left(\frac{2m_B}{M}\right)v_{Bi}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(M\)</span> is the total mass <span class="math notranslate nohighlight">\(m_A + m_B\)</span>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Instead of writing <a class="reference internal" href="#equation-eq-c5-elastic2">(16)</a> for <span class="math notranslate nohighlight">\(v_{Bf}\)</span> you would find <span class="math notranslate nohighlight">\(v_{Af}\)</span> and substitute this into equation <a class="reference internal" href="#equation-eq-c5-com2">(14)</a>. That’s an exercise for you to try.</p>
+</div>
+</aside>
+<p>You can follow similar steps to find the following expression for <span class="math notranslate nohighlight">\(v_{Bf}\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq-c5-elastic4">
+<span class="eqno">(18)<a class="headerlink" href="#equation-eq-c5-elastic4" title="Link to this equation">#</a></span>\[v_{Bf} = \left(\frac{2m_A}{M}\right)v_{Ai}+\left(\frac{m_B - m_A}{M}\right)v_{Bi}\]</div>
+<p><strong>Sense Check</strong></p>
+<p>This is a perfect opportunity for me to emphasise one of the most important yet often underrated problem solving techiques in physics. The idea behind this sense check process is to take the results you have from your derivations, in our case equations <a class="reference internal" href="#equation-eq-c5-elastic3">(17)</a> and <a class="reference internal" href="#equation-eq-c5-elastic4">(18)</a>, and apply some specific conditions to see whether the model in the equation represents what you would expect to happen in the real world.</p>
+<p>Take the first example of imposing the condition that <span class="math notranslate nohighlight">\(m_A = m_B = m\)</span>. With this condition in mind our two equations become</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v_{1f} &amp;= v_{2i}\\
+v_{2f} &amp;= v_{1i}
+\end{align*}\]</div>
+<p>which in words would be described as an exchange of velocities. This is much more apparent if we think about a snooker or pool situation and we say that one of the balls is initially at rest. Once the moving ball of identical mass hits the stationary ball then the initially moving one stops completely and the initially stationary ball moves off with the inital velocity of the impacting ball.</p>
+<p>Another condition we can think about is assuming that one of the masses is significantly larger than the other. For the interest of making the interpretation easier we are going to impose the condition that <span class="math notranslate nohighlight">\(v_{Bi}=0\)</span>, although the actual conceptual understanding we draw from this still applies if object <span class="math notranslate nohighlight">\(B\)</span> is initially moving.</p>
+<p>If <span class="math notranslate nohighlight">\(m_A\ll m_B\)</span> then our two equations for the final velocities become</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v_{Af} &amp;= -v_{Ai}\\
+v_{Bf} &amp;= v_{Bi} = 0
+\end{align*}\]</div>
+<p>Putting this into English we would say that the little mass <span class="math notranslate nohighlight">\(A\)</span> bounces off the much larger mass <span class="math notranslate nohighlight">\(B\)</span> and goes backwards with the same velocity (remember this is an elastic collision) whereas mass <span class="math notranslate nohighlight">\(B\)</span> just stays still. This checks out with what we would expect for throwing a small mass at a much larger mass.</p>
+<p>Taking the reverse condition of <span class="math notranslate nohighlight">\(m_A\gg m_B\)</span> we find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v_{Af} &amp;= v_{Ai}\\
+v_{Bf} &amp;= 2v_{Ai}
+\end{align*}\]</div>
+<p>Translating this into the real world experience we find that the much heavier and initially moving mass just keeps going at the same speed after the collision whereas the much smaller and initially stationary mass flies off at twice the speed of the incoming large mass. Again this checks out with our expectations based on our experience of reality.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Moving away from each other at the start</p>
+<p>The objects simply do not collide.</p>
+<p>Nevertheless if you were to plug the values into equation <a class="reference internal" href="#equation-eq-c5-com2">(14)</a> you would still get an `answer’ for the variable you were solving for, and generally you end up with the rather obvious results of <span class="math notranslate nohighlight">\(v_{Ai}=v_{Af}\)</span> and <span class="math notranslate nohighlight">\(v_{Bi}=v_{Bf}\)</span>.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Moving in positive <span class="math notranslate nohighlight">\(x\)</span> direction, <span class="math notranslate nohighlight">\(v_{Ai}&gt; v_{Bi}\)</span></p>
+<figure class="align-center" id="fig-c5-elastic2">
+<a class="reference internal image-reference" href="Figures/C5_elastic2.png"><img alt="Two masses $m_1$ and $m_2$  moving towards each other in the same direction along the $x$ axis with different velocities. The velocity of the mass in front is less than that of the mass behind. Without this condition the masses will not collide." src="Figures/C5_elastic2.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Two masses <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span>  moving towards each other in the same direction along the <span class="math notranslate nohighlight">\(x\)</span> axis with different velocities. The velocity of the mass in front is less than that of the mass behind. Without this condition the masses will not collide.</span><a class="headerlink" href="#fig-c5-elastic2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>You will be pleased to know that we have already done this derivation in the first case (“Moving towards each other initially”).</p>
+<p>We have determined, from simply looking at the system, that a collision will indeed take place so we can use the exact same result as above. The only difference here is that when we get to the stage of putting in the values for the initial velocities they will all be the same sign - in the diagram above they will all be positive but it is also applicable to the bodies moving in the negative <span class="math notranslate nohighlight">\(x\)</span> direction but will require <span class="math notranslate nohighlight">\(v_{Ai} &lt; v_{Bi}\)</span> for a collision to occur.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Moving in positive <span class="math notranslate nohighlight">\(x\)</span> direction, <span class="math notranslate nohighlight">\(v_{Ai} &lt; v_{Bi}\)</span></p>
+<p>The objects simply do not collide. Mass <span class="math notranslate nohighlight">\(B\)</span> is ahead and has a larger velocity, so mass <span class="math notranslate nohighlight">\(A\)</span> never catches up with <span class="math notranslate nohighlight">\(B\)</span>.</p>
+</div>
+</section>
+<section id="perfectly-inelastic-collisions">
+<span id="sec-c5-inelastic"></span><h3>Perfectly inelastic collisions<a class="headerlink" href="#perfectly-inelastic-collisions" title="Link to this heading">#</a></h3>
+<p>We now move away from the elastic condition that has by definition the requirement that the total kinetic energy in conserved. In an inelastic collision the total kinetic energy is not conserved which means some of the initial energy is ‘lost’ during the collision. Although we could consider systems where a collision occurs and the two bodies move apart (i.e. considering the elastic case but with energy loss) this turns out to be somewhat complicated as we need to quantify the amount of energy lost. This is beyond what we need to do for this course so instead we will focus our attention on a specific case of inelastic collisions in which the two initially separate bodies stick together at and after the collision, and thus move as one body.</p>
+<p>Compared to the elastic case this situation is much easier to derive. We start again by stating the conservation of momentum equation <a class="reference internal" href="#equation-eq-c5-com2">(14)</a> but we now have a single mass <span class="math notranslate nohighlight">\(M\)</span> moving with velocity <span class="math notranslate nohighlight">\(v_f\)</span> after the collision. Thus</p>
+<div class="math notranslate nohighlight" id="equation-eq-c5-inelastic">
+<span class="eqno">(19)<a class="headerlink" href="#equation-eq-c5-inelastic" title="Link to this equation">#</a></span>\[\begin{split}m_Av_{Ai}+m_Bv_{Bi} &amp;= Mv_f\nonumber\\
+\therefore v_f &amp;= \left(\frac{m_A}{M}\right)v_{Ai}+\left(\frac{m_B}{M}\right)v_{Bi}\end{split}\]</div>
+<p>The final velocity is the sum of the weighted initial velocities, where the weighting is determined by what fraction of the total mass each body represents. I am going to give you three sense check conditions that you should think about and see whether the modified version of equation <a class="reference internal" href="#equation-eq-c5-inelastic">(19)</a> describes what you would expect to happen in the real world.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(m_A = m_B = m\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_A \ll m_B\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_A \gg m_B\)</span></p></li>
+</ol>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 4.12 - Collision against a fixed object</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-33" name="sd-tab-set-11" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-33">
+Question</label><div class="sd-tab-content docutils">
+<p>The collision between an empty car (mass <span class="math notranslate nohighlight">\(m\)</span> and initial velocity <span class="math notranslate nohighlight">\(v_i\)</span>) and a solid barrier lasts <span class="math notranslate nohighlight">\(0.120\text{ s}\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Derive an expression for the average force exerted on the wall, if the velocity of the car after the collision is <span class="math notranslate nohighlight">\(v_f\)</span>.</p></li>
+<li><p>If the mass of the car is <span class="math notranslate nohighlight">\(1700\text{ kg}\)</span> and the initial and final velocities are <span class="math notranslate nohighlight">\(13.6\text{ m s}^{-1}\)</span> and <span class="math notranslate nohighlight">\(-1.3\text{ m s}^{-1}\)</span> respectively, calculate the average force on the barrier.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-34" name="sd-tab-set-11" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-34">
+Hint</label><div class="sd-tab-content docutils">
+<p>There are lots of parameters involved here. It can help to list the ones you know (mass, velocity and time), the ones you’re after (force), and identify any intermediate ones you may need to calculate (in this case, momentum).</p>
+</div>
+<input id="sd-tab-item-35" name="sd-tab-set-11" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-35">
+Solution</label><div class="sd-tab-content docutils">
+<p><strong>1</strong>
+With the <span class="math notranslate nohighlight">\(x\)</span> axis along the direction of the initial motion, the change in momentum is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+p_{\text{after}}-p_{\text{before}} &amp;= mv_{\text{after}} - mv_{\text{before}}\\
+	&amp;= m\left(v_{\text{after}} - v_{\text{before}}\right)\\
+\therefore \left&lt;F\right&gt; &amp;= \dfrac{m\left(v_{\text{after}} - v_{\text{before}}\right)}{\Delta t}
+\end{align*}\]</div>
+<p><strong>2</strong>
+Plugging in the numbers will give the force <strong>on</strong> the car <strong>by</strong> the wall</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left&lt;F\right&gt; &amp;= \dfrac{-2.5\times 10^{4}}{0.120}\\
+	&amp;= -2.11\times 10^{5}
+\end{align*}\]</div>
+<p>From Newton’s 3rd law the forces on the car and barrier are of equal magnitudes and opposite directions. Therefore the average force <strong>on</strong> the barrier is <span class="math notranslate nohighlight">\(\left&lt;F\right&gt; = +2.11\times10^{5}\text{ N}\)</span></p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 4.13 - Perfectly elastic collision</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-36" name="sd-tab-set-12" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-36">
+Question</label><div class="sd-tab-content docutils">
+<p>A SuperBall, made of a rubberlike plastic, is thrown against a smooth, hard wall. The ball strikes the wall from a perpendicular direction with speed <span class="math notranslate nohighlight">\(v\)</span>. Assuming that the collision is <strong>perfectly elastic</strong> find:</p>
+<ol class="arabic simple">
+<li><p>the speed of the ball after the collision.</p></li>
+<li><p>the change in momentum of the ball.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-37" name="sd-tab-set-12" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-37">
+Hint</label><div class="sd-tab-content docutils">
+<p>Pay close attention to the words used in the question. In this case whether you’re asked for a scalar or a vector quantity.</p>
+</div>
+<input id="sd-tab-item-38" name="sd-tab-set-12" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-38">
+Solution</label><div class="sd-tab-content docutils">
+<p><strong>1</strong>
+We assume that the collision is perfectly elastic, in part because the wall is much more massive than the ball and as such the reaction force of the ball on the wall will not impart any appreciable velocity on the wall. Therefore the velocity of the ball after the is simply <span class="math notranslate nohighlight">\(-v\)</span>.</p>
+<p><strong>2</strong>
+If the <span class="math notranslate nohighlight">\(x\)</span> axis is definited in the direction of the initial motion, then the momentum before the collision is <span class="math notranslate nohighlight">\(p_{\text{before}} = mv\)</span> and the momentum after is <span class="math notranslate nohighlight">\(p_{\text{after}} = -mv\)</span>. Hence the change in momentum is <span class="math notranslate nohighlight">\(\Delta p = p_{\text{after}} - p_{\text{before}} = -2mv\)</span>.</p>
+<p>The wall has an equal and opposite momentum change of <span class="math notranslate nohighlight">\(+2mv\)</span> so that the total momentum is conserved. The wall can `acquire’ this momentum without acquiring any appreciable velocity because its mass is so large, and it is attached to an even more massive building.</p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 4.14 - Perfectly elastic collision of extended objects</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-39" name="sd-tab-set-13" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-39">
+Question</label><div class="sd-tab-content docutils">
+<p>An empty railway carriage of mass <span class="math notranslate nohighlight">\(m_1 = 20\)</span> metric tons rolling on a straight track at <span class="math notranslate nohighlight">\(v_{1i}=5.0\text{ m s}^{-1}\)</span> collides with a loaded stationary carriage of mass <span class="math notranslate nohighlight">\(m_2 = 65\)</span> metric tons. Assuming the cars bounce off each other elastically, find the velocities after the collision.</p>
+</div>
+<input id="sd-tab-item-40" name="sd-tab-set-13" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-40">
+Hint</label><div class="sd-tab-content docutils">
+<p>The expressions needed have already been derived above. The fact these are extended masses (carriages) rather than small coloured dots makes no difference.</p>
+</div>
+<input id="sd-tab-item-41" name="sd-tab-set-13" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-41">
+Solution</label><div class="sd-tab-content docutils">
+<p>Starting from equations <a class="reference internal" href="#equation-eq-c5-elastic3">(17)</a> and <a class="reference internal" href="#equation-eq-c5-elastic4">(18)</a> and setting <span class="math notranslate nohighlight">\(v_{2i}=0\)</span> we can use the values in the question to find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v_{1f} &amp;= \frac{20-65}{20+65}\times 5.0 = -2.6\text{ m s}^{-1}\\
+v_{2f} &amp;= \frac{2\times20}{20+65}\times 5.0 = 2.4\text{ m s}^{-1}
+\end{align*}\]</div>
+<p>I have left the mass units as tons because the fractions in the above equations are a ratio of masses so the overall term is dimensionless. Always worth checking, but if in doubt convert to SI units to be on the safe side.</p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 4.15 - Perfectly inelastic collision of extended objects</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-42" name="sd-tab-set-14" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-42">
+Question</label><div class="sd-tab-content docutils">
+<p>Suppose that the carriages in Worked Example 4.14 coupled during the collision and remain locked together.</p>
+<ol class="arabic simple">
+<li><p>What is the velocity of the coupled carriages after the collision?</p></li>
+<li><p>How much energy is lost during the collision?</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-43" name="sd-tab-set-14" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-43">
+Hint</label><div class="sd-tab-content docutils">
+<p>“Coupled together” means the collision is inelastic.</p>
+</div>
+<input id="sd-tab-item-44" name="sd-tab-set-14" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-44">
+Solution</label><div class="sd-tab-content docutils">
+<p><strong>1</strong>
+We have a completely inelastic collision here, so from the conservation of momentum</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+m_1v_{1i} &amp;= \left(m_1+m_2\right)v_f\\
+\therefore v_f &amp;= \frac{m_1v_{1i}}{m_1+m_2}\\
+		&amp;= \frac{20\times 5.0}{20+65} = 1.2\text{ m s}^{-1}
+\end{align*}\]</div>
+<p><strong>2</strong>
+The energy lost <span class="math notranslate nohighlight">\(E\)</span> is the difference between the final and initial kinetic energies</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+E &amp;= \frac{1}{2}(m_1+m_2)v_f^2 - \frac{1}{2}m_1v_{1i}^2\\
+	&amp;=1.9\times10^5\text{ J}
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="noether" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>The first and perhaps most elegant general proof that energy, linear and angular momentum are conserved was published by Emmy Noether in 1918. She demonstrated that any physical system with differentiable symmetry <strong>must</strong> have corresponding conservation laws. Her work had extremely far reaching implications and set the foundations for much of the classical physics you will study, but the formal proof of Noether’s Theorem is beyond the scope of this course.</p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Topic3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Topic 3 - Forces</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Topic5.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Topic 5 - Circular Motion</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-energy-and-power">Work, Energy and Power</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#work">Work</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kinetic-energy">Kinetic Energy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-energy">Potential Energy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-energy">Conservation of energy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power">Power</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum">Momentum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-momentum">Conservation of momentum.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-in-1d">Collisions in 1D</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perfectly-elastic-collisions">Perfectly elastic collisions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perfectly-inelastic-collisions">Perfectly inelastic collisions</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Matt Mears
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

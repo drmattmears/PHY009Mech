@@ -1,0 +1,829 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 10 - Torque and rotational acceleration &#8212; PHY009 - Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Lecture10';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logouni.png" class="logo__image only-light" alt="PHY009 - Mechanics - Home"/>
+    <script>document.write(`<img src="_static/logouni.png" class="logo__image only-dark" alt="PHY009 - Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    PHY009: Foundations of Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PreCourse.html">Pre-course requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic1.html">Topic 1 - Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic2.html">Topic 2 - Kinematics and Projectile Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic3.html">Topic 3 - Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic4.html">Topic 4 - Energy, Power and Momentum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic5.html">Topic 5 - Circular Motion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLecture10.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Lecture10.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 10 - Torque and rotational acceleration</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#torque">Torque</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-torque">Definition of torque</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-acceleration-and-torque">Angular acceleration and torque</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-return-to-the-pendulum">A return to the pendulum</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-momentum">Angular momentum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-angular-momentum">Definition of angular momentum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-angular-moment">Conservation of angular moment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-10-torque-and-rotational-acceleration">
+<span id="lecture10"></span><h1>Lecture 10 - Torque and rotational acceleration<a class="headerlink" href="#lecture-10-torque-and-rotational-acceleration" title="Link to this heading">#</a></h1>
+<p>We are almost at the end of our study of rotational kinematics, but there are still two topics that we have only covered in the linear kinematics section. These as the rotational equivalent of force known as <strong>torque</strong> and rotational equivalent of momentum known, unsurprisingly, as <strong>angular momentum</strong>.</p>
+<section id="torque">
+<h2>Torque<a class="headerlink" href="#torque" title="Link to this heading">#</a></h2>
+<section id="definition-of-torque">
+<h3>Definition of torque<a class="headerlink" href="#definition-of-torque" title="Link to this heading">#</a></h3>
+<p>When we considered Newton’s Second Law we stated that a non-zero net force will result in some acceleration (assuming the mass remains constant). Although this is true it is not the whole picture. It is entirely feasbile that a body experiencing some external force may not accelerate in a linear motion but instead begins to rotate. In this case we are concerning ourselves with the force acting in a direction perpendicular to the line connecting the pivot point and the point (or points) on the object where the force(s) are being applied. Let us consider a diagram of a bar of length <span class="math notranslate nohighlight">\(r\)</span> with a fixed pivot point at one end and a force applied to the other end (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C10_torque</span></code>).</p>
+<figure class="align-center" id="fig-c10-torque">
+<a class="reference internal image-reference" href="Figures/C10_torque.png"><img alt="A force $F$ is applied to the end of a bar of length $r$ which is fixed to a pivot point at the opposite end. This force causes the bar to rotate." src="Figures/C10_torque.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-text">A force <span class="math notranslate nohighlight">\(F\)</span> is applied to the end of a bar of length <span class="math notranslate nohighlight">\(r\)</span> which is fixed to a pivot point at the opposite end. This force causes the bar to rotate.</span><a class="headerlink" href="#fig-c10-torque" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may need to cast your memory back to school where you studied levers. If you have two forces acting either side of a pivot point then the leverage, i.e force times distance, need to balance if you want the lever / seesaw to balance.</p>
+</div>
+</aside>
+<p>We assume, for the sake of generality, that the force <span class="math notranslate nohighlight">\(F\)</span> is acting in some direction between <span class="math notranslate nohighlight">\(\hat{\textbf{r}}\)</span> (i.e. pulling on the bar) and <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\theta}}\)</span> (i.e. only acting to induce rotation). It is the component of the force acting perpendicular to the length of that bar that will result in some angular acceleration of the bar, and this component is <span class="math notranslate nohighlight">\(F_\text{rot} = F\sin\phi\)</span>. Therefore the leverage or <strong>torque</strong> <span class="math notranslate nohighlight">\(\boldsymbol{\tau}\)</span> on the bar is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\boldsymbol{\tau} &amp;= rF\sin\phi\,\hat{\boldsymbol{\theta}}\\
+&amp;= \boldsymbol{r}\times\boldsymbol{F}
+\end{align*}\]</div>
+<p>If we have multiple forces acting on the body then the total torque is equal to the sum of the individual torques, i.e.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\boldsymbol{\tau} &amp;=\sum_i \left(\boldsymbol{r}_i\times\boldsymbol{F}_i\right)
+\end{align*}\]</div>
+</section>
+<section id="angular-acceleration-and-torque">
+<h3>Angular acceleration and torque<a class="headerlink" href="#angular-acceleration-and-torque" title="Link to this heading">#</a></h3>
+<p>Any net force will result in an acceleration, as we know from Newton’s Second Law. What we are currently missing is a direct relationship between the torque and resulting angular acceleration, in the same way that we know the relationship between force and acceleration along a straight line.</p>
+<p>We can consider a solid body of mass <span class="math notranslate nohighlight">\(m\)</span> rotating about some axis as the sum of many many small mass elements <span class="math notranslate nohighlight">\(\mathrm{d}m\)</span>. We have already used this idea when deriving the <a class="reference internal" href="Lecture8.html#sec-c8-energy"><span class="std std-ref">total energy of a rotating body</span></a> (specifically <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C8_energy</span></code>), but now we are applying some small force to each of these masses such that a tangential force <span class="math notranslate nohighlight">\(\mathrm{d}F_t\)</span> is applied as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C10_accel</span></code>.</p>
+<figure class="align-center" id="fig-c10-accel">
+<a class="reference internal image-reference" href="Figures/C10_accel.png"><img alt="A force is applied to a random shaped mass that causes it to rotate about an axis perpendicular to the plane of the diagram. The mass is split into small mass elements each of which has a tangential force $\mathrm{d}F_t$ acting on it." src="Figures/C10_accel.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-text">A force is applied to a random shaped mass that causes it to rotate about an axis perpendicular to the plane of the diagram. The mass is split into small mass elements each of which has a tangential force <span class="math notranslate nohighlight">\(\mathrm{d}F_t\)</span> acting on it.</span><a class="headerlink" href="#fig-c10-accel" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We use Newton’s Second law to state</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathrm{d}F_t &amp;= a_t\,\mathrm{d}t
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_t\)</span> is the tangential acceleration. We also know that the torque acting on this element is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathrm{d}\tau &amp;= r\,\mathrm{d}F_t\\
+&amp;= ra_t\,\mathrm{d}m
+\end{align*}\]</div>
+<p>Equation <a class="reference internal" href="Lecture9.html#equation-eq-c9-rolla">()</a> defines the relationship between the tangential and angular accelerations, and thus</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathrm{d}\tau &amp;= r^2\alpha\,\mathrm{d}m
+\end{align*}\]</div>
+<p>To find the net torque we integrate over the entire mass and make use of the fact that the angular acceleration is the same for all mass elements if the body is rigid. Therefore</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\tau &amp;= \alpha\int r^2\,\mathrm{d}m\\
+&amp;= I\alpha
+\end{align*}\]</div>
+</section>
+<section id="a-return-to-the-pendulum">
+<h3>A return to the pendulum<a class="headerlink" href="#a-return-to-the-pendulum" title="Link to this heading">#</a></h3>
+<p>Do you remember way back in <a class="reference internal" href="Lecture2.html#sec-c2-pend"><span class="std std-ref">Lecture 2: the pendulum</span></a> where we derived the differential equation (equation <a class="reference internal" href="Lecture2.html#equation-eq-c2-simple">()</a>) for a pendulum using the components on the gravitational force acting along the path of the pendulum? A pendulum is a rotating system though, albeit one that never completes a full rotation<a class="footnote-reference brackets" href="#pend" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, but we can still use our rotational dynamics and our new understanding of torque to find the same result.</p>
+<p>Starting from our definitions of torque</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\boldsymbol{\tau} = \textbf{r}\times\textbf{F} = \frac{\mathrm{d}\textbf{L}}{\mathrm{d}t}
+\end{align*}\]</div>
+<p>We can define the torque acting on the pendulum in terms of the length and force due to gravity vectors as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\boldsymbol{\tau} &amp;= \textbf{L}\times\textbf{F}_g\\
+\therefore |\boldsymbol{\tau}| &amp;= -mgL\sin\theta
+\end{align*}\]</div>
+<p>Next the angular momentum can be written as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\textbf{L} &amp;= \textbf{r}\times\textbf{p}\\
+	&amp;= m\textbf{r}\times\left(\boldsymbol{\omega}\times\textbf{r}\right)\\
+\therefore |\textbf{L}| &amp;= mL^2\omega\\
+	&amp;= mL^2\frac{\mathrm{d}\theta}{\mathrm{d}t}\\
+	\text{and} \qquad\frac{\mathrm{d}|\textbf{L}|}{\mathrm{d}t} &amp;= mL^2\frac{\mathrm{d}^2\theta}{\mathrm{d}t^2}
+	\end{align*}\]</div>
+<p>If <span class="math notranslate nohighlight">\(\boldsymbol{\tau} = \dfrac{\mathrm{d}\textbf{L}}{\mathrm{d}t}\)</span> then <span class="math notranslate nohighlight">\(|\boldsymbol{\tau}| = \dfrac{\mathrm{d}|\textbf{L}|}{\mathrm{d}t}\)</span> which gives</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+-mgL\sin\theta &amp;= mL^2\frac{\mathrm{d}^2\theta}{\mathrm{d}t^2}\\
+\text{or}\qquad \frac{\mathrm{d}^2\theta}{\mathrm{d}t^2}+\frac{g}{L}\sin\theta &amp;= 0
+\end{align*}\]</div>
+<p>which is exactly the same as equation <a class="reference internal" href="Lecture2.html#equation-eq-c2-simple">()</a> we derived earlier.</p>
+</section>
+</section>
+<section id="angular-momentum">
+<h2>Angular momentum<a class="headerlink" href="#angular-momentum" title="Link to this heading">#</a></h2>
+<section id="definition-of-angular-momentum">
+<h3>Definition of angular momentum<a class="headerlink" href="#definition-of-angular-momentum" title="Link to this heading">#</a></h3>
+<p>To find the total angular momentum of a solid rotating body we once again consider it to be made of small mass elements <span class="math notranslate nohighlight">\(\mathrm{d}m\)</span> each some distance <span class="math notranslate nohighlight">\(r_i\)</span> and moving with some momentum <span class="math notranslate nohighlight">\(p_i\)</span>. The angular momentum for each element <span class="math notranslate nohighlight">\(L_i\)</span> is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+L_i &amp;= \textbf{r}_i\times \textbf{p}_i\\
+&amp;= v_ir_i\,\mathrm{d}m\\
+&amp;= r_i^2\omega\,\mathrm{d}m
+\end{align*}\]</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The choice of <span class="math notranslate nohighlight">\(z\)</span> here is entirely arbitrary, but defining an axis helps us to remember that rotational systems need the axis of rotation stating</p>
+</div>
+</aside>
+<p>So the total angular momentum of the body rotating about the <span class="math notranslate nohighlight">\(z\)</span>axis is simply the sum of the angular momenta for the individual mass elements, i.e.</p>
+<div class="math notranslate nohighlight" id="equation-eq-c10-l">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c10-l" title="Link to this equation">#</a></span>\[\begin{split}L_z &amp;= \omega\int r_i^2\,\mathrm{d}m\nonumber\\
+&amp;= I\omega\end{split}\]</div>
+<p>Often we are more concerned with how the momentum is changing, so by taking the time derivative of equation <a class="reference internal" href="#equation-eq-c10-l">()</a> we find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{\mathrm{d}L_z}{\mathrm{d}t} &amp;= I\frac{\mathrm{d}\omega}{\mathrm{d}t}\\
+&amp;= I\alpha\\
+\therefore \frac{\mathrm{d}L_z}{\mathrm{d}t} &amp;= \tau
+\end{align*}\]</div>
+<p>This final equation should come as no surprise. Back in <a class="reference internal" href="Lecture3.html#lecture3"><span class="std std-ref">Lecture 3</span></a> we saw the more general form of Newton’s Second Law (equation <a class="reference internal" href="Topic3.html#equation-eq-c3-second-new">(9)</a>) which states that the rate of change of linear momentum is equal to the net force applied. Here we have found a rotational equivalent between the rate of change of angular momentum and the net applied torque.</p>
+</section>
+<section id="conservation-of-angular-moment">
+<h3>Conservation of angular moment<a class="headerlink" href="#conservation-of-angular-moment" title="Link to this heading">#</a></h3>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Another shout-out to Noether’s Theorem here for the proof that angular momentum <strong>must</strong> be a conserved quantity</p>
+</div>
+</aside>
+<p>If the net external torque acting on a rotating system is zero then the total angular momentum is constant. This is very similar to the conservation of linear momentum case but extra care must be taken when working with angular momentum as we must consider the distribution of the mass (due to the moment of inertia term in equation <a class="reference internal" href="#equation-eq-c10-l">()</a>).</p>
+<p>There are some really good physical examples of this, one of which I hope you are all familiar with but if not you can find some good videos on YouTube. The system I am thinking of is an ice-skater who is performing a spin on the spot. When they are spinning with their arms outstretched they are rotating with some angular velocity but if they bring their arms in suddenly their rotational velocity increase. We assume they have not suddenly changed their mass and we can see there are no external forces acting on them. The cause of this increased angular velocity is their change in mass distribution.</p>
+<p>Consider the simplified equation for conservation of angular momentum for this system.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+L_\text{before} &amp;= L_\text{after}\\
+I_\text{before}\omega_\text{before} &amp;= I_\text{after}\omega_\text{after}
+\end{align*}\]</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remember moment of inertia is mass times distance squared, so bringing arms in reduces the distance for some of the masses.</p>
+</div>
+</aside>
+<p>If the ice skater decreases their moment of inertia <span class="math notranslate nohighlight">\(I_\text{after}\)</span> then their angular velocity <span class="math notranslate nohighlight">\(\omega_\text{after}\)</span> must increase by an equal factor so that the conservation of angular momentum equation above is balanced.</p>
+</section>
+</section>
+<section id="lecture-questions">
+<h2>Lecture Questions<a class="headerlink" href="#lecture-questions" title="Link to this heading">#</a></h2>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 1</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Question</label><div class="sd-tab-content docutils">
+<p>Suppose that while opening a 1.0 m wide door you push against the edge farthest from the hinge, applying a force with constant magnitude <span class="math notranslate nohighlight">\(0.90\)</span> N at right angles to the surface of the door. How much work do you do on the door during an angular displacement of <span class="math notranslate nohighlight">\(\Delta\phi=30^{\circ}\)</span>?</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Hint</label><div class="sd-tab-content docutils">
+<p>A door is equivalent to a uniform rod, at least in terms of the moment of inertia. Just be careful to ensure you’ve got the right axis of rotation location.</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Solution</label><div class="sd-tab-content docutils">
+<p>For a constant torque the work done is <span class="math notranslate nohighlight">\(W=\tau \Delta\phi\)</span> and the torque is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\tau &amp;= FR\sin\theta\\
+	&amp;= FR
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between the applied force and the length vectors. Therefore</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+W &amp;= FR\Delta\phi\\
+		&amp;= 0.90 \times 1.0 \times \frac{30\times\pi}{180}\\
+		&amp;= 0.47\text{ J}
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 2</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Question</label><div class="sd-tab-content docutils">
+<p>A uniform meterstick is initially standing vertically on the floor. If the meterstick falls over, with what angular velocity will it hit the floor?</p>
+<p>Assume that the end in contact with the floor does not slip.</p>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Hint</label><div class="sd-tab-content docutils">
+<p>This system can be modelled as a thin solid bar or rod, but pay attention to where the axis of rotation is. You’ll need to use a conservation law so it may help to write out what information you know that can be used in one of these laws.</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Solution</label><div class="sd-tab-content docutils">
+<p>The mass of the meterstick is <span class="math notranslate nohighlight">\(M\)</span> and total length is <span class="math notranslate nohighlight">\(l\)</span> such that the centre of mass is initially a height <span class="math notranslate nohighlight">\(y_i=\frac{l}{2}\)</span> above the floor. The motion of the meterstick is of a rod rotating about a fixed axis through the point of contact with the floor and therefore has a moment of inertia <span class="math notranslate nohighlight">\(I=\dfrac{ML^2}{3}\)</span> (this is a result of a ``standard’’ shape configuration, covered in these notes / textbook).</p>
+<p>Assuming conservation of energy throughout the fall the sum of the potential and rotational energies before falling equals the sum of the energies just before hitting the floor, i.e.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{Ml^2\omega_i^2}{6}+Mgy_i&amp;= \frac{Ml^2\omega_f^2}{6}+Mgy_f\\
+\therefore \frac{Mgl}{2} &amp;= \frac{Ml^2\omega_f^2}{6} 
+\end{align*}\]</div>
+<p>where we make use of the initial condition <span class="math notranslate nohighlight">\(\omega_i=0\)</span> (stationary at the start) and <span class="math notranslate nohighlight">\(y_f = 0\)</span> (meterstick is laying on the floor at the collision, so has zero height from floor). Therefore</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{gl}{2} &amp;= \frac{l^2\omega_f^2}{6}\\
+\text{or } \omega_f &amp;= \sqrt{\frac{3g}{l}}
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 3</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+Question</label><div class="sd-tab-content docutils">
+<p>The rotor of the gyroscope on the Gravity Probe B experiment is a quartz sphere of diameter <span class="math notranslate nohighlight">\(3.8\text{ cm}\)</span> and mass <span class="math notranslate nohighlight">\(7.61\times10^{-2}\text{ kg}\)</span>. To start the sphere spinning, a stream of helium gas flowing into an equatorial channel in the surface of the housing is blown tangentially against the rotor.</p>
+<ol class="arabic simple">
+<li><p>What torque must this stream of gas exert on the rotor to accelerate it uniformly from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(10000\)</span> rpm in 30 minutes?</p></li>
+<li><p>What force must it exert on the equator of the sphere?</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+Hint</label><div class="sd-tab-content docutils">
+<p>If you struggle with torque and angular acceleration then consider a linear analogue with force and acceleration.</p>
+<p>For part 2 you should draw out the system and include the force vectors, from which you can identify any angles between vectors and hopefully simplify the system.</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+Solution</label><div class="sd-tab-content docutils">
+<p><strong>1</strong>
+The final angular velocity <span class="math notranslate nohighlight">\(\omega_f=1.05\times10^3 \text{ radians s}^{-1}\)</span> and so the angular acceleration is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\alpha &amp;= \frac{\omega_f - \omega_i}{t_f - t_i}\\ 
+&amp;= \frac{1.05\times10^3 - 0}{30\times60 - 0}\\
+&amp;= 0.582\text{ radians s}^{-2}
+\end{align*}\]</div>
+<p>The required torque is therefore</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\tau &amp;= I\alpha\\
+&amp;= \frac{2}{5}MR^2\times\frac{\omega_f}{t_f}\\
+&amp;= 6.4\times10^{-6}\text{ N m}
+\end{align*}\]</div>
+<p><strong>2</strong>
+The gas is blown tangentially against the rotor, such that the angle between the force from the gas and the radius vector of the sphere is <span class="math notranslate nohighlight">\(90^{\circ}\)</span>.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\tau &amp;= FR\sin\theta = FR\\
+\therefore F &amp;= \frac{\tau}{R}\\
+&amp;= 3.4\times10^{-4}\text{ N}
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 4</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
+Question</label><div class="sd-tab-content docutils">
+<p>Suppose that a pottery wheel is spinning (with the motor disengage) at 80 rpm when a <span class="math notranslate nohighlight">\(6.0\text{ kg}\)</span> sphere of clay (radius <span class="math notranslate nohighlight">\(R=8.0\text{ cm}\)</span>) is suddenly dropped down on the center of the wheel.</p>
+<p>What is the angular velocity after the drop, if the moment of inertia of the pottery wheel itself if <span class="math notranslate nohighlight">\(I_{\text{wheel}}=7.5\times10^{-2}\text{ kg m}^{-2}\)</span>?</p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
+Hint</label><div class="sd-tab-content docutils">
+<p>The system should have some conservered property that you can use. But it’s important to justify that this conservation is valid.</p>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
+Solution</label><div class="sd-tab-content docutils">
+<p>As there is no external torque on the system, the angular momentum of the system is conserved</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+I_i\omega_i &amp;= I_f\omega_f\\
+\omega_f &amp;= \frac{I_i}{I_f}\omega_i\\
+&amp;= \frac{I_\text{wheel}}{I_{\text{wheel}}+I_{\text{clay}}}\omega_i
+\end{align*}\]</div>
+<p>The clay sphere has a moment of inertia <span class="math notranslate nohighlight">\(I_{\text{clay}}=\dfrac{2}{5}MR^2 = 1.5\times10^{-2}\)</span> and so the final angular velocity is <span class="math notranslate nohighlight">\(I_f = 7.0\text{ radians s}^{-1}\)</span>.</p>
+</div>
+</div>
+</div>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="pend" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Unless you <strong>really</strong> push the pendulum. But then we are definitely away from the small angle domain…</p>
+</aside>
+</aside>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#torque">Torque</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-torque">Definition of torque</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-acceleration-and-torque">Angular acceleration and torque</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-return-to-the-pendulum">A return to the pendulum</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-momentum">Angular momentum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-angular-momentum">Definition of angular momentum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-angular-moment">Conservation of angular moment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Matt Mears
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

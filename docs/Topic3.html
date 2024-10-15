@@ -1,0 +1,1349 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Topic 3 - Forces &#8212; PHY009 - Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Topic3';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Topic 4 - Energy, Power and Momentum" href="Topic4.html" />
+    <link rel="prev" title="Topic 2 - Kinematics and Projectile Motion" href="Topic2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logouni.png" class="logo__image only-light" alt="PHY009 - Mechanics - Home"/>
+    <script>document.write(`<img src="_static/logouni.png" class="logo__image only-dark" alt="PHY009 - Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    PHY009: Foundations of Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PreCourse.html">Pre-course requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic1.html">Topic 1 - Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic2.html">Topic 2 - Kinematics and Projectile Motion</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Topic 3 - Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic4.html">Topic 4 - Energy, Power and Momentum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic5.html">Topic 5 - Circular Motion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTopic3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Topic3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Topic 3 - Forces</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axiomata-sive-leges-motus-or-axioms-or-laws-of-motion">“Axiomata Sive Leges Motus’’, or Axioms or Laws of Motion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-law">First Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-law">Second Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#third-law">Third Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-three-laws">Summary of the three laws</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-of-force">Units of force</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-forces">Types of forces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weight">Weight</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tension">Tension</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#friction">Friction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultant-forces">Resultant forces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-a-contact-force-into-normal-and-frictional-components">Resolving a contact force into normal (and frictional) components.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-contact-force">Normal contact force</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#friction-and-the-coefficient-of-friction">Friction and the coefficient of friction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertical-motion">Vertical motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics">Dynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-with-constant-forces">Dynamics with constant forces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vertical-motion-with-drag">Vertical motion with drag</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motion-of-two-connected-particles">Motion of two connected particles</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#forces-involving-two-particles-connected-by-a-light-inextensible-string">Forces Involving Two Particles Connected by a Light Inextensible String</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-involving-pulleys">Problems involving pulleys.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gravity-not-assessed">Gravity - Not assessed!</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="topic-3-forces">
+<span id="topic3"></span><h1>Topic 3 - Forces<a class="headerlink" href="#topic-3-forces" title="Link to this heading">#</a></h1>
+<section id="axiomata-sive-leges-motus-or-axioms-or-laws-of-motion">
+<span id="sec-c3-laws"></span><h2>“Axiomata Sive Leges Motus’’, or Axioms or Laws of Motion<a class="headerlink" href="#axiomata-sive-leges-motus-or-axioms-or-laws-of-motion" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="fig-c3-newton">
+<a class="reference internal image-reference" href="_images/T3_Newton.jpg"><img alt="Photograph of a book. The book is the original copy of Principia owned by Newton." src="_images/T3_Newton.jpg" style="width: 40%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Newton’s own copy of his Principia, with hand-written corrections for the second edition, in the Wren Library at Trinity College, Cambridge.</span><a class="headerlink" href="#fig-c3-newton" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In this chapter we are going to look at some of the work that Isaac Newton developed way back in the 17<sup>th</sup> century. Unfortunately we are not going to dabble in his obsession with alchemy<a class="footnote-reference brackets" href="#fma" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> or finding the Philosopher’s Stone, but instead will concern ourselves with a particular section of the “Philosophiæ Naturalis Principia Mathematica’’ published in 1687. In this work Newton defines three laws of motion that set the foundation for the field of classical mechanics which you will study in more depth next year.</p>
+<p>You will already have seen these three laws of motion but there are some concepts or details that are often overlooked in pre-University courses so firstly we will review the three laws in turn before applying them to some representative examples.</p>
+<p>I will forewarn you now that I’m going to make a point of including the original Latin of the three laws. There is some educational benefit to this, I assure you, but it is also a historical thing that usually gets lots of eyerolls from the audience. I fully intend to honour this tradition until I retire.</p>
+<section id="first-law">
+<h3>First Law<a class="headerlink" href="#first-law" title="Link to this heading">#</a></h3>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Corpus omne perseverare in statu suo quiescendi vel movendi uniformiter in directum, nisi quatenus a viribus impressis cogitur statum illum mutare.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Every body persists in its state of being at rest or of moving uniformly straight forward, except insofar as it is compelled to change its state by force impressed.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>The key point that I want to emphasise with this law is a subtle one but thinking about it now will help in the future when you start thinking about special relativity. Newton makes reference to the ‘state’ of the body. This state could be at rest or a constant motion straight forward but in all cases they are simply specifics of this general ‘state’. This state is the velocity of the body which means we can rephrase the First Law as</p>
+<blockquote>
+<div><p>A body acted on by no <strong>net</strong> force moves with <strong>constant velocity</strong>.</p>
+</div></blockquote>
+<p>The zero velocity case is simply a unique value in an almost infinite number of possible velocities. Sometimes it is convenient to make use of the zero velocity case, particularly when you start thinking about different frames of reference.</p>
+</section>
+<section id="second-law">
+<h3>Second Law<a class="headerlink" href="#second-law" title="Link to this heading">#</a></h3>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Mutationem motus proportionalem esse vi motrici impressae, et fieri secundum lineam rectam qua vis illa imprimitur.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">The alteration of motion is ever proportional to the motive force impress’d; and is made in the direction of the right line in which that force is impress’d.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>This is by far the Law that is most frequently stated incorrectly. Or perhaps more accurately it is that the law taught to you in schools in a special case of a simplified version of the actual statement the Newton made. You will have heard people saying that the second law is simply <span class="math notranslate nohighlight">\(F=ma\)</span> however let us look at the original statement to see what information is missing when we look between the original and this simple-yet-incomplete definition.</p>
+<p>What I hope you notice is that the original statement contains two key parts, conveniently separated by a semi colon. In the first part we have that the alteration of motion, or acceleration, is proportional to the applied force. This is all good and gels with our simple statement that <span class="math notranslate nohighlight">\(F\propto a\)</span>, where the mass <span class="math notranslate nohighlight">\(m\)</span> is our constant of proportionality.</p>
+<p>The information in the original definition that is lacking in our <span class="math notranslate nohighlight">\(F=ma\)</span> statement is that regarding the directions of the applied forces and the resulting acceleration.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this course I will be using the notation that a vector is denoted by <strong>bold font</strong> without italics.</p>
+</div>
+</aside>
+<p>When we want to combine information about the magnitude and direction of properties you should always think about vectors.</p>
+<p>By combining the two components of the original statement for the Second Law we can give a more general statement of the law in mathematical form, namely that</p>
+<div class="math notranslate nohighlight" id="equation-eq-c3-second-old">
+<span class="eqno">(8)<a class="headerlink" href="#equation-eq-c3-second-old" title="Link to this equation">#</a></span>\[\textbf{F}=m\textbf{a}\]</div>
+<p>Have you spotted the ‘error’ yet?</p>
+<p>I was being rather picky with my choice of words right after the Latin and translation text. I said that the version taught is schools is both <strong>simplified</strong> and a <strong>special case</strong>. We have taken care of the simplification by including the directions by way of vectors but the special case element needs to be addressed.</p>
+<p>Let us look back at equation <a class="reference internal" href="#equation-eq-c3-second-old">(8)</a>. I was quite correct to not change the mass into a vector, but what I have assumed is that the mass is <strong>constant</strong>. In fact I need to go back to the original statement of the Second Law and think more generally about the “alteration of motion” and consider a property that contains both the velocity and mass of the body. This is, of course, the <strong>momentum</strong> <span class="math notranslate nohighlight">\((\textbf{p}=m\textbf{v})\)</span> of the body.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is making use of differentiation, which you may be familiar with from before but if not you will see it shortly in your maths courses.</p>
+</div>
+</aside>
+<p>If we now reformulate the Second Law using this concept of the momentum into an equation we find that</p>
+<div class="math notranslate nohighlight" id="equation-eq-c3-second-new">
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq-c3-second-new" title="Link to this equation">#</a></span>\[\textbf{F} = \frac{\mathrm{d}\textbf{p}}{\mathrm{d}t}\]</div>
+<p>We can now check that this more general expression does reduce to the more familar form in equation <a class="reference internal" href="#equation-eq-c3-second-old">(8)</a> under special circumstances. Let us take equation <a class="reference internal" href="#equation-eq-c3-second-new">(9)</a> and apply the product rule</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+	 \textbf{F} &amp;= \frac{\mathrm{d}(m\textbf{v})}{\mathrm{d}t}=m\frac{\mathrm{d}\textbf{v}}{\mathrm{d}t} + \textbf{v}\frac{\mathrm{d}m}{\mathrm{d}t}
+\end{align*}\]</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Because the rate of change of mass is zero</p>
+</aside>
+<p>so in the special case that the mass remains constant the right hand term become zero and therefore we find that</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+	 \textbf{F} &amp;= m\frac{\mathrm{d}\textbf{v}}{\mathrm{d}t}\\
+	 &amp;= m\textbf{a}
+\end{align*}\]</div>
+<p><strong>but only when the mass is constant</strong>. You should try to rememorise Newton’s Second Law as the force applied to a body in a given time, also known as the <strong>impulse</strong> equals the rate of change of momentum of that body.</p>
+</section>
+<section id="third-law">
+<h3>Third Law<a class="headerlink" href="#third-law" title="Link to this heading">#</a></h3>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Actioni contrariam semper et aequalem esse reactionem: sive corporum duorum actiones in se mutuo semper esse aequales et in partes contrarias dirigi.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">To every action there is always an equal and opposite reaction: or the forces of two bodies on each other are always equal and are directed in opposite directions.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>I won’t spend as much time on this Law as there is not as much to critique, but again the key point to emphasise is that in the original statement is there is mention of the magnitude and the direction of the forces. We can neaten this up slightly by introducing our good friends the vectors. If we consider a body A that is exerting a force of magnitude <span class="math notranslate nohighlight">\(F_{AB}\)</span> onto body B then body B exerts a force of magnitude <span class="math notranslate nohighlight">\(F_{BA}\)</span> onto body A, and so we can state that</p>
+<div class="math notranslate nohighlight">
+\[\textbf{F}_{AB} = -\textbf{F}_{BA}\]</div>
+</section>
+<section id="summary-of-the-three-laws">
+<h3>Summary of the three laws<a class="headerlink" href="#summary-of-the-three-laws" title="Link to this heading">#</a></h3>
+<div class="tip admonition">
+<p class="admonition-title">Key point</p>
+<ol class="arabic simple">
+<li><p>First Law: A body acted on by no <strong>net</strong> force moves with <strong>constant velocity</strong> (which may be zero).</p></li>
+<li><p>Second Law: The general mathematical form is <span class="math notranslate nohighlight">\(\textbf{F}=\dfrac{\mathrm{d}\textbf{p}}{\mathrm{d}t}\)</span>. This reduces to <span class="math notranslate nohighlight">\(\textbf{F}=m\textbf{a}\)</span> only in the case where the mass remains constant.</p></li>
+<li><p>Third Law: If body A exerts a force on body B, then body B exerts a force on body A of the same magnitude but in the opposite direction, i.e. <span class="math notranslate nohighlight">\(\textbf{F}_{AB} = -\textbf{F}_{BA}\)</span></p></li>
+</ol>
+</div>
+</section>
+</section>
+<section id="units-of-force">
+<h2>Units of force<a class="headerlink" href="#units-of-force" title="Link to this heading">#</a></h2>
+<p>All forces, regardless of their type or underlying physical cause, have units of Newtons. One Newton is equal to one kilogram meter per second squared <span class="math notranslate nohighlight">\((\text{kg m s}^{-2})\)</span>.</p>
+</section>
+<section id="types-of-forces">
+<h2>Types of forces<a class="headerlink" href="#types-of-forces" title="Link to this heading">#</a></h2>
+<p>Below are four examples of types of force though you will come across more as you study different areas of physics. These four are chosen as they strongly relate to mechanics and will be discussed in more detail, in some cases simultaneouly where appropriate.</p>
+<section id="weight">
+<h3>Weight<a class="headerlink" href="#weight" title="Link to this heading">#</a></h3>
+<p>All particles falling freely under gravity have the same acceleration, <span class="math notranslate nohighlight">\(g\)</span>. This acceleration must be caused by a force acting on the particle, as required by Newton’s Second Law. This force is the <strong>weight</strong> of the particle and is equal to <span class="math notranslate nohighlight">\(F_\text{weight} = mg\)</span> where <span class="math notranslate nohighlight">\(m\)</span> is the mass of the particle.</p>
+</section>
+<section id="tension">
+<h3>Tension<a class="headerlink" href="#tension" title="Link to this heading">#</a></h3>
+<p>Imagine a particle of mass <span class="math notranslate nohighlight">\(m\)</span> hanging in equilibirum at the end of a string. As the particle is in equilibrium the weight <span class="math notranslate nohighlight">\(mg\)</span> acting downwards must be balanced by an equal and opposite force acting upwards (as per Newton’s Third Law). This upward force is the <strong>tension</strong> <span class="math notranslate nohighlight">\(T\)</span> in the string, and is a pulling force on the particle.</p>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 3.1</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Question</label><div class="sd-tab-content docutils">
+<p>A small object is hanging in equilibrium at the end of a vertical string. Find:</p>
+<ol class="arabic simple">
+<li><p>the weight of the object if its mass is <span class="math notranslate nohighlight">\(0.2\text{ kg}\)</span>.</p></li>
+<li><p>the mass of the object if its weight is <span class="math notranslate nohighlight">\(4.9\text{ N}\)</span>.</p></li>
+<li><p>the tension in the string if the mass of the object is <span class="math notranslate nohighlight">\(1.0\text{ kg}\)</span>.</p></li>
+<li><p>the tension in the string if the weight of the object is <span class="math notranslate nohighlight">\(5.0\text{ N}\)</span>.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Hint</label><div class="sd-tab-content docutils">
+<p>Mass and weight are not the same, although they are related. Mass is an intrinsic property of the object whereas weight is a force acting on the mass due to gravity.<br />
+In these types of questions you can assume the system is on Earth, unless told otherwise!</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Solution</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>The weight <span class="math notranslate nohighlight">\(W = mg = 0.2\times9.8 = 1.9(6)\text{ N}\)</span></p></li>
+<li><p>Rearranging the equation for weight gives <span class="math notranslate nohighlight">\(m = \frac{W}{g} = \frac{4.9}{9.8} = 0.5\text{ kg}\)</span>.</p></li>
+<li><p>The object is in equilibrium meaning the tension in the string (force upward) must equal that of the weight (force downward).<br />
+Therefore <span class="math notranslate nohighlight">\(T = W = mg = 1\times 9.8 = 9.8\text{ N}\)</span>.</p></li>
+<li><p>The same argument applies as for part 3 of this question, so <span class="math notranslate nohighlight">\(T = W = 5\text{ N}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="friction">
+<h3>Friction<a class="headerlink" href="#friction" title="Link to this heading">#</a></h3>
+<p>When an object is in contact with a rough surface and you try to push the object across said surface then a <strong>frictional force</strong> acts to oppose the pushing force. The frictional force acts parallel to the surface, and only when the surface is perfectly smooth does the frictional force equal zero.<br />
+We will revisit friction in more detail <a class="reference internal" href="#t3-friction"><span class="std std-ref">shortly</span></a>, but first we need to better understand how to resolve forces to find the resultant force (or resultant forces in Cartesian components).</p>
+</section>
+</section>
+<section id="resultant-forces">
+<h2>Resultant forces<a class="headerlink" href="#resultant-forces" title="Link to this heading">#</a></h2>
+<p>We have already seen in <a class="reference internal" href="Topic1.html#t1-additionvectors"><span class="std std-ref">Topic 1</span></a> that we can add two vectors together to find a single resultant vector. As forces are vector quantities the same applies here - we can add multiple forces (in vector form) to get a single resultant force vector.<br />
+Suppose that two forces, <span class="math notranslate nohighlight">\(\textbf{F}_1\)</span> and <span class="math notranslate nohighlight">\(\textbf{F}_2\)</span> are acting on a particle. The resultant force <span class="math notranslate nohighlight">\(\textbf{R} = \textbf{F}_1 + \textbf{F}_2\)</span>, and then from Newton’s Second Law we can state that the acceleration of this particle is:</p>
+<div class="math notranslate nohighlight">
+\[\textbf{a} = \frac{\textbf{R}}{m} = \frac{\textbf{F}_1 + \textbf{F}_2}{m}\]</div>
+<p>Suppose that a third force <span class="math notranslate nohighlight">\(\textbf{F}_3\)</span> also acts on the particle. The resultant force is now the sum of these three forces, i.e. <span class="math notranslate nohighlight">\(\textbf{R} = \textbf{F}_1 + \textbf{F}_2 + \textbf{F}_3\)</span>.<br />
+More generally the resultant force is the sum of all forces acting on the particle, which can be neatly written using summation notation as:</p>
+<div class="math notranslate nohighlight">
+\[\textbf{R} = \sum_{i=1}^{N}\textbf{F}_i\]</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 3.2</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Question</label><div class="sd-tab-content docutils">
+<p>Two forces of magnitude <span class="math notranslate nohighlight">\(5\text{ N}\)</span> and <span class="math notranslate nohighlight">\(6\text{ N}\)</span> act on a particle at right angles to one another. Find the magnitude and direction of the resultant force.</p>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Hint</label><div class="sd-tab-content docutils">
+<p>When drawing the diagram for this question you can orientate it however you like so long as the two forces stated are perpendicular to one another.</p>
+<figure class="align-center" id="fig-t3-ex2">
+<a class="reference internal image-reference" href="_images/T3_Ex2.png"><img alt="_images/T3_Ex2.png" src="_images/T3_Ex2.png" style="width: 80%;" /></a>
+</figure>
+<p>This gives a right angle triangle with two known sides, and we want to find the other side and one angle.</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Solution</label><div class="sd-tab-content docutils">
+<p>The vector diagram shown in the Hint section is a right angle triangle with <span class="math notranslate nohighlight">\(R\)</span> as the hypoteneuse. Pythagoras’ Theorem gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}R^2 &amp;= 6^2 + 5^2 = 61\\
+\therefore R &amp;= \sqrt{61} \approx 7.81\end{split}\]</div>
+<p>Using the adjacent and opposite sides allows us to determine the angle <span class="math notranslate nohighlight">\(\theta\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\tan\theta &amp;= \frac{6}{5} = 1.2\\
+\therefore \theta &amp;= \tan^{-1}\left(\frac{6}{5}\right) \approx 50.2^{\circ}\end{split}\]</div>
+<p>where the angle <span class="math notranslate nohighlight">\(\theta\)</span> is with respect to the <span class="math notranslate nohighlight">\(5\text{ N}\)</span> force.</p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Physics example: Traffic Lights - weight and tension</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+Question</label><div class="sd-tab-content docutils">
+<p>In this case we consider the type of traffic lights that are suspended from cablesold` below. We have a traffic light suspended from a single cable which in turn is suspended from two cables that make angles of <span class="math notranslate nohighlight">\(37.0^\circ\)</span> and <span class="math notranslate nohighlight">\(53.0^\circ\)</span> to the horizontal beam above. We also know that the weight of the traffic light is <span class="math notranslate nohighlight">\(125.0\text{ N}\)</span>, and we have been tasked with calculating the tensions in each of the three cables.</p>
+<figure class="align-center" id="fig-c3-traffic-old">
+<a class="reference internal image-reference" href="_images/C3_traffic_old.png"><img alt="A hanging style set of traffic lights suspended on one vertical wire which in turn is attached to two wires that are affixed to a horizontal surface. These two wires each make a different angle to this surface and so have a different tension. The traffic light is stationary so no velocity vectors are indicated." src="_images/C3_traffic_old.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">A hanging style set of traffic lights suspended on one vertical wire which in turn is attached to two wires that are affixed to a horizontal surface. These two wires each make a different angle to this surface and so have a different tension. The traffic light is stationary so no velocity vectors are indicated.</span><a class="headerlink" href="#fig-c3-traffic-old" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now before you jump straight in to the calculations we should take a step back and think a) about the assumptions of a system, and b) which approach we should take. The former is somewhat trivial but always worth stating: in this example I am assuming that the traffic light is stationary and therefore (from Newton’s First Law) there is <strong>zero net force</strong> in the system.</p>
+<p>The latter point is important because taking a brief moment to pause and think about the approach gives you the time to think about which methods are valid and, of those, which are the most efficient. For the purposes of hammering this point home I’m going to solve this traffic light problem using two methods, the first being the typical approach taught in pre-University education and the second making use of the vectors that we emphasised in our earlier review of the three laws of motion.</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+Method 1 - Resolving components</label><div class="sd-tab-content docutils">
+<p>Looking at the diagram in the question I am going to split the system up into two parts, the upper and lower, and will consider the lower part first. In this part I have two components, the weight of the traffic light <span class="math notranslate nohighlight">\(mg\)</span> and the tension <span class="math notranslate nohighlight">\(T_3\)</span>. Both of these are only acting in the vertical direction which means</p>
+<div class="math notranslate nohighlight">
+\[T_3 = mg\]</div>
+<p>Next I consider the upper part and here I need to split the components of the three tensions into their horizontal and vertical components. Thus my horizontal components give</p>
+<div class="math notranslate nohighlight" id="equation-eq-c3-t1">
+<span class="eqno">(10)<a class="headerlink" href="#equation-eq-c3-t1" title="Link to this equation">#</a></span>\[\begin{split}T_1\cos\alpha &amp;= T_2\cos\beta\nonumber\\
+T_1 &amp;= T_2\left(\frac{\cos\beta}{\cos\alpha}\right)\end{split}\]</div>
+<p>Next our vertical components give</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+T_3 = mg &amp;= T_1\sin\alpha + T_2\sin\beta\\
+&amp;= T_2\left(\tan\alpha\cos\beta + \sin\beta\right)\\
+\therefore T_2 &amp;= \frac{mg}{\tan\alpha\cos\beta + \sin\beta} \approx 99.8\text{ N}
+\end{align*}\]</div>
+<p>where I have substituted the expression for <span class="math notranslate nohighlight">\(T_1\)</span> (equation <a class="reference internal" href="#equation-eq-c3-t1">(10)</a>) into the second line. Now that I have an expression or value for <span class="math notranslate nohighlight">\(T_2\)</span> I can substitute this back in to equation <a class="reference internal" href="#equation-eq-c3-t1">(10)</a> to find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    T_1 &amp;= T_2\left(\frac{\cos\beta}{\cos\alpha}\right)\\
+        &amp;= \left(\frac{mg}{\tan\alpha\cos\beta + \sin\beta}\right)\left(\frac{\cos\beta}{\cos\alpha}\right) \\
+        &amp;\approx 75.2\text{ N}
+\end{align*}\]</div>
+<p>And there we have it. We have found that <span class="math notranslate nohighlight">\(T_1=75.2\text{ N}\)</span>, <span class="math notranslate nohighlight">\(T_2=99.8\text{ N}\)</span> and <span class="math notranslate nohighlight">\(T_3=125.0\text{ N}\)</span> to the correct number of significant figures.</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+Method 2 - Vectors</label><div class="sd-tab-content docutils">
+<p>The method above does work but it involved an unneccesary amount of work. By remembering that we are working with vectors we can avoid splitting our forces into their components of direction and magnitude (or in this case their horizontal and vertical), and just work with the vectors themselves.</p>
+<p>We have assumed that the system is not accelerating which means there is no net force. Under this assumption the sum of the forces in the system should equal zero which, when expressed as a diagram, means the three vectors form a closed triangle when placed end to end. We will start by sketching this:</p>
+<figure class="align-center" id="fig-c3-traffic-new">
+<a class="reference internal image-reference" href="_images/C3_Traffic_new.png"><img alt="Three arrows indicate the vector forces, one due to gravity pointing directly down, and the two force vectors point at angles with respect to the horizontal. The three vector arrows form a closed triangle because the traffic light is stationary and thus there is zero net force." src="_images/C3_Traffic_new.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Three arrows indicate the vector forces, one due to gravity pointing directly down, and the two force vectors point at angles with respect to the horizontal. The three vector arrows form a closed triangle because the traffic light is stationary and thus there is zero net force.</span><a class="headerlink" href="#fig-c3-traffic-new" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>When presented in this form I hope it is fairly clear that we have a triangle with all lengths and angles defined (even if we do not yet know all the values). Note that I’m borrowing the result from the previous method that <span class="math notranslate nohighlight">\(T_3=mg\)</span>, but this is pretty obvious when you think about the system.</p>
+<p>The fact that this is a triangle of vectors makes no difference; we can apply the geometry rules we all know and love to solve for the unknowns, in this case <span class="math notranslate nohighlight">\(T_1\)</span> and <span class="math notranslate nohighlight">\(T_2\)</span>.</p>
+<p>I will make use of the sine rules of triangles, which if you cannot remember it off the bat is defined as</p>
+<div class="math notranslate nohighlight">
+\[    \frac{mg}{\sin\theta'} = \frac{T_1}{\sin\beta'}=\frac{T_2}{\sin\alpha'}.\]</div>
+<p>We know all of the parameters in the left hand side so will use this part twice, first to find <span class="math notranslate nohighlight">\(T_1\)</span> and again to find <span class="math notranslate nohighlight">\(T_2\)</span>. For <span class="math notranslate nohighlight">\(T_1\)</span> this gives</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{mg}{\sin\theta'}&amp;=\frac{T_1}{\sin\beta'}\\
+T_1&amp;=mg\left(\frac{\sin\theta'}{\sin\beta'}\right)\\
+&amp;\approx0.602mg = 75.2\text{ N}
+\end{align*}\]</div>
+<p>Similar steps will give you <span class="math notranslate nohighlight">\(T_2 = 99.8\text{ N}\)</span>. These are the same as we found using Method 1, as we would expect, but the vector method is much more efficient</p>
+</div>
+</div>
+</div>
+</section>
+<section id="resolving-a-contact-force-into-normal-and-frictional-components">
+<span id="t3-friction"></span><h2>Resolving a contact force into normal (and frictional) components.<a class="headerlink" href="#resolving-a-contact-force-into-normal-and-frictional-components" title="Link to this heading">#</a></h2>
+<section id="normal-contact-force">
+<h3>Normal contact force<a class="headerlink" href="#normal-contact-force" title="Link to this heading">#</a></h3>
+<p>Think of a particle at rest on a horizontal surface. If the surface was removed the particle would accelerate downwards due to gravity, but as it is at rest there must be some equal and opposite force acting upwards due to the surface. This force must balance the weight of the particle such that there is no resultant force and therefore no acceleration.<br />
+This force from the surface is called the <strong>normal reaction force</strong>, <strong>normal contact force</strong>, or simply the <strong>normal force</strong> and is often denoted with either <span class="math notranslate nohighlight">\(\textbf{N}\)</span> for normal or <span class="math notranslate nohighlight">\(\textbf{R}\)</span> for reaction. A key point here is that this force acts normal or perpendicular to the <strong>surface</strong>, and for instances where the surface is at an angle to the horizontal (e.g. in Worked Example 3.4 below) this normal force will not be directed vertically upwards.</p>
+<p>If we now try to push the particle horizontally across the surface then, up to some maximum applied force, the particle does not move. There is an additional <strong>frictional force</strong> that acts to balance the pushing force. Let us have a closer look now at this frictional force.</p>
+</section>
+<section id="friction-and-the-coefficient-of-friction">
+<h3>Friction and the coefficient of friction<a class="headerlink" href="#friction-and-the-coefficient-of-friction" title="Link to this heading">#</a></h3>
+<p>First let us visualise the system.</p>
+<figure class="align-center" id="fig-t3-fric">
+<a class="reference internal image-reference" href="_images/T3_Fric.png"><img alt="_images/T3_Fric.png" src="_images/T3_Fric.png" style="width: 50%;" /></a>
+</figure>
+<p>We have a particle of weight <span class="math notranslate nohighlight">\(mg\)</span> acting down, a normal force <span class="math notranslate nohighlight">\(\textbf{N}\)</span> acting upwards, a pushing force <span class="math notranslate nohighlight">\(\textbf{P}\)</span> acting to the right and a frictional force <span class="math notranslate nohighlight">\(\textbf{F}_f\)</span>. For as long as the particle remains stationary then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\textbf{P} &amp;= -\textbf{F}_f\\
+\text{or } |\textbf{P}| &amp;= |\textbf{F}_f|\end{split}\]</div>
+<p>What this means is that the friction force for a particular surface is not constant. It increases as the applied force <span class="math notranslate nohighlight">\(\textbf{P}\)</span> increases, at least up to a value <span class="math notranslate nohighlight">\(\textbf{F}_\text{max}\)</span> beyond which it cannot increase. At this point the particle is just about to start accelerating because the applied force is equal to the maximum resistive frictional force.<br />
+This maximum force is given by</p>
+<div class="math notranslate nohighlight">
+\[F_\text{max} = \mu R\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu\)</span> is a constant of proportionality called the <strong>coefficient of friction</strong></p>
+<p>For a stationary particle, <span class="math notranslate nohighlight">\(0\leq F_f\leq\mu R\)</span>. Once the particle beins to accelerate the frictional force opposing the relative motion <em>remains</em> at the constant value <span class="math notranslate nohighlight">\(F_\text{max} = \mu R\)</span>.</p>
+<p>Key summary points:</p>
+<ol class="arabic simple">
+<li><p>Friction acts to oppose relative motion.</p></li>
+<li><p>Until it reaches its limiting value the magnitude of the frictional force is <strong>just</strong> sufficient to prevent relative motion.</p></li>
+<li><p>When the limiting value is reached <span class="math notranslate nohighlight">\(F_\text{max} = \mu R\)</span>.</p></li>
+<li><p>For all <strong>rough</strong> surfaces, <span class="math notranslate nohighlight">\(0\leq F_f\leq\mu R\)</span>.</p></li>
+<li><p>For a smooth surface, <span class="math notranslate nohighlight">\(F=0\)</span>.</p></li>
+<li><p>When the particle begins to slide the frictional force has the limiting value <span class="math notranslate nohighlight">\(\mu R\)</span> and acts in the opposite direction of relative motion.</p></li>
+</ol>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 3.3 - Friction on a horizontal surface</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
+Question</label><div class="sd-tab-content docutils">
+<p>A particle of weight <span class="math notranslate nohighlight">\(30\text{ N}\)</span> rests on a horizontal plane. The coefficient of friction between the particle and the place is <span class="math notranslate nohighlight">\(\mu=0.3\)</span>. A horizontal force of magnitude <span class="math notranslate nohighlight">\(P\text{ N}\)</span> is applied to the particle.<br />
+Find the value of <span class="math notranslate nohighlight">\(P\)</span> for which the particle <em>just</em> begins to slide.</p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
+Hint</label><div class="sd-tab-content docutils">
+<p>Draw the force diagram, and consider splitting the system into different (perpendicular) components.</p>
+<figure class="align-center" id="fig-t3-ex3">
+<a class="reference internal image-reference" href="_images/T3_Ex3.png"><img alt="_images/T3_Ex3.png" src="_images/T3_Ex3.png" style="width: 50%;" /></a>
+</figure>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
+Solution</label><div class="sd-tab-content docutils">
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="_images/T3_Ex3.png"><img alt="_images/T3_Ex3.png" src="_images/T3_Ex3.png" style="width: 50%;" /></a>
+</figure>
+<p>Resolving horizontal forces gives</p>
+<div class="math notranslate nohighlight">
+\[P = F_\text{max} = \mu R\]</div>
+<p>Vertical components gives</p>
+<div class="math notranslate nohighlight">
+\[mg = 30 = R\]</div>
+<p>Substituting this value for <span class="math notranslate nohighlight">\(R\)</span> into the expression for the horizontal forces gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}P &amp;= \mu \times R\\
+&amp;= 0.3 \times 30 = 9\text{ N}\end{split}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 3.4 - Friction on an inclined surface</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
+Question</label><div class="sd-tab-content docutils">
+<p>A particle of mass <span class="math notranslate nohighlight">\(4\text{ kg}\)</span> rests in limiting equilibrium on a rough plane inclined at <span class="math notranslate nohighlight">\(30^\circ\)</span> to the horizontal. Find the coefficient of friction between the particle and the plane.</p>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-13">
+Hint</label><div class="sd-tab-content docutils">
+<p>Draw a force diagram, and remember to split the forces into perpendicular components. Keep in mind that, for an inclined surface, the normal force is not directly upwards.</p>
+<p>Options are to resolve into vertical and horizontal components, or parallel and perpendicular to the plane components.</p>
+</div>
+<input id="sd-tab-item-14" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-14">
+Solution</label><div class="sd-tab-content docutils">
+<figure class="align-center" id="fig-t3-ex4">
+<a class="reference internal image-reference" href="_images/T3_Ex4.png"><img alt="_images/T3_Ex4.png" src="_images/T3_Ex4.png" style="width: 50%;" /></a>
+</figure>
+<p>Note that <span class="math notranslate nohighlight">\(\textbf{F}_f\)</span> acts <strong>up the plane</strong>, since without friction the particle would accelerate down the plane.</p>
+<p>Resolving perpendicular to the plane gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}R &amp;= 4g\cos 30\\
+ &amp;= 4g\times \frac{\sqrt{3}}{2} = 2\sqrt{3}g\end{split}\]</div>
+<p>Resolving parallel to the plane gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}F_f &amp;= 4g\sin 30\\
+    &amp;= 4g\times\frac{1}{2} = 2g\end{split}\]</div>
+<p>At equilibrium <span class="math notranslate nohighlight">\(F=\mu R\)</span> and so:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}2g &amp;= \mu\times 2\sqrt{3}g\\
+    \therefore \mu &amp;= \frac{1}{\sqrt{3}} \approx 0.58\end{split}\]</div>
+<p>You should retry this worked example but instead of resolving into parallel and perpendicular to the inclined surface you should find the horizontal and vertical components of all forces involved. The answer will be the same.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="vertical-motion">
+<h2>Vertical motion<a class="headerlink" href="#vertical-motion" title="Link to this heading">#</a></h2>
+<p>In the previous sections we have considered systems known as <strong>statics</strong>, meaning that while there are forces acting on the object there is no net force. The object is in equilibrium and does not accelerate, though we did start thinking about when the pushing force for example could overcome the frictional force and so the object being pushed starts to move. We will now move into the realms of <strong>dynamics</strong> and consider how applied forces cause an object to move and accelerate.</p>
+</section>
+<section id="dynamics">
+<h2>Dynamics<a class="headerlink" href="#dynamics" title="Link to this heading">#</a></h2>
+<p>In the previous sections we have considered systems known as <strong>statics</strong>, meaning that while there are forces acting on the object there is no net force. The object is in equilibrium and does not accelerate, though we did start thinking about when the pushing force for example could overcome the frictional force and so the object being pushed starts to move. We will now move into the realms of <strong>dynamics</strong> and consider how applied forces cause an object to move and accelerate.</p>
+<section id="dynamics-with-constant-forces">
+<h3>Dynamics with constant forces<a class="headerlink" href="#dynamics-with-constant-forces" title="Link to this heading">#</a></h3>
+<p>We have already considered the case of vertical motion acting under gravity and no other forces in example 2.3. When expressing this in terms of the force of gravity and Newton’s Second Law we state:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}F = mg = ma\\
+\therefore g = a\end{split}\]</div>
+<p>which should come as no surprise. An object falling under gravity (without air resistance) accelerates with a magnitude equal to the acceleration due to gravity.</p>
+<p>Other examples in which a particle can move under constant force could be through tension in a string or a constant buoyancy force.</p>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 3.5 - Particle lowered on a string</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-15" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-15">
+Question</label><div class="sd-tab-content docutils">
+<p>A ball of mass <span class="math notranslate nohighlight">\(2.0\text{ kg}\)</span> is attached to the lower end of a string hanging vertically. The ball is lowered with an acceleration of <span class="math notranslate nohighlight">\(0.2\text{ m s}^{-2}\)</span>. Find the tension in the string, <span class="math notranslate nohighlight">\(T\)</span>.</p>
+</div>
+<input id="sd-tab-item-16" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-16">
+Hint</label><div class="sd-tab-content docutils">
+<p>The net force is equal to the sum of the individual forces, but remember to pay attention to the relative directions of each component and the net force.</p>
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-17">
+Solution</label><div class="sd-tab-content docutils">
+<p>If the mass of the ball is <span class="math notranslate nohighlight">\(2.0\text{ kg}\)</span> then the weight is <span class="math notranslate nohighlight">\(W=2g\text{ N}\)</span>. As the ball is accelerating downwards the net resultant force must also be acting downwards, and so:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}ma &amp;= W - T\\
+    &amp;= mg - T\\
+\therefore T &amp;= m\left(g-a\right)\\
+    &amp;= 2\left(9.8-0.2\right)\\
+    &amp;= 19.2\text{ N}\end{split}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 3.6 - Stone through water</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-18">
+Question</label><div class="sd-tab-content docutils">
+<p>A stone of mass <span class="math notranslate nohighlight">\(0.5\text{ kg}\)</span> is released from rest on the surface of the water in a well. It takes <span class="math notranslate nohighlight">\(2.0\)</span> seconds to reach the bottom of the well. Assuming that the water exerts a <strong>constant</strong> buoyancy force upwards of <span class="math notranslate nohighlight">\(2.0\text{ N}\)</span>, find the depth of the well.</p>
+</div>
+<input id="sd-tab-item-19" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-19">
+Hint</label><div class="sd-tab-content docutils">
+<p>Buoyancy force acts vertically upwards. You’ll also need to combine ideas in this topic (forces) with those from the previous topic (kinematic equations).</p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 3.7 - Going up in an elevator</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-20">
+Question</label><div class="sd-tab-content docutils">
+<p>A elevator is accelerating upwards at <span class="math notranslate nohighlight">\(a_y = 1.5\text{ m s}^{-2}\)</span>. A child of mass <span class="math notranslate nohighlight">\(m=30.0\text{ kg}\)</span> is standing in the elevator. Treating the child as a particle(!) find the force between the child and the floor of the elevator.</p>
+</div>
+<input id="sd-tab-item-21" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-21">
+Hint</label><div class="sd-tab-content docutils">
+<p>You’ll need to use Newton’s Second and Third laws here.</p>
+</div>
+<input id="sd-tab-item-22" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-22">
+Solution</label><div class="sd-tab-content docutils">
+<p>The child exerts a force on the floor. By Newton’s Third Law the floor exerts and equal and opposite force on the child. Let this force be <span class="math notranslate nohighlight">\(N\)</span>, the normal force.</p>
+<p>The resultant upward for on the child is <span class="math notranslate nohighlight">\(R-mg\)</span> and using Newton’s Second Law we find:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}F &amp;= ma = R-mg\\
+    \therefore R &amp;= m\left(a+g\right)\\
+        &amp;= 30.0\times\left(1.5 + 9.8\right) = 339.0\text{ N}\end{split}\]</div>
+</div>
+</div>
+</div>
+</section>
+<section id="vertical-motion-with-drag">
+<h3>Vertical motion with drag<a class="headerlink" href="#vertical-motion-with-drag" title="Link to this heading">#</a></h3>
+<p>In this section we are now going to go against the stereotype of a physicist and actually consider air resistance! Or more generally we are going to consider the case of a body moving through a fluid which includes both liquids and gases but can be extended to roughly approximate motion through more exotic states of matter such as polymer melts.<br />
+We are only going to think about a body in free fall as this simple geometry still presents a difficult setup to derive a form of a kinematic equation, namely the velocity of the body. You can extend the principles here to two or three dimensional motion, such as including air resistance in the projectile motion but it quickly gets <strong>very</strong> hard to solve and is not necessary for this course.</p>
+<p>So let us jump into the problem with our usual first step of defining the system, and of course we must include our labelled schematic diagram.</p>
+<figure class="align-center" id="fig-c2-drag">
+<a class="reference internal image-reference" href="Figures/C2_drag.png"><img alt="An object of mass $m$ in free fall through some fluid. The velocity of the object $v(t)$ points downwards in the direction of gravity and there is a resistive force due to the interaction between the fluid and the moving body $R(v)$. For this course we assume that $R(v)$ is proportional to $v(t)$." src="Figures/C2_drag.png" style="width: 30%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">An object of mass <span class="math notranslate nohighlight">\(m\)</span> in free fall through some fluid. The velocity of the object <span class="math notranslate nohighlight">\(v(t)\)</span> points downwards in the direction of gravity and there is a resistive force due to the interaction between the fluid and the moving body <span class="math notranslate nohighlight">\(R(v)\)</span>. For this course we assume that <span class="math notranslate nohighlight">\(R(v)\)</span> is proportional to <span class="math notranslate nohighlight">\(v(t)\)</span>.</span><a class="headerlink" href="#fig-c2-drag" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>You may be questioning why I have taken the time to draw out <a class="reference internal" href="#fig-c2-drag"><span class="std std-numref">Fig. 6</span></a> as it is a rather simple one at face value. I agree but it also allows us to pin down some definitions that will help us from making mistakes down the line. I’d like to draw your attention to the fact that the force acting downwards due to gravity is constant, whereas the resistive force <span class="math notranslate nohighlight">\(R\)</span> is a function of velocity. For nearly every system describing motion through a fluid this will be a positive relation meaning that increasing the velocity will increase the resistive force, but it is the exact relationship between resistive force and velocity that makes this a more challenging problem.</p>
+<p>For the purposes of this example we are going to make the assumption that the resistive force varies linearly with velocity meaning we can state that</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+R(v) &amp;= bv
+\end{align*}\]</div>
+<p>where the constant of proportionality <span class="math notranslate nohighlight">\(b\)</span> depends on the shape of the body moving through the fluid as well as the interaction between the body and fluid. Thankfully we do not need to exactly define what <span class="math notranslate nohighlight">\(b\)</span> is so long as we make the reasonable assumption that it remains constant.</p>
+<p>We can make use of the form of Newton’s Second Law that you have already seen (<span class="math notranslate nohighlight">\(F=ma\)</span>) to make a statement about the net force (and therefore net acceleration) in terms of the two component forces involved. This gives</p>
+<div class="math notranslate nohighlight" id="equation-eq-c2-drag-start">
+<span class="eqno">(11)<a class="headerlink" href="#equation-eq-c2-drag-start" title="Link to this equation">#</a></span>\[\begin{split}mg-bv&amp;=m\frac{dv}{dt}\\
+\frac{dv}{dt}&amp;=g-\left(\frac{b}{m}\right)v\\
+	&amp;=g-kv\end{split}\]</div>
+<p>You will see that I have used the substitution <span class="math notranslate nohighlight">\(k=\frac{b}{m}\)</span>. It is entirely acceptable to combine multiple constants into a single constant as I have done here. Sometimes this can give some new insight into the physical meaning of the system but, more often than not, it is simply because we want to save time by only writing one letter instead of many. This efficient (read: lazy) approach is the one I have taken.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will be formally covered in your maths courses.</p>
+</div>
+</aside>
+<p>This is a differential equation which can be solved using the separation of variables method as follows</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\intop_{0}^{v}\frac{dv}{g-kv}&amp;=\intop_{0}^{t}dt\\
+\left[-\frac{1}{k}\ln\left(g-kv\right)\right]_{0}^{v}&amp;=\left[t\right]_{0}^{t}+c\\
+-\frac{1}{k}\ln\left(g-kv\right)+\left(\frac{1}{k}\ln\left(g\right)\right)&amp;=t+c\\
+\frac{1}{k}\ln\left(\frac{g-kv}{g}\right)&amp;=-t+c\\
+1-\frac{kv}{g}&amp;=e^{-k(t+c)}
+\end{align*}\]</div>
+<p>We can define this constant of integration <span class="math notranslate nohighlight">\(c\)</span> by considering the initial conditions of our system. As is our usual approach we can work from the assumption that the initial velocity is zero. By substituting in <span class="math notranslate nohighlight">\(v=0\)</span> and <span class="math notranslate nohighlight">\(t=0\)</span> we find <span class="math notranslate nohighlight">\(1 = e^{-kc}\)</span> which is only true when <span class="math notranslate nohighlight">\(c=0\)</span> (assuming <span class="math notranslate nohighlight">\(k\neq 0\)</span>). Thus</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{kv}{g}&amp;=1-e^{-kt}\\
+v&amp;=\frac{g}{k}\left(1-e^{-kt}\right)\\
+	&amp;=\frac{mg}{b}\left(1-e^{-\frac{bt}{m}}\right)
+\end{align*}\]</div>
+<p>This equation shows how the velocity of a falling object in a resistive medium changes as a function of time. We can see that if <span class="math notranslate nohighlight">\(t=0\)</span>, then <span class="math notranslate nohighlight">\(v=0\)</span> and when <span class="math notranslate nohighlight">\(t=\infty\)</span>, the terminal velocity <span class="math notranslate nohighlight">\(v_{terminal}=\frac{mg}{b}\)</span> is obtained. Terminal velocity is reached when the gravitational force (weight) is balanced by the resistive force (eg. viscous force).</p>
+</section>
+<section id="motion-of-two-connected-particles">
+<h3>Motion of two connected particles<a class="headerlink" href="#motion-of-two-connected-particles" title="Link to this heading">#</a></h3>
+<section id="forces-involving-two-particles-connected-by-a-light-inextensible-string">
+<h4>Forces Involving Two Particles Connected by a Light Inextensible String<a class="headerlink" href="#forces-involving-two-particles-connected-by-a-light-inextensible-string" title="Link to this heading">#</a></h4>
+<p>When two moving particles are connected by a light (i.e. massless) and inextensible (i.e. constant length) string, there will be a tension in the string. By Newton’s Third Law, the forces acting on the particles due to the tension in the string will have the same magnitude but will act in opposite directions. Since the string is light and inextensible, it does not stretch, and the tension in the string is uniform throughout. This assumption allows us to consider the forces on each particle individually, while recognising that the tension will be the same for both particles, although acting in opposite directions.</p>
+<p>When analysing the forces, we apply Newton’s Second Law to each particle. For a particle of mass <span class="math notranslate nohighlight">\(m_1\)</span>, connected by a string to another particle of mass <span class="math notranslate nohighlight">\(m_2\)</span>, the tension <span class="math notranslate nohighlight">\(T\)</span> in the string is one of the forces acting on <span class="math notranslate nohighlight">\(m_1\)</span>, and it opposes the motion of <span class="math notranslate nohighlight">\(m_1\)</span> if the system is accelerating. Similarly, the tension acts in the opposite direction on <span class="math notranslate nohighlight">\(m_2\)</span>, resisting the motion of <span class="math notranslate nohighlight">\(m_2\)</span> in its direction of travel.</p>
+<p>If the two particles are moving along a horizontal surface, or suspended vertically, additional forces such as friction, gravity, or normal contact forces may need to be considered. For horizontal motion on a smooth surface, we ignore friction, but on a rough surface, we introduce frictional forces, which oppose the direction of motion. For vertical motion (e.g. one particle suspended vertically while the other moves horizontally), gravity becomes a significant factor. The motion of the system is then affected by the gravitational force acting on each particle, with the tension in the string balancing part of this force.</p>
+<p>In either case, the particles share a common acceleration, since the string is inextensible. This common acceleration, <span class="math notranslate nohighlight">\(a\)</span>, can be found by analysing the forces acting on each particle and solving the system of equations that result from Newton’s Second Law.</p>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 3.8 - Two connected particles</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-23" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-23">
+Question</label><div class="sd-tab-content docutils">
+<p>Two particles <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> of masses <span class="math notranslate nohighlight">\(m_A=3.0\text{ kg}\)</span> and <span class="math notranslate nohighlight">\(m_B=4.0\text{ kg}\)</span> connected by a light inextensible string are at rest on a smooth horizontal surface. A force of magnitude <span class="math notranslate nohighlight">\(7.0\text{ N}\)</span> is applied to particle <span class="math notranslate nohighlight">\(B\)</span> in the direction <span class="math notranslate nohighlight">\(AB\)</span> (i.e. away from particle <span class="math notranslate nohighlight">\(A\)</span>). Find:</p>
+<ol class="arabic simple">
+<li><p>the acceleration of particles <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span></p></li>
+<li><p>the tension in the string <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-24" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-24">
+Hint</label><div class="sd-tab-content docutils">
+<p>The diagram helps here, either in terms of ensuring the signs of forces are correct or by constructing a force diagram and solving using arrows (both are equivalent, just different ways of viewing the problem).</p>
+<figure class="align-center" id="fig-t3-ex8">
+<a class="reference internal image-reference" href="_images/T3_Ex8.png"><img alt="_images/T3_Ex8.png" src="_images/T3_Ex8.png" style="width: 50%;" /></a>
+</figure>
+</div>
+<input id="sd-tab-item-25" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-25">
+Solution</label><div class="sd-tab-content docutils">
+<p><strong>Part 1</strong><br />
+The motion of the particles <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> need to be considered separately, but a key observation is that they will both be accelerating by the same amount <span class="math notranslate nohighlight">\(a\)</span> (because they are connected by the string, and <span class="math notranslate nohighlight">\(B\)</span> is pulling <span class="math notranslate nohighlight">\(A\)</span>).<br />
+Letting the tension in the string be <span class="math notranslate nohighlight">\(T\)</span> we use Newton’s Second Law twice, once for each particle.<br />
+For particle <span class="math notranslate nohighlight">\(B\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}7-T &amp;= 4a\\
+\therefore T &amp;= 7-4a\end{split}\]</div>
+<p>For particle <span class="math notranslate nohighlight">\(A\)</span></p>
+<div class="math notranslate nohighlight">
+\[T = 3a\]</div>
+<p>Combining these two equations gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}7-4a &amp;= 3a\\
+7 &amp;= 3a + 4a = 7a\\
+\therefore a &amp;= 1\text{ m s}^{-2}\end{split}\]</div>
+<p><strong>Part 2</strong><br />
+Substitute this value for <span class="math notranslate nohighlight">\(a\)</span> into either of the equations for the particles (I’ll use the one for <span class="math notranslate nohighlight">\(A\)</span> because it’s less complicated):</p>
+<div class="math notranslate nohighlight">
+\[T = 3a = 3\text{ N}\]</div>
+</div>
+</div>
+</div>
+</section>
+<section id="problems-involving-pulleys">
+<h4>Problems involving pulleys.<a class="headerlink" href="#problems-involving-pulleys" title="Link to this heading">#</a></h4>
+<p>For all of the situations we will consider in this course the pulleys are frictionless and the strings involved are light (no mass) and inextensible (fixed length).</p>
+<p>The introduction of a pulley can make the system seem more complicated, though the key thing to keep in mind is that a pulley simply changes the direction of the forces. Some people like to think of them as a theoretical pivot point on a force diagram, so if you had a system in which two masses are connected over a pulley and hanging vertically, the system is (from the perspective of forces) the same as a system in which you rotate one of the force arrows. This is shown below.</p>
+<figure class="align-center" id="fig-t3-pulley">
+<a class="reference internal image-reference" href="_images/T3_pulley.png"><img alt="_images/T3_pulley.png" src="_images/T3_pulley.png" style="width: 40%;" /></a>
+</figure>
+<p>The challenging part of pulley systems is thinking about <strong>relative</strong> motion and action. For example in the previously mentioned scenario both masses are being acted on by gravity, and these forces <span class="math notranslate nohighlight">\(F_A\)</span> and <span class="math notranslate nohighlight">\(F_B\)</span> are both acting vertically downwards. However the force on <span class="math notranslate nohighlight">\(A\)</span> would act to accelerate <span class="math notranslate nohighlight">\(A\)</span> downwards and <span class="math notranslate nohighlight">\(B\)</span> upwards via tension in the string, and the force on <span class="math notranslate nohighlight">\(B\)</span> would do the opposite.</p>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 3.9 - Two particles connected over a pulley with vertical motion only</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-26" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-26">
+Question</label><div class="sd-tab-content docutils">
+<p>Partcles of masses <span class="math notranslate nohighlight">\(5.0\text{ kg}\)</span> and <span class="math notranslate nohighlight">\(2.0\text{ kg}\)</span> are attached to the ends of a light inextensible string which passes over a smooth fixed pulley. The system is released from rest.<br />
+Find the acceleration of the system and the distance moved by the heavier mass in the first <span class="math notranslate nohighlight">\(3.0\)</span> seconds of motion. Assume that neither mass reaches the pulley.</p>
+</div>
+<input id="sd-tab-item-27" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-27">
+Hint</label><div class="sd-tab-content docutils">
+<p>Redraw the diagram above with all forces labelled (gravity and tension), and resolve for each mass to then find the net force on the whole system.</p>
+</div>
+<input id="sd-tab-item-28" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-28">
+Solution</label><div class="sd-tab-content docutils">
+<figure class="align-center" id="fig-t3-ex9">
+<a class="reference internal image-reference" href="_images/T3_Ex9.png"><img alt="_images/T3_Ex9.png" src="_images/T3_Ex9.png" style="width: 40%;" /></a>
+</figure>
+<p>Since the masses are released from rest the heavier object will accelerate downwards with acceleration <span class="math notranslate nohighlight">\(a\)</span>, pulling the lighter object upwards with the same acceleration.<br />
+Let the tension in the string by <span class="math notranslate nohighlight">\(T\)</span> and has the same value throughout the string as the pulley is smooth.</p>
+<p>For the <span class="math notranslate nohighlight">\(5\text{ kg}\)</span> mass:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}F_{5\text{ kg}} &amp;= ma\\
+\therefore 5g - T &amp;= 5a\end{split}\]</div>
+<p>For the <span class="math notranslate nohighlight">\(2\text{ kg}\)</span> mass:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}F_{2\text{ kg}} &amp;= ma\\
+\therefore T - 2g &amp;= 2a\end{split}\]</div>
+<p>Adding these two equations gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}5g - T + T - 2g &amp;= 5a + 2a\\
+\therefore 3g &amp;= 7a\\
+\text{or } a &amp;= \frac{3g}{7} \approx 4.2\end{split}\]</div>
+<p>To find the distance moved by thr <span class="math notranslate nohighlight">\(5\text{ kg}\)</span> mass in 3.0 seconds we use the kinematic equations with the value for the acceleration we have just found.<br />
+The known quantities are:</p>
+<ul class="simple">
+<li><p>v_0 = 0</p></li>
+<li><p>a = \frac{3g}{7}</p></li>
+<li><p>t = 3.0
+Using <span class="math notranslate nohighlight">\(s = v_0t + \frac{1}{2}at^2\)</span> we find:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}s &amp;= \left(0\times3.0\right) + \frac{1}{2}\times\frac{3g}{7}\times3.0^2\\
+    &amp;= 18.9\text{ m}\end{split}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 3.10 - Two particles connected over a pulley in 2 dimensions</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-29" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-29">
+Question</label><div class="sd-tab-content docutils">
+<p>Two particles <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> of masses <span class="math notranslate nohighlight">\(m_P=6.0\text{ kg}\)</span> and <span class="math notranslate nohighlight">\(m_Q=3.0\text{ kg}\)</span> are connected by a light inextensible string. Particle <span class="math notranslate nohighlight">\(P\)</span> rests on a rough horizontal table. The string passes over a smooth pulley fixed at the end of the table and particle <span class="math notranslate nohighlight">\(Q\)</span> hangs vertically. The coefficient of friction between <span class="math notranslate nohighlight">\(P\)</span> and the table is <span class="math notranslate nohighlight">\(\mu=\frac{1}{3}\)</span>.</p>
+<p>The system is then released from rest. Find (in terms of <span class="math notranslate nohighlight">\(g\)</span>):</p>
+<ol class="arabic simple">
+<li><p>the acceleration of <span class="math notranslate nohighlight">\(Q\)</span>,</p></li>
+<li><p>the tension in the string <span class="math notranslate nohighlight">\(T\)</span>, and</p></li>
+<li><p>the force exerted on the pulley.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-30" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-30">
+Hint</label><div class="sd-tab-content docutils">
+<p>This may seem tricky because we have horizontal and vertical motion, but remember that the system should be considered in terms of the direction of forces relative to the motion.<br />
+You may find it helpful to draw a schematic with forces labelled, and then redraw it to a one dimensional version by ‘rotating about’ the pulley.</p>
+</div>
+<input id="sd-tab-item-31" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-31">
+Solution</label><div class="sd-tab-content docutils">
+<figure class="align-center" id="fig-t3-ex10">
+<a class="reference internal image-reference" href="_images/T3_Ex10.png"><img alt="_images/T3_Ex10.png" src="_images/T3_Ex10.png" style="width: 40%;" /></a>
+</figure>
+<p>The tension in each part of the string is the same since the pulley is smooth, which we shall label as <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p><strong>Part 1</strong><br />
+Particle <span class="math notranslate nohighlight">\(P\)</span> does not move vertically, so the net vertical component of force must be zero meaning</p>
+<div class="math notranslate nohighlight">
+\[0 = N - 6g\]</div>
+<p>As <span class="math notranslate nohighlight">\(P\)</span> is moving along the table the friction is the limiting (kinetic) friction meaning <span class="math notranslate nohighlight">\(F_f = \mu N = \frac{1}{3}\times 6g = 2g\)</span>. Using Newton’s Second Law for the horizontal force components on <span class="math notranslate nohighlight">\(P\)</span> we find:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sum F &amp;= ma\\
+T - F_f &amp;= 6a\\
+\therefore T &amp;= 6a + 2g\end{split}\]</div>
+<p>Resolving vertically for <span class="math notranslate nohighlight">\(Q\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}3g - T &amp;= 3a\\
+\therefore 3g - 6a - 2g &amp;= 3a\\
+\text{or } a &amp;= \frac{g}{9}\end{split}\]</div>
+<p><strong>Part 2</strong><br />
+Substituting this value for <span class="math notranslate nohighlight">\(a\)</span> into the equation above for the horizontal forces acting on particle <span class="math notranslate nohighlight">\(P\)</span> gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}T - F_f &amp;= 6a\\
+T - 2g &amp;= 6\times\frac{g}{9} = \frac{2g}{3}\\
+\therefore T &amp;= \frac{2g}{3}+2g = \frac{8g}{3}\end{split}\]</div>
+<p><strong>Part 3</strong><br />
+To find the force exerted on the pulley consider the horizontal and vertical parts of the string separately as shown below.</p>
+<figure class="align-center" id="fig-t3-ex10b">
+<a class="reference internal image-reference" href="_images/T3_Ex10b.png"><img alt="_images/T3_Ex10b.png" src="_images/T3_Ex10b.png" style="width: 60%;" /></a>
+</figure>
+<p>The tension in each part of the string is the same. By Newton’s Third Law there will be equal but opposite tensions at the pulley ends of the strings, also equal to <span class="math notranslate nohighlight">\(T=\frac{8g}{3}\)</span> as found in part 2.</p>
+<p>To calculate the resultant force on the pulley, <span class="math notranslate nohighlight">\(T_P\)</span> we apply the triangle law of addition of vectors which gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}|T_P| &amp;= \sqrt{\left[\left(\frac{8g}{3}\right)^2 + \left(\frac{8g}{3}\right)^2\right]}\\
+        &amp;=\frac{8\sqrt{2}}{3}g\end{split}\]</div>
+<p>and the direction is</p>
+<div class="math notranslate nohighlight">
+\[\theta = \tan^{-1}\left(\frac{|T|}{|T|}\right) = 45^\circ\]</div>
+<p>where this angle is downwards from the table, as indicated in the diagram. If you were using the typical definition of angles being defined anticlockwise from the positivie <span class="math notranslate nohighlight">\(x\)</span> direction (to the right) then <span class="math notranslate nohighlight">\(\theta = 225^\circ\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="gravity-not-assessed">
+<h3>Gravity - Not assessed!<a class="headerlink" href="#gravity-not-assessed" title="Link to this heading">#</a></h3>
+<p><strong>Disclaimer:</strong> This topic is more for completeness and is not part of the assessed course itself.</p>
+<p>When we entertain ourselves by studying how a mass behaves in free fall we typically make two assumptions, that there is no air resistance and that gravity is the only force acting on the mass. This second assumption relies on the approximation that for “small distances” the gravitational force is constant or, more correctly, the change in the force over the small distance is negligible. But what happens if we wanted to calculate the time taken to impact on the Earth, or the impact velocity of a tool dropped by an astronaut undergoing a space walk on the ISS? The force due to gravity is described by</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+F_g &amp;= -\frac{GmM}{r^2}
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(G\)</span> is the gravitational constant, <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(M\)</span> are the masses of the two interacting bodies, and <span class="math notranslate nohighlight">\(r\)</span> is the distance between the two. You may have already seen this but if you have not then worry not as we will cover it in <a class="reference internal" href="Lecture11.html#lecture11"><span class="std std-ref">Lecture 11</span></a>. For now, just accept it as true.</p>
+<p>We are going to now calculate the velocity the dropped tool will have when it hits the surface of the Earth, assuming no atmospheric effects and the tool is dropped from rest.</p>
+<p>If we know the force due to gravity then we can state the acceleration due to gravity,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a_g &amp;= -\frac{GM}{r^2}
+\end{align*}\]</div>
+<p>and we’ll define <span class="math notranslate nohighlight">\(R_E\)</span> as the radius of the Earth, <span class="math notranslate nohighlight">\(h\)</span> as the height of the ISS above the surface of the Earth, and <span class="math notranslate nohighlight">\(r\)</span> is the radial distance of the tool <strong>from the surface of the Earth</strong> (so <span class="math notranslate nohighlight">\(r=0\)</span> occurs then the tool hits the ground).</p>
+<p>The challenging part to this problem comes when we try to link the above equation for acceleration due to gravity with the differential form of acceleration, <span class="math notranslate nohighlight">\(\frac{\mathrm{d}v}{\mathrm{d}t}\)</span>. The acceleration due to gravity acting on the tool is not constant in time as for later times the acceleration will be larger (i.e. the tool is closer to the Earth). One approach to solving this could be to try and calculate the time taken to hit the ground and then find the velocity, but this is a bit tricky as you need an expression for how the acceleration varies in time.</p>
+<p>Instead we can change the differential!</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a = \frac{\mathrm{d}v}{\mathrm{d}t} &amp;= \frac{\mathrm{d}v}{\mathrm{d}r}\,\frac{\mathrm{d}r}{\mathrm{d}t}\\
+			&amp;= v\,\frac{\mathrm{d}v}{\mathrm{d}r}
+\end{align*}\]</div>
+<p>So now we can solve by using the expression for <span class="math notranslate nohighlight">\(a_g\)</span> above, rearranging and integrating,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+-\frac{GM}{r^2}\mathrm{d}r &amp;= v\,\mathrm{d}v\\
+-GM\int\limits_{R_E+h}^{R_E} \frac{\mathrm{d}r}{r^2} &amp;= \int\limits_0^{v_f}v\,\mathrm{d}v\\
+\therefore \frac{v_f^2}{2} 	&amp;= GM\left[\frac{1}{R_E}-\frac{1}{R_E+h}\right]\\
+					&amp;= GM \left(\frac{h}{R_E(R_E+h)}\right)\\
+ \text{so } v_f &amp;= \sqrt{\frac{2GMh}{R_E(R_E+h)}}
+ \end{align*}\]</div>
+<p>A sense check here would be to see what happens when <span class="math notranslate nohighlight">\(h\ll R_E\)</span> meaning the tool is close to the surface and so the gravitational field is roughly constant. When this limit is taken you get the same result you would from the standard suvat-type kinematic equation,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ v_f &amp;= \sqrt{\frac{2GMh}{R_E^2}}=\sqrt{2gh}
+\end{align*}\]</div>
+<p>This may be a rather contrived example but it has some wider reaching benefits beyond the immediate topic. The important part is that if you have a mathematical description for the force related to some physical interaction then you can use this to create lots of insightful models. For example if you knew how the force between two charged particles behaved as a function of separation between them, then you could work out the velocity of one particle if released from rest and the second particle was fixed. Or you could model the motion of charged particles through a field, which forms the basis of an experimental technique known as mass spectrometry.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="fma" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Sorry to any Fullmetal Alchemist fans out there</p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Topic2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Topic 2 - Kinematics and Projectile Motion</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Topic4.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Topic 4 - Energy, Power and Momentum</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axiomata-sive-leges-motus-or-axioms-or-laws-of-motion">“Axiomata Sive Leges Motus’’, or Axioms or Laws of Motion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-law">First Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-law">Second Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#third-law">Third Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-three-laws">Summary of the three laws</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#units-of-force">Units of force</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-forces">Types of forces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weight">Weight</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tension">Tension</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#friction">Friction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultant-forces">Resultant forces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-a-contact-force-into-normal-and-frictional-components">Resolving a contact force into normal (and frictional) components.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-contact-force">Normal contact force</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#friction-and-the-coefficient-of-friction">Friction and the coefficient of friction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertical-motion">Vertical motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics">Dynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-with-constant-forces">Dynamics with constant forces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vertical-motion-with-drag">Vertical motion with drag</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motion-of-two-connected-particles">Motion of two connected particles</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#forces-involving-two-particles-connected-by-a-light-inextensible-string">Forces Involving Two Particles Connected by a Light Inextensible String</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-involving-pulleys">Problems involving pulleys.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gravity-not-assessed">Gravity - Not assessed!</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Matt Mears
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

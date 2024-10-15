@@ -1,0 +1,1009 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 8 - Rotational motion and moments of inertia &#8212; PHY009 - Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Lecture8';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logouni.png" class="logo__image only-light" alt="PHY009 - Mechanics - Home"/>
+    <script>document.write(`<img src="_static/logouni.png" class="logo__image only-dark" alt="PHY009 - Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    PHY009: Foundations of Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PreCourse.html">Pre-course requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic1.html">Topic 1 - Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic2.html">Topic 2 - Kinematics and Projectile Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic3.html">Topic 3 - Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic4.html">Topic 4 - Energy, Power and Momentum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic5.html">Topic 5 - Circular Motion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLecture8.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Lecture8.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 8 - Rotational motion and moments of inertia</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotational-motion-for-constant-angular-acceleration-systems">Rotational motion for constant angular acceleration systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-of-a-rotating-body">Energy of a rotating body</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moment-of-inertia">Moment of inertia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-symmetry">Using symmetry</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-theorems-for-moments-of-inertia">Axis theorems for moments of inertia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paralled-axis-theorem">Paralled axis theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perpendicular-axis-theorem">Perpendicular axis theorem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-8-rotational-motion-and-moments-of-inertia">
+<span id="lecture8"></span><h1>Lecture 8 - Rotational motion and moments of inertia<a class="headerlink" href="#lecture-8-rotational-motion-and-moments-of-inertia" title="Link to this heading">#</a></h1>
+<p>In <a class="reference internal" href="Lecture7.html#lecture7"><span class="std std-ref">Lecture 7</span></a> we considered the forces acting on a circular system. What you will find, if you haven’t spotted it already, is that there is generally a rotational counterpart to all of the linear topics we have studied so far. Last time we looked at forces and in this chapter we are going to consider the kinematic equations for a rotating system, before moving on to consider how we need to rethink mass for rotating objects.</p>
+<section id="rotational-motion-for-constant-angular-acceleration-systems">
+<h2>Rotational motion for constant angular acceleration systems<a class="headerlink" href="#rotational-motion-for-constant-angular-acceleration-systems" title="Link to this heading">#</a></h2>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In a similar style to <a class="reference internal" href="Lecture2.html#sec-c2-non-suvat"><span class="std std-ref">non-constant acceleration in Lecture 2</span></a> we could consider the non-constant angular acceleration system, but for the purposes of what you need to learn for this course that is something we can skip.</p>
+</div>
+</aside>
+<p>We are going to only consider rotating systems that have a constant angular acceleration <span class="math notranslate nohighlight">\(\alpha_0\)</span>. If our angular acceleration is constant then</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\alpha(t) &amp;= \alpha_0
+\end{align*}\]</div>
+<p>but we can also make use of the definition that the angular acceleration is the rate of change of angular velocity <span class="math notranslate nohighlight">\(\omega\)</span>, thus</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{\mathrm{d}\omega}{\mathrm{d}t} &amp;= \alpha_0\\
+\int_0^t \frac{\mathrm{d}\omega}{\mathrm{d}t}\mathrm{d}t &amp;= \int_0^t\alpha_0 \, \mathrm{d}t\\
+\therefore \omega(t) &amp;= \alpha t + c_1
+\end{align*}\]</div>
+<p>We can substitute in <span class="math notranslate nohighlight">\(t=0\)</span> to find this constant of integration because <span class="math notranslate nohighlight">\(\omega(t=0)\)</span> is simply the initial angular velocity <span class="math notranslate nohighlight">\(\omega_0\)</span>, so <span class="math notranslate nohighlight">\(c_1 = \omega_0\)</span>. Therefore</p>
+<div class="math notranslate nohighlight" id="equation-eq-c8-rot-eq1">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c8-rot-eq1" title="Link to this equation">#</a></span>\[\omega(t) = \alpha_0 t + \omega_o\]</div>
+<p>Take a moment to look at this expression. It looks remarkably similar to the constant acceleration kinematic equations for a linear system, in this case the <span class="math notranslate nohighlight">\(v(t) = at + v_0\)</span> equation. Swap linear velocities <span class="math notranslate nohighlight">\(v\)</span> for angular velocities <span class="math notranslate nohighlight">\(\omega\)</span>, and do the same for accelerations <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(\alpha\)</span>, and you can easily remember one set if you remember the other set.</p>
+<p>For completeness though we will actually derive the kinematic equation for angular displacement. Starting from equation <a class="reference internal" href="#equation-eq-c8-rot-eq1">()</a> and noting that the angular velocity is the rate of change of angle we can show</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{\mathrm{d}\theta}{\mathrm{d}t} &amp;= \alpha_0 t + \omega_0\\
+\int_0^t \frac{\mathrm{d}\theta}{\mathrm{d}t}\mathrm{d}t &amp;= \int_0^t \alpha_0 t + \omega_0\,\mathrm{d}t\\
+\therefore \theta(t) &amp;= \frac{\alpha_0 t^2}{2} + \omega_0 t + c_2
+\end{align*}\]</div>
+<p>Once again we make use of the initial conditions that for when <span class="math notranslate nohighlight">\(t=0\)</span> we have the initial displacement <span class="math notranslate nohighlight">\(\theta(t=0)=\theta_0\)</span> so putting these into the equation above means that <span class="math notranslate nohighlight">\(c_2 = \theta_0\)</span>. So finally we find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\theta(t) &amp;= \frac{\alpha_0t^2}{2}+\omega_0t+\theta_0
+\end{align*}\]</div>
+<p>You should hopefully be able to see the similarites between this equation and the linear kinematic equation counterpart (<span class="math notranslate nohighlight">\(x(t) = \frac{at^2}{2}+v_0t+x_0)\)</span>.</p>
+<p>Using these kinematic equations is very similar to the linear version. You will get more practice of these in the tutorials and homeworks but you can find other practice questions in any undergraduate physics textbook.</p>
+</section>
+<section id="energy-of-a-rotating-body">
+<span id="sec-c8-energy"></span><h2>Energy of a rotating body<a class="headerlink" href="#energy-of-a-rotating-body" title="Link to this heading">#</a></h2>
+<p>A logical next step will be to consider the total kinetic energy of a rotating body, firstly by examining an individual particle moving on a circular path but then developing this idea to an extended solid body rotating about some axis.</p>
+<p>For the individual particle case we use our standard equation for the kinetic energy but note that the velocity is the tangential velocity. A justification for this is that if the centripetal force were to suddenly vanish the particle would move off in a straight line at the tengential velocity and therefore would have kinetic energy <span class="math notranslate nohighlight">\(\frac{1}{1}mv_t^2\)</span>. However we now have an relationship between the tangential and angular velocities which allows us to define the kinetic energy of an individual particle moving in a circular path of radius <span class="math notranslate nohighlight">\(r_i\)</span> as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+KE_i = \frac{m_iv_i^2}{2} &amp;= \frac{m_ir_i^2\omega^2}{2}
+\end{align*}\]</div>
+<p>where the subscripts <span class="math notranslate nohighlight">\(i\)</span> indicate an individual particle, notation that will become very useful shortly.</p>
+<p>Let us now move on to the extended solid body case. The way we treat this system is by breaking the single solid body down into the sum of individual particles all rotating about a common axis. It then follows that the total kinetic energy of the solid body is equal to the sum of the kinetic energies of these individual particles.</p>
+<p>In <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C8_energy</span></code> I have picked out two specific particles, labelled with subscripts 1 and 2, to highlight the differences. Particle 1 of mass <span class="math notranslate nohighlight">\(m_1\)</span> follows a circular path of radius <span class="math notranslate nohighlight">\(r_1\)</span> and has tangential velocity <span class="math notranslate nohighlight">\(v_1\)</span> whereas particle two has different mass <span class="math notranslate nohighlight">\(m_2\)</span>, radius <span class="math notranslate nohighlight">\(r_2\)</span> and tangential velocity <span class="math notranslate nohighlight">\(v_2\)</span>. What they <strong>do</strong> have in common is the angular velocity <span class="math notranslate nohighlight">\(\omega\)</span> - the angular velocity must be the same for all particles that make up the solid body if the body were to remain in the same shape and not skew or distort. You’ll also note that I have not made the assumption here that the masses of each particle are the same. This allows me to be more general in the subsequent treatments for bodies that have non-uniform densities, although in practice we will usually stick to the uniform case when solving problems in this course.</p>
+<figure class="align-center" id="fig-c8-energy">
+<a class="reference internal image-reference" href="Figures/C8_energy.png"><img alt="A randomly shaped blob rotating about some axis. This mass is split into small pieces, each of which have their own distance from the axis of rotation and tangential velocity. All mass pieces are moving with the same angular velocity." src="Figures/C8_energy.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-text">A randomly shaped blob rotating about some axis. This mass is split into small pieces, each of which have their own distance from the axis of rotation and tangential velocity. All mass pieces are moving with the same angular velocity.</span><a class="headerlink" href="#fig-c8-energy" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The total kinetic energy <span class="math notranslate nohighlight">\(KE_T\)</span> of the solid body is the sum of the individual kinetic energies of the particles, and so</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+KE_T &amp;= \sum_i\frac{m_ir_i^2\omega^2}{2}\\
+	&amp;= \frac{\omega^2}{2}\sum_im_ir_i^2\\
+	&amp;=\frac{I\omega^2}{2}
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(I\)</span> is the moment of inertia defined by <span class="math notranslate nohighlight">\(\sum_im_ir_i^2\)</span>. Note that this equation for the total kinetic energy is similar to the equation for our linear systems <span class="math notranslate nohighlight">\(\left(\frac{mv^2}{2}\right)\)</span> where <span class="math notranslate nohighlight">\(\omega\)</span> is the rotational counterpart to <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(I\)</span> is therefore the counterpart to <span class="math notranslate nohighlight">\(m\)</span>. But what exactly <strong>is</strong> the moment of inertia? Why does the “mass like” term in the kinetic energy of a rotating body have units of mass <span class="math notranslate nohighlight">\(\times\)</span> length<span class="math notranslate nohighlight">\(^2\)</span>?</p>
+</section>
+<section id="moment-of-inertia">
+<h2>Moment of inertia<a class="headerlink" href="#moment-of-inertia" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This topic is historically the one that students find the most difficult of the entire Mechanics course. So if you do not understand it immediately, don’t worry. It is something that makes more sense when you re-read it a few times in conjunction with working through some derivations and practice questions.</p>
+</div>
+<p>To get an understanding of what moment of inertia is I want to return to our old friend Newton’s Second Law but to reframe what it means. Taking the simple case where the mass remains constant, i.e. we use <span class="math notranslate nohighlight">\(F=ma\)</span> then it is possible to redefine the mass as a measure of resistance to changes in linear motion. In the Second Law equation <span class="math notranslate nohighlight">\(m\)</span> is a constant of proportionality and if this constant is larger then a larger force is required to cause the same acceleration (hence being a measure of resistance).</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We will revisit this in <a class="reference internal" href="Lecture10.html#lecture10"><span class="std std-ref">Lecture 10</span></a> when we learn about torque.</p>
+</div>
+</aside>
+<p>The moment of inertia is the rotational analogue; it is the resistance to changes in rotational motion.</p>
+<p>There is a key difference between mass and moment of inertia. The mass of an object is intrinsic to it, and when we want to accelerate a body of mass <span class="math notranslate nohighlight">\(m\)</span> along a straight line it does not matter how this mass is distributed. The same is not true for a rotating body. The resistance to changing the rotational motion of a body depends not only on how much mass the body has but how this mass is distributed <strong>with respect to the axis of rotation</strong>. We will explore this further in a couple of worked examples below and some in your tutorials, but table 9.2 in the core textbook shows the range of geometries we will consider in this course.</p>
+<p>Before we embark on some worked examples we need to make one final adjustment to our definition of the moment of inertia. In the definition above we are taking a simple summation of discrete particles of equal mass <span class="math notranslate nohighlight">\(\Delta m\)</span> but it is more useful to take the limit of this as the masses tend to <span class="math notranslate nohighlight">\(0\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq-c8-moi">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c8-moi" title="Link to this equation">#</a></span>\[\begin{split}I &amp;= \lim\limits_{\Delta m \to 0}\sum_i r_i^2\Delta m\nonumber\\
+	&amp;= \int r^2\, \mathrm{d}m\end{split}\]</div>
+<p>The general procedure for solving this integral is:</p>
+<ol class="arabic simple">
+<li><p>Split the body up into small mass elements <span class="math notranslate nohighlight">\(\mathrm{d}m\)</span></p></li>
+<li><p>Change <span class="math notranslate nohighlight">\(\mathrm{d}m\)</span> into a distance element, assuming the body has a uniform density.</p></li>
+<li><p>Integrate equation <a class="reference internal" href="#equation-eq-c8-moi">()</a> over this substituted distance element, noting that the limits should cover the whole length of the body with respect to the axis of rotation.</p></li>
+</ol>
+<p>In some cases we can deviate from this general procedure but this is very much dependent on the geometry of the system.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>All moment of inertias will be of the form <span class="math notranslate nohighlight">\(cMR^2\)</span> or <span class="math notranslate nohighlight">\(cML^2\)</span>, i.e mass times distance squared, with some numerical prefactor <span class="math notranslate nohighlight">\(c\)</span> that depends on the geometry of the system <strong>and</strong> the location of the axis of rotation.</p>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Moment of inertia of a ring / thin cylinder</p>
+<p>Consider a ring or hoop of mass <span class="math notranslate nohighlight">\(M\)</span> and radius <span class="math notranslate nohighlight">\(R\)</span> rotating in the <span class="math notranslate nohighlight">\((x,y)\)</span> plane with the origin at the centre of the ring (i.e. the centre of mass).  We split the hoop up into an infinite number of thin slices each of mass <span class="math notranslate nohighlight">\(\mathrm{d}m\)</span>, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C8_hoop</span></code>.</p>
+<figure class="align-center" id="fig-c8-hoop">
+<a class="reference internal image-reference" href="Figures/C8_hoop.png"><img alt="A thin hoop of mass $M$ rotating about a point through the centre of the hoop and perpendicular to the plane of the hoop. The hoop is split into small mass elements, each of which are a distance $R$ from the axis of rotation." src="Figures/C8_hoop.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">A thin hoop of mass <span class="math notranslate nohighlight">\(M\)</span> rotating about a point through the centre of the hoop and perpendicular to the plane of the hoop. The hoop is split into small mass elements, each of which are a distance <span class="math notranslate nohighlight">\(R\)</span> from the axis of rotation.</span><a class="headerlink" href="#fig-c8-hoop" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>At this point we can deviate slightly from the general procedure I set out previously. The reason we can do this for a hoop or ring is because in this very specific geometry and axis configuration the distance of each of the elements to the axis is constant, in this case it is the radius of the hoop. This means that for this example we can take <span class="math notranslate nohighlight">\(R\)</span> outside of the integral which gives</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+I_\text{hoop} &amp;= R^2\int_0^m \,\mathrm{d}m\\
+	&amp;= MR^2
+\end{align*}\]</div>
+</div>
+<div class="dropdown tip admonition" id="sec-c8-rod">
+<p class="admonition-title">Moment of inertia of a thin uniform rod</p>
+<p>Consider a thin uniform rod of mass <span class="math notranslate nohighlight">\(m\)</span> and length <span class="math notranslate nohighlight">\(L\)</span> as shown in figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C8_rod</span></code>. By “thin” we assume the radius of the rod is negligible. We first rotate the rod about an axis perpendicular to the length of the rod and passing through the centre of mass (labelled (a) in the figure).</p>
+<figure class="align-center" id="fig-c8-rod">
+<a class="reference internal image-reference" href="Figures/C8_rod.png"><img alt="Schematic of a thin uniform rod of mass $m$ and length $L$ rotating about an axis a) through the centre of the bar or b) through the end of the bar. Both axes are perpendicular to the length of the bar. The bar is split into small masses, each some distance $r$ from the axis of rotation." src="Figures/C8_rod.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">Schematic of a thin uniform rod of mass <span class="math notranslate nohighlight">\(m\)</span> and length <span class="math notranslate nohighlight">\(L\)</span> rotating about an axis a) through the centre of the bar or b) through the end of the bar. Both axes are perpendicular to the length of the bar. The bar is split into small masses, each some distance <span class="math notranslate nohighlight">\(r\)</span> from the axis of rotation.</span><a class="headerlink" href="#fig-c8-rod" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is different to the thin ring / thin cylinder case where all mass elements had the same distance so we could treat <span class="math notranslate nohighlight">\(r\)</span> as constant. That is rarely the case for most geometries.</p>
+</div>
+</aside>
+<p>We need to split our rod up into thin slices with mass elements <span class="math notranslate nohighlight">\(\mathrm{d}m\)</span> each with their own distance <span class="math notranslate nohighlight">\(r\)</span> from the axis of rotation. Now we cannot simply integrate the variable <span class="math notranslate nohighlight">\(r\)</span> with respect to <span class="math notranslate nohighlight">\(\mathrm{d}m\)</span> - we need to change one of these parameters into the same units as the other. To do this we make use of the fact that the rod is uniform which means the linear mass density <span class="math notranslate nohighlight">\(\lambda\)</span> of the whole rod is the same as the density for our thin mass element of thickness <span class="math notranslate nohighlight">\(\mathrm{d}r\)</span>. Thus</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\lambda = \frac{m}{L} &amp;= \frac{\mathrm{d}m}{\mathrm{d}r}\\
+\therefore \mathrm{d}m &amp;= \frac{m}{L}\,\mathrm{d}r
+\end{align*}\]</div>
+<p>We substitute this expression into our general form for the moment of inertial (equation <a class="reference internal" href="#equation-eq-c8-moi">()</a>) and solve</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+I_\text{rod, CM} &amp;= \frac{m}{L}\int_{-L/2}^{L/2}r^2\,\mathrm{d}r\\
+&amp;= \frac{m}{L}\left[\frac{r^3}{3}\right]_{-L/2}^{L/2}\\
+&amp;= \frac{1}{12}ML^2
+\end{align*}\]</div>
+<p>Spinning a rod about the centre is not the only way to do it. What happens if instead we spin the exact same rod about one of the end points, in this case the axis labelled (b) in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C8_rod</span></code>? The derivation above is identical however because our zero point is now at one end of the bar we need to change the limits of integration. Therefore</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+I_{rod, end} &amp;= \frac{m}{L}\int_{0}^{L}r^2\,\mathrm{d}r\\
+&amp;= \frac{m}{L}\left[\frac{r^3}{3}\right]_{0}^{L}\\
+&amp;= \frac{1}{3}ML^2
+\end{align*}\]</div>
+<p>So we have two different moments of inertia for the exact same rod. The difference here is that the location of the axis of rotation changes, so you must be vigilant and explicit in defining your axes. A diagram will always help.</p>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Moment of inertia of a thin hollow sphere (a shell)</p>
+<p>There are a number of ways to calculate the moment of inertia of a shell rotating about an axis that passes through the centre of mass (i.e. through the diameter of the shell). In the core textbook they show how you can construct this moment of inertia as the sum of an infinite number of thin hoops who radii increase and decrease from top to bottom of the shell. This works but because this approach uses Cartesian coordinates to describe a spherical system the algebra can get a little messy. Instead I am going to describe an alternative approach that makes use of spherical coordinate systems which are, by their very definition, well suited for describing spherical systems.</p>
+<p>Firstly we split the shell up into small rectangles of area <span class="math notranslate nohighlight">\(\mathrm{d}A\)</span>. We use the spherical coordinates <span class="math notranslate nohighlight">\(R\)</span> as the distance from the origin to the volume element, <span class="math notranslate nohighlight">\(\theta\)</span> is the azimuthal angle and <span class="math notranslate nohighlight">\(\phi\)</span> is the zenith angle. These are shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C8_shell</span></code>.</p>
+<figure class="align-center" id="fig-c8-shell">
+<a class="reference internal image-reference" href="Figures/C8_shell.png"><img alt="Schematic of a thin spherical shell rotating about an axis through the diameter of the shell. The mass is split into small surface areas with the small area defined using spherical polar coordinates $(r,\theta,\phi)$." src="Figures/C8_shell.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">Schematic of a thin spherical shell rotating about an axis through the diameter of the shell. The mass is split into small surface areas with the small area defined using spherical polar coordinates <span class="math notranslate nohighlight">\((r,\theta,\phi)\)</span>.</span><a class="headerlink" href="#fig-c8-shell" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This area element can be defined in terms of the three components of the spherical coordinate system, namely</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathrm{d}A &amp;= R^2\sin\phi\,\mathrm{d}\theta\,\mathrm{d}\phi
+\end{align*}\]</div>
+<p>and so the mass of this area element is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathrm{d}m &amp;= \sigma R^2\sin\phi\,\mathrm{d}\theta\,\mathrm{d}\phi
+\end{align*}\]</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="math notranslate nohighlight">\(R\)</span> is the distance from the origin, i.e. the radius of the sphere. For a rotating system we need the perpendicular distance from mass element to axis of rotation.</p>
+</div>
+</aside>
+<p>where <span class="math notranslate nohighlight">\(\sigma\)</span> is the area density (mass per unit area). We next need to determine an expression for the distance from the axis of rotation to the mass element, which is <strong>not</strong> the same as <span class="math notranslate nohighlight">\(R\)</span>. Some simple trigonometry tells us that <span class="math notranslate nohighlight">\(r=R\sin\phi\)</span>, and we can now substitute this into our mass element expression above which in turn we substitute into equation <a class="reference internal" href="#equation-eq-c8-moi">()</a> and solve:</p>
+<div class="math notranslate nohighlight" id="equation-eq-c8-shell1">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c8-shell1" title="Link to this equation">#</a></span>\[\begin{split}I_\text{shell} &amp;= \int r^2\,\mathrm{d}m\nonumber\\
+&amp;= \int r^2 \sigma R^2\sin\phi\,\mathrm{d}\theta\,\mathrm{d}\phi\nonumber\\
+&amp;= \int R^2\sin^2\phi \sigma R^2\sin\phi\,\mathrm{d}\theta\,\mathrm{d}\phi\nonumber\\
+&amp;= R^4\sigma \int_0^{2\pi}\mathrm{d\theta}\int_0^{\pi} \sin^3\phi\,\mathrm{d}\phi\nonumber\\
+&amp;= 2\pi\sigma R^4 \int_0^{\pi} \sin^3\phi\,\mathrm{d}\phi\end{split}\]</div>
+<p>To solve this integral we use a fairly common technique that you should see in your maths course but I will show without explanation here.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\int_0^{\pi} \sin^3\phi\,\mathrm{d}\phi &amp;= \int_0^{\pi} \sin\phi\sin^2\phi\,\mathrm{d}\phi\\
+	&amp;= \int_0^{\pi} \sin\phi\left(1-\cos^2\phi\right)\,\mathrm{d}\phi\\
+		&amp;= \int_0^{\pi} \sin\phi\,\mathrm{d}\phi - \int_0^{\pi} \sin\phi\cos^2\phi\,\mathrm{d}\phi\\
+		&amp;=\int_0^{\pi} \sin\phi\,\mathrm{d}\phi - \int_{-1}^{1}u^2\,\mathrm{d}u\\
+		&amp;= \left[-\cos\phi\right]_0^{\pi} - \left[\frac{u^3}{3}\right]_{-1}^1\\
+		&amp;= \frac{4}{3}
+\end{align*}\]</div>
+<p>We can use this result for the integral in equation <a class="reference internal" href="#equation-eq-c8-shell1">()</a> to finally find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+I_\text{shell} &amp;= 2\pi\sigma R^4  \times \frac{4}{3}\\
+ &amp;= \frac{2}{3}MR^2
+ \end{align*}\]</div>
+<p>where we have used <span class="math notranslate nohighlight">\(\sigma = \dfrac{M}{4\pi R^2}\)</span> by definition.</p>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Moment of inertia of solid sphere</p>
+<p>This system shares a lot of similarities with the thin hollow sphere, but instead of adding up lots of small area elements <span class="math notranslate nohighlight">\(\mathrm{d}A\)</span> we instead need to add up lots of small volume elements <span class="math notranslate nohighlight">\(\mathrm{d}V\)</span>.</p>
+<p>We also can no longer set the radius as a constant value <span class="math notranslate nohighlight">\(R\)</span>, as the small volume elements range from at the centre of the sphere out to the edge. If the define this distance to origin of the volume element as <span class="math notranslate nohighlight">\(s\)</span> then we can state <span class="math notranslate nohighlight">\(0\leq s \leq R\)</span>.</p>
+<p>Thus</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathrm{d}V = s^2\sin\phi\,\mathrm{d}s\,\mathrm{d}\theta\,\mathrm{d}\phi\\
+\therefore \mathrm{d}m = \rho s^2\sin\phi\,\mathrm{d}s\,\mathrm{d}\theta\,\mathrm{d}\phi\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho\)</span> is the density of the sphere.</p>
+<p>Using the same definition for <span class="math notranslate nohighlight">\(r\)</span> as in the thin hollow shell case we now find that</p>
+<div class="math notranslate nohighlight">
+\[r = s\sin\phi\]</div>
+<p>which allows us to find</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}I_\text{sphere} &amp;= \int r^2\,\mathrm{d}m\\
+&amp;= \rho\int s^2 \sin^2\phi s^2\sin\phi\,\mathrm{d}s\,\mathrm{d}\theta\,\mathrm{d}\phi\\
+&amp;= \rho\int_0^Rs^4\,\mathrm{d}s\int_0^\pi\sin^3\phi\,\mathrm{d}\phi\int_0^{2\pi}\mathrm{d}\theta\\
+&amp;= \rho\frac{R^5}{5}\times\frac{4}{3}\times 2\pi = \frac{8\pi\rho R^5}{15}\end{split}\]</div>
+<p>Finally we use <span class="math notranslate nohighlight">\(\rho = \frac{M}{V}=\frac{3M}{4\pi R^3}\)</span> to find</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}I_\text{sphere} &amp;= \frac{8\pi R^5}{15}\times \frac{3M}{4\pi R^3}\\
+&amp;= \frac{2}{5}MR^2\end{split}\]</div>
+</div>
+<section id="using-symmetry">
+<h3>Using symmetry<a class="headerlink" href="#using-symmetry" title="Link to this heading">#</a></h3>
+<p>All of the examples we have considered so far have been solved by adding up the moment of inertia contributions from small point masses across the whole extended shape we are interested in. In other words</p>
+<div class="math notranslate nohighlight" id="equation-eq-moi-symm">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-moi-symm" title="Link to this equation">#</a></span>\[I = \int\mathrm{d}I\]</div>
+<p>This may seem a silly statement to make but it does allow us to leverage symmetry to make the process easier for certain shapes. If it is possible to construct one shape out of an infinite number of another shape <strong>for which we know the moment of inertia expression</strong>, then we can use <a class="reference internal" href="#equation-eq-moi-symm">()</a> with the moment of inertia for these “infinite shapes” on the right hand side.</p>
+<p>This is a lot clearer by going through two more examples, the solid disc and the solid sphere.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Moment of inertia of a thin solid disc</p>
+<p>We can consider a solid disc to be made up of a series of infinitely thin concentric rings of increasing radii, starting from <span class="math notranslate nohighlight">\(r=0\)</span> and going up to <span class="math notranslate nohighlight">\(r=R\)</span>. We know the moment of inertia of a ring is <span class="math notranslate nohighlight">\(I_\text{ring}= MR^2\)</span> so an infinitesimal ring is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}dI_\text{ring} &amp;= r^2\,\mathrm{d}m\\
+    &amp;= r^2 \sigma,\mathrm{d}A\\
+    &amp;= r^2 \frac{M}{A}\times 2\pi r\,\mathrm{d}r\end{split}\]</div>
+<p>where the surface area of a hoop of infinitesimal thickness is <span class="math notranslate nohighlight">\(\mathrm{d}A=2\pi r\,\mathrm{d}r\)</span>.</p>
+<p>Substitute this expression into <a class="reference internal" href="#equation-eq-moi-symm">()</a> gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}I_\text{disc} &amp;= \int \mathrm{d}I_\text{ring}\\
+    &amp;= \frac{M}{A}2\pi \int_0^Rr^3\,\mathrm{d}r\\
+    &amp;= \frac{2\pi M}{\pi R^2} \times \frac{R^4}{4}\\
+    &amp;= \frac{1}{2}MR^2\end{split}\]</div>
+<p>You can derive this from small mass elements, like we’ve done in the previous examples. That’s an exercise for you to try if you want - you will get the same result as above.</p>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Moment of inertia of solid sphere - shell method</p>
+<p>The conceptual idea here is that a solid sphere can be made from an infinite series of infinitely thin shells, a bit like an onion. So the total moment of inertia is</p>
+<div class="math notranslate nohighlight">
+\[I_\text{sphere} = \int \mathrm{d}I_\text{shell}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathrm{d}I_\text{shell} &amp;= \frac{2}{3}r^2\,\mathrm{d}m\\
+    &amp;= \frac{2}{3}r^2 \rho \mathrm{d}V\\
+    &amp;= \frac{2}{3}r^2 \rho 4\pi r^2 \mathrm{d}r\end{split}\]</div>
+<p>where the expression <span class="math notranslate nohighlight">\(\mathrm{d}V=4\pi r^2 \mathrm{d}r\)</span> is the volume of a thin shell of radius <span class="math notranslate nohighlight">\(r\)</span> and thickness <span class="math notranslate nohighlight">\(\mathrm{d}r\)</span>. Thus</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}I_\text{sphere} &amp;= \frac{2\pi}{3}\frac{3M}{4\pi R^2}4\pi\int_0^R r^4\mathrm{d}r\\
+    &amp;= \frac{2M}{R^3} \frac{R^5}{5}\\
+    &amp;= \frac{2}{5}MR^2\\\end{split}\]</div>
+<p>Before I finish, it’s worth pointing out that there is another way to derive the moment of inertia for a solid sphere. Instead of adding up an infinite number of thin shells you can add up an infinite number of discs, stacked on the <span class="math notranslate nohighlight">\(z\)</span> axis going from a very small radius (at <span class="math notranslate nohighlight">\(z=R\)</span>), up to a maximum of <span class="math notranslate nohighlight">\(R\)</span>, then back down to very small at <span class="math notranslate nohighlight">\(z=-R\)</span>.
+I’m not going to derive this here as it’s in the core textbook and a number of websites.</p>
+</div>
+</section>
+</section>
+<section id="axis-theorems-for-moments-of-inertia">
+<h2>Axis theorems for moments of inertia<a class="headerlink" href="#axis-theorems-for-moments-of-inertia" title="Link to this heading">#</a></h2>
+<p>In the real world we often want to calculate the moment of inertia for a body about an axis that does not lend itself to a nice symmetry of mass distribution. You will see this in one of the tutorial questions where we examine in great depth the opening of a swing bin lid.</p>
+<p>There are two theorems that come to our aid, the parallel axis theorem and the perpendicular axis theorem. These are extremely useful as they allow us to translate from rotation about one axis to another axis so long as the new one is either parallel or perpendicular to the first axis. In practice this means we often start with one of the nice symmetric systems and shift our axes to suit.</p>
+<p>For example if we wanted to calculate the moment of inertia of a hula hoop being spun around on your wrist then we can start with the moment of inertia for the hoop through the centre of mass (i.e. the centre of the hoop) and shift the axis by a distance equal to the radius of the hoop.</p>
+<p>You are able to prove these theorems fairly easily but for the purpose of this course you will not be expected to remember the proofs. The results are worth remembering but knowing how to derive them can be helpful in a pinch if you cannot remember the final equations.</p>
+<section id="paralled-axis-theorem">
+<h3>Paralled axis theorem<a class="headerlink" href="#paralled-axis-theorem" title="Link to this heading">#</a></h3>
+<p>The moment of inertia about a parallel axis some distance <span class="math notranslate nohighlight">\(D\)</span> away from the centre of mass axis is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-025b4e28-a0c8-4c78-9236-e2638c35432f">
+<span class="eqno">()<a class="headerlink" href="#equation-025b4e28-a0c8-4c78-9236-e2638c35432f" title="Permalink to this equation">#</a></span>\[\begin{align}
+I &amp;= I_{\text{CM}} + MD^2
+\end{align}\]</div>
+</section>
+<section id="perpendicular-axis-theorem">
+<h3>Perpendicular axis theorem<a class="headerlink" href="#perpendicular-axis-theorem" title="Link to this heading">#</a></h3>
+<p>If the moments of inertia about the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axis are known then the moment of inertia about <span class="math notranslate nohighlight">\(z\)</span> is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+I_z &amp;= I_x + I_y
+\end{align*}\]</div>
+<p>Note that my choice of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> is arbitrary. <span class="math notranslate nohighlight">\(I_x = I_y + I_z\)</span> is equally valid. The important point is that the three axes involved are perpendicular to each other.</p>
+</section>
+</section>
+<section id="lecture-questions">
+<h2>Lecture Questions<a class="headerlink" href="#lecture-questions" title="Link to this heading">#</a></h2>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 1</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Question</label><div class="sd-tab-content docutils">
+<p>The cable supporting an elevator runs over a wheel of radius <span class="math notranslate nohighlight">\(R=0.36\text{ m}\)</span>. If the elevator begins from rest and ascends with an upward acceleration of <span class="math notranslate nohighlight">\(0.60\text{ m s}^{-1}\)</span>, what is the angular acceleration of the wheel? How many turns does the wheel make if this accelerated motion lasts <span class="math notranslate nohighlight">\(5.0\text{ s}\)</span>?</p>
+<p>Assume that the cable runs over the wheel without slipping.</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Hint</label><div class="sd-tab-content docutils">
+<p>Think about what the “no slipping” condition means in terms of the velocity of the wheel and the cable.</p>
+<p>Also note that the question asks for the number of <strong>turns</strong>.</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Solution</label><div class="sd-tab-content docutils">
+<p>If there is no slipping then the speed of the cable must always equal the tangential speed of a point on the rim of the wheel. The acceleration of the elevator must therefore be the same as the tangential acceleration of a point on the rim of the wheel, such that</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a = a_{\text{tangential}} &amp;= \alpha R\\
+\therefore \alpha &amp;= \frac{a}{R}\\
+	&amp;= \frac{0.60}{0.36} = 1.7 \text{ radians s}^{-2}
+	\end{align*}\]</div>
+<p>The angular displacement over this 5.0 s period is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\Delta\phi &amp;= \omega_0t+\frac{1}{2}\alpha t^2\\
+&amp;= \frac{1.7 \times 5^2}{2}\\
+&amp;= 21 \text{ radians}
+\end{align*}\]</div>
+<p>The question asks for the number of turns which is found from</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\text{Turns} &amp;= \frac{\Delta\phi}{2\pi} = 3.3\text{ revolutions}
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 2</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Question</label><div class="sd-tab-content docutils">
+<p>A motor rotates a circular saw wheel, beginning from rest, with an angular acceleration that has an initial value <span class="math notranslate nohighlight">\(\alpha_0 = 60\text{ radians s}^{-2}\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span> and decreases to zero acceleration during the interval <span class="math notranslate nohighlight">\(0\leq t\leq3.0\text{ s}\)</span> according to</p>
+<div class="math notranslate nohighlight">
+\[\alpha(t)=\alpha_0\left(1-\frac{t}{3.0}\right)\]</div>
+<p>After <span class="math notranslate nohighlight">\(t=3.0\text{ s}\)</span> the motor maintains the wheel’s angular velocity at a constant value.</p>
+<ol class="arabic simple">
+<li><p>What is the final constant angular velocity?</p></li>
+<li><p>How many revolutions occur in the process of the wheel “getting up to speed” (i.e. in the time between <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(t=3\)</span>)?</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Hint</label><div class="sd-tab-content docutils">
+<p>Remember to check your assumptions before jumping straight into the memorised equations of motion. Constant acceleration isn’t always the case…</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Solution</label><div class="sd-tab-content docutils">
+<p><strong>1</strong>
+The angular acceleration is given as an explicit function of time so we cannot simply use the constant angular acceleration kinematic equations. But we know the form the acceleration takes (given in the question) so we can solve using <span class="math notranslate nohighlight">\(\alpha = \frac{\mathrm{d}\omega}{\mathrm{d}t}\)</span></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathrm{d}\omega &amp;= \alpha(t)\,\mathrm{d}t\\
+\int\limits_{\omega_0}^\omega \mathrm{d}\omega&amp;= \int\limits_0^t\alpha(t)\,\mathrm{d}t\\
+\therefore \omega &amp;= \alpha_0\int\limits_0^t\left(1-\frac{t}{3}\right)\,\mathrm{d}t\\
+			&amp;=\alpha_0\left(t-\frac{t^2}{6}\right)
+\end{align*}\]</div>
+<p>where we make use the initial condition that <span class="math notranslate nohighlight">\(\omega_0=0\)</span>. Substituting the value for <span class="math notranslate nohighlight">\(t=3\)</span> gives <span class="math notranslate nohighlight">\(\omega = 90\text{ radians s}^{-1}\)</span>.</p>
+<p><strong>2</strong>
+We need to find the change in angular position over the stated time period, which is found using <span class="math notranslate nohighlight">\( \omega= \dfrac{\mathrm{d}\phi}{\mathrm{d}t}\)</span> and the expression for <span class="math notranslate nohighlight">\(\omega(t)\)</span> found in part (1).</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathrm{d}\phi &amp;= \omega\,\mathrm{d}t\\
+\int\limits_{\phi_0}^\phi \mathrm{d}\phi&amp;= \int\limits_0^t\omega(t)\,\mathrm{d}t\\
+\phi-\phi_0 = \Delta\phi &amp;= \alpha_0\int\limits_0^t\left(t-\frac{t^2}{6}\right)\,\mathrm{d}t\\
+&amp;= \alpha_0\left[\frac{t^2}{2}-\frac{t^3}{18}\right]_0^t\\
+&amp;=\alpha_0\left(\frac{t^2}{2}-\frac{t^3}{18}\right)
+\end{align*}\]</div>
+<p>Evaluating this at <span class="math notranslate nohighlight">\(t=3.0\text{ s}\)</span> gives <span class="math notranslate nohighlight">\(\Delta\phi = 180\text{ radians}\)</span> and so the number of revolutions <span class="math notranslate nohighlight">\(=\dfrac{180}{2\pi} = 29\text{ revolutions}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 3</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+Question</label><div class="sd-tab-content docutils">
+<p>Two people are sitting on a massless seesaw, on either side of the fulcrum (i.e the pivot point). Person <span class="math notranslate nohighlight">\(L\)</span> is on the left of the fulcrum at a distance of <span class="math notranslate nohighlight">\(1.85\)</span> m and has mass <span class="math notranslate nohighlight">\(50\)</span> kg whereas person <span class="math notranslate nohighlight">\(R\)</span> on the right is <span class="math notranslate nohighlight">\(1.15\)</span> m from the fulcrum and has mass <span class="math notranslate nohighlight">\(80\)</span> kg. If the (instantaenous) angular velocity of the seesaw is <span class="math notranslate nohighlight">\(0.40\text{ radians s}^{-1}\)</span> and assuming the people are particles(!), calculate the kinetic energy of the system by considering:</p>
+<ol class="arabic simple">
+<li><p>the individual kinetic energies of the people / particles,</p></li>
+<li><p>the single system comprised of both people / particles.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+Hint</label><div class="sd-tab-content docutils">
+<p>This is a mixture of linear kinematics and rotational kinematics. Be careful to use the right one in the right place.</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+Solution</label><div class="sd-tab-content docutils">
+<p><strong>1</strong>
+Treating the people as individual particles means the kinetic energy is found from their corresponding tangential velocities, i.e.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v_L &amp;= R_L\omega &amp; v_R &amp;= R_R\omega
+\end{align*}\]</div>
+<p>So the kinetic energies are</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+K_L &amp;= \frac{m_Lv_L^2}{2}\\
+		&amp;= \frac{m_LR_L^2\omega^2}{2}\\
+		&amp;= 13.7\text{ J}\\
+K_R &amp;= \frac{mRLv_R^2}{2}\\
+		&amp;= \frac{m_RR_R^2\omega^2}{2}\\
+		&amp;= 8.5\text{ J}
+\end{align*}\]</div>
+<p>and so the total kinetic energy <span class="math notranslate nohighlight">\(K_T=K_L+K_R = 22\text{ J}\)</span>.</p>
+<p><strong>2</strong>
+To consider the seesaw + people as a single system we need to find the moment of inertia for the whole setup. As the seesaw is of negligible mass we treat our system as two particles rotating about some common axis (in this case the pivot point of the seesaw).</p>
+<p>The total moment of inertia for a series of points is the sum of the individual moments of inertia, meaning</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+I &amp;= m_L R_L^2 + m_RR_R^2\\
+&amp;= 280\text{ kg m}^2
+\end{align*}\]</div>
+<p>The kinetic energy of rotational motion for this single system is thus</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+K &amp;= \frac{1}{2}I\omega^2\\
+&amp;= \frac{280 \times 0.4^2}{2}\\
+&amp;= 22\text{ J}
+\end{align*}\]</div>
+<p>Note that we get the same answer from both parts of this question which is to be expected!</p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 4</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
+Question</label><div class="sd-tab-content docutils">
+<p>Find the moment of inertia of a wide ring (or annulus), made from a uniform but thin sheet metal of inner radius <span class="math notranslate nohighlight">\(R_1\)</span>, outer radius <span class="math notranslate nohighlight">\(R_2\)</span> and mass <span class="math notranslate nohighlight">\(M\)</span> rotating about its axis of symmetry.</p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
+Hint</label><div class="sd-tab-content docutils">
+<p>As with all moment of inertia problems, what is the system of shapes that you can “build up” to give you the system you are trying to model? Remember that similar symmetry and a shared axis of rotation is important.</p>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
+Solution</label><div class="sd-tab-content docutils">
+<p>The annulus can be regarded as made of a large number of thin, concentric hoops fitting arround one another, each with radius <span class="math notranslate nohighlight">\(R\)</span> and (infinitesimal) width <span class="math notranslate nohighlight">\(\mathrm{d}R\)</span>. All of the mass <span class="math notranslate nohighlight">\(\mathrm{d}m\)</span> of this hoop is the same radius <span class="math notranslate nohighlight">\(R\)</span> from the axis of rotation therefore the moment of inertia of a hoop is</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}I = R^2\,\mathrm{d}m\]</div>
+<p>The area <span class="math notranslate nohighlight">\(\mathrm{d}A\)</span> of the hoop is the circumference times the width, i.e.</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}A = 2\pi R\,\mathrm{d}R\]</div>
+<p>The mass of the hoop is the surface density times the hoop area</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathrm{d}m &amp;= \sigma \times 2\pi R\,\mathrm{d}R\\
+			&amp;= \frac{M}{\pi(R_2^2-R_1^2)} \times 2\pi R\,\mathrm{d}R\\
+			&amp;= \frac{2M}{R_2^2-R_1^2}\,R\,\mathrm{d}R
+\end{align*}\]</div>
+<p>where I have made use of the fact that the material is uniform and so the area density of the thin hoop is the same as the whole annulus, i.e.</p>
+<div class="math notranslate nohighlight">
+\[\sigma = \frac{\mathrm{d}m}{\mathrm{d}A} = \frac{M}{A} = \frac{M}{\pi R_2^2 - \pi R_1^2}\]</div>
+<p>Thus the moment of inertia is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+I = \int\limits_{R_1}^{R_2}R^2\, \mathrm{d}m &amp;= \frac{2M}{R_2^2-R_1^2}\int\limits_{R_1}^{R_2}R^3\,\mathrm{d}R\\
+&amp;= \frac{2M}{R_2^2-R_1^2}\left[\frac{R^4}{4}\right]_{R_1}^{R_2}\\
+&amp;= \frac{2M}{R_2^2-R_1^2}\frac{R_2^4-R_1^4}{4}\\
+&amp;= \frac{1}{2}M\left(R_2^2+R_1^2\right)
+\end{align*}\]</div>
+<p>It is worth noting that if <span class="math notranslate nohighlight">\(R_1=0\)</span> our system becomes a solid disc and gives the expected moment of inertia i.e. <span class="math notranslate nohighlight">\(I_{\text{disc}}=\frac{MR^2}{2}\)</span>. Similarly if <span class="math notranslate nohighlight">\(R_1=R_2\)</span> our system becomes a single hoop and the above equation reduces to the form expected i.e. <span class="math notranslate nohighlight">\(I_{\text{hoop}} = MR^2\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotational-motion-for-constant-angular-acceleration-systems">Rotational motion for constant angular acceleration systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-of-a-rotating-body">Energy of a rotating body</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moment-of-inertia">Moment of inertia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-symmetry">Using symmetry</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-theorems-for-moments-of-inertia">Axis theorems for moments of inertia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paralled-axis-theorem">Paralled axis theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perpendicular-axis-theorem">Perpendicular axis theorem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Matt Mears
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,810 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 4 - Work, potential and conservation of energy &#8212; PHY009 - Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Lecture4';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logouni.png" class="logo__image only-light" alt="PHY009 - Mechanics - Home"/>
+    <script>document.write(`<img src="_static/logouni.png" class="logo__image only-dark" alt="PHY009 - Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    PHY009: Foundations of Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PreCourse.html">Pre-course requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic1.html">Topic 1 - Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic2.html">Topic 2 - Kinematics and Projectile Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic3.html">Topic 3 - Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic4.html">Topic 4 - Energy, Power and Momentum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic5.html">Topic 5 - Circular Motion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLecture4.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Lecture4.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 4 - Work, potential and conservation of energy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-and-kinetic-energy">Work and kinetic energy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-energy">Potential energy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-loss">Energy loss</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-conserved-yet-lost">Energy conserved yet lost?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-4-work-potential-and-conservation-of-energy">
+<span id="lecture4"></span><h1>Lecture 4 - Work, potential and conservation of energy<a class="headerlink" href="#lecture-4-work-potential-and-conservation-of-energy" title="Link to this heading">#</a></h1>
+<p>Energy is, at best, strange. As a concept it perhaps the most far-reaching in terms of applicability but is also one of the most difficult to define completely and succinctly. We explain it in terms of different units, with different equations and models, and try to use general defining statements such as energy being something we ‘pay’ in order to get things done. One particular attempt that I like is from A. P. French (1971) who claimed that</p>
+<blockquote>
+<div><p>Energy is the universal currency that exists in apparently countless denominations; and physical processes represent a conversion from one denomination to another.</p>
+</div></blockquote>
+<p>But none of these truly <strong>define</strong> what energy is. But thankfully this should not be regarded as an issue; Kramer once reflected in a symposium that</p>
+<blockquote>
+<div><p>The most important and most fruitful concepts are those to which it is impossible to attach a well-defined meaning.</p>
+</div></blockquote>
+<p>Having a well-defined meaning of energy is less important and useful compared to how we consider the <strong>transformation</strong> of energy. We cannot define energy in general but we can and will make heavy use of the fact that it is <strong>conserved</strong>, a statement that we will accept at face value.<a class="footnote-reference brackets" href="#noether" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<p>If we take the rather fluffy statement that energy is is paid to do something, then we can define the property “work” that quantifies how this paid energy transforms our system from one state to another. For the purposes of this course we will <strong>only</strong> be considering dynamical states - I leave any thermal work for the Thermal component of the module, and take the approach that any energy that is transformed into a non-dynamical form is “lost”, though we will revisit this apparent paradox of energy being both conserved and lost in <a class="reference internal" href="#sec-c4-lost"><span class="std std-ref">the last section</span></a>.</p>
+<section id="work-and-kinetic-energy">
+<span id="sec-c4-work"></span><h2>Work and kinetic energy<a class="headerlink" href="#work-and-kinetic-energy" title="Link to this heading">#</a></h2>
+<p>In <a class="reference internal" href="Lecture3.html#lecture3"><span class="std std-ref">Lecture 3</span></a> we discussed how the change in the dynamics, i.e. the acceleration of a body is a result of an applied force. We are of course making the assumption here that the mass remains constant meaning we are making use of the special case of Newton’s Second Law given by equation <a class="reference internal" href="Topic3.html#equation-eq-c3-second-old">(8)</a>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You might wonder why I am considering this over a certain distance rather than for a certain time. Fear not, we will come back to this in <a class="reference internal" href="Lecture5.html#lecture5"><span class="std std-ref">Lecture 5</span></a>.</p>
+</div>
+</aside>
+<p>Let us expand on this idea. We have already established that an applied force will give rise to an acceleration, but we can consider the work done when applying this force over a certain distance.</p>
+<p>The system we will first consider is a box being pulled along the ground with some constant force <span class="math notranslate nohighlight">\(\textbf{F}\)</span>, as shown in <a class="reference internal" href="Topic4.html#fig-c4-box"><span class="std std-numref">Fig. 7</span></a>.</p>
+<figure class="align-center" id="fig-c4-box">
+<a class="reference internal image-reference" href="Figures/C4_box.png"><img alt="A box dragged horizontally across a floor by a force applied at some angle $\theta$ to the horizontal. Assume there is no friction between the box and the floor." src="Figures/C4_box.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-text">A box dragged horizontally across a floor by a force applied at some angle <span class="math notranslate nohighlight">\(\theta\)</span> to the horizontal. Assume there is no friction between the box and the floor.</span><a class="headerlink" href="#fig-c4-box" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Assume there is no friction between the box and the ground. The work done <span class="math notranslate nohighlight">\(W\)</span> in moving this box some distance <span class="math notranslate nohighlight">\(x\)</span> is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+W &amp;= F_x x\\
+	&amp;= \left(F\cos\theta\right)x\\
+	&amp;= \textbf{F}\cdot\textbf{x}
+\end{align*}\]</div>
+<p>We need to define some terms here. <span class="math notranslate nohighlight">\(F_x\)</span> is the horiztonal component of the force <span class="math notranslate nohighlight">\(\textbf{F}\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between the horizontal and the direction of <span class="math notranslate nohighlight">\(\textbf{F}\)</span>, and <span class="math notranslate nohighlight">\(\textbf{x}\)</span> is the distance vector with magnitude <span class="math notranslate nohighlight">\(x\)</span> and points in the horizontal direction (i.e. along the unit vector <span class="math notranslate nohighlight">\(\hat{\textbf{x}}\)</span>, such that <span class="math notranslate nohighlight">\(\textbf{x}=x\hat{\textbf{x}}\)</span>). The last line of these equations is known as the <strong>dot product</strong> or <strong>scalar product</strong> of two vectors. I am going to assume you know these as they are or will be taught in your mathematics courses.</p>
+<p>This is the very special case in which the force remains constant over the distance <span class="math notranslate nohighlight">\(x\)</span> so a logical next step would be to consider what happens if the force is not constant but instead is some function of <span class="math notranslate nohighlight">\(x\)</span>? We will assume for  In this circumstance we make use of the special case we have just considered and think of our varying force as being the sum of lots of little displacements <span class="math notranslate nohighlight">\(\Delta x\)</span> where the force is constant (but different) for each these small displacements.</p>
+<p>The small amount of work done in moving the box a distance <span class="math notranslate nohighlight">\(\Delta x\)</span> is <span class="math notranslate nohighlight">\(\Delta W\)</span> which means</p>
+<div class="math notranslate nohighlight">
+\[\Delta W = \textbf{F}\cdot\Delta \textbf{x}\]</div>
+<p>If we make the displacements <strong>really</strong> small we can state that the total work done in moving the box from <span class="math notranslate nohighlight">\(x_1\)</span> to <span class="math notranslate nohighlight">\(x_2\)</span> is</p>
+<div class="math notranslate nohighlight" id="equation-eq-c4-work1">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c4-work1" title="Link to this equation">#</a></span>\[\begin{split}W &amp;= \lim\limits_{\Delta x \to 0} \sum_{x_1}^{x_2}\textbf{F}\cdot\Delta \textbf{x}\nonumber\\
+&amp;= \int_{x_1}^{x_2}\textbf{F}\cdot\mathrm{d}\textbf{x}\end{split}\]</div>
+<p>Now that we have a general definition for the work done in terms of applied force and the distance over which this force is applied, let us now expand further by making use of Newton’s Second Law in the special case that the mass remains constant. The difficulty in substituting the expression <span class="math notranslate nohighlight">\(\textbf{F}=m\dfrac{\mathrm{d}\textbf{v}}{\mathrm{d}t}\)</span> into equation <a class="reference internal" href="Topic4.html#equation-eq-c4-work1">(12)</a> is that the integral is over distance but our definition of the force is a rate of change. We need to do something about the <span class="math notranslate nohighlight">\(\mathrm{d}t\)</span>.</p>
+<p>Firstly we consider a body moving with velocity <span class="math notranslate nohighlight">\(\textbf{v}\)</span>. If a net force <span class="math notranslate nohighlight">\(\textbf{F}\)</span> acts on the body at an angle <span class="math notranslate nohighlight">\(\theta\)</span> to <span class="math notranslate nohighlight">\(\textbf{v}\)</span> then we need to consider the component of the force acting in the direction of <span class="math notranslate nohighlight">\(\textbf{v}\)</span> as we are interested in examining how this changed the magnited of <span class="math notranslate nohighlight">\(\textbf{v}\)</span>. We can write this component of the force over some small time period <span class="math notranslate nohighlight">\(\Delta t\)</span> as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+|\textbf{F}|\cos\theta &amp;= m \frac{|\Delta\textbf{v}|}{\Delta t}\cos\theta
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta \textbf{v}\)</span> is the vector change in <span class="math notranslate nohighlight">\(\textbf{v}\)</span> over <span class="math notranslate nohighlight">\(\Delta t\)</span> and . The element of distance travelled during the time period is <span class="math notranslate nohighlight">\(\Delta\textbf{r}=\textbf{v}\Delta t\)</span> which means the force along <span class="math notranslate nohighlight">\(\textbf{v}\)</span> times this displacement is</p>
+<div class="math notranslate nohighlight" id="equation-eq-c4-work2">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c4-work2" title="Link to this equation">#</a></span>\[\begin{split}|\textbf{F}||\Delta\textbf{r}|\cos\theta &amp;= m \frac{|\Delta\textbf{v}|}{\Delta t}\cos\theta\, |\Delta\textbf{r}|\nonumber\\
+		&amp;= m \frac{|\Delta\textbf{v}|}{\Delta t}\cos\theta \,|\textbf{v}|\,\Delta t\nonumber\\
+		&amp;= m |\textbf{v}||\Delta\textbf{v}|\cos\theta\nonumber\\
+\therefore \textbf{F}\cdot\Delta\textbf{r} &amp;= m\left(\textbf{v}\cdot\Delta\textbf{v}\right)\end{split}\]</div>
+<p>To simplify the right hand side of this expression we make use of a useful trick. Consider the quantity <span class="math notranslate nohighlight">\(\textbf{v}\cdot\textbf{v}\)</span> which is a scalar of magnitude <span class="math notranslate nohighlight">\(v^2\)</span>. So if</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v^2 &amp;= \textbf{v}\cdot\textbf{v}\\
+\end{align*}\]</div>
+<p>then the product rule of differentiation gives</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\Delta(v^2) &amp;= \Delta\textbf{v}\cdot\textbf{v} + \textbf{v}\cdot\Delta\textbf{v}\\
+&amp;= 2\textbf{v}\cdot\Delta\textbf{v}\\
+\therefore \textbf{v}\cdot\Delta\textbf{v} &amp;= \frac{1}{2}\left(\Delta v\right)^2
+\end{align*}\]</div>
+<p>Substition of this final expression into equation <a class="reference internal" href="#equation-eq-c4-work2">()</a>  to find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ \textbf{F}\cdot\Delta\textbf{x} &amp;= \frac{1}{2}m\left(\Delta v\right)^2
+ \end{align*}\]</div>
+<p>and therefore the work is</p>
+<div class="math notranslate nohighlight" id="equation-eq-c4-work3">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c4-work3" title="Link to this equation">#</a></span>\[W = \int_{x_1}^{x_2} \textbf{F}\cdot\Delta\textbf{x} = \frac{1}{2}mv_2^2 - \frac{1}{2}mv_1^2\]</div>
+<p>If we impose the condition that the body was starting from rest at the initial position <span class="math notranslate nohighlight">\(x_1\)</span> then we find that the work done in moving a body a distance <span class="math notranslate nohighlight">\(x\)</span> is equal to <span class="math notranslate nohighlight">\(\frac{mv^2}{2}\)</span>, otherwise known as the kinetic energy.</p>
+<div class="tip admonition">
+<p class="admonition-title">Key point</p>
+<p>In general terms the work done on a body is equal to the change of the kinetic energy of the same body.</p>
+</div>
+</section>
+<section id="potential-energy">
+<h2>Potential energy<a class="headerlink" href="#potential-energy" title="Link to this heading">#</a></h2>
+<p>I am absolutely sure that you have heard of the concept of potential energy before, and will have worked with some of the associated formulae in your pre-University studies. The approach I am going to take here will hopefully give you a deeper insight into what we mean by potential energy and where the memorised equations (such as <span class="math notranslate nohighlight">\(mgh\)</span>) actually come from.</p>
+<p>We start from our definition of the work done as the integral of the force applied over some distance, although for the sake of simplicity we are going to restrict the force to acting along the <span class="math notranslate nohighlight">\(x\)</span> direction only. It’s worth emphasising however that the final result applies in general. If we define the kinetic energy of the body at positions <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> as <span class="math notranslate nohighlight">\(K_1\)</span>and <span class="math notranslate nohighlight">\(K_2\)</span> respectively then equation <a class="reference internal" href="#equation-eq-c4-work3">()</a> can be rewritten as</p>
+<div class="math notranslate nohighlight" id="equation-eq-c4-work4">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c4-work4" title="Link to this equation">#</a></span>\[K_2 - K_1 = \int_{x_1}^{x_2} F(x)\,\mathrm{d}x\]</div>
+<p>We now introduce an arbitrary reference point <span class="math notranslate nohighlight">\(x_0\)</span> that allows us to make comparisons of states 1 and 2 with respect to this reference point. This allows us to rewrite the integral above as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ \int_{x_1}^{x_2} F(x)\,\mathrm{d}x &amp;=  \int_{x_0}^{x_2} F(x)\,\mathrm{d}x -  \int_{x_0}^{x_1} F(x)\,\mathrm{d}x
+ \end{align*}\]</div>
+<p>which we can substitute into equation <a class="reference internal" href="#equation-eq-c4-work4">()</a> to find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ K_2 + \left[-\int_{x_0}^{x_2} F(x)\,\mathrm{d}x\right] &amp;= K_1 + \left[- \int_{x_0}^{x_1} F(x)\,\mathrm{d}x\right]
+\end{align*}\]</div>
+<p>This allows us to define the potential energy <span class="math notranslate nohighlight">\(U(x)\)</span> as follows to ensure that the conservation of energy between states 1 and 2 is met,</p>
+<div class="math notranslate nohighlight" id="equation-eq-c4-work5">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c4-work5" title="Link to this equation">#</a></span>\[U(x)-U(x_0) = - \int_{x_0}^{x} F(x)\,\mathrm{d}x\]</div>
+<p>The potential energy is defined as the <strong>negative</strong> of the work done by the force as the object moves from the reference point to the point of interest. It is quite common to set <span class="math notranslate nohighlight">\(U(x_0)=0\)</span> as we are often more concerned with the <strong>differences</strong> in potential energy between one point and another.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Strictly speaking the general form is <span class="math notranslate nohighlight">\(\textbf{F} = -\nabla\mathbf{\Phi}\)</span> for a 3-dimensional potential field. I am only including here for completeness - for this course you will only have to work with forces and potentials in the form of equation <a class="reference internal" href="#equation-eq-c4-work6">()</a>, but it is useful to be aware of the generalisation.</p>
+</div>
+</aside>
+<p>Finally we can play around with equation <a class="reference internal" href="#equation-eq-c4-work5">()</a> a little to get a slightly different form. We can differentiate both sides of equation <a class="reference internal" href="#equation-eq-c4-work5">()</a> which gives</p>
+<div class="math notranslate nohighlight" id="equation-eq-c4-work6">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c4-work6" title="Link to this equation">#</a></span>\[F = -\frac{\mathrm{d}U}{\mathrm{d}x}\]</div>
+<p>or in everyday language the force is equal to the negative gradient of the potential.</p>
+<p>You may be wondering why we have bothered to come up with yet another definition of the relationship between force and potential energy. Both of the forms are valuable theoretically but when it comes to taking measurements of a system it is often easier to measure the energy differences between two distinct states rather than measuring the forces acting over the whole path between these states. It is common in experimental physics to use a measureable property (in this case the potential energy) to inform us about another property that is difficult or impossible to measure.</p>
+</section>
+<section id="energy-loss">
+<h2>Energy loss<a class="headerlink" href="#energy-loss" title="Link to this heading">#</a></h2>
+<p>Throughout this chapter we have held the assumption that the energy is conserved. We are going to take a slight detour into a real world and terribly exciting physical system that seems to contradict this idea of the conservation of energy - the bouncing ball.</p>
+<p>Consider a ball that is dropped from some initial height <span class="math notranslate nohighlight">\(h_0\)</span>. It falls to the vertically until it hits the ground at which point it then bounces and takes a vertical path up to a new height <span class="math notranslate nohighlight">\(h_1\)</span>, where <span class="math notranslate nohighlight">\(h_1&lt;h_0\)</span>. The ball then falls again, bounces and reaches a new post-bounce height <span class="math notranslate nohighlight">\(h_2\)</span>. An example of this process is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C4_ball1</span></code> where the snapshots of the ball are displaced horizontally so you can see where the ball is as a function of time.</p>
+<figure class="align-center" id="fig-c4-ball1">
+<a class="reference internal image-reference" href="Figures/C4_ball1.png"><img alt="A time-lapse image of a bouncing ball whose maximum height decreases by the same fraction between successive bounces." src="Figures/C4_ball1.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-text">A time-lapse image of a bouncing ball whose maximum height decreases by the same fraction between successive bounces.</span><a class="headerlink" href="#fig-c4-ball1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I am using the subscript <span class="math notranslate nohighlight">\(i\)</span> for initial and <span class="math notranslate nohighlight">\(f\)</span> for final. I could use <span class="math notranslate nohighlight">\(b\)</span> for before and <span class="math notranslate nohighlight">\(a\)</span> for after but it can get easily confused with alphabetical order</p>
+</div>
+</aside>
+<p>To understand what is happening at the impact we consider and compare the velocities of the ball immediately before (<span class="math notranslate nohighlight">\(v_i\)</span>) and immediately after (<span class="math notranslate nohighlight">\(v_f\)</span>) the bounce. We define the coefficient of restitution <span class="math notranslate nohighlight">\(C_R\)</span> as the ratio of these velocities, i.e.</p>
+<div class="math notranslate nohighlight">
+\[C_R = \frac{v_f}{v_i}\]</div>
+<p>Despite this being a perfectly valid definition, it would be completely useless if I wanted you to calculate <span class="math notranslate nohighlight">\(C_R\)</span> for the system shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C4_ball1</span></code> as we do not know the velocities <span class="math notranslate nohighlight">\(v_i\)</span> and <span class="math notranslate nohighlight">\(v_f\)</span> for any of the bounces. Indeed these are the velocities at the <strong>instant</strong> before and after the collision so measuring them would be impossible - we would only ever be able to approximate them over some finite time period <span class="math notranslate nohighlight">\(\Delta t\)</span>.</p>
+<p>We can however make use of the knowledge that, apart from something happening at the bounce, energy is conserved. The potential energy of before the bounce is equal to the kinetic energy immediately before the bounce, and the kinetic energy after the bounce is equal to the potential energy when the ball reaches the new height. With a little algebra magic on our definition for <span class="math notranslate nohighlight">\(C_R\)</span> we can show</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+C_R &amp;= \frac{v_f}{v_i}\\
+C_R^2 	&amp;= \frac{v_f^2}{v_i^2} = \frac{\frac{1}{2} mv_f^2}{\frac{1}{2} mv_i^2}= \frac{mgh_f}{mgh_i}\\
+\therefore C_R &amp;= \sqrt{\frac{h_f}{h_i}}
+\end{align*}\]</div>
+<p>Now this is much better! We can see the maximum heights of the ball before and after a bounce which allows us to calculate <span class="math notranslate nohighlight">\(C_R\)</span>. What is even better is that we do not need to know the scale that allows us to convert from pixels to physical height as we are taking the <strong>ratio</strong> of the two values which is dimensionless.</p>
+<p>It is pretty straightforward to do this experiment yourself. All you need is a bouncy ball, a semi-decent camera with video capability, and some way of extracting the data from the video. I did this with an iPhone camera and used the Tracker software you will use in your lab classes, and extracted the data shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C4_ball2</span></code>.</p>
+<figure class="align-center" id="fig-c4-ball2">
+<a class="reference internal image-reference" href="Figures/C4_ball2.jpg"><img alt="This graph shows the measured height of a ball bouncing as a function of time. The maximum points are indicated and are used to determine the coefficient of resitution from modelling the height as a function of bounce number." src="Figures/C4_ball2.jpg" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-text">This graph shows the measured height of a ball bouncing as a function of time. The maximum points are indicated and are used to determine the coefficient of resitution from modelling the height as a function of bounce number.</span><a class="headerlink" href="#fig-c4-ball2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Rather than taking the heights before and after a single bounce I fitted a model that allowed me to determine <span class="math notranslate nohighlight">\(C_R\)</span> based on all of the bounces recorded. Partly because this gives a more precise value for <span class="math notranslate nohighlight">\(C_R\)</span> but also just because I could. With this experiment I found <span class="math notranslate nohighlight">\(C_R = 0.747 \pm 0.002\)</span> which should hopefully prompt the following question: if <span class="math notranslate nohighlight">\(C_R^2\)</span> is the ratio of the energies, should it not equal 1 because the energy is conserved? If the ball only has <span class="math notranslate nohighlight">\(86.4\%\)</span> of the energy after the bounce compared to before, where has the <span class="math notranslate nohighlight">\(13.6\%\)</span> <strong>gone</strong>?</p>
+</section>
+<section id="energy-conserved-yet-lost">
+<span id="sec-c4-lost"></span><h2>Energy conserved yet lost?<a class="headerlink" href="#energy-conserved-yet-lost" title="Link to this heading">#</a></h2>
+<p>The suggestion that energy has been lost when the ball above bounces is both true and false. The apparent paradox is simple to resolve because it comes down to a case of semantics and being somewhat inaccurate with our language. When I talk about <span class="math notranslate nohighlight">\(13.4\%\)</span> of the energy in my bouncing ball system being lost at each bounce what I should explicitly state is that <span class="math notranslate nohighlight">\(13.4\%\)</span> of the energy is lost <strong>from the dynamic system being observed</strong>, and is transfered into some other form.</p>
+<p>If we were to also measure the sound of the ball impacting the table, measure the vibrations in the table and the slight increase in temperature etc then we would find that the sum of all of these associated energies is equal before and after the bounce. When we talk about loss we mean from the system of interest, in this case a system in motion. The soundwaves, heat, etc produced by the bounce are now unrelated to the motion of the ball.</p>
+<p>That is not to say that you cannot talk about energy being lost. The important point is that both you and the person you are communicating with know that you mean by lost to the system rather than lost to the universe.</p>
+</section>
+<section id="lecture-questions">
+<h2>Lecture Questions<a class="headerlink" href="#lecture-questions" title="Link to this heading">#</a></h2>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 1</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Question</label><div class="sd-tab-content docutils">
+<p>The constant forces <span class="math notranslate nohighlight">\(\textbf{F}_1 = (\hat{i} + 2\hat{j} + 3\hat{k})\text{ N}\)</span> and <span class="math notranslate nohighlight">\(\textbf{F}_2 = (4\hat{i}-5\hat{j}-2\hat{k})\text{ N}\)</span> act together on a particle during a displacement from position <span class="math notranslate nohighlight">\(\textbf{r}_1 = 7\hat{k}\text{ cm}\)</span> to <span class="math notranslate nohighlight">\(\textbf{r}_2 = (20\hat{i}+15\hat{j})\text{ cm}\)</span>. Determine the work done on the particle.</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Hint</label><div class="sd-tab-content docutils">
+<p>Remember that both force and distance are vectors, and the work done is calculated along the direction of motion (see <a class="reference internal" href="Topic4.html#fig-c4-box"><span class="std std-numref">Fig. 7</span></a>).</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Solution</label><div class="sd-tab-content docutils">
+<p>First calculate the net force acting on the particle:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\textbf{F}_\text{net} &amp;= \textbf{F}_1+\textbf{F}_2\\
+	&amp;=  (\hat{i} + 2\hat{j} + 3\hat{k}) + (4\hat{i}-5\hat{j}-2\hat{k})\\
+	&amp;= 5\hat{i}-3\hat{j}+\hat{k}
+\end{align*}\]</div>
+<p>The displacement of the particle is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\textbf{r} &amp;= \textbf{r}_2-\textbf{r}_1\\
+		&amp;= (20\hat{i}+15\hat{j} - 7\hat{k})\text{ cm}\\
+		&amp;= (0.20\hat{i}+0.15\hat{j} - 0.07\hat{k})\text{ m}
+\end{align*}\]</div>
+<p>Thus the work done is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+W	&amp;= \textbf{F}\cdot\textbf{r}\\
+	&amp;= \left(5\hat{i}-3\hat{j}+\hat{k}\right)\cdot\left(0.20\hat{i}+0.15\hat{j} - 0.07\hat{k}\right)\\
+	&amp;= 1 - 0.45 - 0.07\\
+	&amp;= 0.48\text{ J}
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 2</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Question</label><div class="sd-tab-content docutils">
+<p>The potential energy of an object is given by</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+U(x) &amp;= 5x^2 - 4x^3
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(U(x)\)</span> is in joules and <span class="math notranslate nohighlight">\(x\)</span> is in metres.</p>
+<ol class="arabic simple">
+<li><p>What is the force <span class="math notranslate nohighlight">\(F(x)\)</span> acting on the object?</p></li>
+<li><p>Determine the positions where the object is in equilibrium, and state whether they are stable or unstable.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Hint</label><div class="sd-tab-content docutils">
+<p>Stability can be estimated graphically and determined exactly through calculus, so try both.</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Solution</label><div class="sd-tab-content docutils">
+<p><strong>1</strong></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+F(x) &amp;= -\frac{\mathrm{d}U}{\mathrm{d}x}\\
+	&amp;=12x^2-10x
+\end{align*}\]</div>
+<p><strong>2</strong>
+The condition for equilibrium is <span class="math notranslate nohighlight">\(F(x)=0\)</span>, so</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+0 &amp;= 12x^2 - 10x = 2x(6x-5)
+\end{align*}\]</div>
+<p>which has solutions <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(x=\frac{5}{6}\)</span>.</p>
+<p>Whether the positions are stable or not depends on whether the curvature of the equilibrium point is positive or negative, or in other words whether it is a maximum or minimum respectively. The calculus approach is to find the value for <span class="math notranslate nohighlight">\(\dfrac{\mathrm{d}F}{\mathrm{d}x}\)</span> and evaluate it at both of the solutions found above.</p>
+<p>For <span class="math notranslate nohighlight">\(x=0\)</span></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left. \frac{\mathrm{d}F}{\mathrm{d}x}\right\vert_{x=0} &amp;= 24x-10\\
+	&amp;= -10
+\end{align*}\]</div>
+<p>This is a negative value meaning that <span class="math notranslate nohighlight">\(x=0\)</span> is a stable position.</p>
+<p>For <span class="math notranslate nohighlight">\(x=\frac{5}{6}\)</span></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left. \frac{\mathrm{d}F}{\mathrm{d}x}\right\vert_{x=\frac{5}{6}} &amp;= 24x-10\\
+	&amp;= \frac{24*5}{6}-10 = +10
+\end{align*}\]</div>
+<p>This is a positive value meaning that <span class="math notranslate nohighlight">\(x=\frac{5}{6}\)</span> is an unstable position.</p>
+<p>The figure below shows the plots for both <span class="math notranslate nohighlight">\(U(x)\)</span> and <span class="math notranslate nohighlight">\(F(x)\)</span>. The curve of <span class="math notranslate nohighlight">\(U(x)\)</span> at the roots of <span class="math notranslate nohighlight">\(F(x)\)</span> is a minimum for <span class="math notranslate nohighlight">\(x=0\)</span> but maximum for <span class="math notranslate nohighlight">\(x=\frac{5}{6}\)</span>. Be careful with this approach however because some curves may look like they have a clear minimum or maximum but that may not be the case if you zoom in a lot - the calculus approach is safer!</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="Figures/L4_2.png"><img alt="Figures/L4_2.png" src="Figures/L4_2.png" style="width: 70%;" /></a>
+</figure>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 3</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+Question</label><div class="sd-tab-content docutils">
+<p>A body slides down a rough plane inclined to the horizontal at <span class="math notranslate nohighlight">\(\theta=30^\circ\)</span>. If <span class="math notranslate nohighlight">\(70\%\)</span> of the initial potential energy is dissipated during the descent, find the coefficient of sliding friction <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+Hint</label><div class="sd-tab-content docutils">
+<p>A reminder that the friction force is defined as <span class="math notranslate nohighlight">\(F=\mu N\)</span> where <span class="math notranslate nohighlight">\(N\)</span> is the normal force.</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+Solution</label><div class="sd-tab-content docutils">
+<p>Let the body travel a distance <span class="math notranslate nohighlight">\(s\)</span> along the incline and down through a height <span class="math notranslate nohighlight">\(h\)</span>.</p>
+<p>The potential energy lost <span class="math notranslate nohighlight">\(=mgh=mgs\sin\theta\)</span>.</p>
+<p>The work done against friction <span class="math notranslate nohighlight">\(W=f_\text{k}s = \left(\mu_\text{k}mg\cos\theta\right)s\)</span>.</p>
+<p>Thus</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mu_\text{k}mg\cos\theta\,s &amp;= \frac{70}{100}mgs\sin\theta\\
+\therefore \mu_\text{k} &amp;= 0.7\tan\theta\\
+	&amp;= 0.404
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="noether" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>The first and perhaps most elegant general proof that energy, linear and angular momentum are conserved was published by Emmy Noether in 1918. She demonstrated that any physical system with differentiable symmetry <strong>must</strong> have corresponding conservation laws. Her work had extremely far reaching implications and set the foundations for much of the classical physics you will study, but the formal proof of Noether’s Theorem is beyond the scope of this course.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-and-kinetic-energy">Work and kinetic energy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-energy">Potential energy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-loss">Energy loss</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-conserved-yet-lost">Energy conserved yet lost?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Matt Mears
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

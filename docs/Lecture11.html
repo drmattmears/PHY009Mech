@@ -1,0 +1,815 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 11 - Gravity and Kepler’s Laws &#8212; PHY009 - Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Lecture11';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logouni.png" class="logo__image only-light" alt="PHY009 - Mechanics - Home"/>
+    <script>document.write(`<img src="_static/logouni.png" class="logo__image only-dark" alt="PHY009 - Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    PHY009: Foundations of Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PreCourse.html">Pre-course requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic1.html">Topic 1 - Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic2.html">Topic 2 - Kinematics and Projectile Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic3.html">Topic 3 - Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic4.html">Topic 4 - Energy, Power and Momentum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic5.html">Topic 5 - Circular Motion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLecture11.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Lecture11.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 11 - Gravity and Kepler’s Laws</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gravity">Gravity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-gravitational-force-between-particle-and-a-bar">Example - gravitational force between particle and a bar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kepler-s-laws">Kepler’s Laws</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-polar-coordinates">2D Polar Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ellipses">Ellipses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-law">First Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-law">Second Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#third-law">Third Law</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-11-gravity-and-kepler-s-laws">
+<span id="lecture11"></span><h1>Lecture 11 - Gravity and Kepler’s Laws<a class="headerlink" href="#lecture-11-gravity-and-kepler-s-laws" title="Link to this heading">#</a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The content on this page is <strong>not</strong> examinable.</p>
+</div>
+<section id="gravity">
+<h2>Gravity<a class="headerlink" href="#gravity" title="Link to this heading">#</a></h2>
+<p>In between determining his three laws of motions plus (probably) inventing calculus, Newton also found time to look at the solar system and ponder on why the planets stay in their orbit given the lack of any visible centipetal force. He postulated that</p>
+<blockquote>
+<div><p>“Every particle of matter in the Universe attracts every other particle with a force that is directly proportional to the product of the masses and inversely proportional to the square of the distance between them.”</p>
+</div></blockquote>
+<p>which can be written mathematically as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+F_g &amp;= \frac{Gm_1m_2}{r^2}
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(G\)</span> is the gravitational constant, <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span> are the two bodies attracting one another and <span class="math notranslate nohighlight">\(r\)</span> is the distance between them.</p>
+<p>It turns out that having two or more bodies is unnecessary, although Newton would not have been able to observe gravity from a single mass. All mass creates a gravitational field and we can use a test mass <span class="math notranslate nohighlight">\(\delta m\)</span> to measure the gravitational force acting on it from some larger mass <span class="math notranslate nohighlight">\(M\)</span>. Once again we make use of Newton’s Second Law to state</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\delta m\, \textbf{a} &amp;= \textbf{F}_g\\
+\therefore \textbf{a} &amp;= -\frac{GM}{r^2}\,\hat{\textbf{r}}
+\end{align*}\]</div>
+<p>where the minus sign is necessary to indicate that gravity is acting in the opposite direction to the radius vector that points from the large mass to the test mass.</p>
+<section id="example-gravitational-force-between-particle-and-a-bar">
+<h3>Example - gravitational force between particle and a bar<a class="headerlink" href="#example-gravitational-force-between-particle-and-a-bar" title="Link to this heading">#</a></h3>
+<p>We will extend this theory further to consider the gravitational force between a particle and a more extended object, in this case a thin bar of uniform density as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C11_bar</span></code>.</p>
+<figure class="align-center" id="fig-c11-bar">
+<a class="reference internal image-reference" href="Figures/C11_bar.png"><img alt="A schematic of a uniform bar of mass $M$ and length $L$ next to a small mass $m$ some distance $h$ away. The bar is split into small mass elements and the force of gravity is calculated between these elements and the small mass, over the entire length of the bar." src="Figures/C11_bar.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-text">A schematic of a uniform bar of mass <span class="math notranslate nohighlight">\(M\)</span> and length <span class="math notranslate nohighlight">\(L\)</span> next to a small mass <span class="math notranslate nohighlight">\(m\)</span> some distance <span class="math notranslate nohighlight">\(h\)</span> away. The bar is split into small mass elements and the force of gravity is calculated between these elements and the small mass, over the entire length of the bar.</span><a class="headerlink" href="#fig-c11-bar" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As the gravitational force depends on distance and different parts of the bar are different distances away from the particle we need to split our bar up into small slices of thickness <span class="math notranslate nohighlight">\(\mathrm{d}x\)</span> and mass <span class="math notranslate nohighlight">\(\mathrm{d}m\)</span>, and consider the gravitational force on each of these masses. The force acting on a thin slice <span class="math notranslate nohighlight">\(\mathrm{d}F\)</span> is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathrm{d}F &amp;= -\frac{Gm\,\mathrm{d}m}{x^2}
+\end{align*}\]</div>
+<p>and we find the total force by integrating over the entire bar, taking care to use the correct limits. In order to integrate over the length of the bar we need to change our integral variable which requires us to make use of the fact that the bar has a uniform length density <span class="math notranslate nohighlight">\(\lambda\)</span> and so <span class="math notranslate nohighlight">\(\mathrm{d}m = \lambda \,\mathrm{d}x\)</span>. Therefore</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+F_g &amp;= -Gm\lambda\int_h^{h+L} \frac{\mathrm{d}x}{x^2}\\
+&amp;= -\frac{GmM}{L}\left[-\frac{1}{x}\right]_h^{h+L}\\
+&amp;= \frac{GmM}{h(h+L)}
+\end{align*}\]</div>
+<p>You can perform some sense checks here. If we squash the bar sufficiently that the length tends towards zero our equation should reduce to the simple case of gravitational force between two point masses. A similar result should happen if you make the distance between the bar and mass much much larger than the size of the bar.</p>
+</section>
+</section>
+<section id="kepler-s-laws">
+<h2>Kepler’s Laws<a class="headerlink" href="#kepler-s-laws" title="Link to this heading">#</a></h2>
+<p>Before we jump into the three Laws it’s worth having a reminder about 2D polar coordinate systems and ellipses, as they are important pieces of information needed to derive and understand some of the Laws.</p>
+<section id="d-polar-coordinates">
+<h3>2D Polar Coordinates<a class="headerlink" href="#d-polar-coordinates" title="Link to this heading">#</a></h3>
+<p>When dealing with circular and elliptical systems it is often more convenient to work with 2D polar coordinates, i.e. <span class="math notranslate nohighlight">\((r,\theta)\)</span> rather than <span class="math notranslate nohighlight">\((x,y)\)</span>.</p>
+<p>If we consider a planetary system orbiting a single star then we first define the origin as the centre of the star such that the <span class="math notranslate nohighlight">\(r\)</span> coordinate becomes the distance between the star and planet. Our choice of <span class="math notranslate nohighlight">\(\theta=0\)</span> is entirely arbitrary as we will be looking either small angular changes or complete orbits.</p>
+<p>Having defined our coordinate system we recall that the velocity of the planet over a small section of the orbit can be resolved into radial and tangential components, i.e.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+	v_r &amp;= \dfrac{\mathrm{d}r}{\mathrm{d}t}\\
+	v_t &amp;= r\dfrac{\mathrm{d}\theta}{\mathrm{d}t}\\
+		&amp;= r\omega
+\end{align*}\]</div>
+</section>
+<section id="ellipses">
+<h3>Ellipses<a class="headerlink" href="#ellipses" title="Link to this heading">#</a></h3>
+<p>The general equation for an ellipse (in Cartesian form) with the longest length aligned along the <span class="math notranslate nohighlight">\(x\)</span>-axis is given by:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\]</div>
+<p>which takes the general form in 2D polar coordinates:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{a(1-e^2)}{r}=1+e\cos\theta\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are the semi-major and semi-minor axes respectively and the eccentricity of the ellipse <span class="math notranslate nohighlight">\(e\)</span> describes how the shape of the orbit deviates from a circular path (<span class="math notranslate nohighlight">\(e=0\)</span> describes a perfect circle, and <span class="math notranslate nohighlight">\(0\leq e \leq 1)\)</span>.</p>
+</section>
+<section id="first-law">
+<h3>First Law<a class="headerlink" href="#first-law" title="Link to this heading">#</a></h3>
+<p>There are different methods of deriving Kepler’s First Law but here I will present a proof based on conservation of energy.</p>
+<figure class="align-center" id="fig-kepler1">
+<a class="reference internal image-reference" href="Figures/Kepler1.png"><img alt="A body of mass $m$ orbiting on an elliptical path around a larger mass $M$. The distance between the two masses changes throughout the orbit. The velocity of the small mass is resolved into two components, one pointing radially and the other perpendicular to this." src="Figures/Kepler1.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-text">A body of mass <span class="math notranslate nohighlight">\(m\)</span> orbiting on an elliptical path around a larger mass <span class="math notranslate nohighlight">\(M\)</span>. The distance between the two masses changes throughout the orbit. The velocity of the small mass is resolved into two components, one pointing radially and the other perpendicular to this.</span><a class="headerlink" href="#fig-kepler1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>For an orbiting body of mass <span class="math notranslate nohighlight">\(m\)</span> around a larger body of mass <span class="math notranslate nohighlight">\(M\)</span> the total energy <span class="math notranslate nohighlight">\(E\)</span> of the system is given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-c11-energy">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c11-energy" title="Link to this equation">#</a></span>\[\begin{split}E &amp;= \dfrac{mv^2}{2}-\dfrac{GMm}{r}\nonumber\\
+ &amp;=\dfrac{m}{2}\left(\dot{r}^2+r^2\dot{\theta}^2\right)-\dfrac{GMm}{r}\end{split}\]</div>
+<p>where I have used the dot notation for first derivative with respect to time, and split the velocity into radial and tangential components.</p>
+<p>The angular momentum <span class="math notranslate nohighlight">\(L\)</span> of the system is given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-c11-momentum">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c11-momentum" title="Link to this equation">#</a></span>\[\begin{split}L &amp;= mv_t r \nonumber \\ &amp;= mr^2\omega \nonumber\\&amp;= mr^2\dot{\theta}\end{split}\]</div>
+<p>Next we make a subsitution that isn’t obvious at first glance but makes our subsequent steps easier. We define <span class="math notranslate nohighlight">\(\rho = \dfrac{1}{r}\)</span> such that equation <a class="reference internal" href="#equation-eq-c11-momentum">()</a> can be rewritten as</p>
+<div class="math notranslate nohighlight" id="equation-eq-c11-theta">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c11-theta" title="Link to this equation">#</a></span>\[\begin{split}	\dot{\theta} &amp;= \dfrac{L\rho^2}{m}\nonumber \\
+	\therefore \theta &amp;= \int\dfrac{L\rho^2}{m}\mathrm{d}t \nonumber\\
+			&amp;= \int \dfrac{L\rho^2}{m}\dfrac{\mathrm{d}t}{\mathrm{d}\rho}\mathrm{d}\rho\end{split}\]</div>
+<p>However we can manipulate our definition for <span class="math notranslate nohighlight">\(\rho\)</span> to find <span class="math notranslate nohighlight">\(\dot{r}=-\dfrac{1}{\rho^2}\dfrac{\mathrm{d}\rho}{\mathrm{d}t}\)</span> such that equation <a class="reference internal" href="#equation-eq-c11-theta">()</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-eq-c11-theta2">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c11-theta2" title="Link to this equation">#</a></span>\[	\theta = -\int\dfrac{L}{m\dot{r}}\mathrm{d}\rho \]</div>
+<p>We now turn our attention back to equation <a class="reference internal" href="#equation-eq-c11-energy">()</a> which can be rearranged into</p>
+<div class="math notranslate nohighlight" id="equation-eq-c11-rdot">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c11-rdot" title="Link to this equation">#</a></span>\[\begin{split}\dot{r}^2 &amp;= \dfrac{2E}{m}+2GM\rho-\dfrac{L^2}{m^2}\rho^2 \nonumber\\
+	\therefore \dot{r} &amp;= \dfrac{L}{m}\left[\dfrac{e^2}{r_0^2}-\left(\rho-\dfrac{1}{r_0}\right)^2\right]^{\frac{1}{2}}\end{split}\]</div>
+<p>This last step requires a bit of algebraic manipulation as well as the (again not so obvious) substitutions</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+r_0 &amp;= \dfrac{L^2}{GMm^2}\\
+e^2 &amp;= 1+\dfrac{2Er_0}{GMm}
+\end{align*}\]</div>
+<p>Finally we can substitute equation <a class="reference internal" href="#equation-eq-c11-rdot">()</a> into equation <a class="reference internal" href="#equation-eq-c11-theta2">()</a> to find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\theta	&amp;= -\int\dfrac{\mathrm{d}\rho}{\sqrt{\left(\dfrac{e}{r_0}\right)^2 - \left(\rho-\dfrac{1}{r_0} \right)^2 }}\\
+		&amp;= \cos^{-1}\left(\dfrac{\rho-\frac{1}{r_0}}{\frac{e}{r_0}}\right)
+\end{align*}\]</div>
+<p>which can be rearranged into the general form of an eclipse, i.e.</p>
+<div class="math notranslate nohighlight" id="equation-eq-c11-law1">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c11-law1" title="Link to this equation">#</a></span>\[r = \dfrac{r_0}{1+e\cos\theta}\]</div>
+</section>
+<section id="second-law">
+<h3>Second Law<a class="headerlink" href="#second-law" title="Link to this heading">#</a></h3>
+<figure class="align-center" id="fig-c11-kepler2">
+<a class="reference internal image-reference" href="Figures/Kepler2.png"><img alt="An elliptical path of an object orbiting a large mass. The arc length between two points in the orbit reduces to the straight line distance between the points when the angle between the points $\Delta \theta$ is sufficiently small." src="Figures/Kepler2.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-text">An elliptical path of an object orbiting a large mass. The arc length between two points in the orbit reduces to the straight line distance between the points when the angle between the points <span class="math notranslate nohighlight">\(\Delta \theta\)</span> is sufficiently small.</span><a class="headerlink" href="#fig-c11-kepler2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Consider <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C11_Kepler2</span></code> above in which an orbiting body moves from position <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span> in a small time interval <span class="math notranslate nohighlight">\(\Delta t\)</span>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Think in terms of taking the limit as the time step becomes small - the diagram here is greatly exaggerated for visual clarity.</p>
+</div>
+</aside>
+<p>The area swept out in this time interval is approximately equal to the area of the triangle <span class="math notranslate nohighlight">\(ABS\)</span> which, for small arc lengths <span class="math notranslate nohighlight">\(\Delta s\)</span>, reduces to the area of the triangle <span class="math notranslate nohighlight">\(BCS\)</span>.</p>
+<p>The base of this triangle is <span class="math notranslate nohighlight">\(r \Delta\theta\)</span> and height is <span class="math notranslate nohighlight">\(r\)</span> which means that the small area swept out, <span class="math notranslate nohighlight">\(\Delta A\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\Delta A = \dfrac{1}{2}r^2 \Delta\theta\]</div>
+<p>and so the rate of area being swept out is</p>
+<div class="math notranslate nohighlight" id="equation-eq-c11-law2">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c11-law2" title="Link to this equation">#</a></span>\[\begin{split}\dfrac{\Delta A}{\Delta t}  &amp;= \dfrac{1}{2}r^2\dfrac{\Delta\theta}{\Delta t}\nonumber\\
+					&amp;= \dfrac{1}{2}r^2\omega\nonumber\\
+					&amp;= \dfrac{L}{2m}\end{split}\]</div>
+<p>where the angular momentum <span class="math notranslate nohighlight">\(L=mr^2\omega\)</span> is constant as there is no net torque acting on the system.</p>
+</section>
+<section id="third-law">
+<h3>Third Law<a class="headerlink" href="#third-law" title="Link to this heading">#</a></h3>
+<p>As the area of an ellipse is <span class="math notranslate nohighlight">\(\pi ab\)</span> and the rate of sweeping out area is <span class="math notranslate nohighlight">\(\dfrac{L}{2m}\)</span> from equation <a class="reference internal" href="#equation-eq-c11-law2">()</a> we can show that the time taken for a complete orbit <span class="math notranslate nohighlight">\(T\)</span> is the area divided by the rate of area swept, i.e.</p>
+<div class="math notranslate nohighlight" id="equation-eq-c11-t">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c11-t" title="Link to this equation">#</a></span>\[\begin{split}T&amp;=\dfrac{\pi ab}{\frac{L}{2m}}\nonumber \\
+	&amp;= \dfrac{2m\pi ab}{L}\end{split}\]</div>
+<p>We can also rearrange equation <a class="reference internal" href="#equation-eq-c11-law1">()</a> into the form
+<span class="math notranslate nohighlight">\(\dfrac{L^2}{GMm^2}=a(1-e^2)\)</span>
+and from geometry we know that</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+b^2 &amp;= a^2 - e^2a^2\\
+	&amp;= a^2(1-e^2)
+\end{align*}\]</div>
+<p>So by squaring equation <a class="reference internal" href="#equation-eq-c11-t">()</a> and combining these equations we find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+T^2 &amp;= \dfrac{\left(2m\pi ab \right)^2}{L^2}\\
+	&amp;= \dfrac{\left(2m\pi ab\right)^2}{GMm^2a(1-e^2)}\\
+	&amp;= \dfrac{\left(2m\pi ab\right)^2}{GMm^2a(\frac{b^2}{a^2})}\\
+	&amp;= \dfrac{4\pi^2a^3}{GM}
+\end{align*}\]</div>
+<p>In other words, the orbital period squared is proportional to the semi-major axis cubed, with a constant of proportionality that only depends on the mass of the star and <strong>not</strong> on the eccentricity of the orbit.</p>
+</section>
+</section>
+<section id="lecture-questions">
+<h2>Lecture Questions<a class="headerlink" href="#lecture-questions" title="Link to this heading">#</a></h2>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 1</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Question</label><div class="sd-tab-content docutils">
+<p>Calculate the acceleration of free fall on the Moon and compare it with the acceleration of free fall on the Earth.</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Hint</label><div class="sd-tab-content docutils">
+<p>A common way to interpret “compare” in physics is taking a ratio of one value to another.</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Solution</label><div class="sd-tab-content docutils">
+<p>We take <span class="math notranslate nohighlight">\(M_{\text{moon}}=7.35\times10^22\text{ kg}\)</span> and <span class="math notranslate nohighlight">\(R_{\text{moon}}=1.74\times10^{6}\text{ m}\)</span>. Therefore</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+g_{\text{moon}}&amp;= \frac{GM_{\text{moon}}}{R_{\text{moon}}^2}\\
+&amp;= 1.62\text{ m s}^{-2}
+\end{align*}\]</div>
+<p>and so <span class="math notranslate nohighlight">\(\dfrac{g_{\text{moon}}}{g_{\text{Earth}}} = \dfrac{1.62}{9.81} \approx{1}{6}\)</span></p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 2</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Question</label><div class="sd-tab-content docutils">
+<p>The masses of the Sun, Earth and Moon are <span class="math notranslate nohighlight">\(1.99\times10^{30}\text{ kg}\)</span>, <span class="math notranslate nohighlight">\(5.98\times10^{24}\text{ kg}\)</span> and <span class="math notranslate nohighlight">\(7.35\times10^{22}\text{ kg}\)</span> respectively. Assume that the location of the Moon is such that the angle subtended by the lines from the Moon to the Sun and from the Moon to the Earth is <span class="math notranslate nohighlight">\(45.0^{\circ}\)</span>. What is the net force on the Moon due to the gravitational forces of the Sun and Earth?</p>
+<p>Take the Moon-Sun distance to be <span class="math notranslate nohighlight">\(1.50\times10^{11}\text{ m}\)</span> and the Moon-Earth distance to be <span class="math notranslate nohighlight">\(3.84\times10^{8}\text{ m}\)</span>.</p>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Hint</label><div class="sd-tab-content docutils">
+<p>Draw a diagram and carefully choose where you want your axes to lie in order to simplify the system.</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Solution</label><div class="sd-tab-content docutils">
+<p>We align our axes such that the Moon-Sun line lies along the <span class="math notranslate nohighlight">\(x\)</span> axis, and that the Moon-Earth-Sun all lie in the <span class="math notranslate nohighlight">\((x,y)\)</span> plane. The force due to the Sun on the Moon is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\textbf{F}_{SM} &amp;= \frac{GM_SM_M}{R_{SM}^2}\hat{\textbf{i}}
+\end{align*}\]</div>
+<p>and the force between the Earth and Moon is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\textbf{F}_{EM} &amp;= \frac{GM_EM_M}{\sqrt{2}R_{EM}^2}\hat{\textbf{i}} + \frac{GM_EM_M}{\sqrt{2}R_{EM}^2}\hat{\textbf{j}}
+\end{align*}\]</div>
+<p>The total force is the sum of these two forces</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\textbf{F}_T &amp;= \textbf{F}_{SM} + \textbf{F}_{EM}\\
+		&amp;= GM_M\left[\left(\frac{M_S}{R_{SM}^2}+\frac{M_E}{\sqrt{2}R_{EM}^2}\right) \hat{\textbf{i}}+ \frac{M_E}{\sqrt{2}R_{EM}^2}\hat{\textbf{j}}\right]\\
+		&amp;= \left(5.74\times10^{20}\hat{\textbf{i}}+1.41\times10^{20}\hat{\textbf{j}}\right) \text{ N}
+\end{align*}\]</div>
+<p>The magnitude of the force is <span class="math notranslate nohighlight">\(|F_T| = \sqrt{(5.74\times10^{20})^2+(1.41\times10^{20})^2} = 5.91\times10^{20}\text{ N}\)</span> and points at an angle <span class="math notranslate nohighlight">\(\theta = \tan^{-1}\left(\dfrac{1.41\times10^{20}}{5.74\times10^{20}}\right) = 13.8^{\circ}\)</span> with respect to the <span class="math notranslate nohighlight">\(x\)</span> axis (i.e. the Sun-Moon line).</p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 3</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+Question</label><div class="sd-tab-content docutils">
+<p>Both Venus and Earth have approximately circular orbits around the Sun. The period of the orbital motion of Venus is <span class="math notranslate nohighlight">\(0.165\)</span> Earth year. What is the orbital radius of Venus expressed in astronomical units?</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+Hint</label><div class="sd-tab-content docutils">
+<p>This is a fairly straightforward case of using Kepler’s Third Law (twice).</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+Solution</label><div class="sd-tab-content docutils">
+<p>From Kepler’s Third law, where the semi-major axis of a circular orbit is just the radius of the orbit, and so</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+T_E^2 = \frac{4\pi^2}{GM_S}r_E^3 \qquad &amp;\text{and} \qquad T_V^2 = \frac{4\pi^2}{GM_S}r_V^3\\
+\therefore r_V &amp;= \left(\frac{T_V}{T_E}\right)^{\frac{2}{3}}r_E\\
+			&amp;= 0.72r_E
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 4</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
+Question</label><div class="sd-tab-content docutils">
+<p>A communications satellite is in a circular orbit around the Earth, in the equatorial plane. The period of the orbit is such that the satellite `hovers’ in a fixed position relative to the rotating Earth. What is the radius of such a “geosynchronous” or “geostationary” orbit?</p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
+Hint</label><div class="sd-tab-content docutils">
+<p>Geostationary means the satellite must have the same period as the surface of the Earth it is fixed above, which you can use in Kepler’s Third Law.</p>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
+Solution</label><div class="sd-tab-content docutils">
+<p>A geosynchronous satellite has an orbital period of 1 day, so we use Kepler’s Third Law as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+T^2 &amp;= \frac{4\pi^2}{GM_E}r^3\\
+\therefore r &amp;= \left(\frac{GM_ET^2}{4\pi^2}\right)^{\frac{1}{3}}\\
+		&amp;= 4.23\times10^7\text{ m} \approx 6.6R_{\text{Earth}}
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gravity">Gravity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-gravitational-force-between-particle-and-a-bar">Example - gravitational force between particle and a bar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kepler-s-laws">Kepler’s Laws</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-polar-coordinates">2D Polar Coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ellipses">Ellipses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-law">First Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-law">Second Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#third-law">Third Law</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Matt Mears
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

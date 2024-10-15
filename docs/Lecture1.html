@@ -1,0 +1,962 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 1 - Projectile Motion &#8212; PHY009 - Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Lecture1';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logouni.png" class="logo__image only-light" alt="PHY009 - Mechanics - Home"/>
+    <script>document.write(`<img src="_static/logouni.png" class="logo__image only-dark" alt="PHY009 - Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    PHY009: Foundations of Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PreCourse.html">Pre-course requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic1.html">Topic 1 - Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic2.html">Topic 2 - Kinematics and Projectile Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic3.html">Topic 3 - Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic4.html">Topic 4 - Energy, Power and Momentum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic5.html">Topic 5 - Circular Motion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLecture1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Lecture1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 1 - Projectile Motion</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-about-kinematic-equations-and-notation">A note about kinematic equations and notation.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-new-suvat">The new suvat</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parabolic-path">Parabolic Path</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-coconut-shy-cannon">Example: Coconut shy cannon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-points">“Special points’’</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-height-h-text-max">Maximum height, <span class="math notranslate nohighlight">\(h_\text{max}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projectile-range-r">Projectile range, <span class="math notranslate nohighlight">\(R\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-of-flight-t-f">Time of flight, <span class="math notranslate nohighlight">\(t_f\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#something-to-consider">Something to consider.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launchpoint-y-neq0">Launchpoint <span class="math notranslate nohighlight">\(y\neq0\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sloping-ramp">Sloping Ramp</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projectile-range">Projectile Range</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angle-for-maximum-range">Angle for Maximum Range</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-1-projectile-motion">
+<span id="lecture1"></span><h1>Lecture 1 - Projectile Motion<a class="headerlink" href="#lecture-1-projectile-motion" title="Link to this heading">#</a></h1>
+<section id="a-note-about-kinematic-equations-and-notation">
+<h2>A note about kinematic equations and notation.<a class="headerlink" href="#a-note-about-kinematic-equations-and-notation" title="Link to this heading">#</a></h2>
+<p>Be sure you check out the <a class="reference internal" href="PreCourse.html#precourse"><span class="std std-ref">Pre-Course page</span></a> that shows the maths and physics skills and knowledge expected at the start of this course.</p>
+<p>In your pre-university education you will have met the kinematic equations before but most probably under another name: the suvat equations. I am not going to use the suvat notation because it is rather limiting, and instead I will introduce you to a more typical notation convention that will apply to many other fields in physics.</p>
+<p>You will see more of why I am avoiding the suvat terminology and approach in <a class="reference internal" href="Lecture2.html#lecture2"><span class="std std-ref">Lecture 2</span></a>. Something for you to look forward to.</p>
+<section id="the-new-suvat">
+<h3>The new suvat<a class="headerlink" href="#the-new-suvat" title="Link to this heading">#</a></h3>
+<p>I present to you the kinematic equations in <code class="xref std std-numref docutils literal notranslate"><span class="pre">tab-KinEq</span></code> below. Take a few moments to look at them and compare to the suvat forms you most likely have ingrained in your memory by your teachers.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-kineq" style="width: 50%">
+<caption><span class="caption-text">Kinematic equations for a body moving in the <span class="math notranslate nohighlight">\(x\)</span> direction with constant acceleration <span class="math notranslate nohighlight">\(a\)</span>.</span><a class="headerlink" href="#tab-kineq" title="Link to this table">#</a></caption>
+<tbody>
+<tr class="row-odd"><td><p>KE I</p></td>
+<td><p><span class="math notranslate nohighlight">\(v(t)=v_0+at\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>KE II</p></td>
+<td><p><span class="math notranslate nohighlight">\(x(t) = x_0 + v_0t + \dfrac{at^2}{2}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>KE III</p></td>
+<td><p><span class="math notranslate nohighlight">\(v(t)^2 = v_0^2 + 2ax(t)\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The form of the equations should be familiar but some of the notation may be different. By using the notation of <span class="math notranslate nohighlight">\(v(t)\)</span> and <span class="math notranslate nohighlight">\(x(t)\)</span> for velocity and position at time <span class="math notranslate nohighlight">\(t\)</span> respectively we are recognising that these are functions and therefore can be used to calculate the velocity and/or position at any time so long as we have an initial condition. These conditions are <span class="math notranslate nohighlight">\(v_0\)</span> and <span class="math notranslate nohighlight">\(x_0\)</span> for initial velocity and position respectively - as we will see in <a class="reference internal" href="Lecture2.html#lecture2"><span class="std std-ref">Lecture 2</span></a> the initial conditions terminology relates to how we solve differential equations, but you will see more of these later and in your maths courses.</p>
+</section>
+</section>
+<section id="parabolic-path">
+<h2>Parabolic Path<a class="headerlink" href="#parabolic-path" title="Link to this heading">#</a></h2>
+<p>You may have already learned about projectile motion in your pre-university studies but typically the approach taken is to consider only the “special points” of the projectile, namely the <strong>maximum height</strong>, <strong>range</strong> and <strong>time of flight</strong>. You may have also looked at these parameters again in the situation where the landing height is different to the firing height.</p>
+<p>Instead of taking this approach we are going to consider the <strong>entire</strong> path of the projectile. In doing this we can easily determine the expressions for the special points you have already seen but also any other point on the path. We’ll go through an example under <a class="reference internal" href="ProjectileExtra.html#ex-c1-coconut"><span class="std std-ref">Example: Coconut shy cannon</span></a> below which should demonstrate why modelling the entire projectile path is more versatile.
+Also by modelling the projectile path we can also calculate the range when fired up a slope, or a curved hill, or whetever type of ramp shape you can model with a function.<br />
+Exciting, no? You’ll have to contain your enthusiam until <a class="reference internal" href="ProjectileExtra.html#c1-slope"><span class="std std-ref">later</span></a> for that.</p>
+<figure class="align-center" id="parabola">
+<a class="reference internal image-reference" href="Figures/Parabola.png"><img alt="A simple projectile with the same firing and landing height. The velocity vectors at the points on the path indicated are resolved into their horizontal and vertical components." src="Figures/Parabola.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-text">A simple projectile with the same firing and landing height. The velocity vectors at the points on the path indicated are resolved into their horizontal and vertical components. Note that the only acceleration is due to gravity - air resistance is neglected.</span><a class="headerlink" href="#parabola" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By <strong>simple</strong> I mean the firing height and landing height are the same, and we are assuming there is no air resistance.</p>
+</div>
+</aside>
+<p>In <code class="xref std std-numref docutils literal notranslate"><span class="pre">Parabola</span></code> above we can see a simple projectile path for a particle fired at some angle <span class="math notranslate nohighlight">\(\theta\)</span> with some initial velocity <span class="math notranslate nohighlight">\(v_0\)</span>. It is worth noting that the textbook this image comes from (Young and Freedman) uses <span class="math notranslate nohighlight">\(\alpha_0\)</span> for initial firing angle with respect to the horizontal and <span class="math notranslate nohighlight">\(\alpha\)</span> for angles to the horizontal at any other point along the path. I find this a bit unusual and will stick to using <span class="math notranslate nohighlight">\(\theta\)</span> for the angles, and generally I’m just interested in <span class="math notranslate nohighlight">\(\theta_0\)</span>.
+Even though the figure shows the velocities (total, <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> components) at different positions, all we need to know is <span class="math notranslate nohighlight">\(v_0\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> in order to create a model that describes the entire projectile path.</p>
+<p>We can use the horizontal component of the firing velocity <span class="math notranslate nohighlight">\(v_{0,x}\)</span> and initial vertical component <span class="math notranslate nohighlight">\(v_{0,y}\)</span> along with some basic trigonometry to find</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c8178817-e331-4f47-8c12-63da031e8d1a">
+<span class="eqno">()<a class="headerlink" href="#equation-c8178817-e331-4f47-8c12-63da031e8d1a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\cos\theta=\frac{v_{0,x}}{v_{0}}\quad \mathrm{and}\quad \sin\theta=\frac{v_{0,y}}{v_{0}}
+\end{equation}\]</div>
+<p>and a little rearrangement gives</p>
+<div class="math notranslate nohighlight" id="equation-eq1-2">
+<span class="eqno">()<a class="headerlink" href="#equation-eq1-2" title="Link to this equation">#</a></span>\[v_{0,x}=v_{0}\cos\theta\quad\mathrm{and}\quad v_{0,y}=v_{0}\sin\theta\]</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>KEII is <span class="math notranslate nohighlight">\(x(t) = v_0t + \dfrac{at^2}{2}\)</span> from <code class="xref std std-numref docutils literal notranslate"><span class="pre">tab-KinEq</span></code></p>
+</div>
+</aside>
+<p>We can now use KE II (twice, once for horizontal and once for vertical) to determine the <span class="math notranslate nohighlight">\(x\)</span>- and
+<span class="math notranslate nohighlight">\(y\)</span>-positions of the particle as a function of time.</p>
+<p><strong>Horizontal</strong>: Since the only acceleration involved here is due to gravity the horizontal acceleration <span class="math notranslate nohighlight">\(a_{x}=0\)</span>. So the horizontal part of equation <a class="reference internal" href="ProjectileExtra.html#equation-eq1-2">()</a> gives</p>
+<div class="math notranslate nohighlight" id="equation-eq-part-1-x-t">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-part-1-x-t" title="Link to this equation">#</a></span>\[x=v_{0,x}t=\left(v_{0}\cos\theta\right)t\]</div>
+<p><strong>Vertical</strong>: Gravity is the only cause of acceleration and it acts in a downwards direction, and so <span class="math notranslate nohighlight">\(a_{y}=-g\)</span> (initially rising object). From equation <a class="reference internal" href="ProjectileExtra.html#equation-eq1-2">()</a> we find</p>
+<div class="math notranslate nohighlight" id="equation-eq-part-1-y-t">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-part-1-y-t" title="Link to this equation">#</a></span>\[y=v_{0,y}t-\frac{1}{2}gt^{2}=\left(v_{0}\sin\theta\right)t-\frac{1}{2}gt^{2}\]</div>
+<p>We now have two equations that define the <strong>position vector</strong> of the particle <span class="math notranslate nohighlight">\(\textbf{r}(t)\)</span> at any time <span class="math notranslate nohighlight">\(t\)</span>, i.e.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-500973b1-3aed-4841-968e-85e93b811384">
+<span class="eqno">()<a class="headerlink" href="#equation-500973b1-3aed-4841-968e-85e93b811384" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\textbf{r}(t)=\left(\begin{array}{c}
+\left(v_{0}\cos\theta\right)t\\
+\\
+\left(v_{0}\sin\theta\right)t-\frac{1}{2}gt^{2} 
+\end{array}\right)
+= \left(v_0\cos\theta\, t\right)\, \hat{\textbf{i}} + \left((v_{0}\sin\theta)\,t-\frac{1}{2}gt^{2}\right)\, \hat{\textbf{j}} 
+\label{eq:Vector equation of parabola}
+\end{equation}\]</div>
+<p>Although this is a nice compact way of describe the position of the particle it is limited in use, particularly for what we want to do next. What is more useful is if we rearrange equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-part-1-x-t">()</a> to express <span class="math notranslate nohighlight">\(t\)</span> in terms of <span class="math notranslate nohighlight">\(x\)</span> <span class="math notranslate nohighlight">\(\left(\text{i.e. }t=\dfrac{x}{v_{0}\cos\theta}\right)\)</span>, and substitute this expression for <span class="math notranslate nohighlight">\(t\)</span> into equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-part-1-y-t">()</a> to obtain</p>
+<div class="math notranslate nohighlight" id="equation-eq-overall-parabolic-equation">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-overall-parabolic-equation" title="Link to this equation">#</a></span>\[\begin{split}y&amp;=\left(\frac{v_{0}\sin\theta}{v_{0}\cos\theta}\right)x-\left(\frac{g}{2v_{0}^{2}\cos^{2}\theta}\right)x^{2}\nonumber\\
+&amp;=x\tan\theta-\frac{gx^2}{2v_{0}^{2}\cos^{2}\theta}\end{split}\]</div>
+<p>We now have an expression that allows us to find the <span class="math notranslate nohighlight">\(y\)</span>-coordinate of a particle in a projectile path at any given <span class="math notranslate nohighlight">\(x\)</span>-coordinate, and vice versa. Note that the general equation of a parabola is <span class="math notranslate nohighlight">\(y=ax-bx^{2}\)</span>, so equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-overall-parabolic-equation">()</a> follows the form we would expect for a projectile.</p>
+</section>
+<section id="example-coconut-shy-cannon">
+<span id="ex-c1-coconut"></span><h2>Example: Coconut shy cannon<a class="headerlink" href="#example-coconut-shy-cannon" title="Link to this heading">#</a></h2>
+<p>This may seem more difficult than the approach you are used to in calculating the “special points”, so let us now think about a trip to the fairground where we can put our general model for a projectile to the test.</p>
+<p>You arrive at a fairground attraction and the person on the stall explains the challenge before you. A coconut is standing on a pole, you are given a small toy mortar launcher that has a fixed firing angle and a constant firing velocity. Your challenge is to position the mortar launcher on the floor at the appropriate distance so that the projectile hits the coconut off the pole when it is fired. You win a cuddly toy if successful!</p>
+<p>As this is a hypothetical scenario we will make some simplifications but you can build on this in the future to better approximate the real world situation. Our assumptions are</p>
+<ol class="arabic simple">
+<li><p>There is no air resistance</p></li>
+<li><p>Both the projectile and the coconut are point masses</p></li>
+<li><p>The height of the mortar launcher is sufficiently small that we assume it fires from ground height.</p></li>
+</ol>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Seriously. Every time you try a problem without a well labelled diagram a llama somewhere sheds a tear.</p>
+</div>
+</aside>
+<p>We first need to set up our simplified scenario. The best and most important starting point is to draw a well labelled diagram. We need our diagram to include information about the projectile as well as the relative position on the coconut on the pole. <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C1_Coconut</span></code> shows how I would draw the diagram for the problem we are trying to solve.</p>
+<figure class="align-center" id="fig-c1-coconut">
+<a class="reference internal image-reference" href="Figures/Coconut.png"><img alt="A simple projectile with a coconut on a pole of height $h$. A horizontal dashed line indicates the height of the coconut intersecting the parabolic path of the projectile at two points, the $x$ coordinates of which are the solutions found in equation {eq}`eq:C1_hcoconut`" src="Figures/Coconut.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-text">A simple projectile with a coconut on a pole of height <span class="math notranslate nohighlight">\(h\)</span>. The horizontal dashed line indicating the height of the coconut intersects the parabolic path of the projectile at two points, the <span class="math notranslate nohighlight">\(x\)</span> coordinates of which are the solutions found in equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-c1-hcoconut">()</a></span><a class="headerlink" href="#fig-c1-coconut" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>There are two ways to think about the solution to this problem, although in reality they are two different ways of saying the same thing. The first is the physics / real world view where we are wanting to find when the projectile has the same height as the coconut. Alternatively we can think more mathematically and see this as the intersection of two curves, one for the parabola and the other for a straight horizontal line at <span class="math notranslate nohighlight">\(y=h\)</span>.</p>
+<p>So we can set <span class="math notranslate nohighlight">\(y=h\)</span> into equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-overall-parabolic-equation">()</a> which means we can now solve to find the horizontal distance between the launch point and the coconut. Thus</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+	h &amp;= x\tan\theta - \dfrac{gx^2}{2v_{0}^2\cos^2\theta}\\
+	0 &amp;= x^2 - \dfrac{2v_{0}^2\cos^2\theta\tan\theta x}{g} + \dfrac{2v_{0}^2\cos^2\theta h}{g}
+\end{align*}\]</div>
+<p>which has been rearranged into the quadratic form with <span class="math notranslate nohighlight">\(a=1\)</span>, <span class="math notranslate nohighlight">\(b=-\dfrac{2v_{0}^2\sin\theta\cos\theta}{g}\)</span> and <span class="math notranslate nohighlight">\(c=\dfrac{2v_{0}^2\cos^2\theta h}{g}\)</span>.</p>
+<p>You should all be familiar with the quadratic formula for solving a second order polynomial, and the reason I have rearranged my equation for the projectile is that having <span class="math notranslate nohighlight">\(a=1\)</span> makes the final equation neater. Remember the quadratic formula has <span class="math notranslate nohighlight">\(2a\)</span> in the denominator, so this trick of rearranging saves me having a complicated denominator and also means I can simply ignore the <span class="math notranslate nohighlight">\(a\)</span> terms. So finally we get</p>
+<div class="math notranslate nohighlight" id="equation-eq-c1-hcoconut">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c1-hcoconut" title="Link to this equation">#</a></span>\[\begin{split}	x &amp;= \frac{1}{2}\left(-b \pm \sqrt{b^2 -4c}\right)\nonumber\\
+	&amp;= \frac{1}{2}\left(\frac{2v_0^2\sin\theta\cos\theta}{g}\pm\sqrt{\frac{4v_0^4\sin^2\theta\cos^2\theta}{g^2}-\frac{8v_0^2\cos^2\theta h}{g}}\right)\nonumber\\
+	&amp;=\frac{1}{2}\left(\frac{v_0^2\sin(2\theta)}{g} \pm \sqrt{\frac{8v_0^2\cos^2\theta}{g}\left[\frac{v_0^2\sin^2\theta}{2g}-h\right]}\right)\end{split}\]</div>
+<p>The plus-minus <span class="math notranslate nohighlight">\((\pm)\)</span> means that we have two solutions which should come as no surprise when we look back at <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C1_Coconut</span></code>. The two solutions correspond to hitting the coconut on the way up (left of the maximum point) and on the way down (right of the maximum point).</p>
+<p>As useful as this general expression is, we need to be careful and consider the limitations. The square root component provides the main breaking point. If the expression within the square root is negative we have no (real) solution. But never fear! We can turn this around and actually make some use of this apparent limitation to tell us a bit more about the system.</p>
+<p>If we want the expression within the square root sign to always be zero or positive then we can state the requirement that</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+0 &amp;\leq \left(\frac{v_0^2\sin^2\theta}{2g}-h\right)
+\end{align*}\]</div>
+<p>as the term outside the square brackets can never be negative. With some slight rearrangement we can impose an upper limit on <span class="math notranslate nohighlight">\(h\)</span> plus taking the real world lower limit of <span class="math notranslate nohighlight">\(h=0\)</span> because the coconut needs to be at or above ground, we find</p>
+<div class="math notranslate nohighlight" id="equation-eq-c1-hrange">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c1-hrange" title="Link to this equation">#</a></span>\[0 \leq h \leq \frac{v_0^2\sin^2\theta}{2g}\]</div>
+<p>This is kind of interesting now but it will be even more so when we have a little bit more information from the next section. So let us press on.</p>
+</section>
+<section id="special-points">
+<h2>“Special points’’<a class="headerlink" href="#special-points" title="Link to this heading">#</a></h2>
+<p>You may be wondering why you were only taught to find the three “special points”. That is a conversation about the school education system that I will not go into here but we will now see that these three points can be found from the general form of a projectile path given in equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-overall-parabolic-equation">()</a>.</p>
+<section id="maximum-height-h-text-max">
+<h3>Maximum height, <span class="math notranslate nohighlight">\(h_\text{max}\)</span><a class="headerlink" href="#maximum-height-h-text-max" title="Link to this heading">#</a></h3>
+<p>From <code class="xref std std-numref docutils literal notranslate"><span class="pre">Parabola</span></code> it should be clear that the point of maximum height is the stationary point of the parabolic curve. Whenever you hear the phrase “stationary point” you should always think <strong>calculus</strong> which in this circumstance means remembering that a stationary point has a gradient or <strong>first derivative</strong> equal to zero. Working it through from equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-overall-parabolic-equation">()</a> we find,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fa11b489-80ef-4271-a07f-680556bafb90">
+<span class="eqno">()<a class="headerlink" href="#equation-fa11b489-80ef-4271-a07f-680556bafb90" title="Permalink to this equation">#</a></span>\[\begin{align}
+	\dfrac{\mathrm{d}y}{\mathrm{d}x} &amp;= \tan\theta - \dfrac{gx}{v_{0}^{2}\cos^{2}\theta} = 0\nonumber \\
+		 \dfrac{gx}{v_{0}^{2}\cos^{2}\theta} &amp;=\tan\theta \nonumber\\
+		x &amp;=\dfrac{v_{0}^{2}\cos^{2}\theta}{g}\dfrac{\sin\theta}{\cos\theta} \nonumber\\
+		&amp;= \dfrac{v_{0}^{2}\sin\theta\cos\theta}{g}
+\end{align}\]</div>
+<p>This gives the <span class="math notranslate nohighlight">\(x\)</span> coordinate of maximum height, and to find the <span class="math notranslate nohighlight">\(y\)</span> coordinate we simply substitute this expression for <span class="math notranslate nohighlight">\(x\)</span> back into equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-overall-parabolic-equation">()</a>.</p>
+<div class="math notranslate nohighlight" id="equation-eq-hmax">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-hmax" title="Link to this equation">#</a></span>\[\begin{split}	y = h_{\text{max}} &amp;= \dfrac{v_{0}^{2}\sin\theta\cos\theta}{g}\tan\theta - \dfrac{g}{2v_{0}^{2}\cos^2\theta}\dfrac{v_{0}^{4}\sin^2\theta\cos^2\theta}{g^2}\nonumber\\
+	&amp;= \dfrac{v_{0}^{2}\sin^2\theta}{g} - \dfrac{v_{0}^{2}\sin^2\theta}{2g}\nonumber\\
+	h_{\text{max}} &amp;=\dfrac{v_{0}^{2}\sin^2\theta}{2g}\end{split}\]</div>
+<div class="hint admonition">
+<p class="admonition-title">Now where have we seen this expression before..?</p>
+<p>Let us look back at <a class="reference internal" href="ProjectileExtra.html#ex-c1-coconut"><span class="std std-ref">the coconut example</span></a> again, and in particular equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-c1-hrange">()</a>. This ``…kind of interesting…’’ expression for the range of heights our expression is valid for can now be simplified by substituting in equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-hmax">()</a> to get</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+0 \leq h \leq h_{\text{max}}
+\end{align*}\]</div>
+<p>or in other words, the model is only valid if the height of the coconut is between ground level and the maximum height of the projectile. Otherwise the projectile will never hit the coconut anywhere along its path which makes sense in the real world.<br />
+Neat, huh?</p>
+</div>
+</section>
+<section id="projectile-range-r">
+<h3>Projectile range, <span class="math notranslate nohighlight">\(R\)</span><a class="headerlink" href="#projectile-range-r" title="Link to this heading">#</a></h3>
+<p>There are two points when the height of the projectile is zero, i.e. it is on the ground. This condition of <span class="math notranslate nohighlight">\(y=0\)</span> happens at the launching point (<span class="math notranslate nohighlight">\(x=0\)</span>) and at the maximum range of the projectile (<span class="math notranslate nohighlight">\(x=R\)</span>). By using this fact that <span class="math notranslate nohighlight">\(y=0\)</span> at the point we are interested in we can use equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-overall-parabolic-equation">()</a>.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+0=x\tan\theta - \dfrac{gx^2}{2v_{0}^{2}\cos^2\theta}
+\end{align*}\]</div>
+<p>which has solutions <span class="math notranslate nohighlight">\(x=0\)</span> (initial firing point) and</p>
+<div class="math notranslate nohighlight" id="equation-eq-r">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-r" title="Link to this equation">#</a></span>\[\begin{split}	x &amp;=\dfrac{2v_{0}^{2}\cos^2\theta\tan\theta}{g}\nonumber\\
+	&amp;=\dfrac{2v_{0}^{2}\cos\theta\sin\theta}{g}\\
+	&amp;=\dfrac{v_{0}^{2}\sin2\theta}{g} = R\end{split}\]</div>
+<p>by using the identity <span class="math notranslate nohighlight">\(2\sin\theta\cos\theta = \sin2\theta\)</span>.</p>
+<div class="dropdown attention admonition">
+<p class="admonition-title">Something to try</p>
+<p>Go back to the coconut example again and take a look at equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-c1-hcoconut">()</a>. We can now see that the first term in the brackets is in fact the range of the projectile. Now that you have this information I want you to try two examples yourself and see what the equation tells you, both mathematically and the physical representation.</p>
+<ol class="arabic simple">
+<li><p>What happens if the coconut is on the ground, i.e. <span class="math notranslate nohighlight">\(h=0\)</span>?</p></li>
+<li><p>What happens if the height of the coconut post is equal to the maximum height of the projectile, i.e. <span class="math notranslate nohighlight">\(h_{\text{max}}\)</span>?
+Does the algebra agree with your real world expectations?</p></li>
+</ol>
+</div>
+</section>
+<section id="time-of-flight-t-f">
+<h3>Time of flight, <span class="math notranslate nohighlight">\(t_f\)</span><a class="headerlink" href="#time-of-flight-t-f" title="Link to this heading">#</a></h3>
+<p>At the very start of this chapter we have seen that the <span class="math notranslate nohighlight">\(x\)</span> position of the particle can be expressed as a function of time</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x(t)=v_{x,0}t=v_{0}\cos\theta \,t
+\end{align*}\]</div>
+<p>and the <span class="math notranslate nohighlight">\(x\)</span> coordinate for the <strong>total</strong> flight is the range of the projectile. So combining this with equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-r">()</a> gives</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3fe04866-6785-4c6a-accc-107adf450db6">
+<span class="eqno">()<a class="headerlink" href="#equation-3fe04866-6785-4c6a-accc-107adf450db6" title="Permalink to this equation">#</a></span>\[\begin{align}
+	x(t_f) = R &amp;= v_{0}\cos\theta \,t_f\nonumber\\
+	\dfrac{2v_{0}^{2}\cos\theta\sin\theta}{g} &amp;= v_{0}\cos\theta \,t_f\nonumber\\
+	\dfrac{2v_{0}\sin\theta}{g} &amp;= t_f
+\end{align}\]</div>
+</section>
+<section id="something-to-consider">
+<h3>Something to consider.<a class="headerlink" href="#something-to-consider" title="Link to this heading">#</a></h3>
+<p>Whilst this approach to finding the parameters of interest may be different to what you have seen before, there is some rationale behind this approach.</p>
+<p>Firstly it reduces the number of equations you need to start from. The parabolic equation alone will give the range and maximum height, and a simple distance-time relation gives time of flight.</p>
+<p>The other, perhaps more important reason why this is a good approach is that it avoids changing between types of equations (in this case, functions of distance or time). When trying to determine “distance” parameters we use an equation that is only a function of distance (equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-overall-parabolic-equation">()</a>). Being flexible with the approach you take will most certainly save you time and heartache later in your course.</p>
+<div class="admonition-key-points admonition">
+<p class="admonition-title">Key points</p>
+<ol class="arabic simple">
+<li><p>The path of a simple projectile is given by <span class="math notranslate nohighlight">\(y=x\tan\theta-\dfrac{gx^2}{2v_{0}^{2}\cos^{2}\theta}\)</span></p></li>
+<li><p>The <strong>maximum height</strong> is found from the <strong>turning point</strong> of this path.</p></li>
+<li><p>The <strong>range</strong> is found when <span class="math notranslate nohighlight">\(y=0\)</span>, with one solution being the firing point and the other being the range.</p></li>
+</ol>
+</div>
+</section>
+</section>
+<section id="launchpoint-y-neq0">
+<span id="c1-launch"></span><h2>Launchpoint <span class="math notranslate nohighlight">\(y\neq0\)</span><a class="headerlink" href="#launchpoint-y-neq0" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="fig-c1-projectile-y-0">
+<a class="reference internal image-reference" href="Figures/Projectile_y_0.png"><img alt="A projectile is fired from some initial height $h$ above the ground, with a new range $R'$ compared to the simple projectile range $R$" src="Figures/Projectile_y_0.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-text">A projectile is fired from some initial height <span class="math notranslate nohighlight">\(h\)</span> above the ground, with a new range <span class="math notranslate nohighlight">\(R'\)</span> compared to the simple projectile range <span class="math notranslate nohighlight">\(R\)</span>. Our choice of where <span class="math notranslate nohighlight">\(y=0\)</span> is arbitrary so in this case the <span class="math notranslate nohighlight">\(y\)</span> coordinate of the new landing point is <span class="math notranslate nohighlight">\(-h\)</span>. If I wanted to define the firing height as <span class="math notranslate nohighlight">\(y=h\)</span> then I can still solve this but the algebra becomes more challenging.</span><a class="headerlink" href="#fig-c1-projectile-y-0" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Once again we return to equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-overall-parabolic-equation">()</a> but in this case we set <span class="math notranslate nohighlight">\(y=h\)</span> where <span class="math notranslate nohighlight">\(h\)</span> is the height difference between firing and landing points (positive <span class="math notranslate nohighlight">\(h\)</span> means landing point is higher than firing point).
+Thus</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+	h &amp;= x\tan\theta - \dfrac{gx^2}{2v_{0}^2\cos^2\theta}\\
+	0 &amp;= x^2 - \dfrac{2v_{0}^2\sin\theta\cos\theta x}{g} + \dfrac{2v_{0}^2\cos^2\theta h}{g}
+\end{align*}\]</div>
+<p>which has been rearranged into the quadratic form with <span class="math notranslate nohighlight">\(a=1\)</span>, <span class="math notranslate nohighlight">\(b=-\dfrac{2v_{0}^2\sin\theta\cos\theta}{g}\)</span> and <span class="math notranslate nohighlight">\(c=\dfrac{2v_{0}^2\cos^2\theta h}{g}\)</span>.</p>
+<p>Solving the quadratic and taking only the positive root of the square root term (negative root gives the solution behind the firing point) is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+	R' = R+\Delta R &amp;= \dfrac{1}{2}\left[\dfrac{2v_{0}^2\sin\theta\cos\theta}{g}+\left(\dfrac{4v_{0}^4\sin^2\theta\cos^2\theta}{g^2}+\dfrac{8v_0^2\cos^2\theta h}{g}\right)^{\frac{1}{2}}\right]\\
+	&amp;= \dfrac{1}{2}\left[\dfrac{2v_{0}^2\sin\theta\cos\theta}{g}+\left(\dfrac{4v_{0}^2\cos^2\theta}{g^2}\left(v_0^2\sin^2\theta+2gh\right)\right)^{\frac{1}{2}}\right]\\
+	&amp;= \dfrac{1}{2}\left[\dfrac{2v_{0}^2\sin\theta\cos\theta}{g}+\dfrac{2v_{0}\cos\theta}{g}\left(v_0^2\sin^2\theta+2gh\right)^{\frac{1}{2}}\right]\\
+	&amp;= \dfrac{v_0 \cos\theta}{g}\left[v_0 \sin\theta + \left(v_0^2\sin^2\theta+2gh\right)^{\frac{1}{2}}\right]
+\end{align*}\]</div>
+<p>This equation is certainly more complicated than the earlier case where <span class="math notranslate nohighlight">\(h=0\)</span> (equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-r">()</a>) but this is a more general equation that can be used for any landing height. As a useful test you should set <span class="math notranslate nohighlight">\(h=0\)</span> in the above equation to show that it reduces to the form you expect for a system with the same firing and landing height.</p>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
+<p>Even though I have presented this as a separate scenario, hopefully you have spotted that this is incredibly similar to the coconut example from earlier. And so it should be but in this case we are relaxing the constraint that <span class="math notranslate nohighlight">\(h\geq0\)</span> because the target could now be lower than the cannon.</p>
+<p>In fact this is the solution to the question posed very early in <a class="reference internal" href="ProjectileExtra.html#ex-c1-coconut"><span class="std std-ref">the coconut example</span></a>. If the cannon has a height of <span class="math notranslate nohighlight">\(h_\text{cannon}\)</span> and the coconut is on a post of height <span class="math notranslate nohighlight">\(h_\text{post}\)</span> then we can simplify this by taking the difference and reducing the system to the simple case of firing from ground height and trying to hit a coconut on a post of height <span class="math notranslate nohighlight">\((h=h_\text{post}-h_\text{cannon})\)</span>.</p>
+</div>
+</section>
+<section id="sloping-ramp">
+<span id="c1-slope"></span><h2>Sloping Ramp<a class="headerlink" href="#sloping-ramp" title="Link to this heading">#</a></h2>
+<p>In this final section we are going to think about generalising the scenario further and asking ourselves why were castles built on top of hills? There is certainly the argument that climbing a hill is tiring, but by making some approximations to model the shape of a hill we can see how an upward slope changes the range of a projectile compared to an upward slope or firing on a level plane.</p>
+<p>We are going to only consider the most simple model for a hill which is a straight line with some constant gradient. If you wanted to you can do the same process as we are about to see but use a different expression for the hill.</p>
+<figure class="align-center" id="fig-projectileslope">
+<a class="reference internal image-reference" href="Figures/ProjectileSlope.png"><img alt="Firing a projectile down a ramp inclined at an angle $\alpha$ with respect to the horizontal, where a positive $\alpha$ indicates an upwards sloping ramp. Care should be taken to note that the firing angle $\theta$ is defined with respect to the horizontal, and not to the surface of the ramp. The new landing coordinates are $(x',y')$." src="Figures/ProjectileSlope.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-text">Firing a projectile down a ramp inclined at an angle <span class="math notranslate nohighlight">\(\alpha\)</span> with respect to the horizontal, where a positive <span class="math notranslate nohighlight">\(\alpha\)</span> indicates an upwards sloping ramp. Care should be taken to note that the firing angle <span class="math notranslate nohighlight">\(\theta\)</span> is defined with respect to the horizontal, and not to the surface of the ramp. The new landing coordinates are <span class="math notranslate nohighlight">\((x',y')\)</span>.</span><a class="headerlink" href="#fig-projectileslope" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="projectile-range">
+<h3>Projectile Range<a class="headerlink" href="#projectile-range" title="Link to this heading">#</a></h3>
+<p>In this situation we once again consider the intersection between the parabolic curve and the landing ‘line’. In section <a class="reference internal" href="ProjectileExtra.html#c1-launch"><span class="std std-ref">Launchpoint <span class="math notranslate nohighlight">\(y\neq0\)</span></span></a> we used the simple expression <span class="math notranslate nohighlight">\(y=h\)</span> but in the case of a sloping ramp we must use the equation of a straight line expressed in terms of the angle of the ramp, such that</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x'\tan\alpha &amp;= x'\tan\theta - \dfrac{gx'^2}{2v_0^2\cos^2\theta}
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x'\)</span> is the <span class="math notranslate nohighlight">\(x\)</span>-coordinate of the landing point on the ramp and <span class="math notranslate nohighlight">\(\alpha\)</span> is the slope angle.
+Thus</p>
+<div class="math notranslate nohighlight" id="equation-eq-slope-x">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-slope-x" title="Link to this equation">#</a></span>\[\begin{split}\dfrac{gx'}{2v_0^2\cos^2\theta} &amp;= \tan\theta - \tan\alpha\nonumber\\
+x' &amp;= \dfrac{2v_0^2}{g}\left(\cos^2\theta\tan\theta - \cos^2\theta\tan\alpha\right)\nonumber\\
+&amp;= \dfrac{2v_0^2}{g}\left(\sin\theta\cos\theta - \cos^2\theta\tan\alpha\right)\end{split}\]</div>
+<p>It is worth reiterating that this expression is for the <strong>horizontal coordinate of the landing point</strong> and not the length down the ramp. However this length <span class="math notranslate nohighlight">\(L\)</span> can easily be found from trigonometry</p>
+<div class="math notranslate nohighlight" id="equation-eq-slope-l">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-slope-l" title="Link to this equation">#</a></span>\[\begin{split}L &amp;= \dfrac{x'}{\cos\alpha}\nonumber\\
+&amp;= \dfrac{2v_0^2}{g\cos\alpha}\left(\sin\theta\cos\theta - \cos^2\theta\dfrac{\sin\alpha}{\cos\alpha}\right)\nonumber\\
+&amp;= \dfrac{2v_0^2\cos\theta}{g\cos\alpha}\left(\dfrac{\sin\theta\cos\alpha - \cos\theta\sin\alpha}{\cos\alpha}\right)\nonumber\\
+&amp;= \dfrac{2v_0^2\cos\theta}{g\cos^2\alpha}\left[\sin(\theta - \alpha)\right]\end{split}\]</div>
+<p>A (double) sensibility check can be performed here as both equations <a class="reference internal" href="ProjectileExtra.html#equation-eq-slope-x">()</a> and <a class="reference internal" href="ProjectileExtra.html#equation-eq-slope-l">()</a> should reduce to the range equation (equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-r">()</a>) when the angle of the slope <span class="math notranslate nohighlight">\(\alpha\)</span> is zero.</p>
+</section>
+<section id="angle-for-maximum-range">
+<h3>Angle for Maximum Range<a class="headerlink" href="#angle-for-maximum-range" title="Link to this heading">#</a></h3>
+<p>Determining the angle for maximum range requires us to look for a stationary point in the function <span class="math notranslate nohighlight">\(x'(\theta)\)</span> or <span class="math notranslate nohighlight">\(L(\theta)\)</span>. We are able to use either equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-slope-x">()</a> or <a class="reference internal" href="ProjectileExtra.html#equation-eq-slope-l">()</a> as they both describe the same landing point, and so in this case we will (somewhat arbitrarily) work with equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-slope-l">()</a>.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\dfrac{\mathrm{d}L}{\mathrm{d}\theta} = 0 &amp;= \dfrac{2v_0^2}{g\cos^2\alpha}\,\dfrac{\mathrm{d}}{\mathrm{d}\theta}\left((\sin[\theta-\alpha]\cos\theta\right)\\
+&amp;= \dfrac{2v_0^2}{g\cos^2\alpha}\,\left(\cos\theta\cos[\theta-\alpha]-\sin\theta\sin[\theta-\alpha]\right)\\
+&amp;= \dfrac{2v_0^2}{g\cos^2\alpha}\,\cos\left(\alpha-2\theta\right)
+\end{align*}\]</div>
+<p>As the fraction term does not equal zero we find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+0&amp;= \cos\left(\alpha-2\theta_{\text{max}}\right)\\
+\therefore \alpha-2\theta_{\text{max}} &amp;= \cos^{-1}(0)\\
+\therefore \theta_{\text{max}} &amp;= \dfrac{\alpha}{2} - \frac{\pi}{2}\left(n -\dfrac{1}{2}\right) = \frac{\alpha}{2}+\frac{\pi}{4}
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is any integer. We only require the first solution, i.e. <span class="math notranslate nohighlight">\(n=0\)</span> which gives us the final expression. You can perform another sensibility check by seeing what happens when <span class="math notranslate nohighlight">\(\alpha=0\)</span>, i.e the flat surface situation.</p>
+<p>Substituting this value for <span class="math notranslate nohighlight">\(\theta_\text{max}\)</span> into equation <a class="reference internal" href="ProjectileExtra.html#equation-eq-slope-l">()</a> will give the maximum distance down the ramp when fired at <span class="math notranslate nohighlight">\(\theta_{\text{max}}\)</span>;</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+L_{\text{max}} &amp;= \dfrac{v_0^2}{g\cos^2\alpha}\left[\frac{1}{2}\left(\cos(2\alpha)-\sin(\alpha)\right)\right]
+\end{align*}\]</div>
+</section>
+</section>
+<section id="lecture-questions">
+<h2>Lecture Questions<a class="headerlink" href="#lecture-questions" title="Link to this heading">#</a></h2>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 1</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Question</label><div class="sd-tab-content docutils">
+<p>A resident life mentor sees a water-filled balloon fall vertically past their window. Having lightning reflexes, they observe that the balloon took <span class="math notranslate nohighlight">\(0.15\text{ sec}\)</span> to pass from the top to bottom of the <span class="math notranslate nohighlight">\(2\text{ m}\)</span> high window.</p>
+<p>Assuming that the balloon was released from rest, how high above the bottom of the window was the cheeky fresher who dropped the balloon?</p>
+<p>[Not a projectile motion question per se, but good to get the brain working.]</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Hint</label><div class="sd-tab-content docutils">
+<p>Although the balloon is being released from rest, this corresponds to the top of the building and <strong>not</strong> at the top of the window.</p>
+<p>Start this by drawing a diagram and label all the different distances and corresponding velocities (i.e. velocity at top of window and at bottom of window.).</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Solution</label><div class="sd-tab-content docutils">
+<p>Firstly we shall assume negligible air resistance. It’s not stated in the question but is a reasonable assumption to make, plus the question is pretty much unsolvable with the little information we are given.</p>
+<p>Start with some definitions. The distance from the drop point and the top of the window is <span class="math notranslate nohighlight">\(h\)</span>, height of window is <span class="math notranslate nohighlight">\(h_w\)</span>, and the velocities of the balloon at the top and bottom of the window are <span class="math notranslate nohighlight">\(v_t\)</span> and <span class="math notranslate nohighlight">\(v_b\)</span> respectively. So we use the information about the window to find the velocity of the balloon just as it appears in view.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+h_w &amp;= v_tt+\frac{gt^2}{2}\\
+\therefore v_t &amp;= \frac{h_w}{t}-\frac{gt}{2} \left[\approx 12.6\text{ m s}^{-1}\right]
+\end{align*}\]</div>
+<p>Next we know the acceleration and the `final’ velocity (i.e. <span class="math notranslate nohighlight">\(v_t\)</span>) so we can determine <span class="math notranslate nohighlight">\(h\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v_t^2 &amp;= \cancelto{0}{v_0^2}+2ah\\
+\therefore h &amp;= \frac{v_t^2}{2g}\\
+		&amp;= \frac{1}{2g}\left(\frac{h_w}{t}-\frac{gt}{2}\right)^2\\
+		&amp;= \frac{12.6^2}{2\times9.8} \approx 8.1\text{ m}
+\end{align*}\]</div>
+<p>Final step is from reading the question carefully. We are asked for the distance between the bottom of the window and the release point, which is <span class="math notranslate nohighlight">\(8.1 + 2 = 10.1\text{ m }\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 2</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Question</label><div class="sd-tab-content docutils">
+<p>A baseball is hit out of the stadium and is observed to pass over the stands, <span class="math notranslate nohighlight">\(120.0\text{ m}\)</span> from the home plate (i.e. where the batter stands), at a height of <span class="math notranslate nohighlight">\(15.0\text{ m}\)</span>. The ball leaves the bat at an angle of <span class="math notranslate nohighlight">\(45^\circ\)</span> to the horizontal and is <span class="math notranslate nohighlight">\(1.2\text{ m}\)</span> above the ground when struck. If air resistance can be ignored, what is the minimum initial speed of the ball?</p>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Hint</label><div class="sd-tab-content docutils">
+<p>The temptation here is to set the maximum height of the projectile equal to the height of the stands, but the question isn’t asking for that. It turns out that the top of the projectile does not align with the top of the stands.</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Solution</label><div class="sd-tab-content docutils">
+<p>What we need to do is find the velocity or velocities that correspond to the ball hitting the top of the stand either on the upward path (between bat and maximum height), or on the downward.</p>
+<p>There are two possible ways to solve this. One is to use the modified equations that take into account the non-zero starting height. The alternative approach that I’ll just is to simply redefine my origin as the ball-bat collision point, meaning that the reduced height of the stand is <span class="math notranslate nohighlight">\(h'=15-1.2=13.8\text{ m}\)</span>. The value for <span class="math notranslate nohighlight">\(x\)</span> remains unchanged at <span class="math notranslate nohighlight">\(x=120.0\text{ m}\)</span>.</p>
+<p>We now use the simple equation for a projectile (no modifications for height or angle) and rearrange for <span class="math notranslate nohighlight">\(v_0\)</span>, i.e.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+h' &amp;= x\tan\theta - \frac{gx^2}{2v_0^2\cos^2\theta}\\
+v_0^2 &amp;= \frac{gx^2}{2\cos^2\theta\left(x\tan\theta-h'\right)}\\
+	&amp;= \frac{gx^2}{(x-h')}\\
+\therefore	v_0 &amp;= \pm\frac{\sqrt{g}x}{\sqrt{x-h'}} \approx 36.5\text{ m s}^{-1}
+\end{align*}\]</div>
+<p>There’s only one solution that makes sense with our physical system, i.e. the positive square root. If you were to plot the projectile path with this initial velocity you’d see that the ball hits the top of the stands on the downward part of the path. This means the velocity found is the minimum velocity asked for it the question - any larger velocity will cause the ball to go above the stand even on the downward trajectory.</p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 3</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+Question</label><div class="sd-tab-content docutils">
+<p>A perfectly elastic ball is thrown against a house, bounces back over the head of the thrower and lands on the ground. When it leaves the thrower’s hand, the ball is <span class="math notranslate nohighlight">\(2.0\text{ m}\)</span> above the ground and <span class="math notranslate nohighlight">\(4.0\text{ m}\)</span> from the wall, and has <span class="math notranslate nohighlight">\(v_{0x} = v_{0y} = 10\text{ m s}^{-1}\)</span>. How far behind the thrower does the ball hit the ground?</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+Hint</label><div class="sd-tab-content docutils">
+<p>Draw a diagram (of course!) but include two different paths. One showing the actual path of the ball bouncing off the wall, and another showing the path the ball would take if the wall was not in the way.</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+Solution</label><div class="sd-tab-content docutils">
+<p>The solution to this problem requires some conceptual insight (aka a trick) regarding an elastic collision in terms of vectors. The details of the trick are below but the short answer is that the path of the ball still follows a parabola but at the wall the x-direction is reversed - think of it like drawing the parabolic path then placing a mirror on the wall.</p>
+<p>Recognising this we then only need to find the range of a standard projectile from a non-zero height, and then subtract twice the person-wall distance. We also need to recognise that while the launch angle is not explicitly stated we know it is <span class="math notranslate nohighlight">\(45^{\circ}\)</span> because the horizontal and vertical components of the launch velocity are equal.</p>
+<p>Start from the equation of a projectile from a non-zero starting point, i.e.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+h &amp;= x\tan\theta - \dfrac{gx^2}{2v_{0}^2\cos^2\theta}\\
+\therefore R &amp;= \dfrac{v_0 \cos\theta}{g}\left[v_0 \sin\theta + \left(v_0^2\sin^2\theta-2gh\right)^{\frac{1}{2}}\right]
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(h=2\)</span>, <span class="math notranslate nohighlight">\(\theta=45^\circ\)</span> and <span class="math notranslate nohighlight">\(v_0=\sqrt{v_x^2+v_y^2}=\sqrt{10^2+10^2}=10\sqrt{2}\)</span>.</p>
+<p>Plugging in these numbers gives</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+R &amp;= \frac{10{\sqrt{2}}}{g{\sqrt{2}}} \left[\frac{10{\sqrt{2}}}{{\sqrt{2}}} + \left(\frac{100\times {2}}{{2}}-2\times g\times 2\right)^{\frac{1}{2}}\right]\\
+&amp;= \frac{10}{g} \left[10 + \left(100-5g\right)^{\frac{1}{2}}\right]\\
+&amp;\approx 22.23
+\end{align*}\]</div>
+<p>and so the distance the ball lands behind the person is <span class="math notranslate nohighlight">\(14.2\text{ m}\)</span>.</p>
+<p>Although it’s not necessary it’s never a bad thing to do a sense check and I’ll do this with the range equation for a simple projectile.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+R_\text{simple} &amp;= \dfrac{v_{0}^{2}\sin2\theta}{g}\\
+&amp;= \frac{200}{g}\approx 20.4
+\end{align*}\]</div>
+<p>The range we found earlier (<span class="math notranslate nohighlight">\(22.2\text{ m}\)</span>) should be larger than the simple projectile, which is indeed the case here. So while this doesn’t show that the answer to the original question is correct, it is at least reasonable compared to a more idealised case.</p>
+<p><strong>Explaining the ‘trick’</strong>
+It’s not a trick per se but needs us to understand something about momentum in vector form. Immediately before the collision the ball has a momentum that can be resolved into <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> components. Let us define positive <span class="math notranslate nohighlight">\(x\)</span> in the direction from the person to the wall, and positive <span class="math notranslate nohighlight">\(y\)</span> as up from the ground.</p>
+<p>When the ball hits the wall the horizontal component of momentum inverts in direction but does not change in magnitude (because it is inelastic), which is what gives us this `mirror’ effect I mentioned before. The <span class="math notranslate nohighlight">\(y\)</span> component however does not change in either direction or magnitude. So care needs to be taken when describing how the collision changes the momentum - you need to think about it as a vector quantity, and then be careful about which components undergo a change or inversion.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-about-kinematic-equations-and-notation">A note about kinematic equations and notation.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-new-suvat">The new suvat</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parabolic-path">Parabolic Path</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-coconut-shy-cannon">Example: Coconut shy cannon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-points">“Special points’’</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-height-h-text-max">Maximum height, <span class="math notranslate nohighlight">\(h_\text{max}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projectile-range-r">Projectile range, <span class="math notranslate nohighlight">\(R\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-of-flight-t-f">Time of flight, <span class="math notranslate nohighlight">\(t_f\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#something-to-consider">Something to consider.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launchpoint-y-neq0">Launchpoint <span class="math notranslate nohighlight">\(y\neq0\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sloping-ramp">Sloping Ramp</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projectile-range">Projectile Range</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angle-for-maximum-range">Angle for Maximum Range</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Matt Mears
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

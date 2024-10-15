@@ -1,0 +1,1130 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Topic 1 - Vectors &#8212; PHY009 - Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Topic1';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Topic 2 - Kinematics and Projectile Motion" href="Topic2.html" />
+    <link rel="prev" title="Pre-course requirements" href="PreCourse.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logouni.png" class="logo__image only-light" alt="PHY009 - Mechanics - Home"/>
+    <script>document.write(`<img src="_static/logouni.png" class="logo__image only-dark" alt="PHY009 - Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    PHY009: Foundations of Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PreCourse.html">Pre-course requirements</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Topic 1 - Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic2.html">Topic 2 - Kinematics and Projectile Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic3.html">Topic 3 - Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic4.html">Topic 4 - Energy, Power and Momentum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic5.html">Topic 5 - Circular Motion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTopic1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Topic1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Topic 1 - Vectors</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-and-vector-quantities">Scalar and Vector quantities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-convention">Notation convention</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-vectors">Properties of vectors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equal-vectors">Equal vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similar-vectors">Similar vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-subtraction-of-vectors">Addition (and subtraction) of vectors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cartesian-unit-vectors-and-components">Cartesian unit vectors and components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">Notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hat-mathbf-i-hat-mathbf-j-notation"><span class="math notranslate nohighlight">\(\hat{\mathbf{i}},\hat{\mathbf{j}}\)</span> notation.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitude-of-a-vector-in-hat-mathbf-i-hat-mathbf-j-notation">Magnitude of a vector in <span class="math notranslate nohighlight">\(\hat{\mathbf{i}},\hat{\mathbf{j}}\)</span> notation.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-a-vector">Components of a vector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-vectors-in-mechanics">Using vectors in mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#position-vectors">Position vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-and-acceleration-vectors">Velocity and acceleration vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalars-and-vectors-in-newtonian-mechanics-summary">Scalars and vectors in Newtonian mechanics - summary</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="topic-1-vectors">
+<span id="topic1"></span><h1>Topic 1 - Vectors<a class="headerlink" href="#topic-1-vectors" title="Link to this heading">#</a></h1>
+<section id="scalar-and-vector-quantities">
+<h2>Scalar and Vector quantities<a class="headerlink" href="#scalar-and-vector-quantities" title="Link to this heading">#</a></h2>
+<p>There are many quantities you have heard about that can be fully described by some number and appropriate unit of measurement, such as mass (e.g. <span class="math notranslate nohighlight">\(10\text{ g}\)</span>), distance between two points (e.g. <span class="math notranslate nohighlight">\(0.5\text{ m}\)</span>) and time take for a kettle to boil (e.g. <span class="math notranslate nohighlight">\(120\text{ s}\)</span> or <span class="math notranslate nohighlight">\(2\text{ mins}\)</span>). We call these types of quantities <strong>scalars</strong> and the size of the scalar is the <strong>magnitude</strong>. However there are other quantities that are not <em>completely</em> characterised by a single number with units.</p>
+<p>Consider the example where I told you that a person started half way between the entrance to the Hicks building and John’s Van<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, and that the person walked 4 meters. You do not have enough information to find their final position, and whether they walked towards getting a tasty treat or in some other direction. It is this word <em>direction</em> that is needed to provide the complete characterisation of <strong>displacement</strong>: the length, direction and units of the distance travelled allows you to know where the person is. We call this type of quantity a <strong>vector</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A vector is defined to be any quantity which is completely specified by a scalar magnitude and a direction.</p>
+</div>
+<section id="notation-convention">
+<h3>Notation convention<a class="headerlink" href="#notation-convention" title="Link to this heading">#</a></h3>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Strictly speaking the displacement or magnitude of <span class="math notranslate nohighlight">\(\overrightarrow{OA}\)</span> is <span class="math notranslate nohighlight">\(\left|OA\right|\)</span> where the <span class="math notranslate nohighlight">\(| |\)</span> represents the <strong>modulus</strong> of a quantity.</p>
+</div>
+</aside>
+<p>There are a number of different ways in which a vector quantity can written. One common method is known as the over-arrow style, for reasons that will become clear very quickly. If we have a particle that is starting at some point <span class="math notranslate nohighlight">\(O\)</span> and moves to some final position <span class="math notranslate nohighlight">\(A\)</span> then the displacement of the particle is denoted by <span class="math notranslate nohighlight">\(OA\)</span>. Given that a vector also has some direction to it we can represent this by introducing an arrow such that the vector describing the displacement from point <span class="math notranslate nohighlight">\(O\)</span> to point <span class="math notranslate nohighlight">\(A\)</span> is <span class="math notranslate nohighlight">\(\overrightarrow{OA}\)</span>.</p>
+<p>Two other complementary notation styles exist where the vector is described by a single letter or variable rather than the start and end points, and present this letter either in <strong>bold</strong> or with a line underneath. So if our single letter choice to represent the vector between points <span class="math notranslate nohighlight">\(O\)</span> and <span class="math notranslate nohighlight">\(A\)</span> was <span class="math notranslate nohighlight">\(a\)</span> then we would write</p>
+<div class="math notranslate nohighlight">
+\[\overrightarrow{OA} = \mathbf{a} = \underline{a}\]</div>
+<p>I have described these two styles as complementary as they depend on the tool you are using to write them. In creating these digital typed notes I can easily turn an letter into bold font but this is harder to do with handwritten letters, and so when writing vectors by hand the underline style is more common.</p>
+<p>The magnitude of a vector using this single letter notation is usually represented by the same letter but in <em>italics</em> rather than bold, meaning</p>
+<div class="math notranslate nohighlight">
+\[|\overrightarrow{OA}| = \left|\mathbf{a}\right| = a\]</div>
+<p>Finally, for the most part the choice of vector notation is a matter of personal preference but you’ll find that as you progress in your studies the bold type notation is probably the most likely to be used. As you’ve gathered from the above it’s the one that I tend to use and so will be the preferred choice going forward but I may swap between conventions as deemed appropriate.</p>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 1</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Question</label><div class="sd-tab-content docutils">
+<p>A student starts at the point <span class="math notranslate nohighlight">\(O\)</span> and walks <span class="math notranslate nohighlight">\(4.0\text{ km}\)</span> east to the point <span class="math notranslate nohighlight">\(A\)</span> and the <span class="math notranslate nohighlight">\(3.0\text{ km}\)</span> north to the point <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p>Find their final <strong>displacement</strong> from point <span class="math notranslate nohighlight">\(O\)</span>.</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Hint</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>It helps to draw this out (it does not have to be to scale).</p></li>
+<li><p>Pay attention to the type of triangle that this forms.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Solution</label><div class="sd-tab-content docutils">
+<p>By drawing this out the two stages of the journey form two sides of a right angle triangle, with the hypoteneuse being the displacement we are interested in.</p>
+<figure class="align-center" id="fig-l1ex1">
+<a class="reference internal image-reference" href="_images/L1Ex1.png"><img alt="_images/L1Ex1.png" src="_images/L1Ex1.png" style="width: 60%;" /></a>
+</figure>
+<p>Using Pythagoras’ Theorem:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+OB^2 &amp;= OA^2 + AB^2\\
+    &amp;= 4.0^2 + 3.0^2\\
+    &amp;= 16.0 + 9.0 = 25.0\\
+\therefore |OB| = 5.0
+\end{align*}\]</div>
+<p>This <span class="math notranslate nohighlight">\(|OB|\)</span> is the distance the person has travelled, and to find the displacement we also need the direction which can be determined using trigonometry, and is defined as <span class="math notranslate nohighlight">\(\theta\)</span> in the diagram. As all sides are known we can use any of the identities but I will choose the two values given in the question and the tangent relationship:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\tan\theta &amp;= \frac{\text{opposite}}{\text{adjacent}}\\
+            &amp;= \frac{3.0}{4.0}\\
+\therefore \theta &amp;= \tan^{-1}\left(\frac{3.0}{4.0}\right) \approx 36.9^\circ
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="properties-of-vectors">
+<h2>Properties of vectors<a class="headerlink" href="#properties-of-vectors" title="Link to this heading">#</a></h2>
+<section id="equal-vectors">
+<h3>Equal vectors<a class="headerlink" href="#equal-vectors" title="Link to this heading">#</a></h3>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<figure class="align-center" id="fig-l1fig1">
+<a class="reference internal image-reference" href="_images/L1Fig1.png"><img alt="_images/L1Fig1.png" src="_images/L1Fig1.png" style="width: 100%;" /></a>
+</figure>
+</aside>
+<p>Two vectors are <strong>equal</strong> if an only if they have both the <strong>same magnitude</strong> and the <strong>same direction</strong>. In the diagram to the right two vectors are shown as the arrows correcting start and end points, and we can see that <span class="math notranslate nohighlight">\(\mathbf{x} = \mathbf{y}\)</span>, or in the arrow notation <span class="math notranslate nohighlight">\(\overrightarrow{AB}=\overrightarrow{PQ}\)</span>.</p>
+<p>It’s important to note that the two vectors <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> are equal even though they have different start and end points. What is the same is the distance between the two start and ends, and the direction from start to end, but two vectors do not have to share a start and end point to be equal.</p>
+</section>
+<section id="similar-vectors">
+<h3>Similar vectors<a class="headerlink" href="#similar-vectors" title="Link to this heading">#</a></h3>
+<p>A vector can be equal <strong>and opposite</strong> to another if the size of the vector was the same but it is pointing in the opposite direction. In the case of the diagram above the second vector could instead start at point <span class="math notranslate nohighlight">\(Q\)</span> and end at point <span class="math notranslate nohighlight">\(P\)</span>. In this case we would state that <span class="math notranslate nohighlight">\(\mathbf{y}=-\mathbf{x}\)</span>. If you are using the arrow notation style the order of letters is crucial: <span class="math notranslate nohighlight">\(\overrightarrow{PQ}\)</span> is not the same as <span class="math notranslate nohighlight">\(\overrightarrow{QP}\)</span>, and in fact <span class="math notranslate nohighlight">\(\overrightarrow{PQ} = -\overrightarrow{QP}\)</span>.</p>
+<p>We can also have vectors that point in the same direction (i.e. they are parallel) but have different magnitudes as shown below.</p>
+<p>From this we can state that:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\overrightarrow{PQ} &amp;= k\overrightarrow{LM}
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is a scalar that represents the scaling factor between the two vectors which can be written as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+k &amp;= \frac{|\overrightarrow{PQ}|}{|\overrightarrow{LM}}
+\end{align*}\]</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 2</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Question</label><div class="sd-tab-content docutils">
+<figure class="align-center" id="fig-l1ex2">
+<a class="reference internal image-reference" href="_images/L1Ex2.png"><img alt="_images/L1Ex2.png" src="_images/L1Ex2.png" style="width: 40%;" /></a>
+</figure>
+<p>The diagram shows a parallelogram <span class="math notranslate nohighlight">\(OABC\)</span>, with <span class="math notranslate nohighlight">\(\overrightarrow{OA}=\mathbf{a}\)</span> and <span class="math notranslate nohighlight">\(\overrightarrow{OB}=\mathbf{b}\)</span>. The point <span class="math notranslate nohighlight">\(D\)</span> is the mid-point of <span class="math notranslate nohighlight">\(AC\)</span>. Express the following vectors in terms of <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\overrightarrow{BC}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\overrightarrow{AC}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\overrightarrow{CA}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\overrightarrow{OC}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\overrightarrow{AB}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\overrightarrow{OD}\)</span></p></li>
+</ol>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Hint</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Remember that a vector pointing in the opposite direction of a similar one has a minus sign in front, i.e. <span class="math notranslate nohighlight">\(\overrightarrow{XY}=-\overrightarrow{YX}\)</span>.</p></li>
+<li><p>Use the scaling factor <span class="math notranslate nohighlight">\(k\)</span> to ‘travel’ some contraction (<span class="math notranslate nohighlight">\(k&lt;1\)</span>) or  stretch (<span class="math notranslate nohighlight">\(k&gt;1\)</span>) of a vector.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Solution</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\overrightarrow{BC}\)</span> is in the same direction as <span class="math notranslate nohighlight">\(\overrightarrow{OA}\)</span> and of the same length because <span class="math notranslate nohighlight">\(OABC\)</span> is a parallelogram. Therefore <span class="math notranslate nohighlight">\(\overrightarrow{BC}=\overrightarrow{OA}=\mathbf{a}\)</span>.</p></li>
+<li><p>Similarly, <span class="math notranslate nohighlight">\(\overrightarrow{AC}\)</span> is in the same direction and of the same size as <span class="math notranslate nohighlight">\(\overrightarrow{OB}\)</span> and so <span class="math notranslate nohighlight">\(\overrightarrow{AC}=\overrightarrow{OB}=\mathbf{b}\)</span>.</p></li>
+<li><p>The vector <span class="math notranslate nohighlight">\(\overrightarrow{CA}\)</span> is the same length as <span class="math notranslate nohighlight">\(\overrightarrow{AC}\)</span> but in the opposite direction, and therefore <span class="math notranslate nohighlight">\(\overrightarrow{CA} = -\overrightarrow{AC}=-\mathbf{b}\)</span>.</p></li>
+<li><p>To find <span class="math notranslate nohighlight">\(\overrightarrow{OC}\)</span> consider the triangle <span class="math notranslate nohighlight">\(OAC\)</span>.</p></li>
+</ol>
+<figure class="align-center" id="fig-l1ex2-d">
+<a class="reference internal image-reference" href="_images/L1Ex2_d.png"><img alt="_images/L1Ex2_d.png" src="_images/L1Ex2_d.png" style="width: 40%;" /></a>
+</figure>
+<p>By the triangle law:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\overrightarrow{OC} &amp;= \overrightarrow{OA} + \overrightarrow{AC}\\
+        &amp;= \overrightarrow{OA} + \overrightarrow{OB}\\
+        &amp;= \mathbf{a} + \mathbf{b}
+\end{align*}\]</div>
+<ol class="arabic simple" start="5">
+<li><p>To find <span class="math notranslate nohighlight">\(\overrightarrow{AB}\)</span> consider the triangle <span class="math notranslate nohighlight">\(OAB\)</span>.</p></li>
+</ol>
+<figure class="align-center" id="fig-l1ex2-e">
+<a class="reference internal image-reference" href="_images/L1Ex2_e.png"><img alt="_images/L1Ex2_e.png" src="_images/L1Ex2_e.png" style="width: 40%;" /></a>
+</figure>
+<p>By the triangle laaw:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\overrightarrow{AB} &amp;= \overrightarrow{AO} + \overrightarrow{OB}\\
+        &amp;= -\overrightarrow{OA} + \overrightarrow{OB}\\
+        &amp;= -\mathbf{a} + \mathbf{b} = \mathbf{b} - \mathbf{a}
+\end{align*}\]</div>
+<ol class="arabic simple" start="6">
+<li><p>To find <span class="math notranslate nohighlight">\(\overrightarrow{OD}\)</span> consider the triangle <span class="math notranslate nohighlight">\(OAD\)</span>.</p></li>
+</ol>
+<figure class="align-center" id="fig-l1ex2-f">
+<a class="reference internal image-reference" href="_images/L1Ex2_f.png"><img alt="_images/L1Ex2_f.png" src="_images/L1Ex2_f.png" style="width: 40%;" /></a>
+</figure>
+<p>We must first find <span class="math notranslate nohighlight">\(\overrightarrow{AD}\)</span>. <span class="math notranslate nohighlight">\(\overrightarrow{AD}\)</span> is parallel to <span class="math notranslate nohighlight">\(\overrightarrow{AC}\)</span> (shown in grey) and half its length as <span class="math notranslate nohighlight">\(D\)</span> is the midpoint of <span class="math notranslate nohighlight">\(\overrightarrow{AC}\)</span>, so</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\overrightarrow{AD} &amp;= \frac{1}{2}\mathbf{b}
+\end{align*}\]</div>
+<p>By the triangle law:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\overrightarrow{OD} &amp;= \overrightarrow{OA}+\overrightarrow{AD}\\
+    &amp;= \mathbf{a} + \frac{1}{2}\mathbf{b}
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+</section>
+<section id="addition-and-subtraction-of-vectors">
+<span id="t1-additionvectors"></span><h3>Addition (and subtraction) of vectors<a class="headerlink" href="#addition-and-subtraction-of-vectors" title="Link to this heading">#</a></h3>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<figure class="align-default">
+<img alt="_images/L1Fig2.png" src="_images/L1Fig2.png" />
+</figure>
+</aside>
+<p>Suppose that runner 1 goes from a point <span class="math notranslate nohighlight">\(O\)</span> to <span class="math notranslate nohighlight">\(A\)</span> and then from point <span class="math notranslate nohighlight">\(A\)</span> to point <span class="math notranslate nohighlight">\(B\)</span>, and runner 2 goes directly from point <span class="math notranslate nohighlight">\(O\)</span> to point <span class="math notranslate nohighlight">\(B\)</span>. As the result of these two different journeys is the same (they start and end at the same point) we can write</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\text{Runner 1} &amp;= \text{Runner 2}\\
+\overrightarrow{OA}+\overrightarrow{AB} &amp;= \overrightarrow{OB}\\
+\text{or }\qquad \mathbf{x} + \mathbf{y} &amp;= \mathbf{r}
+\end{align*}\]</div>
+<p>The displacement <span class="math notranslate nohighlight">\(\mathbf{r}=\overrightarrow{OB}\)</span> is the <strong>sum</strong> or <strong>resultant</strong> of the displacements <span class="math notranslate nohighlight">\(\mathbf{x}=\overrightarrow{OA}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{y}=\overrightarrow{AB}\)</span>. This is sometimes known as the <strong>triangle law of addition</strong>, but it also holds true for a single vector being the resultant of the sum of any number of other vectors.</p>
+</section>
+</section>
+<section id="cartesian-unit-vectors-and-components">
+<h2>Cartesian unit vectors and components<a class="headerlink" href="#cartesian-unit-vectors-and-components" title="Link to this heading">#</a></h2>
+<p>A <strong>unit vector</strong> is a vector with magntitude of 1 unit. They are particularly useful in allowing us to specify the direction of some property (force, velocity, etc) without changing the magnitude of the property itself: multiplying a value by a unit vector does not change the magnitude but provides additional information about the direction via the direction of the unit vector.
+There are a number of unit vector sets that are particularly helpful in physics. The one we will use in this course is known as the <strong>Cartesian</strong> set as the unit vectors lie along the positive cartesian axes, more commonly known as the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axes in two dimensions with the <span class="math notranslate nohighlight">\(z\)</span> axis taking us into three dimensions.</p>
+<p>Any vector can be written as the product of the magnitude of the vector times the unit vector pointing in the same direction as the original vector. So for the general vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \mathbf{a} &amp;= |\mathbf{a}|\,\hat{\mathbf{a}}
+\end{align*}\]</div>
+<section id="notation">
+<h3>Notation<a class="headerlink" href="#notation" title="Link to this heading">#</a></h3>
+<p>Unit vectors are commonly represented by use of the ^ or “hat” symbol. For example the unit vector of some vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> is written as <span class="math notranslate nohighlight">\(\hat{\mathbf{a}}\)</span>.</p>
+</section>
+<section id="hat-mathbf-i-hat-mathbf-j-notation">
+<h3><span class="math notranslate nohighlight">\(\hat{\mathbf{i}},\hat{\mathbf{j}}\)</span> notation.<a class="headerlink" href="#hat-mathbf-i-hat-mathbf-j-notation" title="Link to this heading">#</a></h3>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The unit vector in the <span class="math notranslate nohighlight">\(z\)</span> direction is <span class="math notranslate nohighlight">\(\hat{\mathbf{k}}\)</span>.</p>
+</div>
+</aside>
+<p>The unit vectors along the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> cartersian axes are usually denoted by <span class="math notranslate nohighlight">\(\hat{\mathbf{i}}\)</span> and <span class="math notranslate nohighlight">\(\hat{\mathbf{j}}\)</span> respectively. So the vector <span class="math notranslate nohighlight">\((3\hat{\mathbf{i}}+4\hat{\mathbf{j}})\)</span> corresponds to a displacement of 3 units in the <span class="math notranslate nohighlight">\(x\)</span> direction (i.e. in the direction of the unit vector <span class="math notranslate nohighlight">\(\hat{\mathbf{i}}\)</span>) and 4 units in the <span class="math notranslate nohighlight">\(y\)</span> direction (i.e. in the direction of the unit vector <span class="math notranslate nohighlight">\(\hat{\mathbf{j}}\)</span>).</p>
+<p>The use of unit vectors along the cartesian axes is very useful as we can describe any single vector in terms of <strong>independent</strong> <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> components. This in turn means we can add vectors together using this notation by adding the relevant components separately. If we want to add vectors together we add the terms involving <span class="math notranslate nohighlight">\(\hat{\mathbf{i}}\)</span> and those involve <span class="math notranslate nohighlight">\(\hat{\mathbf{j}}\)</span> separately.
+Expressing this mathematically for two general vectors <span class="math notranslate nohighlight">\(\mathbf{a}=a_1\hat{\mathbf{i}}+a_2\hat{\mathbf{j}}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}=b_1\hat{\mathbf{i}} + b_2\hat{\mathbf{j}}\)</span> (where <span class="math notranslate nohighlight">\(a_1,a_2,b_1,b_2\)</span> are arbitrary constants) their sum would be</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathbf{a} + \mathbf{b} &amp;= (a_1\hat{\mathbf{i}} + a_2\hat{\mathbf{j}}) + ((b_1\hat{\mathbf{i}} + b_2\hat{\mathbf{j}})\\
+    &amp;= (a_1\hat{\mathbf{i}} + b_1\hat{\mathbf{i}}) + (a_2\hat{\mathbf{j}} + b_2\hat{\mathbf{j}})\\
+    &amp;= (a_1 + b_1)\hat{\mathbf{i}} + (a_2 + b_2)\hat{\mathbf{j}}
+\end{align*}\]</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<figure class="align-center" id="fig-l1unitvec">
+<a class="reference internal image-reference" href="_images/L1UnitVec.png"><img alt="_images/L1UnitVec.png" src="_images/L1UnitVec.png" style="width: 100%;" /></a>
+</figure>
+</aside>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 3</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+Question</label><div class="sd-tab-content docutils">
+<p>Given <span class="math notranslate nohighlight">\(\mathbf{a}=(2\hat{\mathbf{i}} + 3\hat{\mathbf{j}})\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b} = (4\hat{\mathbf{i}} - 2\hat{\mathbf{j}})\)</span>, find <span class="math notranslate nohighlight">\(\mathbf{a} + \mathbf{b}\)</span> in terms of <span class="math notranslate nohighlight">\(\hat{\mathbf{i}}\)</span> and <span class="math notranslate nohighlight">\(\hat{\mathbf{j}}\)</span>. Show that this result is true by plotting <span class="math notranslate nohighlight">\(\mathbf{a}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{a+b}\)</span> on a graph.</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+Hint</label><div class="sd-tab-content docutils">
+<p>When adding two vectors together you should add only the relevant components together. In this case treat <span class="math notranslate nohighlight">\(\hat{\mathbf{i}}\)</span> and <span class="math notranslate nohighlight">\(\hat{\mathbf{j}}\)</span> components separately.</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+Solution</label><div class="sd-tab-content docutils">
+<p>Given <span class="math notranslate nohighlight">\(\mathbf{a}=(2\hat{\mathbf{i}} + 3\hat{\mathbf{j}})\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b} = (4\hat{\mathbf{i}} - 2\hat{\mathbf{j}})\)</span> then</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathbf{a} + \mathbf{b} &amp;= (2\hat{\mathbf{i}} + 3\hat{\mathbf{j}}) + (4\hat{\mathbf{i}} - 2\hat{\mathbf{j}})\\
+    &amp;= (2{\mathbf{i}} + 4{\mathbf{i}}) + (3{\mathbf{j}} - 2{\mathbf{j}})\\
+    &amp;= 6{\mathbf{i}} + {\mathbf{j}}
+\end{align*}\]</div>
+<figure class="align-center" id="fig-l1ex3">
+<a class="reference internal image-reference" href="_images/L1Ex3.png"><img alt="_images/L1Ex3.png" src="_images/L1Ex3.png" style="width: 60%;" /></a>
+</figure>
+</div>
+</div>
+</div>
+<p>Subtraction of vectors with the <span class="math notranslate nohighlight">\(\hat{\mathbf{i}},\hat{\mathbf{j}}\)</span> notation works in a similar way, by subtracting the <span class="math notranslate nohighlight">\(\hat{\mathbf{i}}\)</span> and <span class="math notranslate nohighlight">\(\hat{\mathbf{j}}\)</span> components separately. For two general vectors <span class="math notranslate nohighlight">\(\mathbf{a}=a_1\hat{\mathbf{i}}+a_2\hat{\mathbf{j}}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}=b_1\hat{\mathbf{i}} + b_2\hat{\mathbf{j}}\)</span> (where <span class="math notranslate nohighlight">\(a_1,a_2,b_1,b_2\)</span> are arbitrary constants) their difference would be</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathbf{a} - \mathbf{b} &amp;= (a_1\hat{\mathbf{i}} + a_2\hat{\mathbf{j}}) - ((b_1\hat{\mathbf{i}} + b_2\hat{\mathbf{j}})\\
+    &amp;= (a_1\hat{\mathbf{i}} - b_1\hat{\mathbf{i}}) + (a_2\hat{\mathbf{j}} - b_2\hat{\mathbf{j}})\\
+    &amp;= (a_1 - b_1)\hat{\mathbf{i}} + (a_2 - b_2)\hat{\mathbf{j}}
+\end{align*}\]</div>
+</section>
+<section id="magnitude-of-a-vector-in-hat-mathbf-i-hat-mathbf-j-notation">
+<h3>Magnitude of a vector in <span class="math notranslate nohighlight">\(\hat{\mathbf{i}},\hat{\mathbf{j}}\)</span> notation.<a class="headerlink" href="#magnitude-of-a-vector-in-hat-mathbf-i-hat-mathbf-j-notation" title="Link to this heading">#</a></h3>
+<p>When a vector <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> is given in terms of the unit vectors <span class="math notranslate nohighlight">\(\hat{\mathbf{i}}\)</span> and <span class="math notranslate nohighlight">\(\hat{\mathbf{j}}\)</span> you can find its magnitude by using Pythagoras’ Theorem because <span class="math notranslate nohighlight">\(\hat{\mathbf{i}}\)</span> and <span class="math notranslate nohighlight">\(\hat{\mathbf{j}}\)</span> are perpendicular so their components form two sides of a right angle triangle.</p>
+<p>If <span class="math notranslate nohighlight">\(\mathbf{R} = x\hat{\mathbf{i}} +y\hat{\mathbf{j}}\)</span> then</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+|\mathbf{R}|^2 &amp;= |\mathbf{x}|^2 + |\mathbf{y}|^2\\
+\therefore R^2 &amp;= \sqrt{x^2 + y^2}
+\end{align*}\]</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 4</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
+Question</label><div class="sd-tab-content docutils">
+<p>Find the unit vector in the direction of the vector <span class="math notranslate nohighlight">\(\mathbf{a} = 2\hat{\mathbf{i}} + 3\hat{\mathbf{j}}\)</span>.</p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
+Hint</label><div class="sd-tab-content docutils">
+<p>Recall that any vector is the product of the magnitude of the vector and the unit vector pointing in the same direction.</p>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
+Solution</label><div class="sd-tab-content docutils">
+<p>The magnitude of <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    |\mathbf{a}| &amp;= \sqrt{2^2 + 3^2}\\
+            &amp;= \sqrt{13}
+\end{align*}\]</div>
+<p>So the unit vector pointing in the same direction as <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \frac{\mathbf{a}}{|\mathbf{a}|} &amp;= \frac{1}{\sqrt{13}}(2\hat{\mathbf{i}} + 3\hat{\mathbf{j}})\\
+            &amp;= \frac{2}{\sqrt{13}}\hat{\mathbf{i}} + \frac{3}{\sqrt{13}}\hat{\mathbf{j}}
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="components-of-a-vector">
+<h2>Components of a vector<a class="headerlink" href="#components-of-a-vector" title="Link to this heading">#</a></h2>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In two dimensions this will be a pair of vectors, and in three dimensions we need three in the set.</p>
+</div>
+</aside>
+<p>We’ve already seen that we can combine two vectors into a single resultant vector, but it is useful to do the reverse where we express a single vector by an equivalent set of vectors. This is known as <strong>resolving</strong> a vector into component vectors, and our choice of components should be aligned with some sort of defined coordinate axis. For most of the systems we will see in this course the most appropriate coordinate system will be the cartesian one meaning we resolve our vector into <span class="math notranslate nohighlight">\(\hat{\mathbf{i}}\)</span> and <span class="math notranslate nohighlight">\(\hat{\mathbf{j}}\)</span> components.</p>
+<p>Look at the situation shown in <a class="reference internal" href="#fig-l1components"><span class="std std-numref">Fig. 1</span></a>.</p>
+<figure class="align-center" id="fig-l1components">
+<a class="reference internal image-reference" href="_images/L1Components.png"><img alt="_images/L1Components.png" src="_images/L1Components.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Resolving one vector <span class="math notranslate nohighlight">\((\overrightarrow{OP})\)</span> into two component vectors <span class="math notranslate nohighlight">\((\overrightarrow{OA},\overrightarrow{AP})\)</span> aligned along the cartesian axes.</span><a class="headerlink" href="#fig-l1components" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>By the triangle rule of addition we can state that</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ \overrightarrow{OP} &amp;= \overrightarrow{OA} + \overrightarrow{AP}\\
+     &amp;= \overrightarrow{OA} + \overrightarrow{OB}
+\end{align*}\]</div>
+<p>By trigonometry:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{OA}{OP} &amp;= \cos\theta \implies OA = OP\cos\theta\\
+\frac{OB}{OP} &amp;= \sin\theta \implies OB = OP\sin\theta
+\end{align*}\]</div>
+<p>And so</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\overrightarrow{OA} &amp;= OP\cos\theta\hat{\mathbf{i}}\\
+\overrightarrow{OB} &amp;= OP\sin\theta\hat{\mathbf{j}}\\
+\therefore \overrightarrow{OP} &amp;= (OP\cos\theta)\hat{\mathbf{i}} + (OP\sin\theta)\hat{\mathbf{j}}
+\end{align*}\]</div>
+<p><span class="math notranslate nohighlight">\(OP\cos\theta\)</span> and <span class="math notranslate nohighlight">\(OP\sin\theta\)</span> are called the cartesian components of <span class="math notranslate nohighlight">\(\overrightarrow{OP}\)</span>.</p>
+</section>
+<section id="using-vectors-in-mechanics">
+<h2>Using vectors in mechanics<a class="headerlink" href="#using-vectors-in-mechanics" title="Link to this heading">#</a></h2>
+<section id="position-vectors">
+<h3>Position vectors<a class="headerlink" href="#position-vectors" title="Link to this heading">#</a></h3>
+<p>Imagine a particple <span class="math notranslate nohighlight">\(P\)</span> moving in a plane that has some fixed point <span class="math notranslate nohighlight">\(O\)</span> on it. The position of <span class="math notranslate nohighlight">\(P\)</span> with respect to this fixed point <span class="math notranslate nohighlight">\(O\)</span> is uniquely defined by the vector</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\overrightarrow{OP} &amp;= \mathbf{r}
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> is the <strong>position vector</strong> of <span class="math notranslate nohighlight">\(P\)</span> relative to <span class="math notranslate nohighlight">\(O\)</span>. The choice of the letter <span class="math notranslate nohighlight">\(O\)</span> is intentional because we often (but not always) use the <strong>origin</strong> as the position reference point to which we define position vectors to.</p>
+<p>The general form of the vector between the reference point with coordinates <span class="math notranslate nohighlight">\((O_x,O_y)\)</span> and the position point with coordinates <span class="math notranslate nohighlight">\((P_x,P_y)\)</span> is:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \mathbf{r} &amp;= (P_x-O_x)\hat{\mathbf{i}}+(P_y-O_y)\hat{\mathbf{j}}
+\end{align*}\]</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Worked Example 5</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
+Question</label><div class="sd-tab-content docutils">
+<p>At a given time the cartesian coordinates of the position <span class="math notranslate nohighlight">\(P\)</span> of a particle are <span class="math notranslate nohighlight">\((2,1)\)</span>. Find the position vectors of <span class="math notranslate nohighlight">\(P\)</span></p>
+<ol class="arabic simple">
+<li><p>relative to the origin.</p></li>
+<li><p>relative to the point <span class="math notranslate nohighlight">\((1,2)\)</span></p></li>
+</ol>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-13">
+Hint</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Start by drawing a set of cartesian axes, adding the three key points, and finally connecting the pairs of points with directional lines (i.e. lines with arrows).</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-14" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-14">
+Solution</label><div class="sd-tab-content docutils">
+<figure class="align-center" id="fig-l1ex5">
+<a class="reference internal image-reference" href="_images/L1Ex5.png"><img alt="_images/L1Ex5.png" src="_images/L1Ex5.png" style="width: 60%;" /></a>
+</figure>
+<p>In the diagram point <span class="math notranslate nohighlight">\(P\)</span> is labelled at position <span class="math notranslate nohighlight">\((2,1)\)</span>, and the two starting points <span class="math notranslate nohighlight">\(O_1\)</span> and <span class="math notranslate nohighlight">\(O_2\)</span> are at the origin and position <span class="math notranslate nohighlight">\((1,2)\)</span> respectively.</p>
+<ol class="arabic simple">
+<li><p>The position vector <span class="math notranslate nohighlight">\(\mathbf{r}_1\)</span> of point <span class="math notranslate nohighlight">\(P\)</span> with respect to the origin <span class="math notranslate nohighlight">\(O_1\)</span> is</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ \textbf{r}_1 &amp;= \overrightarrow{O_1P}\\
+     &amp;= (2-0)\hat{\mathbf{i}} + (1-0)\hat{\mathrm{j}}\\
+     &amp;= 2\hat{\mathbf{i}} + 1\hat{\mathrm{j}}
+\end{align*}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>The position vector <span class="math notranslate nohighlight">\(\mathbf{r}_2\)</span> of point <span class="math notranslate nohighlight">\(P\)</span> with respect to the point <span class="math notranslate nohighlight">\(O_2\)</span> is</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ \textbf{r}_2 &amp;= \overrightarrow{O_2P}\\
+     &amp;= (2-1)\hat{\mathbf{i}} + (1-2)\hat{\mathrm{j}}\\
+     &amp;= 1\hat{\mathbf{i}} - 1\hat{\mathrm{j}}
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+</section>
+<section id="velocity-and-acceleration-vectors">
+<h3>Velocity and acceleration vectors<a class="headerlink" href="#velocity-and-acceleration-vectors" title="Link to this heading">#</a></h3>
+<p>If a particle is moving with a <em>speed</em> of <span class="math notranslate nohighlight">\(5\text{ m s}^{-1}\)</span> then, provided the speed remains constant, it will travel <span class="math notranslate nohighlight">\(5\text{ m}\)</span> every second, no matter what type of path the particle is travelling on. However to get a complete picture of what is happening you need to know the <em>direction</em> in which the particle is moving: if you only know the speed then you do know that the particle mentioned above will be <span class="math notranslate nohighlight">\(5\text{ m}\)</span> away from the starting point after one second, but you don’t know exactly where it is without knowing the direction this <span class="math notranslate nohighlight">\(5\text{ m}\)</span> distance was in.
+If we know the speed and direction of a particle we know its <strong>velocity</strong>, typically denoted by <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you cover calculus you’ll see the formal definition of <span class="math notranslate nohighlight">\(\mathbf{v}=\frac{\mathrm{d}\mathbf{r}}{\mathrm{d}t}\)</span>.</p>
+</div>
+</aside>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The velocity of a particle is a vector in the direction of motion (i.e. in the same direction as the displacement vector) whose magnitude is equal to the speed of the particle.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \text{velocity} = \frac{\text{change in displacement}}{\text{time}}
+\end{align*}\]</div>
+</div>
+<p>Just as the velocity of a particle tells you how the position (vector) of a particle changes with time, the <strong>acceleration</strong> describes how the velocity changes with time. As velocity is a vector so is acceleration, and is defined as</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Another calculus definition: <span class="math notranslate nohighlight">\(\mathbf{a}=\frac{\mathrm{d}\mathbf{v}}{\mathrm{d}t}=\frac{\mathrm{d}^2\mathbf{r}}{\mathrm{d}t^2}\)</span>.</p>
+</div>
+</aside>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Acceleration is the rate of change of velocity.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \text{acceleration} = \frac{\text{change in velocity}}{\text{time}}
+\end{align*}\]</div>
+</div>
+</section>
+<section id="scalars-and-vectors-in-newtonian-mechanics-summary">
+<h3>Scalars and vectors in Newtonian mechanics - summary<a class="headerlink" href="#scalars-and-vectors-in-newtonian-mechanics-summary" title="Link to this heading">#</a></h3>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Summary table</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Quantity</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Distance</strong></p></td>
+<td><p>Scalar</p></td>
+<td><p>Length of the path between two points</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Speed</strong></p></td>
+<td><p>Scalar</p></td>
+<td><p>Rate of change of distance</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Mass</strong></p></td>
+<td><p>Scalar</p></td>
+<td><p>Amount of matter in an object</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Time</strong></p></td>
+<td><p>Scalar</p></td>
+<td><p>Duration of an event</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Energy</strong></p></td>
+<td><p>Scalar</p></td>
+<td><p>Capacity to do work</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Temperature</strong></p></td>
+<td><p>Scalar</p></td>
+<td><p>Measure of thermal energy</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Work</strong></p></td>
+<td><p>Scalar</p></td>
+<td><p>Energy transferred by force over    distance</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Power</strong></p></td>
+<td><p>Scalar</p></td>
+<td><p>Rate at which work is done</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Potential Energy</strong></p></td>
+<td><p>Scalar</p></td>
+<td><p>Energy stored due to position</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Kinetic Energy</strong></p></td>
+<td><p>Scalar</p></td>
+<td><p>Energy of an object due to its m   otion</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Volume</strong></p></td>
+<td><p>Scalar</p></td>
+<td><p>Space occupied by a substance</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Pressure</strong></p></td>
+<td><p>Scalar</p></td>
+<td><p>Force per unit area</p></td>
+</tr>
+<tr class="row-even"><td><p>———————-</p></td>
+<td><p>———</p></td>
+<td><p>—————————————————-</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Displacement</strong></p></td>
+<td><p>Vector</p></td>
+<td><p>Change in position</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Velocity</strong></p></td>
+<td><p>Vector</p></td>
+<td><p>Rate of change of displacement</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Acceleration</strong></p></td>
+<td><p>Vector</p></td>
+<td><p>Rate of change of velocity</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Force</strong></p></td>
+<td><p>Vector</p></td>
+<td><p>Interaction that causes a cha   nge in motion</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Momentum</strong></p></td>
+<td><p>Vector</p></td>
+<td><p>Product of mass and velocity</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Impulse</strong></p></td>
+<td><p>Vector</p></td>
+<td><p>Change in momentum</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Position</strong></p></td>
+<td><p>Vector</p></td>
+<td><p>Location of an object in spa   ce</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Angular Velocity</strong></p></td>
+<td><p>Vector</p></td>
+<td><p>Rate of rotation</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Torque</strong></p></td>
+<td><p>Vector</p></td>
+<td><p>Tendency of a force to r   ota</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Angular momentum</strong></p></td>
+<td><p>Vector</p></td>
+<td><p>Product of rotational inertia and angular velocity</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>an important landmark</p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="PreCourse.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Pre-course requirements</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Topic2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Topic 2 - Kinematics and Projectile Motion</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-and-vector-quantities">Scalar and Vector quantities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-convention">Notation convention</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-vectors">Properties of vectors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equal-vectors">Equal vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similar-vectors">Similar vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-subtraction-of-vectors">Addition (and subtraction) of vectors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cartesian-unit-vectors-and-components">Cartesian unit vectors and components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">Notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hat-mathbf-i-hat-mathbf-j-notation"><span class="math notranslate nohighlight">\(\hat{\mathbf{i}},\hat{\mathbf{j}}\)</span> notation.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitude-of-a-vector-in-hat-mathbf-i-hat-mathbf-j-notation">Magnitude of a vector in <span class="math notranslate nohighlight">\(\hat{\mathbf{i}},\hat{\mathbf{j}}\)</span> notation.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-a-vector">Components of a vector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-vectors-in-mechanics">Using vectors in mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#position-vectors">Position vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-and-acceleration-vectors">Velocity and acceleration vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalars-and-vectors-in-newtonian-mechanics-summary">Scalars and vectors in Newtonian mechanics - summary</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Matt Mears
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

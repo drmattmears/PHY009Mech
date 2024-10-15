@@ -1,0 +1,866 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 7 - Circular motion and centripetal force &#8212; PHY009 - Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Lecture7';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logouni.png" class="logo__image only-light" alt="PHY009 - Mechanics - Home"/>
+    <script>document.write(`<img src="_static/logouni.png" class="logo__image only-dark" alt="PHY009 - Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    PHY009: Foundations of Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PreCourse.html">Pre-course requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic1.html">Topic 1 - Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic2.html">Topic 2 - Kinematics and Projectile Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic3.html">Topic 3 - Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic4.html">Topic 4 - Energy, Power and Momentum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic5.html">Topic 5 - Circular Motion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLecture7.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Lecture7.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 7 - Circular motion and centripetal force</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-acceleration-and-forces">Angular acceleration and forces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ball-on-a-string-two-examples">Ball on a string - two examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#horizontal-plane">Horizontal plane</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conical-pendulum">Conical Pendulum</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#friction-round-a-corner-an-example">Friction round a corner  - an example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-uniform-circular-motion">Non-uniform circular motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relating-rotational-and-linear-quantities">Relating rotational and linear quantities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-7-circular-motion-and-centripetal-force">
+<span id="lecture7"></span><h1>Lecture 7 - Circular motion and centripetal force<a class="headerlink" href="#lecture-7-circular-motion-and-centripetal-force" title="Link to this heading">#</a></h1>
+<section id="angular-acceleration-and-forces">
+<h2>Angular acceleration and forces<a class="headerlink" href="#angular-acceleration-and-forces" title="Link to this heading">#</a></h2>
+<p>We are all aware by now that acceleration is a vector, so when we are dealing with circular and rotational systems we need to be mindful that the acceleration will be constantly changing even if the rotational speed remains constant. This is because the direction of the velocity vector is constantly changing around the circular path. This is shown in part a of <a class="reference internal" href="Topic5.html#fig-c7-centri-accel"><span class="std std-numref">Fig. 10</span></a> where we are imagining a particle moving in a circular path of radius <span class="math notranslate nohighlight">\(r\)</span> with some constant rotational speed and no external forces acting on the system.</p>
+<figure class="align-center" id="fig-c7-centri-accel">
+<a class="reference internal image-reference" href="Figures/C7_centri_accel.png"><img alt="a) Two velocity vectors at different points of the circular path. The magnitudes of the vectors are the same but the direction differ. b) The arc length between these two point is approximated by the straight line distance $\Delta r$ when the angle between the points $\Delta \theta$ is small. c) The angle between the two velocity vectors is also $\Delta\theta$ and the line between the end points of these two velocity vectors is itself a vector $\Delta v$." src="Figures/C7_centri_accel.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-text">a) Two velocity vectors at different points of the circular path. The magnitudes of the vectors are the same but the direction differ. b) The arc length between these two point is approximated by the straight line distance <span class="math notranslate nohighlight">\(\Delta r\)</span> when the angle between the points <span class="math notranslate nohighlight">\(\Delta \theta\)</span> is small. c) The angle between the two velocity vectors is also <span class="math notranslate nohighlight">\(\Delta\theta\)</span> and the line between the end points of these two velocity vectors is itself a vector <span class="math notranslate nohighlight">\(\Delta v\)</span>.</span><a class="headerlink" href="#fig-c7-centri-accel" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In <a class="reference internal" href="Topic5.html#fig-c7-centri-accel"><span class="std std-numref">Fig. 10</span></a>a there are two velocity vectors labelled, <span class="math notranslate nohighlight">\(\textbf{v}_1\)</span> and <span class="math notranslate nohighlight">\(\textbf{v}_2\)</span> for two specific point on the path. These two vectors have the same magnitude (<span class="math notranslate nohighlight">\(|\textbf{v}_1| = |\textbf{v}_2| = v_t\)</span>, where <span class="math notranslate nohighlight">\(v_t\)</span> is the tangential velocity) but differ in their direction. We will make use of these vector arrows shortly.</p>
+<p>Part b of the figure shows the arc length <span class="math notranslate nohighlight">\(s\)</span> that the body travels along between the two specific points. If we take the limiting case that the time difference <span class="math notranslate nohighlight">\(\Delta t\)</span> between these two points is sufficiently small then the arc length is approximated by the straight line <span class="math notranslate nohighlight">\(\Delta r\)</span> and therefore</p>
+<div class="math notranslate nohighlight" id="equation-eq-c7-cent1">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c7-cent1" title="Link to this equation">#</a></span>\[s \approx \Delta r = v_t\Delta t\]</div>
+<p>Let us now return to the velocity vectors. We can construct a vector triangle using the two velocity vectors to find the change vector <span class="math notranslate nohighlight">\(\Delta \textbf{v}\)</span>. If we now recall that the velocity vectors are at a tangent to the radius vector to the body we can see that the two triangles constructed in <a class="reference internal" href="Topic5.html#fig-c7-centri-accel"><span class="std std-numref">Fig. 10</span></a>b and c are similar triangles - the radii and velocities both subtend the same angle <span class="math notranslate nohighlight">\(\Delta\theta\)</span>. Thus</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{\Delta r}{r} &amp;= \frac{\Delta v}{v_t}\\
+\frac{v_t\Delta t}{r} &amp;= \frac{\Delta v}{v_t}\\
+\therefore \frac{\Delta v}{\Delta t} = a &amp;= \frac{v_t^2}{r}
+\end{align*}\]</div>
+<p>This acceleration is always directed towards the centre of the circle and is perpendicular to the velocity. It is the acceleration that acts to change the direction so that the body stays on a circular path - if this acceleration were to disappear the body would then move in a straight line along the tangent to the curve at the point where the acceleration stopped, and with a velocity equal to the tangential velocity. This expression for <span class="math notranslate nohighlight">\(a\)</span> is probably familiar to you from you pre-University courses but now you have one way in which you can derive it from scratch. There are other methods you could use that are in different textbooks (each book seems to have their own method) but I personally find this the most simple and delightful.</p>
+<p><strong>But wait!</strong> We have already seen that an acceleration is the result of a force acting on the body in question. This allows us to define a <strong>centripetal force</strong> <span class="math notranslate nohighlight">\(F_r\)</span> that acts to keep the body on a circular path, starting from Newton’s Second law for a constant mass system,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ma = \frac{mv_t^2}{r} &amp;= \sum F_r
+\end{align*}\]</div>
+<p>So we have shown that there needs to be this centripetal force acting to cause the centripetal acceleration. But what exactly <strong>is</strong> this force? The answer depends very much on the system that you are concerned with. For a planet orbiting a star the centripetal force acting on the planet is gravity, whereas in the Bohr model of the atom the electrostatic force acts to keep the electron orbiting the nucleus. We are going to come back to looking more at gravity in <a class="reference internal" href="Lecture11.html#lecture11"><span class="std std-ref">Lecture 11</span></a> and I will leave electrostatic forces for your course next semester. But we can think of some simple everyday examples using the physics we have already covered in this course and before.</p>
+<section id="ball-on-a-string-two-examples">
+<h3>Ball on a string - two examples<a class="headerlink" href="#ball-on-a-string-two-examples" title="Link to this heading">#</a></h3>
+<p>Imagine we have a ball of mass <span class="math notranslate nohighlight">\(m\)</span> on a string of length <span class="math notranslate nohighlight">\(L\)</span> We are going to look at two different cases of the ball making a circular path parallel to the <a class="reference internal" href="Topic5.html#sec-l7-horiz"><span class="std std-ref">horizontal plane</span></a> and the <a class="reference internal" href="Topic5.html#sec-l7-conical"><span class="std std-ref">conical pendulum</span></a>.</p>
+<section id="horizontal-plane">
+<span id="sec-l7-horiz"></span><h4>Horizontal plane<a class="headerlink" href="#horizontal-plane" title="Link to this heading">#</a></h4>
+<p>The technical terminology may suggest this is a complicated case, but it is in fact the simplest we can work with. Imagine that the ball is being swung around fast enough that the string is perfectly horizontal. In this case we can ignore the external force of gravity because it is perpendicular to the centripetal force and therefore does not contribute to the net force.</p>
+<p>This means that our centripetal force is simply the tension in the string <span class="math notranslate nohighlight">\(T\)</span> and so</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*} 
+\sum F_r = T &amp;= \frac{mv_t^2}{r} = m\omega^2r
+\end{align*}\]</div>
+</section>
+<section id="conical-pendulum">
+<span id="sec-l7-conical"></span><h4>Conical Pendulum<a class="headerlink" href="#conical-pendulum" title="Link to this heading">#</a></h4>
+<figure class="align-center" id="fig-c7-conical">
+<a class="reference internal image-reference" href="Figures/C7_conical.png"><img alt="Schematic of a conical pendulum of string length $L$. The mass traces a circular path of radius $r$ in the horizontal plane but the pivot point is above the horizontal plane." src="Figures/C7_conical.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">Schematic of a conical pendulum of string length <span class="math notranslate nohighlight">\(L\)</span>. The mass traces a circular path of radius <span class="math notranslate nohighlight">\(r\)</span> in the horizontal plane but the pivot point is above the horizontal plane.</span><a class="headerlink" href="#fig-c7-conical" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The conical pendulum is another system in which the circular path of the swinging ball is in the horizontal plane but now the string is no longer parallel to the horizontal. A schematic diagram is shown in <a class="reference internal" href="Topic5.html#fig-c7-conical"><span class="std std-numref">Fig. 11</span></a> and the angular velocity <span class="math notranslate nohighlight">\(\omega = \frac{v}{r}\)</span>. Note that the radius of the circular path <span class="math notranslate nohighlight">\(r\)</span> is not equal to the length of the string <span class="math notranslate nohighlight">\(L\)</span>, which is an easy and common mistake to make.</p>
+<p>The conical pendulum has both horizontal and vertical components so we need to resolve the component forces if we want to solve any problems involving this system. Firstly we will consider the horizontal forces. The centripetal force is due to the horizontal component of the tension, i.e.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+m\omega^2 r &amp;= T\sin\theta
+\end{align*}\]</div>
+<p>whereas the vertical components require us to have <strong>zero net vertical force</strong> beause the mass is not accelerating vertically. We can express this as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+mg &amp;= T\cos\theta
+\end{align*}\]</div>
+<p>We can combine these two expressions to find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\omega &amp;= \sqrt{\frac{g\tan\theta}{r}}
+\end{align*}\]</div>
+</section>
+</section>
+<section id="friction-round-a-corner-an-example">
+<h3>Friction round a corner  - an example<a class="headerlink" href="#friction-round-a-corner-an-example" title="Link to this heading">#</a></h3>
+<p>Another physical and everyday example that we can analyse is the maximum cornering speed of a vehicle. In this case the physical process causing the centripetal force is the friction between the vehicle tyre and the road. This friction force <span class="math notranslate nohighlight">\(f_s\)</span> is proportional to the normal force and as we are, perhaps counterintuitively, dealing with the coefficient of <strong>static} friction</strong> we can state the force due to friction as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\sum F_r = f_s  &amp;=\mu_smg 
+ \end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu_s\)</span> is the coefficient of static friction. The maximum cornering speed occurs when the centripetal force is equal to the static frictional force so we can find the maximum velocity of a vehicle before it will skid out</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mu_smg &amp;= \frac{mv_{\text{max}}^2}{r}\\
+\therefore v_\text{max} &amp;= \sqrt{\mu_sgr}
+\end{align*}\]</div>
+</section>
+</section>
+<section id="non-uniform-circular-motion">
+<h2>Non-uniform circular motion<a class="headerlink" href="#non-uniform-circular-motion" title="Link to this heading">#</a></h2>
+<p>In all of the examples we have examined previously the circular path traced out by the moving body has been parallel to the horizontal, and consequently the tangential (and therefore angular) velocity is constant. Now we are going to rethink our ball on a string experiment but this time we will swing the ball around such that the circular path is in the vertical plane only. In this setup the tangential velocity is not constant because the components of force due to gravity vary depending on the position in the circular path. Take a look at <a class="reference internal" href="Topic5.html#fig-c7-vert"><span class="std std-numref">Fig. 12</span></a> showing a ball of mass <span class="math notranslate nohighlight">\(m\)</span> moving in a clockwise circle of radius <span class="math notranslate nohighlight">\(r\)</span> in the vertical plane.</p>
+<figure class="align-center" id="fig-c7-vert">
+<a class="reference internal image-reference" href="Figures/C7_vert.png"><img alt="Schematic of a circular path in the vertical plane. Gravity acts on the rotating mass and the total gravitational force always acts down but the component acting parallel to the tangent of the path varies as a function of $\theta$ around the circular path." src="Figures/C7_vert.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-text">Schematic of a circular path in the vertical plane. Gravity acts on the rotating mass and the total gravitational force always acts down but the component acting parallel to the tangent of the path varies as a function of <span class="math notranslate nohighlight">\(\theta\)</span> around the circular path.</span><a class="headerlink" href="#fig-c7-vert" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Once again we need to consider the two components of the different forces acting on our system. However if we were to jump straight in a try to define this in terms of Cartesian coordinates (i.e. the typical <span class="math notranslate nohighlight">\((x,y)\)</span> system) then we immediately see the model is going to be complicated. The ball is moving in a circular path so if we make a change in <span class="math notranslate nohighlight">\(x\)</span> then there will also be a change in <span class="math notranslate nohighlight">\(y\)</span>, but it is much easier if we can have two orthogonal parameters that vary independently.</p>
+<p>This is where we can make use of the coordinate systems you have seen in your maths courses. Instead of expressing the position of the ball with an <span class="math notranslate nohighlight">\((x,y)\)</span> coordinate we can instead use the radius and angle of the ball, <span class="math notranslate nohighlight">\((r,\theta)\)</span>. The unit vectors of these two parameters are perpendicular and so meet our orthogonality requirement, and we can also change one without changing the other. Awesome.</p>
+<p>So now we want to consider the <strong>radial</strong> and <strong>tangential</strong> components of the forces acting on our system.</p>
+<p>Let us start with the tangential (i.e. the ones acting in the <span class="math notranslate nohighlight">\(\hat{\mathbf{\theta}}\)</span> direction) components. We have the tangential component of gravity which we can equate, using Newton’s Second Law, to the net tangential force.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+mg\sin\theta &amp;= ma_t\\
+\therefore a_t &amp;= g\sin\theta
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_t\)</span> is the tangential acceleration.</p>
+<p>Next we move onto considering the radial forces. We know that the total sum of the forces is the centripetal force which in this case equals the tension in the string <span class="math notranslate nohighlight">\(T\)</span> minus the radial component of gravity. The minus here is because the component from gravity is acting outwards and our centripetal force and the tension are acting inwards. This gives</p>
+<div class="math notranslate nohighlight" id="equation-eq-c7-vert1">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c7-vert1" title="Link to this equation">#</a></span>\[\frac{mv_t^2}{r} = T - mg\cos\theta\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-c7-vert2">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c7-vert2" title="Link to this equation">#</a></span>\[\therefore T = m\left(\frac{v_t^2}{r} + g\cos\theta\right)\]</div>
+<p>You may be wondering why I have chosen to define the angle <span class="math notranslate nohighlight">\(\theta\)</span> with <span class="math notranslate nohighlight">\(\theta=0\)</span> at the bottom of the circle rather than zero being at the top. This is so that when <span class="math notranslate nohighlight">\(\theta=0\)</span> equation <a class="reference internal" href="Topic5.html#equation-eq-c7-vert1">(21)</a> becomes</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{mv_t^2}{r} &amp;= T - mg
+\end{align*}\]</div>
+<p>which gives the correct opposing directions of the tension and gravity when the ball is at the bottom of the path. This is what we expect because gravity is acting downward whereas tension is acting completely upwards. If I were to define <span class="math notranslate nohighlight">\(\theta=0\)</span> at the top of the path then I would need to change the minus sign in equation <a class="reference internal" href="Topic5.html#equation-eq-c7-vert1">(21)</a> to a plus, but personally I find this means the physical interpretation of what the equation is describing becomes less self evident.</p>
+</section>
+<section id="relating-rotational-and-linear-quantities">
+<h2>Relating rotational and linear quantities<a class="headerlink" href="#relating-rotational-and-linear-quantities" title="Link to this heading">#</a></h2>
+<p>There are three important relationships that we make use of time and time again when relating linear and rotational dynamics. I will state the results here but the (rather simple) proofs and details are found in and around equations <a class="reference internal" href="Lecture9.html#equation-eq-c9-rollv">()</a> and <a class="reference internal" href="Lecture9.html#equation-eq-c9-rolla">()</a> when we look at rolling motion.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+s &amp;= R\theta\\
+v &amp;= R\omega\\
+a &amp; = R\alpha
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(s\)</span> is the arc length, <span class="math notranslate nohighlight">\(\theta\)</span> is the angle subtended, and <span class="math notranslate nohighlight">\(\omega\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span> are the angular velocity and accelerations respectively.</p>
+</section>
+<section id="lecture-questions">
+<h2>Lecture Questions<a class="headerlink" href="#lecture-questions" title="Link to this heading">#</a></h2>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 1</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Question</label><div class="sd-tab-content docutils">
+<p>The blade of a circular saw is initally rotating at 7000 revolutions per minutes (rpm). The motor is the switched off and the blade slows to a complete stop in 8.0 seconds. What is the average angular acceleration?</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Hint</label><div class="sd-tab-content docutils">
+<p>If you’re still not comfortable with rotational kinematics then think of the linear equivalent.</p>
+<p>And remember to work in SI units!</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Solution</label><div class="sd-tab-content docutils">
+<p>First we convert the initial angular velocity <span class="math notranslate nohighlight">\(\omega_i\)</span> from rpm to \textbf{radians} per second</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\omega_i &amp;= \frac{7000 \times 2\pi}{60} = 7.3\times10^{2}\text{ radians s}^{-1}
+\end{align*}\]</div>
+<p>The final angular velocity <span class="math notranslate nohighlight">\(\omega_f=0\)</span> and hence the average angular acceleration is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left&lt;\alpha\right&gt; &amp;= \frac{\Delta \omega}{\Delta t}\\
+	&amp;= \frac{\omega_f - \omega_i}{t_f-t_i}\\
+	&amp;= \frac{0-7.3\times10^{2}}{8.0 - 0} = -91\text{ radians s}^{-2}
+	\end{align*}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 2</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Question</label><div class="sd-tab-content docutils">
+<p>An automobile accelerates uniformly from 0 to 80 km/h in 6.0 seconds. The wheels have a radius of <span class="math notranslate nohighlight">\(0.3\)</span> m. What is the angular acceleration of the wheels, assuming they roll without slipping?</p>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Hint</label><div class="sd-tab-content docutils">
+<p>“Accelerates uniformly” means that the acceleration is constant.</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Solution</label><div class="sd-tab-content docutils">
+<p>The translational acceleration of the automobile is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a &amp;= \frac{v_f-v_i}{t} = 3.7 \text{ m s}^{-2}
+\end{align*}\]</div>
+<p>remembering that you need to convert everything into SI units.\
+The angular acceleration is related to the translation acceleration as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\alpha &amp;= \frac{a}{R}\\
+	 &amp;= \frac{3.7}{0.30} = 12\text{ radians s}^{-2}
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 3</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+Question</label><div class="sd-tab-content docutils">
+<p>A large centrifuge at the Sandia National Laboratory is used for testing the behaviour of components of rockets, satellites and re-entry vehicles when subjected to high accelerations. The centrifuge has an arm length of 8.8 m and has a maximum rotation speed of 175 revolutions per minute. What is the tangential speed at the end of this arm, and what is the centripetal acceleration?</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+Hint</label><div class="sd-tab-content docutils">
+<p>Nothing too complicated required here, just remember to convert to the right units.</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+Solution</label><div class="sd-tab-content docutils">
+<p>First we convert <span class="math notranslate nohighlight">\(175\text{ rpm} = \dfrac{175}{60} = 18\)</span> revolutions per second, and thus the angular velocity is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\omega &amp;= 2\pi f = 18\text{ radians s}^{-1}
+\end{align*}\]</div>
+<p>The tangential speed at the end of the centrifuge arm is</p>
+<div class="math notranslate nohighlight">
+\[v=\omega R = 1.6\times10^2\text{ m s}^{-1}\]</div>
+<p>and the centripetal acceleration is</p>
+<div class="math notranslate nohighlight">
+\[a_{\text{cent.}} = \omega^2R = 2.9\times10^{3}\text{ m s}^{-2}\]</div>
+<p>which is almost <span class="math notranslate nohighlight">\(300\,\,g\)</span>!</p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 4</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
+Question</label><div class="sd-tab-content docutils">
+<p>Calculate the following centripetal accelerations as multiples of <span class="math notranslate nohighlight">\(g\)</span>:</p>
+<ol class="arabic simple">
+<li><p>acceleration toward the Earth’ axis of rotation of a person standing at a <span class="math notranslate nohighlight">\(45^{\circ}\)</span> latitude.</p></li>
+<li><p>acceleration of the moon towards the Earth.</p></li>
+<li><p>acceleration of an electron moving around a proton with a tangential velocity of <span class="math notranslate nohighlight">\(2\times10^6 \text{ m s}^{-1}\)</span> in an orbit of radius <span class="math notranslate nohighlight">\(0.5\overset{\circ}{A}\)</span>. Note, this is the ground state in the Bohr atomic model for hydrogen.</p></li>
+<li><p>acceleration of a point on the rim of a bicycle wheel of diameter 66 cm if the bicycle is travelling along at 11 m s<span class="math notranslate nohighlight">\(^{-1}\)</span></p></li>
+</ol>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
+Hint</label><div class="sd-tab-content docutils">
+<p>All four of these questions use the same basic formulae, just in different ways. A good starting point is to write the variables that you know, and see which equations have the right combination of unknown and desired variables.</p>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
+Solution</label><div class="sd-tab-content docutils">
+<p><strong>1</strong>
+The centripetal acceleration is the same as that of a person standing on the edge of a disc with radius <span class="math notranslate nohighlight">\(r=R_{\text{Earth}}\cos\theta\)</span> where <span class="math notranslate nohighlight">\(\theta = 45^{\circ}\)</span>. This gives</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a&amp;=\left(2\pi\times\frac{1}{86400}\right)^2\times R_{\text{Earth}}\cos\theta\\
+&amp;= \frac{4\pi^2\times 6371000} {86400^2 \times \sqrt{2}}\\
+&amp;= 0.024\text{ m s}^{-2} \approx 2.4\times10^{-3}g
+\end{align*}\]</div>
+<p><strong>2</strong>
+The moon takes one month to orbit the Earth, so the time period is <span class="math notranslate nohighlight">\(T = 30\times24\times60\times60=2592000\)</span> seconds and a corresponding frequency of <span class="math notranslate nohighlight">\(f=\frac{1}{T} = 3.86\times10^{-7}\)</span>. We take the Earth-Moon distance to be <span class="math notranslate nohighlight">\(R_{\text{Earth-Moon}}=3.7\times10^{8}\text{ m}\)</span>. The acceleration is thus</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a&amp;= \left(2\pi\times\frac{1}{T}\right)^2\times R_{\text{Earth-Moon}}\\
+&amp;= \left(2\pi\times\frac{1}{2592000}\right)^2\times 3.86\times10^{8}\\
+&amp;= 2.3\times10^{-3}\text{ m s}^{-2} \approx 2.3\times10^{-4}g
+\end{align*}\]</div>
+<p><strong>3</strong>
+This time we have the tangential velocity rather than the time period given in the previous two questions, which means</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a &amp;= \frac{v^2}{r}\\
+&amp;= \frac{(2\times10^6)^2}{5.0\times10^{-11}}\\
+&amp;= 8.0\times10^{22} \approx 8.2\times1^{21}g
+\end{align*}\]</div>
+<p><strong>4</strong></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\omega&amp;= \frac{v}{r}\\
+\therefore a &amp;= \frac{v^2}{r^2}r = \frac{v^2}{r}\\
+&amp;= 367\text{ m s}^{-1} \approx 37g
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 5</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
+Question</label><div class="sd-tab-content docutils">
+<p>A particle moves in a plane and its position can be described by Cartesian coordinates <span class="math notranslate nohighlight">\((x,y)\)</span> or polar coordinates <span class="math notranslate nohighlight">\((r,\theta)\)</span>, where <span class="math notranslate nohighlight">\(x=r\cos\theta\)</span> and <span class="math notranslate nohighlight">\(y=r\sin\theta\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Calculate the acceleration components <span class="math notranslate nohighlight">\(a_x\)</span> and <span class="math notranslate nohighlight">\(a_y\)</span> as time derivatives of <span class="math notranslate nohighlight">\(x=r\cos\theta\)</span> and <span class="math notranslate nohighlight">\(y=r\sin\theta\)</span> respectively, where both <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> are assumed to depend on <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+<li><p>Verify that the acceleration components in polar coordinates are given by</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a_r &amp;= a_x\cos\theta + a_y\sin\theta\\
+a_{\theta} &amp;= -a_x\sin\theta + a_y\cos\theta
+\end{align*}\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Substitute the values for <span class="math notranslate nohighlight">\(a_x\)</span> and <span class="math notranslate nohighlight">\(a_y\)</span> found in part (a) to obtain general expressions for <span class="math notranslate nohighlight">\(a_r\)</span> and <span class="math notranslate nohighlight">\(a_\theta\)</span> in polar coordinates.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-13">
+Hint</label><div class="sd-tab-content docutils">
+<p>You <strong>absolutely</strong> need to use diagrams to solve these problems.</p>
+<p>The maths isn’t too complicated but it’s quite longwinded and easy to get lost, so make sure you lay things out clearly to ensure you don’t drop terms (particularly in part 1 where you need to use two different differentiation methods).</p>
+</div>
+<input id="sd-tab-item-14" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-14">
+Solution</label><div class="sd-tab-content docutils">
+<p><strong>1</strong>
+For this it is easier to make use of the `dot’ notation of time derivatives, such that <span class="math notranslate nohighlight">\(v_x = \dot{x}\)</span>, <span class="math notranslate nohighlight">\(a_x=\ddot{x}=\dot{v}_x\)</span>, <span class="math notranslate nohighlight">\(v_y=\dot{y}\)</span> and <span class="math notranslate nohighlight">\(a_y=\ddot{y}=\dot{v}_y\)</span>. We work through the calculus with care:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v_x &amp;= \dot{r}\cos\theta - r\dot{\theta}\sin\theta &amp; v_y &amp;= \dot{r}\sin\theta + r\dot{\theta}\cos\theta
+\end{align*}\]</div>
+<p>where we need to make use of both the product and chain rules. Differentiating these expressions, again using both the product and chain rules yields</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a_x &amp;= \ddot{r}\cos\theta - \dot{r}\dot{\theta}\sin\theta  - \dot{r}\dot{\theta}\sin\theta - r\ddot{\theta}\sin\theta - r\dot{\theta}^2\cos\theta\\
+&amp;= \left(\ddot{r}-r\dot{\theta}^2 \right)\cos\theta - \left(2\dot{r}\dot{\theta}+r\ddot{\theta}\right)\sin\theta\\
+a_y &amp;= \ddot{r}\sin\theta + \dot{r}\dot{\theta}\cos\theta + \dot{r}\dot{\theta}\cos\theta + r\ddot{\theta}\cos\theta - r\dot{\theta}^2\sin\theta\\
+&amp;= \left(2\dot{r}\dot{\theta}+r\ddot{\theta}\right)\cos\theta + \left(\ddot{r}-r\dot{\theta}^2\right)\sin\theta
+\end{align*}\]</div>
+<p><strong>2</strong>
+This is best approached from a diagram where we take the components of <span class="math notranslate nohighlight">\(a_x\)</span> and <span class="math notranslate nohighlight">\(a_y\)</span> `pointing’ in the <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> directions (this is the reverse of what we are generally used to).</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="Figures/L7_5.png"><img alt="Figures/L7_5.png" src="Figures/L7_5.png" style="width: 80%;" /></a>
+</figure>
+<p><strong>3</strong></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a_r &amp;=a_x\cos\theta + a_y\sin\theta\\
+&amp;= \left(\ddot{r}-r\dot{\theta}^2 \right)\cos^2\theta - \left(2\dot{r}\dot{\theta}+r\ddot{\theta}\right)\sin\theta\cos\theta + \left(2\dot{r}\dot{\theta}+r\ddot{\theta}\right)\cos\theta\sin\theta + \left(\ddot{r}-r\dot{\theta}^2\right)\sin^2\theta\\
+&amp;= \left(\ddot{r}-r\dot{\theta}^2 \right)\left(\cos^2\theta+\sin^2\theta\right)\\
+&amp;= \left(\ddot{r}-r\dot{\theta}^2 \right)\\
+a_\theta &amp;= -a_x\sin\theta + a_y\cos\theta\\
+&amp;= -\left(\ddot{r}-r\dot{\theta}^2 \right)\cos\theta\sin\theta + \left(2\dot{r}\dot{\theta}+r\ddot{\theta}\right)\sin^2\theta + \left(2\dot{r}\dot{\theta}+r\ddot{\theta}\right)\cos^2\theta + \left(\ddot{r}-r\dot{\theta}^2\right)\sin\theta\cos\theta\\
+&amp;= \left(2\dot{r}\dot{\theta}+r\ddot{\theta}\right)\left(\sin^2\theta+\cos^2\theta\right)\\
+&amp;= \left(2\dot{r}\dot{\theta}+r\ddot{\theta}\right)
+\end{align*}\]</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-acceleration-and-forces">Angular acceleration and forces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ball-on-a-string-two-examples">Ball on a string - two examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#horizontal-plane">Horizontal plane</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conical-pendulum">Conical Pendulum</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#friction-round-a-corner-an-example">Friction round a corner  - an example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-uniform-circular-motion">Non-uniform circular motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relating-rotational-and-linear-quantities">Relating rotational and linear quantities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Matt Mears
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

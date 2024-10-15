@@ -1,0 +1,703 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 6 - Conservation of momentum in 2D &#8212; PHY009 - Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Lecture6';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logouni.png" class="logo__image only-light" alt="PHY009 - Mechanics - Home"/>
+    <script>document.write(`<img src="_static/logouni.png" class="logo__image only-dark" alt="PHY009 - Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    PHY009: Foundations of Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PreCourse.html">Pre-course requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic1.html">Topic 1 - Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic2.html">Topic 2 - Kinematics and Projectile Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic3.html">Topic 3 - Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic4.html">Topic 4 - Energy, Power and Momentum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic5.html">Topic 5 - Circular Motion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLecture6.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Lecture6.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 6 - Conservation of momentum in 2D</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-collisions-in-2d-resolving-method">Elastic collisions in 2D - resolving method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-does-the-algebra-stop">When does the algebra stop??</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-collisions-in-2d-vector-method">Elastic collisions in 2D - vector method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-6-conservation-of-momentum-in-2d">
+<span id="lecture6"></span><h1>Lecture 6 - Conservation of momentum in 2D<a class="headerlink" href="#lecture-6-conservation-of-momentum-in-2d" title="Link to this heading">#</a></h1>
+<section id="elastic-collisions-in-2d-resolving-method">
+<h2>Elastic collisions in 2D - resolving method<a class="headerlink" href="#elastic-collisions-in-2d-resolving-method" title="Link to this heading">#</a></h2>
+<p>You will be pleased to know that we have already seen the physics we need to work with elastic collisions in two (and three) dimensions.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In most cases I will use horizontal and vertical axes.</p>
+</div>
+</aside>
+<p>The hardest part, and in my experience the part that usually causes some students to trip up, is recognising that having more than one dimension means we need to think about the orthogonal components for any vector quantities involved.</p>
+<p>Let us pick apart the last part of the paragraph above. We saw in the <a class="reference internal" href="Topic4.html#sec-c5-elastic"><span class="std std-ref">one dimensional elastic collision case</span></a> that we make use of both the conservation of energy and conservation of momentum to find the final velocities of the two impacting bodies. The two dimensional case uses exactly the same concepts but it is important to be aware that because momentum is a vector quantity we need to resolve it into the two orthogonal components and use conservation of momentum twice, once for each component, whereas energy is a scalar quantity so we can only use this principle once.</p>
+<p>A worked example will help clarify this and demonstrate the process of solving problems involving elastic collisions in two dimensions. In <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C6_collision</span></code> a body of mass <span class="math notranslate nohighlight">\(m_1\)</span> is moving with velocity <span class="math notranslate nohighlight">\(v_{1i}\)</span> along the <span class="math notranslate nohighlight">\(x\)</span>-axis. It collides with a stationary body of mass <span class="math notranslate nohighlight">\(m_2\)</span>. After the collision the first body moves with a new velocity <span class="math notranslate nohighlight">\(v_{1f}\)</span> in a straight line at an angle <span class="math notranslate nohighlight">\(\theta\)</span> to the <span class="math notranslate nohighlight">\(x\)</span>-axis. Similarly the second body moves with velocity <span class="math notranslate nohighlight">\(v_{2f}\)</span> at an angle <span class="math notranslate nohighlight">\(\phi\)</span> below the <span class="math notranslate nohighlight">\(x\)</span>-axis.</p>
+<figure class="align-center" id="fig-c6-collision">
+<a class="reference internal image-reference" href="Figures/C6_collision.png"><img alt="Schematic of two masses colliding. One mass initially moves along the $x$-axis and the other is stationary. After the collision the two masses move in a straight line at different angles with respect to the $x$-axis and have different velocities." src="Figures/C6_collision.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">Schematic of two masses colliding. One mass initially moves along the <span class="math notranslate nohighlight">\(x\)</span>-axis and the other is stationary. After the collision the two masses move in a straight line at different angles with respect to the <span class="math notranslate nohighlight">\(x\)</span>-axis and have different velocities.</span><a class="headerlink" href="#fig-c6-collision" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Let us start with the simplest step which is defining the total energy before and after the collision,</p>
+<div class="math notranslate nohighlight" id="equation-eq-c6-collision1">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c6-collision1" title="Link to this equation">#</a></span>\[\begin{split}KE_{\text{before}} &amp;= KE_{\text{after}}\nonumber\\
+\therefore \frac{m_1v_{1i}^2}{2} + 0 &amp;=  \frac{m_1v_{1f}^2}{2} + \frac{m_2v_{2f}^2}{2}\nonumber\\
+\text{or} \,\, m_1v_{1i}^2 &amp;= m_1v_{1f}^2 + m_2v_{2f}^2\end{split}\]</div>
+<p>Next we will consider the conservation of momentum in terms of the <span class="math notranslate nohighlight">\(y\)</span>-components before and after the collision. As body 1 is initially only moving along the <span class="math notranslate nohighlight">\(x\)</span>-axis it has no initial component of momentum in the <span class="math notranslate nohighlight">\(y\)</span>-direction, and body 2 is stationary so has no momentum whatsoever. After the collision we can make use of some simple trigonometry to define the vertical components of velocity for both bodies which leads to</p>
+<div class="math notranslate nohighlight" id="equation-eq-c6-collision2">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c6-collision2" title="Link to this equation">#</a></span>\[0 = m_1v_{1f}\sin\theta - m_2v_{2f}\sin\phi\]</div>
+<p>The final relationship we need is found by considering the conservation of momentum in the <span class="math notranslate nohighlight">\(x\)</span>-direction. We note that body 1 is moving in the <span class="math notranslate nohighlight">\(x\)</span>-direction initially which gives</p>
+<div class="math notranslate nohighlight" id="equation-eq-c6-collision3">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c6-collision3" title="Link to this equation">#</a></span>\[m_1v_{1i} = m_1v_{1f}\cos\theta + m_2v_{2f}\cos\phi\]</div>
+<p>Before we start manipulating these three equations to find expressions for <span class="math notranslate nohighlight">\(v_{1f}\)</span> and <span class="math notranslate nohighlight">\(v_{2f}\)</span> I want to highlight a small but really important point. In equation <a class="reference internal" href="#equation-eq-c6-collision3">()</a> the two terms on the right hand side are added together whereas in <a class="reference internal" href="#equation-eq-c6-collision2">()</a> we a calculating the difference. This minus sign in equation <a class="reference internal" href="#equation-eq-c6-collision2">()</a> is necessary because the vertical components of momentum are in <strong>opposite directions</strong> for the two bodies.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This may seem picky, but it is a common mistake to make particularly when under time constraints such as an exam. Always worth checking the signs match the directions in the diagram.</p>
+</div>
+</aside>
+<p>In terms of <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C6_collision</span></code> the vertical component for body 1 is upwards (positive <span class="math notranslate nohighlight">\(y\)</span>) whereas body 2 is downwards. This is in contrast to the horizontal components of momentum for both bodies 1 and 2 after the collision - they are both moving to the right (positive <span class="math notranslate nohighlight">\(x\)</span>) and therefore we must add them together.</p>
+<p>Great. Time for some algebra.</p>
+<p>Equation <a class="reference internal" href="#equation-eq-c6-collision1">()</a> has velocity squared terms whereas equations <a class="reference internal" href="#equation-eq-c6-collision2">()</a> and <a class="reference internal" href="#equation-eq-c6-collision3">()</a> are linear with velocities. If I want to start combining equations then having these velocities to the same power means I can make some substitutions, but taking the square-root of equation <a class="reference internal" href="#equation-eq-c6-collision1">()</a> looks messy. So one technique I am going to use is squaring the other equations to get my velocity squared terms, and will sort out the extra terms (such as masses being squared) further down the line.</p>
+<p>Let us square equations <a class="reference internal" href="#equation-eq-c6-collision2">()</a> and <a class="reference internal" href="#equation-eq-c6-collision3">()</a> to find respectively</p>
+<div class="math notranslate nohighlight" id="equation-eq-c6-collision4">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c6-collision4" title="Link to this equation">#</a></span>\[0 = m_1^2v_{1f}^2\sin^2\theta + m_2^2v_{2f}^2\sin^2\phi - 2m_1m_2v_{1f}v_{2f}\sin\theta\sin\phi\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-c6-collision5">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c6-collision5" title="Link to this equation">#</a></span>\[m_1^2v_{1i}^2 = m_1^2v_{1f}^2\cos^2\theta + m_2v_{2f}^2\cos^2\phi + 2m_1m_2v_{1f}v_{2f}\cos\theta\cos\phi\]</div>
+<p>These two equations look pretty daunting but by being careful in how I write out the equations on the page I can see some similarities between terms on the right hand sides. They both share a number of similarities, namely that <span class="math notranslate nohighlight">\(\sin\)</span> in <a class="reference internal" href="#equation-eq-c6-collision4">()</a> becomes <span class="math notranslate nohighlight">\(\cos\)</span> in <a class="reference internal" href="#equation-eq-c6-collision5">()</a>. I also notice that there are <span class="math notranslate nohighlight">\(\sin^2\)</span> and <span class="math notranslate nohighlight">\(\cos^2\)</span> terms which is a major flag to me - I may be able to utilise some trigonometric identities to simplify.</p>
+<p>Hopefully you are all familiar with the identity <span class="math notranslate nohighlight">\(\sin^2\theta + \cos^2\theta = 1\)</span>. If I add equations <a class="reference internal" href="#equation-eq-c6-collision4">()</a> and <a class="reference internal" href="#equation-eq-c6-collision5">()</a> together I can make use of this identity to find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+m_1^2v_{1i}^2 &amp;= m_1^2v_{1f}^2 + m_2^2v_{2f}^2 +2m_1m_2v_{1f}v_{2f}\left(\cos\theta\cos\phi - \sin\theta\sin\phi\right)
+\end{align*}\]</div>
+<p>We now make use of another trigonometric identity, in this case <span class="math notranslate nohighlight">\(\cos A \cos B - \sin A \sin B = \cos\left(A + B\right)\)</span> to find</p>
+<div class="math notranslate nohighlight" id="equation-eq-c6-collision6">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c6-collision6" title="Link to this equation">#</a></span>\[\begin{split}m_1^2v_{1i}^2 &amp;= m_1^2v_{1f}^2 + m_2^2v_{2f}^2 +2m_1m_2v_{1f}v_{2f}\cos\left(\theta + \phi\right)\\
+\bigg[ v_{1i} &amp;= \sqrt{v_{1f}^2 +\left(\frac{m_2}{m_1}\right)^2 v_{2f}^2 + \frac{2m_2v_{1f}v_{2f}}{m_1} \cos\left(\theta + \phi\right)} \bigg] \end{split}\]</div>
+<p>From here you could take a rearranged form of equation <a class="reference internal" href="#equation-eq-c6-collision1">()</a> that expresses one of the final velocities in terms of the other parameters, then substitute that into the above to only include the final velocity of one body, however this sort of algeabraic manipulation could go on for quite some time…</p>
+<section id="when-does-the-algebra-stop">
+<h3>When does the algebra stop??<a class="headerlink" href="#when-does-the-algebra-stop" title="Link to this heading">#</a></h3>
+<p>You can breathe a collective sigh of relief because I’m going to stop with the algebra here. I’ve ended up finding an expression that contains all of the possible parameters for our system, so we can use this to find a single unknown if we know the other parameters.</p>
+<p>But I want to emphasise a key point here that can save you a lot of time in the future. I have one equation that utilises the conservation of energy and two for the components of momentum, and the rest is just flexing some algebra muscles to get different forms of the momentum equations that may be useful.</p>
+<p><strong>Always highlight what you are being asked to find and what you already know.</strong> Although I have made use of all the equations that describe the momentum and energy of the system I would be wasting time if the question at hand asked me to find the initial velocity but I already know the masses and final velocities of both bodies. In this case I would just plug the numbers into equation <a class="reference internal" href="#equation-eq-c6-collision1">()</a>. Simples.</p>
+<p>I will need to make use of more equations, perhaps of different forms such as equations <a class="reference internal" href="#equation-eq-c6-collision4">()</a> - <a class="reference internal" href="#equation-eq-c6-collision6">()</a>, when I have more than one unknown variable. Remember that we need as many simultaneous equations are there are unknown variables if we want to solve for each unknown.</p>
+</section>
+</section>
+<section id="elastic-collisions-in-2d-vector-method">
+<h2>Elastic collisions in 2D - vector method<a class="headerlink" href="#elastic-collisions-in-2d-vector-method" title="Link to this heading">#</a></h2>
+<p>There is a much faster but somewhat more challenging method that could be used when working with two dimensional collisions, and that is to make use of the fact that the momenta are vectors. This means we can use techniques in vector mathematics that will allow us to ‘bypass’ the resolving into horizontal and vertical components steps. Actually the vector method still uses the horizontal and vertical components but does so in a much more condensed and efficient way.</p>
+<p>In vector form our conservation of momentum is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\textbf{p}_{1i} &amp;= \textbf{p}_{1f} + \textbf{p}_{2f}\\
+|\textbf{p}_{1i}|\hat{\textbf{i}}&amp;= |\textbf{p}_{1f}|\cos\theta \hat{\textbf{i}} +|\textbf{p}_{1f}|\sin\theta \hat{\textbf{j}} +|\textbf{p}_{2f}|\cos\phi \hat{\textbf{i}} -|\textbf{p}_{2f}|\sin\phi \hat{\textbf{j}}\\
+&amp;= \left(|\textbf{p}_{1f}|\cos\theta + |\textbf{p}_{2f}|\cos\phi\right)\hat{\textbf{i}} + \left(|\textbf{p}_{1f}|\sin\theta  -|\textbf{p}_{2f}|\sin\phi\right) \hat{\textbf{j}}
+\end{align*}\]</div>
+<p>In column vector form it is a little easier to see why this is a much more compact method</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left(
+\begin{array}{c}
+|\textbf{p}_{1i}|\\
+0\\
+\end{array}
+\right)
+&amp;= 
+\left(
+\begin{array}{c}
+|\textbf{p}_{1f}|\cos\theta + |\textbf{p}_{2f}|\cos\phi\\
+|\textbf{p}_{1f}|\sin\theta - |\textbf{p}_{2f}|\sin\phi\\
+\end{array}
+\right)
+\end{align*}\]</div>
+<p>where we can solve “along the rows” as separate equations.</p>
+</section>
+<section id="lecture-questions">
+<h2>Lecture Questions<a class="headerlink" href="#lecture-questions" title="Link to this heading">#</a></h2>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 1</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Question</label><div class="sd-tab-content docutils">
+<p>A red car of mass <span class="math notranslate nohighlight">\(1100\text{ kg}\)</span> and a green car of mass <span class="math notranslate nohighlight">\(1300\text{ kg}\)</span> collide (without injury) at a cross junction. Just before the collision the red car was travelling due east at <span class="math notranslate nohighlight">\(34\text{ m s}^{-1}\)</span> and the green car was travelling due north at <span class="math notranslate nohighlight">\(15\text{ m s}^{-1}\)</span>. After the collision the two cars remain joined together and skid with locked wheels (meaning no more drive from the tyres). What is the direction of the skid?</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Hint</label><div class="sd-tab-content docutils">
+<p>This problem is much easier if you think about the centre of mass of the system, as one unique property of this is that the velocity of the centre of mass remains constant before and after a collision.</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Solution</label><div class="sd-tab-content docutils">
+<p>The final velocity of the joined cars coincides with the final velocity of the centre of mass which in turn is the same as the initial velocity of the centre of mass. Thus</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\textbf{v}_{CM} &amp;= \frac{m_{\text{red}}\textbf{v}_{\text{red}}+m_{\text{green}}\textbf{v}_{\text{green}}}{m_{\text{red}}+m_{\text{green}}}
+\end{align*}\]</div>
+<p>Aligning our axes such that the <span class="math notranslate nohighlight">\(x\)</span> axis is due east and <span class="math notranslate nohighlight">\(y\)</span> is due north, the initial velocity of the red car has no <span class="math notranslate nohighlight">\(y\)</span> component and similarly the velocity of the green car has no <span class="math notranslate nohighlight">\(x\)</span> component. Resolving the centre of mass velocity into <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> components gives</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v_{CM,x}&amp;=\frac{m_{\text{red}}{v}_{\text{red}}}{m_{\text{red}}+m_{\text{green}}} = 16\text{ m s}^{-1}\\
+v_{CM,y}&amp;=\frac{m_{\text{green}}{v}_{\text{green}}}{m_{\text{red}}+m_{\text{green}}} = 8.1\text{ m s}^{-1}
+\end{align*}\]</div>
+<p>The angle can be found as the angle between these two components, i.e.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\tan\theta&amp;= \frac{v_{CM,y}}{v_{CM,x}}\\
+			&amp;=0.51\\
+			\therefore \theta &amp;= 27^{\circ}
+\end{align*}\]</div>
+<p>measured anticlockwise from the positive <span class="math notranslate nohighlight">\(x\)</span> axis.</p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 2</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Question</label><div class="sd-tab-content docutils">
+<p>In an atomic collision or “scattering” experiment, a helium ion of mass <span class="math notranslate nohighlight">\(m_{\text{He}} = 4.0\text{ a.m.u}\)</span> and velocity <span class="math notranslate nohighlight">\(v_{\text{He}}=1200\text{ m s}^{-1}\)</span> collides with an oxygen (<span class="math notranslate nohighlight">\(\text{O}_2\)</span>) molecule of mass <span class="math notranslate nohighlight">\(m_{\text{O}_2}=32\text{ a.m.u}\)</span> which is initially at rest. The helium ion exits the collision at <span class="math notranslate nohighlight">\(90^{\circ}\)</span> from its incident direction with one quarter of its original kinetic energy.</p>
+<ol class="arabic simple">
+<li><p>What is the recoil speed of the oxygen molecule?</p></li>
+<li><p>What fraction of the total kinetic energy is lost during the collision?</p></li>
+<li><p>What possible mechanisms could explain this ``loss’’ of energy, given the usual `suspects’ are absent at the atomic level?</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Hint</label><div class="sd-tab-content docutils">
+<p>Remember that you can define your coordinate system in the most convenient way to suit the physical system. Just so long as the rules still apply (i.e. in Cartesian coordinates the rule is that the axes are perpendicular).</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Solution</label><div class="sd-tab-content docutils">
+<p><strong>1</strong>
+Firstly we shall adopt the convention that a lower case letter refers to the He ion and upper case for the <span class="math notranslate nohighlight">\(\text{O}_2\)</span>, otherwise the notation gets a bit messy. We also use subscripts to indicate initial and final velocities</p>
+<p>From the statement regarding the kinetic energy of the helium ion we know</p>
+<div class="math notranslate nohighlight" id="equation-eq-6-1">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-6-1" title="Link to this equation">#</a></span>\[\begin{split}\frac{1}{2}mv_f^2 &amp;= \frac{1}{4}\times\frac{1}{2}mv_i^2\nonumber\\
+\therefore v_f &amp;= \frac{v_i}{2}\end{split}\]</div>
+<p>We next align our axes such that the initial direction of the He molecule is along the positive <span class="math notranslate nohighlight">\(x\)</span> axis and the direction of He molecule after collision is along positive <span class="math notranslate nohighlight">\(y\)</span>. Conservation of momentum applies due to the absence of any external forces, and so considering conservation of momentum along the two directions gives</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+mv_i &amp;= MV_{f,x} &amp;\text{x component}\\
+0 &amp;= mv_f + MV_{f,y} &amp;\text{y component}
+\end{align*}\]</div>
+<p>We know that <span class="math notranslate nohighlight">\(M=8m\)</span> and so substituting this along with equation <a class="reference internal" href="#equation-eq-6-1">()</a> into the above expressions for momentum gives</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+V_{f,x} &amp;= \frac{m}{M}v_i = 150\text{ m s}^{-1}\\
+V_{f,y} &amp;= -\frac{m}{M}v_f = -75\text{ m s}^{-1}
+\end{align*}\]</div>
+<p>Thus the total speed of the oxygen molecule after collision is <span class="math notranslate nohighlight">\(V_f = \sqrt{V_{f,x}^2+V_{f,y}^2} = 170\text{ m s}^{-1}\)</span>.</p>
+<p><strong>2</strong>
+The fraction of kinetic energy lost <span class="math notranslate nohighlight">\(\Delta E\)</span> is the difference in kinetic energy before and after the collision divided by the kinetic energy before, i.e.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\Delta E&amp;= \frac{K_{\text{before}}-K_{\text{after}}}{K_{\text{before}}}\\
+		&amp;= 1-\frac{K_{\text{after}}}{K_{\text{before}}}\\
+		&amp;= 1- \frac{\frac{1}{8}mv_i^2+\frac{1}{2}MV_f^2}{\frac{1}{2}mv_i^2}\\
+		&amp;= 1 - \frac{1}{4}-\frac{M}{m}\left(\frac{V_f}{v_i}\right)^2\\
+		&amp;=0.59
+\end{align*}\]</div>
+<p><strong>3</strong>
+This 59% of the initial kinetic energy is lost to internal motions of the oxygen molecule, namely rotational and vibrational motion.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-collisions-in-2d-resolving-method">Elastic collisions in 2D - resolving method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-does-the-algebra-stop">When does the algebra stop??</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-collisions-in-2d-vector-method">Elastic collisions in 2D - vector method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Matt Mears
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

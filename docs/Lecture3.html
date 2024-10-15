@@ -1,0 +1,974 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 3 - Forces and Newton’s Laws &#8212; PHY009 - Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Lecture3';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logouni.png" class="logo__image only-light" alt="PHY009 - Mechanics - Home"/>
+    <script>document.write(`<img src="_static/logouni.png" class="logo__image only-dark" alt="PHY009 - Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    PHY009: Foundations of Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PreCourse.html">Pre-course requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic1.html">Topic 1 - Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic2.html">Topic 2 - Kinematics and Projectile Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic3.html">Topic 3 - Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic4.html">Topic 4 - Energy, Power and Momentum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic5.html">Topic 5 - Circular Motion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLecture3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Lecture3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 3 - Forces and Newton’s Laws</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axiomata-sive-leges-motus-or-axioms-or-laws-of-motion">“Axiomata Sive Leges Motus’’, or Axioms or Laws of Motion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-law">First Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-law">Second Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#third-law">Third Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-three-laws">Summary of the three laws</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-forces">Resolving forces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-traffic-lights-not-uk-ones">Example - Traffic Lights (not UK ones)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-resolving-components">Method 1 - Resolving components</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-vectors">Method 2 - Vectors</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-on-a-string">Mass on a string</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-3-forces-and-newton-s-laws">
+<span id="lecture3"></span><h1>Lecture 3 - Forces and Newton’s Laws<a class="headerlink" href="#lecture-3-forces-and-newton-s-laws" title="Link to this heading">#</a></h1>
+<section id="axiomata-sive-leges-motus-or-axioms-or-laws-of-motion">
+<span id="sec-c3-laws"></span><h2>“Axiomata Sive Leges Motus’’, or Axioms or Laws of Motion<a class="headerlink" href="#axiomata-sive-leges-motus-or-axioms-or-laws-of-motion" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="fig-c3-newton">
+<a class="reference internal image-reference" href="Figures/C3_Newton.jpg"><img alt="Photograph of a book. The book is the original copy of Principia owned by Newton." src="Figures/C3_Newton.jpg" style="width: 40%;" /></a>
+<figcaption>
+<p><span class="caption-text">Newton’s own copy of his Principia, with hand-written corrections for the second edition, in the Wren Library at Trinity College, Cambridge.</span><a class="headerlink" href="#fig-c3-newton" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In this topic` we are going to look at some of the work that Isaac Newton developed way back in the 17<sup>th</sup> century. Unfortunately we are not going to dabble in his obsession with alchemy<a class="footnote-reference brackets" href="#fma" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> or finding the Philosopher’s Stone, but instead will concern ourselves with a particular section of the “Philosophiæ Naturalis Principia Mathematica’’ published in 1687. In this work Newton defines three laws of motion that set the foundation for the field of classical mechanics which you will study in more depth next year.</p>
+<p>You will already have seen these three laws of motion but there are some concepts or details that are often overlooked in pre-University courses so firstly we will review the three laws in turn before applying them to some representative examples.</p>
+<p>I will forewarn you now that I’m going to make a point of including the original Latin of the three laws. There is some educational benefit to this, I assure you, but it is also a historical thing that makes students audibly groan during lectures in response to my “quirkiness”. I fully intend to honour this tradition until I retire.</p>
+<section id="first-law">
+<h3>First Law<a class="headerlink" href="#first-law" title="Link to this heading">#</a></h3>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Corpus omne perseverare in statu suo quiescendi vel movendi uniformiter in directum, nisi quatenus a viribus impressis cogitur statum illum mutare.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Every body persists in its state of being at rest or of moving uniformly straight forward, except insofar as it is compelled to change its state by force impressed.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>The key point that I want to emphasise with this law is a subtle one but thinking about it now will help in the future when you start thinking about special relativity. Newton makes reference to the ‘state’ of the body. This state could be at rest or a constant motion straight forward but in all cases they are simply specifics of this general ‘state’. This state is the velocity of the body which means we can rephrase the First Law as</p>
+<blockquote>
+<div><p>A body acted on by no <strong>net</strong> force moves with <strong>constant velocity</strong>.</p>
+</div></blockquote>
+<p>The zero velocity case is simply a unique value in an almost infinite number of possible velocities. Sometimes it is convenient to make use of the zero velocity case, particularly when you start thinking about different frames of reference.</p>
+</section>
+<section id="second-law">
+<h3>Second Law<a class="headerlink" href="#second-law" title="Link to this heading">#</a></h3>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Mutationem motus proportionalem esse vi motrici impressae, et fieri secundum lineam rectam qua vis illa imprimitur.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">The alteration of motion is ever proportional to the motive force impress’d; and is made in the direction of the right line in which that force is impress’d.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>This is by far the Law that is most frequently stated incorrectly. Or perhaps more accurately it is that the law taught to you in schools in a special case of a simplified version of the actual statement the Newton made. You will have heard people saying that the second law is simply <span class="math notranslate nohighlight">\(F=ma\)</span> however let us look at the original statement to see what information is missing when we look between the original and this simple-yet-incomplete definition.</p>
+<p>What I hope you notice is that the original statement contains two key parts, conveniently separated by a semi colon. In the first part we have that the alteration of motion, or acceleration, is proportional to the applied force. This is all good and gels with our simple statement that <span class="math notranslate nohighlight">\(F\propto a\)</span>, where the mass <span class="math notranslate nohighlight">\(m\)</span> is our constant of proportionality.</p>
+<p>The information in the original definition that is lacking in our <span class="math notranslate nohighlight">\(F=ma\)</span> statement is that regarding the directions of the applied forces and the resulting acceleration.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this course I will be using the notation that a vector is denoted by <strong>bold font</strong> without italics.</p>
+</div>
+</aside>
+<p>When we want to combine information about the magnitude and direction of properties you should always think about vectors.</p>
+<p>By combining the two components of the original statement for the Second Law we can give a more general statement of the law in mathematical form, namely that</p>
+<div class="math notranslate nohighlight" id="equation-eq-c3-second-old">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c3-second-old" title="Link to this equation">#</a></span>\[\textbf{F}=m\textbf{a}\]</div>
+<p>Have you spotted the ‘error’ yet?</p>
+<p>I was being rather picky with my choice of words right after the Latin and translation text. I said that the version taught is schools is both <strong>simplified</strong> and a <strong>special case</strong>. We have taken care of the simplification by including the directions by way of vectors but the special case element needs to be addressed.</p>
+<p>Let us look back at equation <a class="reference internal" href="Topic3.html#equation-eq-c3-second-old">(8)</a>. I was quite correct to not change the mass into a vector, but what I have assumed is that the mass is <strong>constant</strong>. In fact I need to go back to the original statement of the Second Law and think more generally about the “alteration of motion” and consider a property that contains both the velocity and mass of the body. This is, of course, the <strong>momentum</strong> <span class="math notranslate nohighlight">\((\textbf{p}=m\textbf{v})\)</span> of the body.</p>
+<p>If we now reformulate the Second Law using this concept of the momentum into an equation we find that</p>
+<div class="math notranslate nohighlight" id="equation-eq-c3-second-new">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c3-second-new" title="Link to this equation">#</a></span>\[\textbf{F} = \frac{\mathrm{d}\textbf{p}}{\mathrm{d}t}\]</div>
+<p>We can now check that this more general expression does reduce to the more familar form in equation <a class="reference internal" href="Topic3.html#equation-eq-c3-second-old">(8)</a> under special circumstances. Let us take equation <a class="reference internal" href="Topic3.html#equation-eq-c3-second-new">(9)</a> and apply the product rule</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+	 \textbf{F} &amp;= \frac{\mathrm{d}(m\textbf{v})}{\mathrm{d}t}=m\frac{\mathrm{d}\textbf{v}}{\mathrm{d}t} + \textbf{v}\frac{\mathrm{d}m}{\mathrm{d}t}
+\end{align*}\]</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Because the rate of change of mass is zero</p>
+</aside>
+<p>so in the special case that the mass remains constant the right hand term become zero and therefore we find that</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+	 \textbf{F} &amp;= m\frac{\mathrm{d}\textbf{v}}{\mathrm{d}t}\\
+	 &amp;= m\textbf{a}
+\end{align*}\]</div>
+<p><strong>but only when the mass is constant</strong>. You should try to rememorise Newton’s Second Law as the force applied to a body in a given time, also known as the <strong>impulse</strong> equals the rate of change of momentum of that body.</p>
+</section>
+<section id="third-law">
+<h3>Third Law<a class="headerlink" href="#third-law" title="Link to this heading">#</a></h3>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Actioni contrariam semper et aequalem esse reactionem: sive corporum duorum actiones in se mutuo semper esse aequales et in partes contrarias dirigi.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">To every action there is always an equal and opposite reaction: or the forces of two bodies on each other are always equal and are directed in opposite directions.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>I won’t spend as much time on this Law as there is not as much to critique, but again the key point to emphasise is that in the original statement is there is mention of the magnitude and the direction of the forces. We can neaten this up slightly by introducing our good friends the vectors. If we consider a body A that is exerting a force of magnitude <span class="math notranslate nohighlight">\(F_{AB}\)</span> onto body B then body B exerts a force of magnitude <span class="math notranslate nohighlight">\(F_{BA}\)</span> onto body A, and so we can state that</p>
+<div class="math notranslate nohighlight">
+\[\textbf{F}_{AB} = -\textbf{F}_{BA}\]</div>
+</section>
+<section id="summary-of-the-three-laws">
+<h3>Summary of the three laws<a class="headerlink" href="#summary-of-the-three-laws" title="Link to this heading">#</a></h3>
+<div class="tip admonition">
+<p class="admonition-title">Key point</p>
+<ol class="arabic simple">
+<li><p>First Law: A body acted on by no <strong>net</strong> force moves with <strong>constant velocity</strong> (which may be zero).</p></li>
+<li><p>Second Law: The general mathematical form is <span class="math notranslate nohighlight">\(\textbf{F}=\dfrac{\mathrm{d}\textbf{p}}{\mathrm{d}t}\)</span>. This reduces to <span class="math notranslate nohighlight">\(\textbf{F}=m\textbf{a}\)</span> only in the case where the mass remains constant.</p></li>
+<li><p>Third Law: If body A exerts a force on body B, then body B exerts a force on body A of the same magnitude but in the opposite direction, i.e. <span class="math notranslate nohighlight">\(\textbf{F}_{AB} = -\textbf{F}_{BA}\)</span></p></li>
+</ol>
+</div>
+</section>
+</section>
+<section id="resolving-forces">
+<h2>Resolving forces<a class="headerlink" href="#resolving-forces" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="Topic3.html#sec-c3-laws"><span class="std std-ref">The three Laws</span></a> were discussed in quite some length but what we are really excited about is using these to solve some physics problems. So that is exactly what we will do now.</p>
+<section id="example-traffic-lights-not-uk-ones">
+<h3>Example - Traffic Lights (not UK ones)<a class="headerlink" href="#example-traffic-lights-not-uk-ones" title="Link to this heading">#</a></h3>
+<p>In this case we consider the type of traffic lights that are suspended from cables, as shows in <a class="reference internal" href="Topic3.html#fig-c3-traffic-old"><span class="std std-numref">Fig. 4</span></a> below. We have a traffic light suspended from a single cable which in turn is suspended from two cables that make angles of <span class="math notranslate nohighlight">\(37.0^\circ\)</span> and <span class="math notranslate nohighlight">\(53.0^\circ\)</span> to the horizontal beam above. We also know that the weight of the traffic light is <span class="math notranslate nohighlight">\(125.0\text{ N}\)</span>, and we have been tasked with calculating the tensions in each of the three cables.</p>
+<figure class="align-center" id="fig-c3-traffic-old">
+<a class="reference internal image-reference" href="Figures/C3_traffic_old.png"><img alt="A hanging style set of traffic lights suspended on one vertical wire which in turn is attached to two wires that are affixed to a horizontal surface. These two wires each make a different angle to this surface and so have a different tension. The traffic light is stationary so no velocity vectors are indicated." src="Figures/C3_traffic_old.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-text">A hanging style set of traffic lights suspended on one vertical wire which in turn is attached to two wires that are affixed to a horizontal surface. These two wires each make a different angle to this surface and so have a different tension. The traffic light is stationary so no velocity vectors are indicated.</span><a class="headerlink" href="#fig-c3-traffic-old" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now before you jump straight in to the calculations we should take a step back and think a) about the assumptions of a system, and b) which approach we should take. The former is somewhat trivial but always worth stating: in this example I am assuming that the traffic light is stationary and therefore (from Newton’s First Law) there is <strong>zero net force</strong> in the system.</p>
+<p>The latter point is important because taking a brief moment to pause and think about the approach gives you the time to think about which methods are valid and, of those, which are the most efficient. For the purposes of hammering this point home I’m going to solve this traffic light problem using two methods, the first being the typical approach taught in pre-University education and the second making use of the vectors that we emphasised in our earlier review of the three laws of motion.</p>
+<section id="method-1-resolving-components">
+<span id="sec-c3-traffic-old"></span><h4>Method 1 - Resolving components<a class="headerlink" href="#method-1-resolving-components" title="Link to this heading">#</a></h4>
+<p>Looking at <a class="reference internal" href="Topic3.html#fig-c3-traffic-old"><span class="std std-numref">Fig. 4</span></a> I am going to split the system up into two parts, the upper and lower, and will consider the lower part first. In this part I have two components, the weight of the traffic light <span class="math notranslate nohighlight">\(mg\)</span> and the tension <span class="math notranslate nohighlight">\(T_3\)</span>. Both of these are only acting in the vertical direction which means</p>
+<div class="math notranslate nohighlight">
+\[T_3 = mg\]</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As an aside, horizontal and vertical are somewhat arbitrary. What I am doing is splitting these into two orthogonal components, but given that gravity acts vertically it is sensible to align one of my components with this.</p>
+</div>
+</aside>
+<p>Next I consider the upper part and here I need to split the components of the three tensions into their horizontal and vertical components. Thus my horizontal components give</p>
+<div class="math notranslate nohighlight" id="equation-eq-c3-t1">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c3-t1" title="Link to this equation">#</a></span>\[\begin{split}T_1\cos\alpha &amp;= T_2\cos\beta\nonumber\\
+T_1 &amp;= T_2\left(\frac{\cos\beta}{\cos\alpha}\right)\end{split}\]</div>
+<p>Next our vertical components give</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+T_3 = mg &amp;= T_1\sin\alpha + T_2\sin\beta\\
+&amp;= T_2\left(\tan\alpha\cos\beta + \sin\beta\right)\\
+\therefore T_2 &amp;= \frac{mg}{\tan\alpha\cos\beta + \sin\beta} \approx 99.8\text{ N}
+\end{align*}\]</div>
+<p>where I have substituted the expression for <span class="math notranslate nohighlight">\(T_1\)</span> (equation <a class="reference internal" href="Topic3.html#equation-eq-c3-t1">(10)</a>) into the second line. Now that I have an expression or value for <span class="math notranslate nohighlight">\(T_2\)</span> I can substitute this back in to equation <a class="reference internal" href="Topic3.html#equation-eq-c3-t1">(10)</a> to find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+T_1 &amp;= T_2\left(\frac{\cos\beta}{\cos\alpha}\right)\\
+&amp;= \left(\frac{mg}{\tan\alpha\cos\beta + \sin\beta}\right)\left(\frac{\cos\beta}{\cos\alpha}\right) \\
+&amp;\approx 75.2\text{ N}
+\end{align*}\]</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>This precision is dictated by the precision of the original input values, in this case the weight and the two stated angles.</p>
+</aside>
+<p>And there we have it. We have found that <span class="math notranslate nohighlight">\(T_1=75.2\text{ N}\)</span>, <span class="math notranslate nohighlight">\(T_2=99.8\text{ N}\)</span> and <span class="math notranslate nohighlight">\(T_3=125.0\text{ N}\)</span> to the correct number of significant figures.</p>
+</section>
+<section id="method-2-vectors">
+<span id="c3-method2"></span><h4>Method 2 - Vectors<a class="headerlink" href="#method-2-vectors" title="Link to this heading">#</a></h4>
+<p>The method above does work but it involved an unneccesary amount of work. By remembering that we are working with vectors we can avoid splitting our forces into their components of direction and magnitude (or in this case their horizontal and vertical), and just work with the vectors themselves.</p>
+<p>We have assumed that the system is not accelerating which means there is no net force. Under this assumption the sum of the forces in the system should equal zero which, when expressed as a diagram, means the three vectors form a closed triangle when placed end to end. We will start by sketching this as in <a class="reference internal" href="Topic3.html#fig-c3-traffic-new"><span class="std std-numref">Fig. 5</span></a>.</p>
+<figure class="align-center" id="fig-c3-traffic-new">
+<a class="reference internal image-reference" href="Figures/C3_Traffic_new.png"><img alt="Three arrows indicate the vector forces, one due to gravity pointing directly down, and the two force vectors point at angles with respect to the horizontal. The three vector arrows form a closed triangle because the traffic light is stationary and thus there is zero net force." src="Figures/C3_Traffic_new.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-text">Three arrows indicate the vector forces, one due to gravity pointing directly down, and the two force vectors point at angles with respect to the horizontal. The three vector arrows form a closed triangle because the traffic light is stationary and thus there is zero net force.</span><a class="headerlink" href="#fig-c3-traffic-new" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>When presented in this form I hope it is fairly clear that we have a triangle with all lengths and angles defined (even if we do not yet know all the values).</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I’m borrowing the result from the previous method that <span class="math notranslate nohighlight">\(T_3=mg\)</span>, but this is pretty obvious when you think about the system.</p>
+</div>
+</aside>
+<p>The fact that this is a triangle of vectors makes no difference; we can apply the geometry rules we all know and love to solve for the unknowns, in this case <span class="math notranslate nohighlight">\(T_1\)</span> and <span class="math notranslate nohighlight">\(T_2\)</span>.</p>
+<p>I will make use of the sine rules of triangles, which if you cannot remember it off the bat is defined as</p>
+<div class="math notranslate nohighlight">
+\[\frac{mg}{\sin\theta'}=\frac{T_1}{\sin\beta'}=\frac{T_2}{\sin\alpha'}.\]</div>
+<p>We know all of the parameters in the left hand side so will use this part twice, first to find <span class="math notranslate nohighlight">\(T_1\)</span> and again to find <span class="math notranslate nohighlight">\(T_2\)</span>. For <span class="math notranslate nohighlight">\(T_1\)</span> this gives</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{mg}{\sin\theta'}&amp;=\frac{T_1}{\sin\beta'}\\
+T_1&amp;=mg\left(\frac{\sin\theta'}{\sin\beta'}\right)\\
+&amp;\approx0.602mg = 75.2\text{ N}
+\end{align*}\]</div>
+<p>Similar steps will give you <span class="math notranslate nohighlight">\(T_2 = 99.8\text{ N}\)</span>. These are the same as we found using the <a class="reference internal" href="#sec-c3-traffic-old"><span class="std std-ref">previous method</span></a>, as we would expect, but the vector method is much more efficient</p>
+</section>
+</section>
+<section id="mass-on-a-string">
+<h3>Mass on a string<a class="headerlink" href="#mass-on-a-string" title="Link to this heading">#</a></h3>
+<p>This may all seem a little arbitrary and trivial but we can use the principles that allowed to solve the traffic light problem above to consider a different system that will form the basis of how you describe and manipulate waves on a string. All I will cover in this part of the course is from defining the system up to the definition of boundary conditions, but you will take this further in the Waves and Oscillations part of the module.</p>
+<p>Our first step is one of defining some notation. Consider a string whose equilibrium position lies along the <span class="math notranslate nohighlight">\(x\)</span>-axis. If the string oscillates in the <span class="math notranslate nohighlight">\(y\)</span> direction only (that is, we confine this to two dimensions)</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="math notranslate nohighlight">\(\Psi\)</span> is the Greek capital letter ‘psi’. You may ask why I’m not using <span class="math notranslate nohighlight">\(A\)</span> for amplitude, but typically <span class="math notranslate nohighlight">\(A\)</span> is the maximum amplitude whereas <span class="math notranslate nohighlight">\(\Psi\)</span> varies with time and position.</p>
+</div>
+</aside>
+<p>then the amplitude of the oscillation <span class="math notranslate nohighlight">\(\Psi\)</span> is a function of the position along the string and the time, denoted by <span class="math notranslate nohighlight">\(\Psi(x,t)\)</span> as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C3_string1</span></code>.</p>
+<figure class="align-center" id="fig-c3-string1">
+<a class="reference internal image-reference" href="Figures/C3_string1.png"><img alt="The amplitude of each point on the string is a function of both the position along the string $x$ and of time $t$. This amplitude $\Psi(x,t)$ is defined with respect to the equilibrium position, i.e. where the string sits stationary when no initial force or displacement is applied." src="Figures/C3_string1.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-text">The amplitude of each point on the string is a function of both the position along the string <span class="math notranslate nohighlight">\(x\)</span> and of time <span class="math notranslate nohighlight">\(t\)</span>. This amplitude <span class="math notranslate nohighlight">\(\Psi(x,t)\)</span> is defined with respect to the equilibrium position, i.e. where the string sits stationary when no initial force or displacement is applied.</span><a class="headerlink" href="#fig-c3-string1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Let us consider a more complicated system of two strings that are joined together with a blob of glue with mass <span class="math notranslate nohighlight">\(m\)</span>. These two strings have different mass densities, <span class="math notranslate nohighlight">\(\mu_1\)</span> and <span class="math notranslate nohighlight">\(\mu_2\)</span> but are both under the same tension <span class="math notranslate nohighlight">\(T\)</span>. This can be seen in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C3_string2</span></code>.</p>
+<figure class="align-center" id="fig-c3-string2">
+<a class="reference internal image-reference" href="Figures/C3_string2.png"><img alt="A blob of glue with mass $m$ is joining two strings of different mass densities together. As a wave travels along this string system the mass accelerates in the $y$ direction only. There are two tensions acting on the mass, one from each of the strings." src="Figures/C3_string2.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-text">A blob of glue with mass <span class="math notranslate nohighlight">\(m\)</span> is joining two strings of different mass densities together. As a wave travels along this string system the mass accelerates in the <span class="math notranslate nohighlight">\(y\)</span> direction only. There are two tensions acting on the mass, one from each of the strings.</span><a class="headerlink" href="#fig-c3-string2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now we can start thinking about and defining the boundary conditions at the blob of glue which is the boundary between the two strings.</p>
+<p>The first condition is that the strings must remain joined. This may seem silly and trivial but to ensure this condition is met at the boundary we can make some very useful statements. In order for the strings to remain joined any wave they are both carrying <strong>must</strong> have the same frequency at all points on the string and <strong>must</strong> have the same amplitude at the boundary . The string ends at the boundary cannot have different vertical positions if they are joined. Therefore at the boundary we can state</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\omega_1 &amp;= \omega_2\\
+\Psi_1(x=0,t) &amp;= \Psi_2(x=0,t)
+\end{align*}\]</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In case you forgot, this is a lecture on forces!</p>
+</div>
+</aside>
+<p>The second boundary condition is less obvious from first glance but can easily be determined when we think about the <strong>forces</strong> acting on the blob of glue. The blob has an acceleration <span class="math notranslate nohighlight">\(a\)</span> which means</p>
+<div class="math notranslate nohighlight" id="equation-eq-c3-string">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c3-string" title="Link to this equation">#</a></span>\[T\sin\beta-T\sin\alpha =ma\]</div>
+<p>For small oscillations we can state that</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\sin\beta \approx \tan\beta = \frac{\partial{\Psi_2}}{\partial{x}}(x=0,t)\\
+\sin\alpha \approx \tan\alpha = \frac{\partial{\Psi_1}}{\partial{x}}(x=0,t)
+\end{align*}\]</div>
+<p>We can also define the acceleration of the blob of glue in terms of the second partial derivative of the position with respect to time, i.e.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a &amp;= \frac{\partial{}^2\Psi}{\partial{t^2}}
+\end{align*}\]</div>
+<p>We can substitute these three expressions back in to equation <a class="reference internal" href="#equation-eq-c3-string">()</a> to find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+T\frac{\partial{\Psi_2}}{\partial{x}}(x=0,t) -T\frac{\partial{\Psi_1}}{\partial{x}}(x=0,t) &amp;= m\frac{\partial{}^2\Psi}{\partial{t^2}}
+\end{align*}\]</div>
+<p>Finally let us suppose that there is no blob of glue at the join, such that <span class="math notranslate nohighlight">\(m\rightarrow 0\)</span>, which leads to</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+T\frac{\partial{\Psi_2}}{\partial{x}}(x=0,t) &amp;= T\frac{\partial{\Psi_1}}{\partial{x}}(x=0,t)\\
+\frac{\partial{\Psi_2}}{\partial{x}}(x=0,t) &amp;= \frac{\partial{\Psi_1}}{\partial{x}}(x=0,t)
+\end{align*}\]</div>
+<p>This can be reinterpreted as the curvature at the boundary is the same for both string 1 and 2. Intuitively this makes sense as we would not expect to see a sharp change in gradient at the boundary, and instead expect (or indeed require) it to be smooth.</p>
+<p>So we now have our three boundary conditions:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\omega_1 = \omega_2\)</span></p></li>
+<li><p>At <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(\Psi_1 = \Psi_2\)</span> for all <span class="math notranslate nohighlight">\(t\)</span></p></li>
+<li><p>At <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(\dfrac{\partial{\Psi_1}}{\partial{x}} = \dfrac{\partial{\Psi_2}}{\partial{x}}\)</span> for all <span class="math notranslate nohighlight">\(t\)</span></p></li>
+</ol>
+<p>These boundary conditions will allow you to solve for how waves scatter at the boundary between two strings which you will cover in the Waves and Oscillation lectures. Hopefully what you can see here is that these boundary conditions are fairly sensible to define when you think carefully about the physical system you are dealing with, and that even the more complicated one here about the requirement of continuous curvature at the boundary can be easily derived from some relatively simple resolution of forces.</p>
+</section>
+</section>
+<section id="lecture-questions">
+<h2>Lecture Questions<a class="headerlink" href="#lecture-questions" title="Link to this heading">#</a></h2>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 1</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Question</label><div class="sd-tab-content docutils">
+<p>Three vector forces <span class="math notranslate nohighlight">\(\textbf{F}_1\)</span>, <span class="math notranslate nohighlight">\(\textbf{F}_2\)</span> and <span class="math notranslate nohighlight">\(\textbf{F}_3\)</span> act on a particle of mass <span class="math notranslate nohighlight">\(m = 3.8\text{ kg}\)</span> as shown below.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="Figures/L3_1.png"><img alt="Figures/L3_1.png" src="Figures/L3_1.png" style="width: 50%;" /></a>
+</figure>
+<ol class="arabic simple">
+<li><p>Calculate the magnitude and direction of the net force acting on the particle.</p></li>
+<li><p>Calculate the particle’s acceleration.</p></li>
+<li><p>If an additional stabilizing force <span class="math notranslate nohighlight">\(\textbf{F}_4\)</span> is applied to create an equilibrium condition with a resultant net force of zero, what would be the magnitude and direction of <span class="math notranslate nohighlight">\(\textbf{F}_4\)</span>?</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Hint</label><div class="sd-tab-content docutils">
+<p>Be careful with using the <a class="reference internal" href="#c3-method2"><span class="std std-ref">resolving vectors</span></a> method. Not all of the vectors are labelled on the diagram, so you aren’t dealing with a triangle of arrows. However you could combine pairs of vectors into single vectors until you get down to three, and then use the triangle method.</p>
+<p>Note that the word <strong>acceleration</strong> has a specific definition. Make sure you include all of the necessary information in your result.</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Solution</label><div class="sd-tab-content docutils">
+<p><strong>1</strong> The second step is to resolve the forces into <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> components. The first step is to check that it’s worth doing this! The question is asking for magnitude and directions, and the force diagram gives the three forces in magnitude and direction format, so it is indeed worth doing this.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+F_x &amp;= -80\cos35^\circ + 60 + 40\cos45^\circ = 22.75\text{ N}\\
+F_y &amp;= 80\sin35^\circ + 0 - 40\sin45^\circ = 17.60\text{ N}
+\end{align*}\]</div>
+<p>We can now calculate the magnitude of the net force <span class="math notranslate nohighlight">\(F_\text{net}\)</span> and the direction <span class="math notranslate nohighlight">\(\theta\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+F_\text{net} &amp;= \sqrt{F_x^2+F_y^2}=28.8\text{ N}\\
+\tan\theta &amp;= \frac{F_y}{F_x} = 0.7736 \implies \theta = 37.7^\circ
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta\)</span> is defined as anticlockwise from the positive <span class="math notranslate nohighlight">\(x\)</span> axis.</p>
+<p><strong>2</strong></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a &amp;= \frac{F_\text{net}}{m} = 7.6\text{ m s}^{-2}
+\end{align*}\]</div>
+<p>in the direction of the force found in part 1 (i.e. <span class="math notranslate nohighlight">\(37.7^\circ\)</span> anticlockwise from the positive <span class="math notranslate nohighlight">\(x\)</span> axis).</p>
+<p><strong>3</strong> The long approach to this question would be to go back to the first step but add another component into our expressions for <span class="math notranslate nohighlight">\(F_x\)</span> and <span class="math notranslate nohighlight">\(F_y\)</span> and then solving the simultaneous equations.</p>
+<p>The shorter approach is to recognise that to have a net zero force one must add an additional force that is equal in magnitude but opposite in direction to <span class="math notranslate nohighlight">\(\textbf{F}_\text{net}\)</span>, i.e. <span class="math notranslate nohighlight">\(\textbf{F}_4 = -\textbf{F}_\text{net}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 2</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Question</label><div class="sd-tab-content docutils">
+<p>A container of mass <span class="math notranslate nohighlight">\(200.0 \text{ kg}\)</span> rests on the back of an open truck. If the truck accelerates at <span class="math notranslate nohighlight">\(1.5 \text{ m s}^{-2}\)</span>, what is the minimum coefficient of static friction between the container and the bed of the truck required to prevent the container from sliding off the back of the truck?</p>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Hint</label><div class="sd-tab-content docutils">
+<p>A reminder that friction force is proportional to the weight of the object and acts parallel to the surface.</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Solution</label><div class="sd-tab-content docutils">
+<p>The force applied to the container <span class="math notranslate nohighlight">\(F=ma\)</span> and the frictional force <span class="math notranslate nohighlight">\(F_f=\mu mg\)</span>. Therefore</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mu mg &amp;= ma\\
+\therefore \mu &amp;= \frac{a}{g} = 0.15
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 3</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+Question</label><div class="sd-tab-content docutils">
+<p>Three strings are knotted together, and masses of <span class="math notranslate nohighlight">\(7.0\text{ kg}\)</span>, <span class="math notranslate nohighlight">\(8.0\text{ kg}\)</span> and <span class="math notranslate nohighlight">\(9.0\text{ kg}\)</span> are attached to their free ends. The strings carrying the two lighter weights are slung over fixed smooth pegs. At what angle to the vertical do these strings rest when the system is in equillibrium?</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="Figures/L3_3.png"><img alt="Figures/L3_3.png" src="Figures/L3_3.png" style="width: 50%;" /></a>
+</figure>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+Hint</label><div class="sd-tab-content docutils">
+<p>The pulleys are a slight distraction. How would the system change if you were to instead pull the <span class="math notranslate nohighlight">\(7.0\text{ kg}\)</span> and <span class="math notranslate nohighlight">\(8.0\text{ kg}\)</span> masses by the same force but in the direction of the diagonal lines connecting the <span class="math notranslate nohighlight">\(9.0\text{ kg}\)</span> mass cable and the two respective pulleys?</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+Solution</label><div class="sd-tab-content docutils">
+<p>At equilibrium there is no net force. In terms of the force vectors this means the three involved should form a closed triangle from which we can use the cosine formula to calcuate our angles.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="Figures/L3_3b.png"><img alt="Figures/L3_3b.png" src="Figures/L3_3b.png" style="width: 50%;" /></a>
+</figure>
+<p>First we want to calculate <span class="math notranslate nohighlight">\(\alpha\)</span>. We use</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a^2 &amp;= b^2 + c^2 - 2bc\cos\alpha\\
+\cos \alpha &amp;= \frac{b^2 + c^2 - a^2}{2bc} = \frac{9600}{14400} = \frac{2}{3}\\
+\therefore \alpha &amp;\approx 42.1^\circ \approx 0.84\text{ radians}
+\end{align*}\]</div>
+<p>The second angle we want to find is <span class="math notranslate nohighlight">\(\gamma\)</span> which is more obvious when you project upwards from the vectors <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>. One again we use the cosine rule:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+c^2 &amp;= a^2 + b^2 - 2bc\cos\alpha\\
+\cos \gamma &amp;= \frac{a^2 + b^2 - c^2}{2ab} = \frac{6600}{12600} \approx 0.52\\
+\therefore \gamma &amp;\approx 58.7^\circ \approx 1.02\text{ radians}
+\end{align*}\]</div>
+<p>Strictly speaking there is a third angle that is needed, as the question asks for the angles that the three strings make to the vertical. The third string i.e. vector <span class="math notranslate nohighlight">\(\textbf{b}\)</span> is pointing vertically down so the angle is either zero or <span class="math notranslate nohighlight">\(\pi\)</span> radians depending on which way you define the positive vertical axis.</p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 4</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
+Question</label><div class="sd-tab-content docutils">
+<p>An aircraft of mass 10 metric tonnes is gliding at <span class="math notranslate nohighlight">\(5^\circ\)</span> to the horizontal. The pilot has turned the engine meaning that the plane is gliding at a constant speed. Determine the forces of lift and drag.</p>
+<p>Note: 1 metric tonne is <span class="math notranslate nohighlight">\(10^3\text{ kg}.\)</span></p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
+Hint</label><div class="sd-tab-content docutils">
+<p>Avoid the temptation to assume that lift acts vertically with respect to the ground, and that drag acts horizontally. These two forces act on the aircraft, so think in terms of how the aircraft moves.</p>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
+Solution</label><div class="sd-tab-content docutils">
+<p>The weight of the aircraft is <span class="math notranslate nohighlight">\(10^3g\)</span> - I’m leaving it in terms of <span class="math notranslate nohighlight">\(g\)</span> for now and will plug numbers in at the end.</p>
+<p>The lift force <span class="math notranslate nohighlight">\(L\)</span> is the force which keeps an aircraft in the air and acts perpendicular to the direction of motion. On the other hand the drag force <span class="math notranslate nohighlight">\(D\)</span> acts anti-parallel to (i.e. parallel to but in the opposite direction of) the direction of motion.</p>
+<p>As the speed of the aircraft is constant the forces must be in equilibrium. We can therefore construct a force triangle from which we can determine</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+D &amp;= 10^3g\times\sin5 = 855.0\text{ N}\\
+L &amp;= 10^3g\times\cos5 = 9772.7\text{ N}
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="fma" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Sorry to any Fullmetal Alchemist fans out there</p>
+</aside>
+</aside>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axiomata-sive-leges-motus-or-axioms-or-laws-of-motion">“Axiomata Sive Leges Motus’’, or Axioms or Laws of Motion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-law">First Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-law">Second Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#third-law">Third Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-three-laws">Summary of the three laws</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-forces">Resolving forces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-traffic-lights-not-uk-ones">Example - Traffic Lights (not UK ones)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-resolving-components">Method 1 - Resolving components</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-vectors">Method 2 - Vectors</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-on-a-string">Mass on a string</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Matt Mears
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,718 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 9 - Rolling Motion &#8212; PHY009 - Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Lecture9';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logouni.png" class="logo__image only-light" alt="PHY009 - Mechanics - Home"/>
+    <script>document.write(`<img src="_static/logouni.png" class="logo__image only-dark" alt="PHY009 - Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    PHY009: Foundations of Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PreCourse.html">Pre-course requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic1.html">Topic 1 - Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic2.html">Topic 2 - Kinematics and Projectile Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic3.html">Topic 3 - Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic4.html">Topic 4 - Energy, Power and Momentum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic5.html">Topic 5 - Circular Motion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLecture9.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Lecture9.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 9 - Rolling Motion</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling-translational-rotational">Rolling = translational + rotational</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-solid-cylinder-down-a-ramp">Example - Solid cylinder down a ramp</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling-race">Rolling Race</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-9-rolling-motion">
+<span id="lecture9"></span><h1>Lecture 9 - Rolling Motion<a class="headerlink" href="#lecture-9-rolling-motion" title="Link to this heading">#</a></h1>
+<p><strong>Disclaimer:</strong> This is by far my most favourite topic to teach in the first year Mechanics course so you will have to forgive me if I come across as overly enthusiastic in this chapter.</p>
+<section id="rolling-translational-rotational">
+<h2>Rolling = translational + rotational<a class="headerlink" href="#rolling-translational-rotational" title="Link to this heading">#</a></h2>
+<p>So far we have learnt about systems moving with linear dynamics (<a class="reference internal" href="ProjectileExtra.html#lecture1"><span class="std std-ref">Lecture 1</span></a> to <a class="reference internal" href="Lecture6.html#lecture6"><span class="std std-ref">Lecture 6</span></a> and systems that are rotating (<a class="reference internal" href="Lecture7.html#lecture7"><span class="std std-ref">Lectures 7</span></a> and <a class="reference internal" href="Lecture8.html#lecture8"><span class="std std-ref">8</span></a>). We can now turn our attention to the more complicated but also very common in real life systems that are rotating but also have translational motion. The most obvious system that we can examine is that of a circular object (ball or cylinder) rolling down a ramp. It is obviously rotating but also moves down the ramp.</p>
+<p>The way that we describe this rolling motion is by making heaving use of the centre of mass for the object. If we look at <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C9_roll1</span></code> we can see a silver disc rolling along a flat surface. The disc has two coloured markings, one at the centre of mass (in yellow) and one at the edge of the disc (in red). As you can see when the yellow and red positions are all displayed for the entire length the disc rolls along, the red position moves along a cycloid path from the flat surface to a maximum height equal to the diameter of the disc. The yellow centre of mass position however is a flat line parallel to the flat surface.</p>
+<p>So for a rolling disc the centre of mass is moving with linear motion only, which allows us to make connections between the rotational and linear kinematics.</p>
+<figure class="align-center" id="fig-c9-roll1">
+<a class="reference internal image-reference" href="Figures/C9_roll1.png"><img alt="A time-lapse image of a disc rolling along a horizontal surface. The centre of mass is marked and traces out a horizontal path whereas the edge of the disc (marked in red) traces a cycloid path. Thus we can use linear kinematics to describe the motion of the centre of mass." src="Figures/C9_roll1.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">A time-lapse image of a disc rolling along a horizontal surface. The centre of mass is marked and traces out a horizontal path whereas the edge of the disc (marked in red) traces a cycloid path. Thus we can use linear kinematics to describe the motion of the centre of mass.</span><a class="headerlink" href="#fig-c9-roll1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>For an object that is rolling <strong>without slipping</strong> the linear distance travelled by the centre of mass is equal to the arc length between the first and last points on the edge of the disc. A way to visualise this is to imagine applying some wet paint to the edge of the disc. If you roll it along some distance <span class="math notranslate nohighlight">\(s\)</span> then the paint transfered from the disc to the surface is the arc length on the disc. A schematic diagram is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:C9_roll2</span></code>.</p>
+<figure class="align-center" id="fig-c9-roll2">
+<a class="reference internal image-reference" href="Figures/C9_roll2.jpg"><img alt="A disc of radius $R$ rolls along and rotates by some angle $\theta$. The arc length of this is equal to the linear distance travelled along the ground." src="Figures/C9_roll2.jpg" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-text">A disc of radius <span class="math notranslate nohighlight">\(R\)</span> rolls along and rotates by some angle <span class="math notranslate nohighlight">\(\theta\)</span>. The arc length of this is equal to the linear distance travelled along the ground.</span><a class="headerlink" href="#fig-c9-roll2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We know that the arc length, radius and angle are all related, namely <span class="math notranslate nohighlight">\(s=R\theta\)</span>, and we have established now that the linear distance travelled by the centre of mass is equal to the arc length, and therefore we can show that</p>
+<div class="math notranslate nohighlight" id="equation-eq-c9-rollv">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c9-rollv" title="Link to this equation">#</a></span>\[\begin{split}v_\text{CM} &amp;= \frac{\mathrm{d}s}{\mathrm{d}t}\nonumber\\
+ &amp;= R\frac{\mathrm{d}\theta}{\mathrm{d}t}\nonumber\\
+ &amp;= R\omega\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eq-c9-rolla">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-c9-rolla" title="Link to this equation">#</a></span>\[\begin{split} a_\text{CM} &amp;= \frac{\mathrm{d}v_\text{CM}}{\mathrm{d}t}\nonumber\\
+ &amp;= R\frac{\mathrm{d}\omega}{\mathrm{d}t}\nonumber\\
+ &amp;=R\alpha\end{split}\]</div>
+<p>I have already stated that rolling motion is the combination of translational (linear) motion and rotational motion, but now we are able to express the rotational motion in a linear form when we consider the centre of mass.</p>
+<p>The same also applies for kinetic energy which is, as we know, fundamentally linked to the velocity of a body. For a rolling system the total kinetic energy <span class="math notranslate nohighlight">\(K_T\)</span> is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+K_T &amp;= K_\text{translational} + K_\text{rotational}\\
+&amp;= \frac{1}{2}mv_\text{CM}^2 + \frac{1}{2}I\omega^2
+\end{align*}\]</div>
+<p>Let us now work through an example problem involving a cylinder rolling down an incline.</p>
+<section id="example-solid-cylinder-down-a-ramp">
+<h3>Example - Solid cylinder down a ramp<a class="headerlink" href="#example-solid-cylinder-down-a-ramp" title="Link to this heading">#</a></h3>
+<p>Consider a solid cylinder of mass <span class="math notranslate nohighlight">\(m\)</span> and radius <span class="math notranslate nohighlight">\(r\)</span> initially at rest on top of a ramp of height <span class="math notranslate nohighlight">\(h\)</span> inclined by some angle <span class="math notranslate nohighlight">\(\theta\)</span> to the horizontal. The cylinder is given a gentle push and begins to roll down the ramp without slipping. We want to calculate the centre of mass velocity of the cylinder at the end of the ramp.</p>
+<p>To approach this we first assume that the system is isolated in that there is no energy lost from the mechanical system. This allows us to state that the change in gravitational potential energy must equal the total kinetic energy of the cylinder at the end of the ramp. In other words</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+mgh &amp;= \frac{1}{2}mv_\text{CM}^2 + \frac{1}{2}I\omega^2
+\end{align*}\]</div>
+<p>We next substitute for <span class="math notranslate nohighlight">\(\omega\)</span> using equation <a class="reference internal" href="#equation-eq-c9-rollv">()</a> and the moment of inertia for a solid cylinder <span class="math notranslate nohighlight">\(I = \dfrac{1}{2}mr^2\)</span> to find</p>
+<div class="math notranslate nohighlight" id="equation-eq-v-cm-roll">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-v-cm-roll" title="Link to this equation">#</a></span>\[\begin{split}mgh &amp;= \frac{1}{2}mv_\text{CM}^2 + \frac{1}{2}\left(\dfrac{1}{2}mr^2\right)\left(\frac{v_\text{CM}^2}{r^2}\right)\\
+2gh &amp;= v_\text{CM}^2 + \frac{1}{2}v_\text{CM}^2\\
+\therefore v_\text{CM} &amp;= \sqrt{\frac{4gh}{3}}\end{split}\]</div>
+<p>It is worth doing a sense check here. If we consider the more simple case of an object with mass <span class="math notranslate nohighlight">\(m\)</span> sliding down a frictionless incline then the centre of mass velocity of the object will be <span class="math notranslate nohighlight">\(\sqrt{2gh}\)</span>. This is larger than the centre of mass velocity for a rolling object which checks out with our intuition: if both the rolling and sliding object start from the same height they have the same potential energy, but while the sliding object converts this all to linear kinetic energy  the rolling object “shares” the energy between rotational and translational motion.</p>
+<p>You can take this further and calculate the time taken to roll down a ramp of length <span class="math notranslate nohighlight">\(L\)</span>, calculate the rotational velocity of the cylinder at the end of the ramp, and so on. You are now at the stage where you can start drawing on the different concepts and tools we have learned about in the previous chapters and make them work to solve whatever problem you have in front of you.</p>
+</section>
+</section>
+<section id="rolling-race">
+<h2>Rolling Race<a class="headerlink" href="#rolling-race" title="Link to this heading">#</a></h2>
+<p>Let us have a race. Imagine that we set a number of different shapes at the top of a ramp of height <span class="math notranslate nohighlight">\(h\)</span>, and released them from rest. Which shape should reach the bottom of the incline first?
+The shapes we’re using are some of those we saw in <a class="reference internal" href="Lecture8.html#lecture8"><span class="std std-ref">Lecture 8</span></a>, namely:</p>
+<ol class="arabic simple">
+<li><p>A hollow cylinder.</p></li>
+<li><p>A solid cylinder.</p></li>
+<li><p>A hollow sphere.</p></li>
+<li><p>A solid sphere.</p></li>
+</ol>
+<p>We have already solved this for the solid cylinder above, so we just need to modify equation <a class="reference internal" href="#equation-eq-v-cm-roll">()</a> slightly so that it applies to the general case rather than using a specific expression for the moment of inertia for a specific shape. In other words, we want to use the general <span class="math notranslate nohighlight">\(I=cMR^2\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-eq-v-cm-race">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-v-cm-race" title="Link to this equation">#</a></span>\[\begin{split}mgh &amp;= \frac{1}{2}mv_\text{CM}^2 + \frac{1}{2}\left(cmr^2\right)\left(\frac{v_\text{CM}^2}{r^2}\right)\\
+mgh &amp;= \frac{1}{2}(1+c)mv_\text{CM}^2\\
+\therefore v_\text{CM} &amp;= \sqrt{\frac{2gh}{1+c}}\end{split}\]</div>
+<p>From this expression we can find our answer of which shape will get to the bottom first, i.e. is the one with the highest centre of mass velocity at the bottom of the ramp. The way to maximise <span class="math notranslate nohighlight">\(v_\text{CM}\)</span> in equation <a class="reference internal" href="#equation-eq-v-cm-race">()</a> is to make <span class="math notranslate nohighlight">\(c\)</span> smaller. So shapes with a smaller <span class="math notranslate nohighlight">\(c\)</span> value will reach the bottom first.</p>
+<p>The solid sphere <span class="math notranslate nohighlight">\(\left(c=\frac{2}{5}\right)\)</span> finishes first, then the solid cylinder <span class="math notranslate nohighlight">\(\left(c=\frac{1}{2}\right)\)</span>, then the hollow sphere <span class="math notranslate nohighlight">\(\left(c=\frac{2}{3}\right)\)</span> and finally the thin cylinder <span class="math notranslate nohighlight">\((c=1)\)</span>.</p>
+<p>Something else to note from equation <a class="reference internal" href="#equation-eq-v-cm-race">()</a> is the absence of any mass or radius terms. This means the centre of mass velocity of <strong>all</strong> solid cylinders, for example, will be the same regardless of how large or heavy they are. It <strong>only</strong> depends on the shape distribution quanitifed by <span class="math notranslate nohighlight">\(c\)</span>.</p>
+</section>
+<section id="lecture-questions">
+<h2>Lecture Questions<a class="headerlink" href="#lecture-questions" title="Link to this heading">#</a></h2>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 1</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Question</label><div class="sd-tab-content docutils">
+<p>Prove that the moment of inertia of a uniform solid sphere of mass <span class="math notranslate nohighlight">\(M\)</span> and radius <span class="math notranslate nohighlight">\(R\)</span>, rotating about an axis through its centre of mass, given by <span class="math notranslate nohighlight">\(I_{\text{CM}}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[I_{CM}=\frac{2}{5}MR^{2}\]</div>
+<p>using the moment of inertia of a thin solid disc <span class="math notranslate nohighlight">\(I_{disc}=\frac{1}{2}mr^{2}\)</span> where <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(r\)</span> are the mass and radius of the disc respectively.</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Hint</label><div class="sd-tab-content docutils">
+<p>A solid sphere can be modelled as a series of concentric disc stacked vertically, going from a small disc up to the largest at the equator, then back to small again. Think of stacking a coins of increasing size then down to the smallest again.</p>
+<p>You’ll then need to recall that</p>
+<div class="math notranslate nohighlight">
+\[I_\text{sphere} = \int\mathrm{d}I_\text{disc}\]</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Solution</label><div class="sd-tab-content docutils">
+<p>We start by recognising that the moment of inertia of a solid sphere is the sum of the moment of inertia of many thin discs rotating about the same axis as the solid sphere, i.e.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+I_{\text{sphere}} &amp;= \int\,\mathrm{d}I_{\text{disc}}\\
+	&amp;= \frac{1}{2}\int y^2\,\mathrm{d}m
+\end{align*}\]</div>
+<p>where I have aligned the axis of rotation along <span class="math notranslate nohighlight">\(x\)</span> and so the radius of the disc is <span class="math notranslate nohighlight">\(y\)</span> and thus its volume <span class="math notranslate nohighlight">\(\mathrm{d}V = \pi y^2\,\mathrm{d}x\)</span>.</p>
+<p>The disc and sphere are both uniform which means the density of a disc is equal to the density of the sphere, and so</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\rho = \frac{M}{V} &amp;= \frac{\mathrm{d}m}{\mathrm{d}V}\\
+ \therefore \frac{M}{\frac{4}{3}\pi R^3} &amp;= \frac{\mathrm{d}m}{\pi y^2 \mathrm{d}x}\\
+ \mathrm{d}m &amp;= \frac{3M}{4\pi R^3} \pi y^2 \,\mathrm{d}x =\left(\frac{3M}{4R^3}\right)y^2\,\mathrm{d}x
+\end{align*}\]</div>
+<p>We substitute this into our original equation for the moment of inertia for a sphere and find</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+I_{\text{sphere}} &amp;= \frac{1}{2}\int y^2\left(\frac{3M}{4R^3}\right)y^2\,\mathrm{d}x\\
+&amp;= \frac{3M}{8R^3}\int y^4\,\mathrm{d}x
+\end{align*}\]</div>
+<p>Finally we need to express <span class="math notranslate nohighlight">\(y\)</span> in terms of <span class="math notranslate nohighlight">\(x\)</span> which we do by noting that the edge of the discs and therefore the edge of the sphere in the <span class="math notranslate nohighlight">\(x,y\)</span> plane can be described using the equation of a circle, i.e. <span class="math notranslate nohighlight">\(R^2 = x^2 + y^2\)</span> or <span class="math notranslate nohighlight">\(y^2 = R^2 - x^2\)</span>, which yields</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+I_{\text{sphere}} &amp;= \frac{3M}{8R^3}\int\limits_{-R}^R \left(R^2-x^2\right)^2\,\mathrm{d}x\\
+		&amp;= \frac{3M}{8R^3}\int\limits_{-R}^R \left(R^4 - 2R^2x^2 + x^4\right)\,\mathrm{d}x\\
+		&amp;=\frac{6M}{8R^3}\left[R^4x-\frac{2R^2x^3}{3}+\frac{x^5}{5}\right]_{0}^{R}\\
+		&amp;=\frac{6M}{8R^3}\left(R^5 - \frac{2R^5}{3}+\frac{R^5}{5} - 0\right)\\
+		&amp;=\frac{6M}{8R^3}\left(\frac{15R^5-10R^5+3R^5}{15}\right)\\
+		&amp;=\frac{6M}{8R^3}\frac{8R^5}{15}\\
+		&amp;=\frac{2}{5}MR^2
+\end{align*}\]</div>
+<p>where I have made of the fact that the function is symmetric which allowed me to change my limits into something easier to work with (between 0 and <span class="math notranslate nohighlight">\(R\)</span>).</p>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 2</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Question</label><div class="sd-tab-content docutils">
+<p>A glass ball is rolled from rest down a ramp 2.0 m long. At what angle to the horizontal must the ramp be inclined to achieve a centre of mass velocity of 4.0 m s<sup>-1</sup> at the end of the ramp?</p>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Hint</label><div class="sd-tab-content docutils">
+<p>This follows on from the expressions derived for rolling down a ramp, but you need to also consider the geometry of the system to replace <span class="math notranslate nohighlight">\(h\)</span> with <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Solution</label><div class="sd-tab-content docutils">
+<p>From the conservation of energy</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2}mv^2 + \frac{1}{2}I\omega^2 = mgh\]</div>
+<p>where <span class="math notranslate nohighlight">\(h\)</span> is the height difference between the top and bottom of the ramp. We assume the ball is not slipping which means <span class="math notranslate nohighlight">\(\omega = \frac{v}{R}\)</span> and so we use this and the expression for <span class="math notranslate nohighlight">\(I_{\text{sphere}}\)</span> given above:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+mgh &amp;= \frac{1}{2}\left(mv^2 + \frac{Iv^2}{R^2}\right)\\
+	&amp;= \frac{mv^2}{2}\left(1+\frac{2}{5}\right)\\
+	\therefore h &amp;= \frac{7v^2}{10g}
+	\end{align*}\]</div>
+<p>Simple trigonometry relates the angle, height and length of ramp as <span class="math notranslate nohighlight">\(h=L\sin\theta\)</span> and so</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\sin\theta &amp;= \frac{7v^2}{10gL}\\
+\therefore \theta &amp;= \sin^{-1}\left(\frac{7\times4^2}{10\times9.8\times2}\right) = 34.8^{\circ}
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown hint admonition">
+<p class="admonition-title">Question 3</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+Question</label><div class="sd-tab-content docutils">
+<p>Find the translational kinetic energy of the ball in Question 2 after it has travelled half of the length of the ramp. Take the mass of the ball to be 60 g.</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+Hint</label><div class="sd-tab-content docutils">
+<p>Even though the system involves an object that is both rotating and translating, the expression for the centre of mass velocity means you can solve this problem only considering the linear kinematics and kinetic energy of linear dynamics.</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+Solution</label><div class="sd-tab-content docutils">
+<p>Linear kinematic equations can be used to find the centre of mass acceleration</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v_f^2 &amp;= v_i^2 + 2aL\\
+\therefore a &amp;= \frac{v^2}{2L} = 4.0\text{ m s}^{-2}
+\end{align*}\]</div>
+<p>The halfway point has a length <span class="math notranslate nohighlight">\(L_{\frac{1}{2}}=1.0\text{ m}\)</span> and so the velocity at this point is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+v_{\frac{1}{2}} &amp;= 2aL_{\frac{1}{2}}\\
+&amp;= 2.82\text{ m s}^{-1}
+\end{align*}\]</div>
+<p>and so the kinetic energy at this point is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+K &amp;= \frac{mv_{\frac{1}{2}}^2}{2}\\
+&amp;= 0.24\text{ J}
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling-translational-rotational">Rolling = translational + rotational</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-solid-cylinder-down-a-ramp">Example - Solid cylinder down a ramp</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling-race">Rolling Race</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-questions">Lecture Questions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Matt Mears
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
